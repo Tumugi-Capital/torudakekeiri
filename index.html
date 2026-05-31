@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>撮るだけ経理 | スマホひとつで完了する次世代AI経理</title>
     <style>
-        /* --- 近未来デザイン設定 (Dark & Neon) --- */
+        /* --- オシャレで明るいモダンSaaSデザイン設定 --- */
         :root {
-            --primary: #00f0ff; /* ネオンシアン */
-            --primary-hover: #00d4ff;
-            --accent: #8b5cf6; /* ネオンパープル */
-            --bg-main: #050b14; /* 深い宇宙のような黒 */
-            --bg-card: rgba(16, 24, 39, 0.6); /* ガラスのようなカード背景 */
-            --text-main: #f8fafc; /* 白に近いグレー */
-            --text-muted: #94a3b8; /* 薄いグレー */
-            --border-color: rgba(0, 240, 255, 0.2);
+            --primary: #4f46e5; /* 上品なインディゴブルー */
+            --secondary: #0ea5e9; /* スカイブルー */
+            --accent: #ec4899; /* ピンク（アラートなど） */
+            --bg-main: #f8fafc; /* 清潔感のある極薄いグレー */
+            --bg-card: rgba(255, 255, 255, 0.85); /* 白い半透明カード */
+            --text-main: #334155; /* 読みやすい濃いスレートグレー */
+            --text-muted: #64748b; /* 落ち着いたグレー */
+            --border-color: rgba(255, 255, 255, 0.5);
             --container-width: 1100px;
         }
 
@@ -28,13 +28,15 @@
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
             color: var(--text-main);
             background-color: var(--bg-main);
-            /* 背景のサイバーなぼんやりとした光 */
+            /* オーロラのような淡い背景グラデーション */
             background-image: 
-                radial-gradient(circle at 15% 20%, rgba(0, 240, 255, 0.05), transparent 30%),
-                radial-gradient(circle at 85% 80%, rgba(139, 92, 246, 0.05), transparent 30%);
+                radial-gradient(at 0% 0%, rgba(224, 231, 255, 1) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(224, 242, 254, 1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(250, 232, 255, 1) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(243, 244, 246, 1) 0px, transparent 50%);
             background-attachment: fixed;
             line-height: 1.7;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.03em;
         }
 
         a { color: inherit; text-decoration: none; }
@@ -49,18 +51,17 @@
         /* --- グラスモーフィズム（すりガラス）カード --- */
         .glass-card {
             background: var(--bg-card);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .glass-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(0, 240, 255, 0.15);
-            border-color: rgba(0, 240, 255, 0.5);
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.08);
         }
 
         /* --- 見出しグラデーション --- */
@@ -69,195 +70,187 @@
             text-align: center;
             margin-bottom: 50px;
             font-weight: 800;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
+            color: var(--text-main);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
-            width: 100%;
         }
 
         @media (max-width: 768px) {
             .section-title { font-size: 1.6rem; margin-bottom: 40px; }
         }
 
-        /* --- 光るCTAボタン --- */
+        /* --- スタイリッシュなCTAボタン --- */
         .btn-cta {
             display: inline-block;
-            background: linear-gradient(135deg, var(--primary) 0%, #0075ff 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: #ffffff;
             padding: 16px 45px;
             font-size: 1.1rem;
             font-weight: 700;
             border-radius: 50px;
-            box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+            box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
             transition: all 0.3s ease;
             text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: none;
         }
 
         .btn-cta:hover {
             transform: translateY(-2px);
-            box-shadow: 0 0 30px rgba(0, 240, 255, 0.7);
+            box-shadow: 0 15px 35px rgba(79, 70, 229, 0.4);
+            color: #ffffff;
         }
 
         /* --- ヘッダー --- */
         header {
-            background-color: rgba(5, 11, 20, 0.7);
+            background-color: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
         }
 
         .header-inner { display: flex; justify-content: space-between; align-items: center; height: 70px; }
         
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 800;
-            color: var(--primary);
-            letter-spacing: 0.1em;
-            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 0.05em;
         }
 
         nav ul { display: flex; gap: 24px; align-items: center; }
-        nav ul a { font-size: 0.95rem; font-weight: 600; transition: color 0.2s, text-shadow 0.2s; color: var(--text-main); }
-        nav ul a:hover { color: var(--primary); text-shadow: 0 0 8px var(--primary); }
+        nav ul a { font-size: 0.95rem; font-weight: 600; transition: color 0.2s; color: var(--text-main); }
+        nav ul a:hover { color: var(--primary); }
         
         .nav-btn {
-            background: transparent;
-            border: 1px solid var(--primary);
-            padding: 8px 18px;
+            background: #ffffff;
+            border: 1px solid rgba(79, 70, 229, 0.2);
+            padding: 8px 20px;
             border-radius: 20px;
             color: var(--primary) !important;
-            box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
             transition: all 0.3s;
         }
-        .nav-btn:hover { background: rgba(0, 240, 255, 0.1); box-shadow: 0 0 15px rgba(0, 240, 255, 0.4); }
+        .nav-btn:hover { background: var(--primary); color: #ffffff !important; border-color: var(--primary); }
 
         @media (max-width: 768px) { nav { display: none; } }
 
         /* --- 1. ファーストビュー (Hero) --- */
         .hero {
-            padding: 120px 0 100px;
+            padding: 100px 0 80px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: -50%; left: 50%;
-            transform: translateX(-50%);
-            width: 800px; height: 800px;
-            background: radial-gradient(circle, rgba(0,240,255,0.08) 0%, transparent 60%);
-            z-index: -1;
         }
 
         .hero-badge {
             display: inline-block;
-            background: rgba(0, 240, 255, 0.1);
-            border: 1px solid var(--primary);
+            background: #ffffff;
+            border: 1px solid rgba(79, 70, 229, 0.2);
             color: var(--primary);
-            padding: 6px 20px;
+            padding: 8px 24px;
             border-radius: 30px;
             font-size: 0.9rem;
             font-weight: 700;
             margin-bottom: 30px;
-            box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
         }
 
         .hero h1 { font-size: 3rem; line-height: 1.4; margin-bottom: 24px; font-weight: 800; }
-        .hero p { font-size: 1.15rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 50px; }
+        .hero p { font-size: 1.15rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 40px; }
 
         @media (max-width: 768px) {
-            .hero { padding: 80px 0 60px; }
+            .hero { padding: 60px 0 50px; }
             .hero h1 { font-size: 1.8rem; }
             .hero p { font-size: 1rem; }
         }
 
         /* --- 共通セクション余白 --- */
-        section { padding: 100px 0; }
-        @media (max-width: 768px) { section { padding: 70px 0; } }
+        section { padding: 80px 0; }
+        @media (max-width: 768px) { section { padding: 60px 0; } }
 
         /* --- 2. 課題喚起 (Issue) --- */
         .issue-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .issue-card { padding: 30px; border-top: 2px solid #ef4444; }
-        .issue-card-icon { color: #ef4444; margin-bottom: 16px; filter: drop-shadow(0 0 5px rgba(239, 68, 68, 0.5)); }
-        .issue-card p { font-size: 1rem; font-weight: 600; }
+        .issue-card { padding: 30px; border-top: 3px solid var(--accent); }
+        .issue-card-icon { color: var(--accent); margin-bottom: 16px; }
+        .issue-card p { font-size: 1rem; font-weight: 600; line-height: 1.6; }
         @media (max-width: 768px) { .issue-grid { grid-template-columns: 1fr; } }
 
         /* --- 3. サービス概要 (About) --- */
         .about-box {
             text-align: center; padding: 60px 40px;
-            background: linear-gradient(135deg, rgba(16, 24, 39, 0.8) 0%, rgba(5, 11, 20, 0.9) 100%);
+            background: #ffffff; /* 白基調でスッキリと */
         }
-        .about-tag { color: var(--primary); font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; display: block; letter-spacing: 0.2em; }
-        .about-box h3 { font-size: 1.8rem; margin-bottom: 24px; }
+        .about-tag { color: var(--secondary); font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; display: block; letter-spacing: 0.1em; }
+        .about-box h3 { font-size: 1.8rem; margin-bottom: 24px; color: var(--text-main); }
         .about-box p { font-size: 1.1rem; max-width: 800px; margin: 0 auto; color: var(--text-muted); text-align: left; display: inline-block; }
         @media (max-width: 768px) { .about-box { padding: 40px 20px; } .about-box h3 { font-size: 1.4rem; } }
 
         /* --- 4. ご利用の流れ (How to) --- */
         .howto-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-top: 30px; }
-        .howto-card { padding: 30px; position: relative; }
+        .howto-card { padding: 30px; position: relative; overflow: hidden; }
         .howto-number {
-            position: absolute; top: -20px; left: 20px;
-            background: var(--bg-main); border: 2px solid var(--primary); color: var(--primary);
-            width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            font-weight: 800; font-size: 1.2rem; box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+            position: absolute; top: -15px; right: -10px;
+            font-size: 6rem; font-weight: 900; color: rgba(79, 70, 229, 0.05); /* 背景の透かし文字 */
+            line-height: 1; z-index: 0; pointer-events: none;
         }
-        .howto-card h4 { font-size: 1.3rem; margin: 15px 0 10px; color: #fff; }
+        .howto-card-content { position: relative; z-index: 1; }
+        .howto-step-badge {
+            display: inline-block; background: var(--primary); color: white; padding: 4px 12px; border-radius: 12px; font-size: 0.85rem; font-weight: bold; margin-bottom: 10px;
+        }
+        .howto-card h4 { font-size: 1.3rem; margin-bottom: 10px; color: var(--text-main); }
         @media (max-width: 768px) { .howto-grid { grid-template-columns: 1fr; gap: 30px; } }
 
         /* --- 5. 特徴 (Features) --- */
         .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
         .feature-card { text-align: center; padding: 40px 20px; }
-        .feature-num { font-size: 3rem; font-weight: 800; color: rgba(0, 240, 255, 0.1); line-height: 1; margin-bottom: 15px; -webkit-text-stroke: 1px var(--primary); }
-        .feature-card h4 { font-size: 1.25rem; margin-bottom: 16px; color: #fff; }
-        .feature-card p { color: var(--text-muted); }
+        .feature-num { font-size: 2.5rem; font-weight: 800; color: var(--secondary); margin-bottom: 15px; }
+        .feature-card h4 { font-size: 1.25rem; margin-bottom: 16px; color: var(--text-main); }
+        .feature-card p { color: var(--text-muted); font-size: 0.95rem; }
         @media (max-width: 768px) { .features-grid { grid-template-columns: 1fr; } }
 
         /* --- 6. 機能 (Functions) --- */
         .functions-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
         .function-card { display: flex; gap: 20px; padding: 30px; }
-        .function-icon { color: var(--primary); flex-shrink: 0; filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.6)); }
-        .function-info h4 { font-size: 1.2rem; margin-bottom: 8px; color: #fff; }
-        .function-info p { color: var(--text-muted); }
+        .function-icon { color: var(--primary); flex-shrink: 0; background: rgba(79, 70, 229, 0.1); padding: 12px; border-radius: 16px; height: fit-content; }
+        .function-info h4 { font-size: 1.2rem; margin-bottom: 8px; color: var(--text-main); }
+        .function-info p { color: var(--text-muted); font-size: 0.95rem; }
         @media (max-width: 768px) { .functions-grid { grid-template-columns: 1fr; } .function-card { flex-direction: column; gap: 15px; } }
 
         /* --- 7. 料金プラン (Price) --- */
         .price { text-align: center; }
-        .price-card { max-width: 450px; margin: 0 auto; padding: 50px 40px; border: 2px solid var(--primary); position: relative; overflow: hidden; }
-        .price-card::before {
-            content: ""; position: absolute; top: -50px; left: -50px; width: 100px; height: 100px;
-            background: var(--primary); filter: blur(50px); opacity: 0.3; z-index: -1;
-        }
-        .price-card h3 { font-size: 1.5rem; margin-bottom: 10px; color: #fff; }
-        .price-main { font-size: 3.5rem; font-weight: 800; color: var(--primary); margin: 20px 0; text-shadow: 0 0 15px rgba(0, 240, 255, 0.3); }
+        .price-card { max-width: 450px; margin: 0 auto; padding: 50px 40px; border: 2px solid rgba(79, 70, 229, 0.2); position: relative; background: #ffffff; }
+        .price-card h3 { font-size: 1.5rem; margin-bottom: 10px; color: var(--text-main); }
+        .price-main { font-size: 3.5rem; font-weight: 800; color: var(--primary); margin: 20px 0; }
         .price-main span { font-size: 1.2rem; font-weight: 500; color: var(--text-muted); }
-        .price-note { background: rgba(0, 240, 255, 0.1); color: var(--primary); padding: 12px; border-radius: 8px; font-weight: 600; margin-bottom: 30px; border: 1px solid rgba(0, 240, 255, 0.2); }
+        .price-note { background: #f0fdf4; color: #16a34a; padding: 12px; border-radius: 8px; font-weight: 600; margin-bottom: 30px; }
 
         /* --- 8. FAQ --- */
         .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
         .faq-item { padding: 25px; }
-        .faq-q { font-weight: 700; display: flex; gap: 12px; margin-bottom: 12px; font-size: 1.1rem; color: #fff; }
-        .faq-q::before { content: "Q."; color: var(--primary); text-shadow: 0 0 8px rgba(0, 240, 255, 0.5); }
-        .faq-a { display: flex; gap: 12px; color: var(--text-muted); padding-left: 5px; }
-        .faq-a::before { content: "A."; color: var(--accent); font-weight: 700; text-shadow: 0 0 8px rgba(139, 92, 246, 0.5); }
+        .faq-q { font-weight: 700; display: flex; gap: 12px; margin-bottom: 12px; font-size: 1.1rem; color: var(--text-main); }
+        .faq-q::before { content: "Q."; color: var(--primary); }
+        .faq-a { display: flex; gap: 12px; color: var(--text-muted); padding-left: 5px; line-height: 1.6; }
+        .faq-a::before { content: "A."; color: var(--secondary); font-weight: 700; }
 
         /* --- 下部CTA --- */
-        .bottom-cta { text-align: center; background: linear-gradient(180deg, transparent 0%, rgba(0, 240, 255, 0.05) 100%); border-top: 1px solid rgba(255, 255, 255, 0.05); }
-        .bottom-cta h2 { font-size: 2.2rem; margin-bottom: 40px; color: #fff; }
+        .bottom-cta { text-align: center; padding: 100px 0; background: transparent; }
+        .bottom-cta h2 { font-size: 2.2rem; margin-bottom: 40px; color: var(--text-main); }
 
         /* --- フッター --- */
-        footer { background-color: #020617; border-top: 1px solid rgba(255, 255, 255, 0.05); padding: 60px 0 30px; font-size: 0.9rem; color: var(--text-muted); }
+        footer { background-color: #ffffff; border-top: 1px solid rgba(0,0,0,0.05); padding: 60px 0 30px; font-size: 0.9rem; color: var(--text-muted); }
         .footer-inner { display: flex; justify-content: space-between; margin-bottom: 40px; }
-        .footer-info h5 { color: #fff; font-size: 1.3rem; margin-bottom: 10px; letter-spacing: 0.1em; }
+        .footer-info h5 { color: var(--text-main); font-size: 1.3rem; margin-bottom: 10px; font-weight: 800; }
         .footer-links { display: flex; gap: 30px; }
         .footer-links a:hover { color: var(--primary); }
-        .copyright { text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 30px; }
+        .copyright { text-align: center; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 30px; }
 
         @media (max-width: 768px) {
             .footer-inner { flex-direction: column; gap: 30px; }
@@ -289,7 +282,7 @@
         <section class="hero">
             <div class="container">
                 <span class="hero-badge">AIが自動で仕訳を想定</span>
-                <h1>経理は「撮るだけ」の時代へ。<br>スマホで完結する次世代AI経理</h1>
+                <h1>経理は「撮るだけ」の時代へ。<br><span class="text-gradient">スマホで完結する次世代AI経理</span></h1>
                 <p>レシートや領収書を撮って送るだけ。<br>経理の知識がなくても、誰でも迷わずカンタンに。</p>
                 <!-- メインのボタンリンク -->
                 <a href="ここに撮るだけ経理のシステムURLを入力" class="btn-cta">今なら月10枚まで無料！無料で始める</a>
@@ -303,19 +296,19 @@
                 <div class="issue-grid">
                     <div class="issue-card glass-card">
                         <div class="issue-card-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                         </div>
                         <p>毎月末のレシート入力や経費精算に時間を奪われている</p>
                     </div>
                     <div class="issue-card glass-card">
                         <div class="issue-card-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                         </div>
                         <p>簿記の知識がなく、勘定科目や税区分がこれで合っているのか不安</p>
                     </div>
                     <div class="issue-card glass-card">
                         <div class="issue-card-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                         </div>
                         <p>経理担当者を雇う余裕はないが、経営や本業にもっと集中したい</p>
                     </div>
@@ -344,13 +337,19 @@
                 <div class="howto-grid">
                     <div class="howto-card glass-card">
                         <div class="howto-number">1</div>
-                        <h4>レシート撮影</h4>
-                        <p>手元のレシートや領収書をスマホでパシャッと撮影して送信。</p>
+                        <div class="howto-card-content">
+                            <span class="howto-step-badge">STEP 1</span>
+                            <h4>レシート撮影</h4>
+                            <p>手元のレシートや領収書をスマホでパシャッと撮影して送信。</p>
+                        </div>
                     </div>
                     <div class="howto-card glass-card">
                         <div class="howto-number">2</div>
-                        <h4>AIが自動仕訳＆会話</h4>
-                        <p>AIが内容を瞬時に分析。高度な処理を裏側で即座に行います。</p>
+                        <div class="howto-card-content">
+                            <span class="howto-step-badge">STEP 2</span>
+                            <h4>AIが自動仕訳＆会話</h4>
+                            <p>AIが内容を瞬時に分析。高度な処理を裏側で即座に行います。</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -387,7 +386,7 @@
                 <div class="functions-grid">
                     <div class="function-card glass-card">
                         <div class="function-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
                         </div>
                         <div class="function-info">
                             <h4>レシート自動読取</h4>
@@ -396,7 +395,7 @@
                     </div>
                     <div class="function-card glass-card">
                         <div class="function-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                         </div>
                         <div class="function-info">
                             <h4>経費妥当性の自動チェック</h4>
@@ -441,7 +440,7 @@
         <!-- 下部CTA -->
         <section class="bottom-cta">
             <div class="container">
-                <h2>さあ、面倒な経理を自動化しましょう</h2>
+                <h2 class="section-title">さあ、面倒な経理を自動化しましょう</h2>
                 <!-- 最下部のボタンリンク -->
                 <a href="ここに撮るだけ経理のシステムURLを入力" class="btn-cta">今なら月10枚まで無料！無料で始める</a>
             </div>
