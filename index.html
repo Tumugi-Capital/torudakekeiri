@@ -10,6 +10,7 @@
     <style>
         /* --- 基本設定 & リセット --- */
         :root {
+            /* 洗練されたカラーパレットに刷新 */
             --primary: #2563eb; 
             --primary-gradient: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
             --accent: #0f172a; 
@@ -32,6 +33,7 @@
         }
 
         body {
+            /* フォントファミリーをアップデート */
             font-family: 'Noto Sans JP', "Helvetica Neue", Arial, sans-serif;
             color: var(--text-main);
             background-color: var(--bg-white);
@@ -70,7 +72,7 @@
             }
         }
 
-        /* --- ボタン共通スタイル --- */
+        /* --- ボタン共通スタイル（グラデーションとシャドウ強化） --- */
         .btn-cta {
             display: inline-block;
             background: var(--primary-gradient);
@@ -160,6 +162,7 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            /* 背景にモダンな薄いグラデーションメッシュを配置 */
             background: radial-gradient(circle at 15% 50%, rgba(219, 234, 254, 0.5), transparent 25%),
                         radial-gradient(circle at 85% 30%, rgba(191, 219, 254, 0.5), transparent 25%);
             background-color: var(--bg-white);
@@ -276,6 +279,7 @@
             overflow: hidden;
         }
 
+        /* 背景のアクセント */
         .about-box::before {
             content: '';
             position: absolute;
@@ -494,8 +498,9 @@
             position: relative;
         }
 
+        /* おすすめバッジ */
         .price-card::before {
-            content: '小規模事業者に最適';
+            content: '最もシンプル';
             position: absolute;
             top: -15px;
             left: 50%;
@@ -698,34 +703,34 @@
     <main>
         <section class="hero">
             <div class="container">
-                <span class="hero-badge">個人事業主・小規模法人向け AI経理サポート</span>
-                <h1>本業に集中したい人のための、<br>スマホで完結する次世代AI経理</h1>
-                <p>面倒なレシート入力は、LINEでパシャッと撮って送るだけ。<br>簿記の知識がなくても、AIが自動で仕訳を<span class="nowrap">代行します。</span></p>
+                <span class="hero-badge">今なら月10枚まで無料キャンペーン中！</span>
+                <h1>経理は「撮るだけ」の時代へ。<br>スマホひとつで完了する次世代AI経理</h1>
+                <p>レシートや領収書をLINEで撮って送るだけ。AIが自動で仕訳を想定します。<br>経理の知識がなくても、誰でも迷わず<span class="nowrap">カンタンに。</span></p>
                 <a href="https://lin.ee/RYKWAXN" class="btn-cta" target="_blank" rel="noopener noreferrer">今なら月10枚まで無料！LINEで始める</a>
             </div>
         </section>
 
         <section class="issue">
             <div class="container">
-                <h2 class="section-title">経理作業で、こんなお悩みありませんか？</h2>
+                <h2 class="section-title">こんなお悩み、ありませんか？</h2>
                 <div class="issue-grid">
                     <div class="issue-card hover-card">
                         <div class="issue-card-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                         </div>
-                        <p>毎月末の領収書整理や入力作業に、大切な時間を<span class="nowrap">奪われている</span></p>
+                        <p>毎月末のレシート入力や経費精算に時間を<span class="nowrap">奪われている</span></p>
                     </div>
                     <div class="issue-card hover-card">
                         <div class="issue-card-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                         </div>
-                        <p>簿記の知識がないため、この勘定科目や税区分で合っているか<span class="nowrap">いつも不安</span></p>
+                        <p>簿記の知識がなく、勘定科目や<br>税区分がこれで合っているのか<span class="nowrap">不安</span></p>
                     </div>
                     <div class="issue-card hover-card">
                         <div class="issue-card-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                         </div>
-                        <p>税理士や経理担当を雇う予算はないが、とにかく本業に<span class="nowrap">集中したい</span></p>
+                        <p>経理担当者を雇う余裕はないが、<br>経営や本業にもっと<span class="nowrap">集中したい</span></p>
                     </div>
                 </div>
             </div>
@@ -735,10 +740,10 @@
             <div class="container">
                 <div class="about-box">
                     <span class="about-tag">AI AGENT</span>
-                    <h3>知識ゼロでも大丈夫。<br>あなたの代わりにAIが経理を担当します。</h3>
+                    <h3>レシートを撮ってLINEで送るだけで<br>経理仕訳が完了するAIエージェント</h3>
                     <p>
-                        「撮るだけ経理」は、個人事業主や小規模事業者のために作られたAIエージェントです。レシートを送信するだけで、面倒な仕訳作業を自動化します。<br><br>
-                        経費として不適切な可能性がある場合はAIが優しくアラートを出すため、専門知識がなくても安心して<span class="nowrap">運用できます。</span>
+                        「撮るだけ経理」は、レシート画像の読み取りから自動仕訳までを一気通貫で自動化する<span class="nowrap">サービスです。</span><br><br>
+                        万が一、経費として妥当ではない可能性がある場合はAIが自動でアラートを出すため、経理の知識がなくても安心して<span class="nowrap">運用できます。</span>
                     </p>
                 </div>
             </div>
@@ -746,17 +751,17 @@
 
         <section class="howto">
             <div class="container">
-                <h2 class="section-title">いつものスマホ操作だけで完結</h2>
+                <h2 class="section-title">以下の手順でかんたん処理</h2>
                 <div class="howto-grid">
                     <div class="howto-card hover-card">
                         <div class="howto-number">STEP 1</div>
-                        <h4>レシートを撮影してLINEで送信</h4>
-                        <p>新しいアプリを覚える必要はありません。手元の領収書をスマホでパシャッと撮影し、いつものLINEに<span class="nowrap">送るだけ。</span></p>
+                        <h4>レシート撮影</h4>
+                        <p>手元のレシートや領収書をスマホでパシャッと撮影して<span class="nowrap">送信。</span></p>
                     </div>
                     <div class="howto-card hover-card">
                         <div class="howto-number">STEP 2</div>
-                        <h4>AIが自動で仕訳＆確認</h4>
-                        <p>AIが内容を瞬時に分析し、適切な勘定科目を判断。用途が不明な場合は、AIからチャット形式で確認のメッセージが<span class="nowrap">届きます。</span></p>
+                        <h4>AIが自動仕訳＆会話</h4>
+                        <p>AIが内容を瞬時に分析。高度な処理を裏側で即座に<span class="nowrap">行います。</span></p>
                     </div>
                 </div>
             </div>
@@ -764,22 +769,22 @@
 
         <section class="features" id="features">
             <div class="container">
-                <h2 class="section-title">小規模事業者に選ばれる理由</h2>
+                <h2 class="section-title">選ばれる理由・特徴</h2>
                 <div class="features-grid">
                     <div class="feature-card hover-card">
                         <div class="feature-num">01</div>
-                        <h4>外注するより圧倒的に安い</h4>
-                        <p>記帳代行を頼むと毎月数万円かかるところ、月額ワンコイン（500円台）から手軽に<span class="nowrap">導入できます。</span></p>
+                        <h4>圧倒的な低価格</h4>
+                        <p>今なら、月額500円台から<span class="nowrap">利用可能。</span></p>
                     </div>
                     <div class="feature-card hover-card">
                         <div class="feature-num">02</div>
-                        <h4>スキマ時間にすぐ終わる</h4>
-                        <p>月末にまとめてPCに向かう必要はありません。支払い直後、移動中などのスキマ時間にスマホひとつで<span class="nowrap">処理完了。</span></p>
+                        <h4>スムーズな導入</h4>
+                        <p>新しいアプリの複雑な操作を覚える必要はありません。いつもの<br>スマホ操作だけで仕訳が<span class="nowrap">完了します。</span></p>
                     </div>
                     <div class="feature-card hover-card">
                         <div class="feature-num">03</div>
-                        <h4>高精度な自動仕訳で安心</h4>
-                        <p>独自のAIが、ただ文字を読むだけでなく「あなたの業種」や「文脈」まで考慮して、正確な税区分と勘定科目を<span class="nowrap">導き出します。</span></p>
+                        <h4>高精度な自動仕訳</h4>
+                        <p>独自のAIがレシートの記載内容だけでなく、文脈や業種を考慮して勘定科目・税区分を高精度に<span class="nowrap">判定します。</span></p>
                     </div>
                 </div>
             </div>
@@ -787,7 +792,7 @@
 
         <section class="functions" id="functions">
             <div class="container">
-                <h2 class="section-title">充実のサポート機能</h2>
+                <h2 class="section-title">主な機能</h2>
                 <div class="functions-grid">
                     <div class="function-card hover-card">
                         <div class="function-icon">
@@ -795,7 +800,7 @@
                         </div>
                         <div class="function-info">
                             <h4>レシート自動読取</h4>
-                            <p>手書きの領収書でも大丈夫。高精度なAI-OCRで日付・金額・店舗名を正確に<span class="nowrap">読み取ります。</span></p>
+                            <p>高精度なAI-OCRで画像から日付・金額・<br>店舗名を<span class="nowrap">抽出。</span></p>
                         </div>
                     </div>
                     <div class="function-card hover-card">
@@ -803,8 +808,8 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                         </div>
                         <div class="function-info">
-                            <h4>経費の「うっかりミス」防止</h4>
-                            <p>個人的な支出や、経費として迷いやすい項目にはAIが自動でアラートを出し、申告時のトラブルを<span class="nowrap">未然に防ぎます。</span></p>
+                            <h4>経費妥当性の自動チェック</h4>
+                            <p>経費として適正かAIが判断し、迷いやすい<br>支出にはアラートを<span class="nowrap">通知。</span></p>
                         </div>
                     </div>
                 </div>
@@ -813,7 +818,7 @@
 
         <section class="price" id="price">
             <div class="container">
-                <h2 class="section-title">負担にならない料金プラン</h2>
+                <h2 class="section-title">料金プラン</h2>
                 <p style="margin-bottom: 40px; font-size: 1.15rem; font-weight: 500;">まずは無料でお試しください</p>
                 <div class="price-card hover-card">
                     <h3>基本料金</h3>
@@ -829,12 +834,12 @@
                 <h2 class="section-title">よくあるご質問</h2>
                 <div class="faq-list">
                     <div class="faq-item">
-                        <div class="faq-q">PCや新しいソフトの設定は必要ですか？</div>
-                        <div class="faq-a">いいえ、普段お使いのLINEから友だち追加してユーザー登録するだけで、数分で使い始めることができます。</div>
+                        <div class="faq-q">導入にどれくらい時間がかかりますか？</div>
+                        <div class="faq-a">ユーザー登録後、数分で使い始めることができます。</div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-q">勝手に課金されることはありませんか？</div>
-                        <div class="faq-a">はい、クレジットカードの登録なしで月に10枚まで無料でお試しいただけます。自動で有料プランに切り替わることはありません。</div>
+                        <div class="faq-q">無料で試すことはできますか？</div>
+                        <div class="faq-a">はい、クレジットカードの登録なしで、月に10枚まで無料でご利用いただけます。</div>
                     </div>
                 </div>
             </div>
@@ -842,7 +847,7 @@
 
         <section class="bottom-cta" id="cta">
             <div class="container">
-                <h2>もう、月末の経理作業に悩まない。</h2>
+                <h2>さあ、面倒な経理を自動化しましょう</h2>
                 <a href="https://lin.ee/RYKWAXN" class="btn-cta" target="_blank" rel="noopener noreferrer">今なら月10枚まで無料！LINEで始める</a>
             </div>
         </section>
@@ -853,7 +858,7 @@
             <div class="footer-inner">
                 <div class="footer-info">
                     <h5>撮るだけ経理</h5>
-                    <p>個人事業主・小規模法人を支える次世代AI経理サービス</p>
+                    <p>スマホひとつで完了する次世代AI経理サービス</p>
                 </div>
                 <div class="footer-links">
                     <span>運営会社：紬キャピタル合同会社</span>
