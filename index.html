@@ -4,17 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>撮るだけ経理 | スマホひとつで完了する次世代AI経理</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
     <style>
         /* --- 基本設定 & リセット --- */
         :root {
-            --primary: #2563eb; /* メインカラー（鮮やかなブルー） */
-            --primary-hover: #1d4ed8;
-            --accent: #0f172a; /* 墨色・ダークネイビー */
-            --text-main: #334155; /* 本文テキスト */
-            --text-muted: #64748b; /* 補足テキスト */
-            --bg-light: #f8fafc; /* 薄いグレー背景 */
+            /* 洗練されたカラーパレットに刷新 */
+            --primary: #2563eb; 
+            --primary-gradient: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+            --accent: #0f172a; 
+            --text-main: #334155; 
+            --text-muted: #64748b; 
+            --bg-light: #f8fafc; 
             --bg-white: #ffffff;
             --container-width: 1100px;
+            --shadow-sm: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+            --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.04);
+            --shadow-hover: 0 20px 25px -5px rgba(37, 99, 235, 0.15), 0 10px 10px -5px rgba(37, 99, 235, 0.04);
+            --radius-lg: 24px;
+            --radius-md: 16px;
         }
 
         * {
@@ -24,11 +33,12 @@
         }
 
         body {
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            /* フォントファミリーをアップデート */
+            font-family: 'Noto Sans JP', "Helvetica Neue", Arial, sans-serif;
             color: var(--text-main);
             background-color: var(--bg-white);
-            line-height: 1.7;
-            letter-spacing: 0.03em;
+            line-height: 1.8;
+            letter-spacing: 0.04em;
         }
 
         a {
@@ -43,75 +53,81 @@
         .container {
             max-width: var(--container-width);
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
         .section-title {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--accent);
             text-align: center;
-            margin-bottom: 40px;
-            font-weight: 700;
+            margin-bottom: 50px;
+            font-weight: 800;
+            letter-spacing: 0.05em;
         }
 
         @media (max-width: 768px) {
             .section-title {
-                font-size: 1.6rem;
-                margin-bottom: 30px;
+                font-size: 1.8rem;
+                margin-bottom: 40px;
             }
         }
 
-        /* --- ボタン共通スタイル --- */
+        /* --- ボタン共通スタイル（グラデーションとシャドウ強化） --- */
         .btn-cta {
             display: inline-block;
-            background-color: var(--primary);
+            background: var(--primary-gradient);
             color: var(--bg-white);
-            padding: 16px 40px;
-            font-size: 1.1rem;
+            padding: 18px 48px;
+            font-size: 1.15rem;
             font-weight: 700;
             border-radius: 50px;
-            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
-            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
             text-align: center;
+            letter-spacing: 0.05em;
         }
 
         .btn-cta:hover {
-            background-color: var(--primary-hover);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+            filter: brightness(1.1);
         }
 
         /* --- ヘッダー --- */
         header {
-            background-color: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid #e2e8f0;
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
         }
 
         .header-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 70px;
+            height: 76px;
         }
 
         .logo {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 800;
-            color: var(--primary);
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 0.02em;
         }
 
         nav ul {
             display: flex;
-            gap: 24px;
+            gap: 32px;
             align-items: center;
         }
 
         nav ul a {
             font-size: 0.95rem;
-            font-weight: 600;
+            font-weight: 500;
             color: var(--accent);
             transition: color 0.2s;
         }
@@ -123,12 +139,15 @@
         .nav-btn {
             background-color: var(--accent);
             color: var(--bg-white) !important;
-            padding: 8px 18px;
-            border-radius: 20px;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: all 0.2s ease;
         }
 
         .nav-btn:hover {
-            opacity: 0.9;
+            background-color: var(--primary);
+            transform: translateY(-1px);
         }
 
         @media (max-width: 768px) {
@@ -139,77 +158,102 @@
 
         /* --- 1. ファーストビュー (Hero) --- */
         .hero {
-            padding: 100px 0 80px;
+            padding: 120px 0 100px;
             text-align: center;
-            background: linear-gradient(180deg, #eff6ff 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+            /* 背景にモダンな薄いグラデーションメッシュを配置 */
+            background: radial-gradient(circle at 15% 50%, rgba(219, 234, 254, 0.5), transparent 25%),
+                        radial-gradient(circle at 85% 30%, rgba(191, 219, 254, 0.5), transparent 25%);
+            background-color: var(--bg-white);
         }
 
         .hero-badge {
             display: inline-block;
-            background-color: #dbeafe;
+            background-color: #eff6ff;
             color: var(--primary);
-            padding: 6px 16px;
-            border-radius: 20px;
+            padding: 8px 20px;
+            border-radius: 30px;
             font-size: 0.9rem;
             font-weight: 700;
-            margin-bottom: 24px;
+            margin-bottom: 30px;
+            border: 1px solid #bfdbfe;
+            letter-spacing: 0.05em;
         }
 
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 3.2rem;
             color: var(--accent);
-            line-height: 1.3;
-            margin-bottom: 24px;
+            line-height: 1.4;
+            margin-bottom: 30px;
             font-weight: 800;
+            letter-spacing: 0.02em;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: var(--text-main);
-            max-width: 700px;
-            margin: 0 auto 40px;
+            max-width: 750px;
+            margin: 0 auto 50px;
+            font-weight: 500;
         }
 
         @media (max-width: 768px) {
             .hero {
-                padding: 60px 0;
+                padding: 80px 0 60px;
             }
             .hero h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             .hero p {
-                font-size: 1rem;
+                font-size: 1.05rem;
             }
+        }
+
+        /* --- 共通カードアニメーション --- */
+        .hover-card {
+            transition: all 0.3s ease;
+        }
+        .hover-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
         }
 
         /* --- 2. 課題喚起 (Issue) --- */
         .issue {
-            padding: 80px 0;
+            padding: 100px 0;
             background-color: var(--bg-light);
         }
 
         .issue-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
+            gap: 30px;
         }
 
         .issue-card {
             background-color: var(--bg-white);
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            padding: 40px 30px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
             border-top: 4px solid #ef4444;
         }
 
         .issue-card-icon {
             color: #ef4444;
-            margin-bottom: 16px;
+            margin-bottom: 24px;
+            background-color: #fef2f2;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .issue-card p {
-            font-size: 1rem;
-            font-weight: 600;
+            font-size: 1.05rem;
+            font-weight: 700;
             color: var(--accent);
         }
 
@@ -221,89 +265,110 @@
 
         /* --- 3. サービス概要 (About) --- */
         .about {
-            padding: 100px 0;
+            padding: 120px 0;
         }
 
         .about-box {
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            color: var(--accent);
-            padding: 50px;
-            border-radius: 24px;
+            background: var(--accent);
+            color: var(--bg-white);
+            padding: 70px 50px;
+            border-radius: var(--radius-lg);
             text-align: center;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-            border: 1px solid #cbd5e1;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 背景のアクセント */
+        .about-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            opacity: 0.15;
+            filter: blur(50px);
         }
 
         .about-tag {
-            color: var(--primary);
+            color: #38bdf8;
             font-size: 1.1rem;
             font-weight: 800;
-            margin-bottom: 16px;
-            display: block;
-            letter-spacing: 0.05em;
+            margin-bottom: 20px;
+            display: inline-block;
+            letter-spacing: 0.1em;
+            background-color: rgba(56, 189, 248, 0.1);
+            padding: 6px 16px;
+            border-radius: 20px;
         }
 
         .about h3 {
-            font-size: 1.8rem;
-            margin-bottom: 30px;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
             font-weight: 800;
+            line-height: 1.5;
         }
 
         .about p {
-            font-size: 1.05rem;
+            font-size: 1.15rem;
             max-width: 800px;
             margin: 0 auto;
-            color: var(--text-main);
+            color: #e2e8f0;
             text-align: left;
             display: inline-block;
+            font-weight: 400;
         }
 
         @media (max-width: 768px) {
             .about-box {
-                padding: 30px 20px;
+                padding: 40px 24px;
             }
             .about h3 {
-                font-size: 1.4rem;
+                font-size: 1.6rem;
             }
         }
 
         /* --- 4. ご利用の流れ (How to) --- */
         .howto {
-            padding: 80px 0;
+            padding: 100px 0;
             background-color: var(--bg-light);
-            text-align: center;
         }
 
         .howto-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            text-align: left;
-            margin-top: 40px;
+            gap: 40px;
+            margin-top: 50px;
         }
 
         .howto-card {
             background-color: var(--bg-white);
-            padding: 40px;
-            border-radius: 16px;
+            padding: 50px 40px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(226, 232, 240, 0.8);
             position: relative;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-            border: 1px solid #e2e8f0;
         }
 
         .howto-number {
-            display: inline-block;
-            background-color: var(--primary);
+            position: absolute;
+            top: -16px;
+            left: 40px;
+            background: var(--primary-gradient);
             color: var(--bg-white);
-            padding: 4px 16px;
+            padding: 6px 20px;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 800;
-            margin-bottom: 16px;
+            letter-spacing: 0.05em;
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
         }
 
         .howto-card h4 {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: var(--accent);
             margin-bottom: 16px;
             font-weight: 800;
@@ -313,41 +378,48 @@
             .howto-grid {
                 grid-template-columns: 1fr;
             }
+            .howto-number {
+                left: 20px;
+            }
         }
 
         /* --- 5. 選ばれる理由・特徴 (Features) --- */
         .features {
-            padding: 100px 0;
+            padding: 120px 0;
             background-color: var(--bg-white);
-            text-align: center;
         }
 
         .features-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 40px;
+            gap: 40px;
+            margin-top: 50px;
         }
 
         .feature-card {
-            background-color: var(--bg-light);
-            padding: 40px 30px;
-            border-radius: 16px;
+            background-color: var(--bg-white);
+            padding: 50px 30px;
+            border-radius: var(--radius-md);
             text-align: center;
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            box-shadow: var(--shadow-sm);
         }
 
         .feature-num {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 800;
-            color: var(--primary);
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             line-height: 1;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
+            opacity: 0.8;
         }
 
         .feature-card h4 {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             color: var(--accent);
-            margin-bottom: 16px;
+            margin-bottom: 20px;
             font-weight: 800;
         }
 
@@ -359,7 +431,7 @@
 
         /* --- 6. 主な機能 (Functions) --- */
         .functions {
-            padding: 80px 0;
+            padding: 100px 0;
             background-color: var(--bg-light);
         }
 
@@ -367,28 +439,35 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 30px;
-            margin-top: 40px;
+            margin-top: 50px;
         }
 
         .function-card {
             background-color: var(--bg-white);
-            padding: 30px;
-            border-radius: 16px;
+            padding: 40px;
+            border-radius: var(--radius-md);
             display: flex;
-            gap: 20px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-            border: 1px solid #e2e8f0;
+            gap: 24px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(226, 232, 240, 0.8);
         }
 
         .function-icon {
             color: var(--primary);
             flex-shrink: 0;
+            background-color: #eff6ff;
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .function-info h4 {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: var(--accent);
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             font-weight: 800;
         }
 
@@ -398,160 +477,203 @@
             }
             .function-card {
                 flex-direction: column;
-                gap: 15px;
+                gap: 20px;
             }
         }
 
         /* --- 7. 料金プラン (Price) --- */
         .price {
-            padding: 100px 0;
+            padding: 120px 0;
             text-align: center;
         }
 
         .price-card {
             background-color: var(--bg-white);
             border: 2px solid var(--primary);
-            max-width: 500px;
+            max-width: 480px;
             margin: 0 auto;
-            border-radius: 24px;
-            padding: 40px;
-            box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.1);
+            border-radius: var(--radius-lg);
+            padding: 50px 40px;
+            box-shadow: var(--shadow-md);
+            position: relative;
+        }
+
+        /* おすすめバッジ */
+        .price-card::before {
+            content: '最もシンプル';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-gradient);
+            color: white;
+            padding: 6px 24px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
         }
 
         .price-card h3 {
             font-size: 1.5rem;
             color: var(--accent);
-            margin-bottom: 10px;
+            margin-bottom: 16px;
             font-weight: 800;
         }
 
         .price-main {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 800;
             color: var(--primary);
-            margin: 20px 0;
+            margin: 24px 0;
+            line-height: 1;
         }
 
         .price-main span {
             font-size: 1.2rem;
             font-weight: 500;
             color: var(--text-muted);
+            margin-left: 8px;
         }
 
         .price-note {
             background-color: #f0fdf4;
-            color: #16a34a;
-            padding: 10px;
+            color: #15803d;
+            padding: 12px;
             border-radius: 8px;
-            font-weight: 600;
-            margin-bottom: 30px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            border: 1px solid #bbf7d0;
         }
 
         /* --- 8. よくあるご質問 (FAQ) --- */
         .faq {
-            padding: 80px 0;
+            padding: 100px 0;
             background-color: var(--bg-light);
         }
 
         .faq-list {
-            max-width: 750px;
-            margin: 40px auto 0;
+            max-width: 800px;
+            margin: 50px auto 0;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 24px;
         }
 
         .faq-item {
             background-color: var(--bg-white);
-            padding: 24px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
-            border: 1px solid #e2e8f0;
+            padding: 30px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(226, 232, 240, 0.8);
         }
 
         .faq-q {
             font-weight: 800;
             color: var(--accent);
             display: flex;
-            gap: 10px;
-            margin-bottom: 10px;
-            font-size: 1.05rem;
+            gap: 16px;
+            margin-bottom: 16px;
+            font-size: 1.15rem;
         }
 
         .faq-q::before {
-            content: "Q.";
+            content: "Q";
             color: var(--primary);
+            background-color: #eff6ff;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            flex-shrink: 0;
         }
 
         .faq-a {
             display: flex;
-            gap: 10px;
+            gap: 16px;
             color: var(--text-main);
-            padding-left: 5px;
+            font-weight: 500;
         }
 
         .faq-a::before {
-            content: "A.";
+            content: "A";
             color: #ef4444;
+            background-color: #fef2f2;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-weight: 800;
+            font-size: 0.9rem;
+            flex-shrink: 0;
         }
 
         /* --- 下部CTA --- */
         .bottom-cta {
-            padding: 100px 0;
+            padding: 120px 0;
             text-align: center;
             background: linear-gradient(180deg, #ffffff 0%, #eff6ff 100%);
         }
 
         .bottom-cta h2 {
-            font-size: 2rem;
+            font-size: 2.4rem;
             color: var(--accent);
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             font-weight: 800;
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 768px) {
+            .bottom-cta h2 {
+                font-size: 1.8rem;
+            }
         }
 
         /* --- フッター --- */
         footer {
             background-color: var(--accent);
             color: #94a3b8;
-            padding: 60px 0 30px;
-            font-size: 0.9rem;
+            padding: 80px 0 40px;
+            font-size: 0.95rem;
         }
 
         .footer-inner {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 40px;
+            align-items: center;
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .footer-info h5 {
             color: var(--bg-white);
-            font-size: 1.2rem;
-            margin-bottom: 10px;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
             font-weight: 800;
+            letter-spacing: 0.05em;
         }
 
         .footer-links {
-            display: flex;
-            gap: 30px;
-            color: #f8fafc;
-            font-weight: 600;
+            color: #e2e8f0;
+            font-weight: 500;
         }
 
         .copyright {
             text-align: center;
-            border-top: 1px solid #334155;
-            padding-top: 30px;
+            font-size: 0.85rem;
         }
 
         @media (max-width: 768px) {
             .footer-inner {
                 flex-direction: column;
+                align-items: flex-start;
                 gap: 30px;
-            }
-            .footer-links {
-                flex-direction: column;
-                gap: 15px;
             }
         }
 
@@ -563,7 +685,6 @@
 </head>
 <body>
 
-    <!-- ヘッダー -->
     <header>
         <div class="container header-inner">
             <div class="logo">撮るだけ経理</div>
@@ -573,7 +694,6 @@
                     <li><a href="#functions">機能</a></li>
                     <li><a href="#price">料金</a></li>
                     <li><a href="#faq">FAQ</a></li>
-                    <!-- ヘッダーのボタン -->
                     <li><a href="https://lin.ee/RYKWAXN" class="nav-btn" target="_blank" rel="noopener noreferrer">無料で始める</a></li>
                 </ul>
             </nav>
@@ -581,37 +701,34 @@
     </header>
 
     <main>
-        <!-- 1. ファーストビュー (Hero Section) -->
         <section class="hero">
             <div class="container">
                 <span class="hero-badge">今なら月10枚まで無料キャンペーン中！</span>
                 <h1>経理は「撮るだけ」の時代へ。<br>スマホひとつで完了する次世代AI経理</h1>
                 <p>レシートや領収書をLINEで撮って送るだけ。AIが自動で仕訳を想定します。<br>経理の知識がなくても、誰でも迷わず<span class="nowrap">カンタンに。</span></p>
-                <!-- ヒーローエリアのボタン -->
                 <a href="https://lin.ee/RYKWAXN" class="btn-cta" target="_blank" rel="noopener noreferrer">今なら月10枚まで無料！LINEで始める</a>
             </div>
         </section>
 
-        <!-- 2. 課題喚起 (Issue) -->
         <section class="issue">
             <div class="container">
                 <h2 class="section-title">こんなお悩み、ありませんか？</h2>
                 <div class="issue-grid">
-                    <div class="issue-card">
+                    <div class="issue-card hover-card">
                         <div class="issue-card-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                         </div>
                         <p>毎月末のレシート入力や経費精算に時間を<span class="nowrap">奪われている</span></p>
                     </div>
-                    <div class="issue-card">
+                    <div class="issue-card hover-card">
                         <div class="issue-card-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                         </div>
                         <p>簿記の知識がなく、勘定科目や<br>税区分がこれで合っているのか<span class="nowrap">不安</span></p>
                     </div>
-                    <div class="issue-card">
+                    <div class="issue-card hover-card">
                         <div class="issue-card-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                         </div>
                         <p>経理担当者を雇う余裕はないが、<br>経営や本業にもっと<span class="nowrap">集中したい</span></p>
                     </div>
@@ -619,7 +736,6 @@
             </div>
         </section>
 
-        <!-- 3. サービス概要 (About) -->
         <section class="about">
             <div class="container">
                 <div class="about-box">
@@ -633,17 +749,16 @@
             </div>
         </section>
 
-        <!-- 4. ご利用の流れ (How to) -->
         <section class="howto">
             <div class="container">
                 <h2 class="section-title">以下の手順でかんたん処理</h2>
                 <div class="howto-grid">
-                    <div class="howto-card">
+                    <div class="howto-card hover-card">
                         <div class="howto-number">STEP 1</div>
                         <h4>レシート撮影</h4>
                         <p>手元のレシートや領収書をスマホでパシャッと撮影して<span class="nowrap">送信。</span></p>
                     </div>
-                    <div class="howto-card">
+                    <div class="howto-card hover-card">
                         <div class="howto-number">STEP 2</div>
                         <h4>AIが自動仕訳＆会話</h4>
                         <p>AIが内容を瞬時に分析。高度な処理を裏側で即座に<span class="nowrap">行います。</span></p>
@@ -652,22 +767,21 @@
             </div>
         </section>
 
-        <!-- 5. 選ばれる理由・特徴 (Features) -->
         <section class="features" id="features">
             <div class="container">
                 <h2 class="section-title">選ばれる理由・特徴</h2>
                 <div class="features-grid">
-                    <div class="feature-card">
+                    <div class="feature-card hover-card">
                         <div class="feature-num">01</div>
                         <h4>圧倒的な低価格</h4>
                         <p>今なら、月額500円台から<span class="nowrap">利用可能。</span></p>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card hover-card">
                         <div class="feature-num">02</div>
                         <h4>スムーズな導入</h4>
                         <p>新しいアプリの複雑な操作を覚える必要はありません。いつものスマホ操作だけで仕訳が<span class="nowrap">完了します。</span></p>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card hover-card">
                         <div class="feature-num">03</div>
                         <h4>高精度な自動仕訳</h4>
                         <p>独自のAIがレシートの記載内容だけでなく、文脈や業種を考慮して勘定科目・税区分を高精度に<span class="nowrap">判定します。</span></p>
@@ -676,23 +790,22 @@
             </div>
         </section>
 
-        <!-- 6. 主な機能 (Functions) -->
         <section class="functions" id="functions">
             <div class="container">
                 <h2 class="section-title">主な機能</h2>
                 <div class="functions-grid">
-                    <div class="function-card">
+                    <div class="function-card hover-card">
                         <div class="function-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
                         </div>
                         <div class="function-info">
                             <h4>レシート自動読取</h4>
                             <p>高精度なAI-OCRで画像から日付・金額・店舗名を<span class="nowrap">抽出。</span></p>
                         </div>
                     </div>
-                    <div class="function-card">
+                    <div class="function-card hover-card">
                         <div class="function-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                         </div>
                         <div class="function-info">
                             <h4>経費妥当性の自動チェック</h4>
@@ -703,49 +816,43 @@
             </div>
         </section>
 
-        <!-- 7. 料金プラン (Price) -->
         <section class="price" id="price">
             <div class="container">
                 <h2 class="section-title">料金プラン</h2>
-                <p style="margin-bottom: 30px; font-size: 1.1rem;">まずは無料でお試しください</p>
-                <div class="price-card">
+                <p style="margin-bottom: 40px; font-size: 1.15rem; font-weight: 500;">まずは無料でお試しください</p>
+                <div class="price-card hover-card">
                     <h3>基本料金</h3>
                     <div class="price-main">500<span>円 / 月 (税抜)</span></div>
                     <div class="price-note">※月10枚までは無料でご利用いただけます</div>
-                    <!-- 料金エリアのボタン -->
                     <a href="https://lin.ee/RYKWAXN" class="btn-cta" style="width: 100%;" target="_blank" rel="noopener noreferrer">無料で試してみる</a>
                 </div>
             </div>
         </section>
 
-        <!-- 8. よくあるご質問 (FAQ) -->
         <section class="faq" id="faq">
             <div class="container">
                 <h2 class="section-title">よくあるご質問</h2>
                 <div class="faq-list">
                     <div class="faq-item">
                         <div class="faq-q">導入にどれくらい時間がかかりますか？</div>
-                        <div class="faq-a">ユーザー登録後、数分で使い始めることができます。</span></div>
+                        <div class="faq-a">ユーザー登録後、数分で使い始めることができます。</div>
                     </div>
                     <div class="faq-item">
                         <div class="faq-q">無料で試すことはできますか？</div>
-                        <div class="faq-a">はい、クレジットカードの登録なしで、月に10枚まで無料でご利用いただけます。</span></div>
+                        <div class="faq-a">はい、クレジットカードの登録なしで、月に10枚まで無料でご利用いただけます。</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 下部CTA -->
         <section class="bottom-cta" id="cta">
             <div class="container">
                 <h2>さあ、面倒な経理を自動化しましょう</h2>
-                <!-- 下部CTAエリアのボタン -->
                 <a href="https://lin.ee/RYKWAXN" class="btn-cta" target="_blank" rel="noopener noreferrer">今なら月10枚まで無料！LINEで始める</a>
             </div>
         </section>
     </main>
 
-    <!-- フッター -->
     <footer>
         <div class="container">
             <div class="footer-inner">
@@ -753,12 +860,10 @@
                     <h5>撮るだけ経理</h5>
                     <p>スマホひとつで完了する次世代AI経理サービス</p>
                 </div>
-                <!-- お問い合わせを削除し、運営会社を紬キャピタル合同会社に -->
                 <div class="footer-links">
                     <span>運営会社：紬キャピタル合同会社</span>
                 </div>
             </div>
-            <!-- コピーライトの会社名も変更 -->
             <div class="copyright">
                 &copy; 2026 紬キャピタル合同会社 All Rights Reserved.
             </div>
