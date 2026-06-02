@@ -564,10 +564,12 @@
             border: 1px solid rgba(226, 232, 240, 0.8);
         }
 
+        /* 修正ポイント: align-itemsをflex-startにし、要素を上揃えに */
         .faq-q {
             font-weight: 800;
             color: var(--accent);
             display: flex;
+            align-items: flex-start;
             gap: 16px;
             margin-bottom: 16px;
             font-size: 1.15rem;
@@ -585,10 +587,13 @@
             justify-content: center;
             font-size: 0.9rem;
             flex-shrink: 0;
+            margin-top: 2px;
         }
 
+        /* 修正ポイント: align-itemsをflex-startにし、要素を上揃えに */
         .faq-a {
             display: flex;
+            align-items: flex-start;
             gap: 16px;
             color: var(--text-main);
             font-weight: 500;
@@ -607,6 +612,7 @@
             font-weight: 800;
             font-size: 0.9rem;
             flex-shrink: 0;
+            margin-top: 2px;
         }
 
         /* --- 下部CTA --- */
@@ -837,12 +843,20 @@
                 <h2 class="section-title">よくあるご質問</h2>
                 <div class="faq-list">
                     <div class="faq-item">
-                        <div class="faq-q">PCや新しいソフトの設定は必要ですか？</div>
-                        <div class="faq-a">いいえ、普段お使いのLINEから友だち追加してユーザー登録するだけで、数分で使い始めることが<span class="nowrap">できます。</span></div>
+                        <div class="faq-q">
+                            <div>PCや新しいソフトの設定は必要ですか？</div>
+                        </div>
+                        <div class="faq-a">
+                            <div>いいえ、普段お使いのLINEから友だち追加してユーザー登録するだけで、数分で使い始めることが<span class="nowrap">できます。</span></div>
+                        </div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-q">勝手に課金されることはありませんか？</div>
-                        <div class="faq-a">はい、クレジットカードの登録なしで月に10枚まで無料でお試しいただけます。自動で有料プランに切り替わることは<span class="nowrap">ありません。</span></div>
+                        <div class="faq-q">
+                            <div>勝手に課金されることはありませんか？</div>
+                        </div>
+                        <div class="faq-a">
+                            <div>はい、クレジットカードの登録なしで月に10枚まで無料でお試しいただけます。自動で有料プランに切り替わることは<span class="nowrap">ありません。</span></div>
+                        </div>
                     </div>
                 </div>
             </div>
