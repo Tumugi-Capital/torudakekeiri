@@ -22,15 +22,9 @@
         }
     </script>
     <style>
-        /* 少し丸みのある上品なフォント指定。word-breakを追加して単語途中での改行を防ぐ */
+        /* 少し丸みのある上品なフォント指定 */
         body { 
             font-family: 'Helvetica Neue', Arial, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif; 
-            word-break: auto-phrase; /* 最近のブラウザで文節改行をしてくれるプロパティ */
-        }
-        /* 古いSafariなどへのフォールバックとして */
-        .keep-all {
-            word-break: keep-all;
-            overflow-wrap: break-word;
         }
     </style>
 </head>
@@ -56,15 +50,15 @@
         <ul class="space-y-5 text-sm bg-white p-7 rounded-3xl shadow-sm border border-brand-100 text-stone-600">
             <li class="flex items-start">
                 <span class="text-brand-500 mr-3 mt-0.5">💭</span>
-                <span class="leading-relaxed keep-all text-balance">領収書の山を見るとため息が出る。</span>
+                <span class="leading-relaxed text-balance">領収書の山を見るとため息が出る。</span>
             </li>
             <li class="flex items-start">
                 <span class="text-brand-500 mr-3 mt-0.5">💭</span>
-                <span class="leading-relaxed keep-all text-balance">インボイス番号の確認や税率計算が面倒。</span>
+                <span class="leading-relaxed text-balance"><span class="inline-block">インボイス番号の確認</span>や<span class="inline-block">税率計算が面倒。</span></span>
             </li>
             <li class="flex items-start">
                 <span class="text-brand-500 mr-3 mt-0.5">💭</span>
-                <span class="leading-relaxed keep-all text-balance">経理に時間を奪われ、本業に集中できない。</span>
+                <span class="leading-relaxed text-balance">経理に時間を奪われ、<span class="inline-block">本業に集中できない。</span></span>
             </li>
         </ul>
         <p class="text-center font-bold text-brand-600 mt-6 text-base">
@@ -81,25 +75,25 @@
             <div class="space-y-10">
                 <div class="flex items-start">
                     <div class="bg-brand-100 text-brand-600 font-bold rounded-full w-12 h-12 flex items-center justify-center shrink-0 shadow-inner">1</div>
-                    <div class="ml-5">
+                    <div class="ml-5 overflow-hidden">
                         <h3 class="font-bold text-stone-800">LINEで送る</h3>
-                        <p class="text-sm text-stone-500 mt-2 leading-relaxed keep-all text-balance">スマホで領収書の写真を撮ってLINEに送信。テキストや音声入力も可能です。</p>
+                        <p class="text-sm text-stone-500 mt-2 leading-relaxed text-balance">スマホで領収書の写真を撮って<span class="inline-block">LINEに送信。</span><span class="inline-block">テキストや音声入力も可能です。</span></p>
                     </div>
                 </div>
                 
                 <div class="flex items-start">
                     <div class="bg-brand-100 text-brand-600 font-bold rounded-full w-12 h-12 flex items-center justify-center shrink-0 shadow-inner">2</div>
-                    <div class="ml-5">
+                    <div class="ml-5 overflow-hidden">
                         <h3 class="font-bold text-stone-800">AIが瞬時に解析</h3>
-                        <p class="text-sm text-stone-500 mt-2 leading-relaxed keep-all text-balance">日付・金額・勘定科目・インボイス番号をAIが実務レベルで自動推論します。</p>
+                        <p class="text-sm text-stone-500 mt-2 leading-relaxed text-balance"><span class="inline-block">日付・金額・勘定科目・インボイス番号を</span>AIが実務レベルで自動推論します。</p>
                     </div>
                 </div>
 
                 <div class="flex items-start">
                     <div class="bg-brand-100 text-brand-600 font-bold rounded-full w-12 h-12 flex items-center justify-center shrink-0 shadow-inner">3</div>
-                    <div class="ml-5">
+                    <div class="ml-5 overflow-hidden">
                         <h3 class="font-bold text-stone-800">MFへワンタップ記帳</h3>
-                        <p class="text-sm text-stone-500 mt-2 leading-relaxed keep-all text-balance">解析結果を確認し「MFに記帳」をタップするだけで、マネーフォワードへ直接反映。（※プレミアム限定）</p>
+                        <p class="text-sm text-stone-500 mt-2 leading-relaxed text-balance">解析結果を確認し「MFに記帳」をタップするだけで、<span class="inline-block">マネーフォワードへ直接反映。</span>（※プレミアム限定）</p>
                     </div>
                 </div>
             </div>
@@ -115,7 +109,7 @@
                 <div class="text-center my-4">
                     <span class="text-4xl font-extrabold text-stone-800">500</span><span class="text-sm text-stone-500"> 円/月(税抜)</span>
                 </div>
-                <p class="text-xs text-center text-stone-500 mb-6 keep-all text-balance">AIの仕訳推論を無制限に使いたい方</p>
+                <p class="text-xs text-center text-stone-500 mb-6 text-balance">AIの仕訳推論を無制限に使いたい方</p>
                 <ul class="text-sm space-y-3 mb-8 text-stone-600">
                     <li class="flex items-center"><span class="text-brand-500 mr-3">✔</span>レシート画像解析：無制限</li>
                     <li class="flex items-center"><span class="text-brand-500 mr-3">✔</span>仕訳・インボイス推論</li>
@@ -132,7 +126,7 @@
                 <div class="text-center my-4">
                     <span class="text-4xl font-extrabold text-stone-800">1,000</span><span class="text-sm text-stone-500"> 円/月(税抜)</span>
                 </div>
-                <p class="text-xs text-center text-stone-500 mb-6 keep-all text-balance">MFへの自動記帳まで全自動化したい方</p>
+                <p class="text-xs text-center text-stone-500 mb-6 text-balance">MFへの自動記帳まで全自動化したい方</p>
                 <ul class="text-sm space-y-3 mb-8 text-stone-700">
                     <li class="flex items-center"><span class="text-brand-500 mr-3">✔</span>レシート画像解析：無制限</li>
                     <li class="flex items-center"><span class="text-brand-500 mr-3">✔</span>仕訳・インボイス推論</li>
@@ -154,15 +148,15 @@
             <div class="space-y-5 text-sm">
                 <div class="bg-white p-5 rounded-2xl shadow-sm">
                     <p class="font-bold text-stone-800 flex items-center"><span class="text-brand-500 mr-2 font-bold">Q.</span> どんな画像でも読み取れますか？</p>
-                    <p class="text-stone-500 mt-2 ml-6 leading-relaxed keep-all text-balance">スマホで撮影した一般的な領収書や、電子領収書のスクリーンショットにも対応しています。</p>
+                    <p class="text-stone-500 mt-2 ml-6 leading-relaxed text-balance">スマホで撮影した一般的な領収書や、電子領収書のスクリーンショットにも対応しています。</p>
                 </div>
                 <div class="bg-white p-5 rounded-2xl shadow-sm">
                     <p class="font-bold text-stone-800 flex items-center"><span class="text-brand-500 mr-2 font-bold">Q.</span> 対応している会計ソフトは？</p>
-                    <p class="text-stone-500 mt-2 ml-6 leading-relaxed keep-all text-balance">現在は「マネーフォワード クラウド会計」のみに対応しております。</p>
+                    <p class="text-stone-500 mt-2 ml-6 leading-relaxed text-balance">現在は「マネーフォワード クラウド会計」のみに対応しております。</p>
                 </div>
                 <div class="bg-white p-5 rounded-2xl shadow-sm">
                     <p class="font-bold text-stone-800 flex items-center"><span class="text-brand-500 mr-2 font-bold">Q.</span> プラン変更はいつでも可能ですか？</p>
-                    <p class="text-stone-500 mt-2 ml-6 leading-relaxed keep-all text-balance">はい。LINEのメニューからいつでもアップグレードが可能です。</p>
+                    <p class="text-stone-500 mt-2 ml-6 leading-relaxed text-balance">はい。LINEのメニューからいつでもアップグレードが可能です。</p>
                 </div>
             </div>
         </div>
