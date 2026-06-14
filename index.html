@@ -13,6 +13,53 @@
   <meta property="og:url" content="https://tumugi-capital.github.io/homepage/">
   <meta name="twitter:card" content="summary">
 
+
+  <!-- Google Analytics 4：GA_MEASUREMENT_ID_HERE を実際の測定IDに置き換えてください -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID_HERE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID_HERE');
+
+    const STRIPE_LINKS = {
+      entry: 'https://buy.stripe.com/8x214h3vX5Kkc1bbrHeUU05',
+      premium: 'https://buy.stripe.com/eVq14hc2tb4E9T3cvLeUU06'
+    };
+
+    function trackLpEvent(eventName, params = {}) {
+      if (typeof gtag === 'function') {
+        gtag('event', eventName, params);
+      }
+    }
+
+    function openTrackedLink(url, eventName, buttonLocation) {
+      trackLpEvent(eventName, {
+        button_location: buttonLocation,
+        destination_url: url
+      });
+
+      if (!url || url.includes('_HERE')) {
+        alert('決済リンクは現在準備中です。まずはLINEから無料体験をお試しください。');
+        return false;
+      }
+
+      setTimeout(function() {
+        window.location.href = url;
+      }, 150);
+
+      return false;
+    }
+
+    function openLineTracked(buttonLocation) {
+      return openTrackedLink('https://lin.ee/8zc0VBd', 'line_add_click', buttonLocation);
+    }
+
+    function openStripeTracked(planName, buttonLocation) {
+      return openTrackedLink(STRIPE_LINKS[planName], 'stripe_payment_click', buttonLocation);
+    }
+  </script>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -84,7 +131,7 @@
       </p>
 
       <div class="mt-8 space-y-3">
-        <a href="https://lin.ee/8zc0VBd" class="block w-full rounded-full bg-brand-500 px-6 py-4 text-center text-base font-bold text-white shadow-soft transition hover:bg-brand-600 active:scale-[0.99]">
+        <a href="https://lin.ee/8zc0VBd" onclick="return openLineTracked('hero_cta')" class="block w-full rounded-full bg-brand-500 px-6 py-4 text-center text-base font-bold text-white shadow-soft transition hover:bg-brand-600 active:scale-[0.99]">
           まずは無料で試してみる
           <span class="block text-xs font-normal opacity-90">LINE友だち追加</span>
         </a>
@@ -231,8 +278,12 @@
             β期間中は、利用状況に応じて上限や提供内容を調整する場合があります。
           </p>
 
-          <a href="https://lin.ee/8zc0VBd" class="block rounded-full border-2 border-brand-500 py-4 text-center font-bold text-brand-600 transition hover:bg-brand-50">
-            LINEから登録
+          <a href="https://buy.stripe.com/8x214h3vX5Kkc1bbrHeUU05" onclick="return openStripeTracked('entry', 'entry_plan')" class="block rounded-full border-2 border-brand-500 py-4 text-center font-bold text-brand-600 transition hover:bg-brand-50">
+            ENTRY PLANに申し込む
+          </a>
+
+          <a href="https://lin.ee/8zc0VBd" onclick="return openLineTracked('entry_plan_line')" class="mt-3 block text-center text-xs font-bold text-stone-500 underline underline-offset-4">
+            まずはLINEで無料体験する
           </a>
         </div>
 
@@ -262,8 +313,12 @@
             β期間中は、利用状況に応じて上限や提供内容を調整する場合があります。
           </p>
 
-          <a href="https://lin.ee/8zc0VBd" class="block rounded-full bg-brand-500 py-4 text-center font-bold text-white shadow-md transition hover:bg-brand-600">
-            LINEから登録
+          <a href="https://buy.stripe.com/eVq14hc2tb4E9T3cvLeUU06" onclick="return openStripeTracked('premium', 'premium_plan')" class="block rounded-full bg-brand-500 py-4 text-center font-bold text-white shadow-md transition hover:bg-brand-600">
+            PREMIUM PLANに申し込む
+          </a>
+
+          <a href="https://lin.ee/8zc0VBd" onclick="return openLineTracked('premium_plan_line')" class="mt-3 block text-center text-xs font-bold text-stone-500 underline underline-offset-4">
+            まずはLINEで無料体験する
           </a>
         </div>
 
@@ -274,6 +329,11 @@
         <span class="phrase font-bold text-brand-600">経理入力の手間を軽く。</span><br>
         <span class="phrase">領収書整理と会計入力の負担を、</span>
         <span class="phrase">LINEで手軽に減らせます。</span>
+      </p>
+
+      <p class="mt-4 rounded-2xl bg-brand-100 p-4 text-center text-[11px] leading-5 text-stone-500">
+        <span class="phrase">Xからのアクセスやボタンのクリック状況は、</span>
+        <span class="phrase">Google Analyticsで確認できます。</span>
       </p>
     </section>
 
@@ -381,7 +441,7 @@
         <p class="truncate text-[11px] text-stone-500">まずはLINEで無料体験</p>
       </div>
 
-      <a href="https://lin.ee/8zc0VBd" class="block flex-1 rounded-full bg-brand-500 px-5 py-3 text-center text-sm font-bold text-white shadow-md transition hover:bg-brand-600 sm:flex-none sm:px-8">
+      <a href="https://lin.ee/8zc0VBd" onclick="return openLineTracked('sticky_cta')" class="block flex-1 rounded-full bg-brand-500 px-5 py-3 text-center text-sm font-bold text-white shadow-md transition hover:bg-brand-600 sm:flex-none sm:px-8">
         LINEで無料体験
       </a>
     </div>
