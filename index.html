@@ -3,7 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>撮るだけ経理 - LINE × AI × MF自動記帳</title>
+    <title>撮るだけ経理 - LINE × AI × Money Forward記帳サポート</title>
+
+    <!-- OGP / X Cards：公開URL・画像URLは差し替えてください -->
+    <meta name="description" content="LINEに領収書を送るだけで、AIが仕訳候補を作成。確認後にMoney Forwardクラウド会計への記帳をサポートする会計入力アシスタントです。">
+    <meta property="og:title" content="撮るだけ経理 - 領収書をLINEで送るだけ">
+    <meta property="og:description" content="AIが仕訳候補を作成し、確認後にMoney Forwardクラウド会計への記帳をサポートします。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://YOUR_LP_URL_HERE">
+    <meta property="og:image" content="https://YOUR_OGP_IMAGE_URL_HERE">
+    <meta name="twitter:card" content="summary_large_image">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -13,7 +23,7 @@
                         brand: {
                             50: '#faf8f7',
                             100: '#f5efeb',
-                            500: '#d98b8b', // ダスティローズ
+                            500: '#d98b8b',
                             600: '#c57070',
                         }
                     }
@@ -22,9 +32,8 @@
         }
     </script>
     <style>
-        /* 少し丸みのある上品なフォント指定 */
-        body { 
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif; 
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
         }
     </style>
 </head>
@@ -32,11 +41,11 @@
 
     <header class="bg-gradient-to-br from-brand-100 to-white text-center py-16 px-5 shadow-sm rounded-b-3xl">
         <h1 class="text-3xl font-extrabold mb-5 text-stone-800 leading-tight">
-            領収書は、もう<br><span class="text-brand-600">「撮る」</span>だけで終わる。
+            領収書は、もう<br><span class="text-brand-600">「撮る」</span>だけで軽くなる。
         </h1>
         <p class="text-sm md:text-base text-stone-600 mb-8 max-w-md mx-auto leading-loose text-balance">
             LINEに領収書の写真を送るだけ。<br>
-            AIが仕訳からマネーフォワード自動記帳まで完了させる、次世代の経理アシスタント。
+            AIが仕訳候補を作成し、確認後にMoney Forwardクラウド会計への記帳をサポートする、会計入力アシスタントです。
         </p>
         <a href="https://lin.ee/8zc0VBd" class="inline-block bg-brand-500 text-white font-bold text-base py-4 px-10 rounded-full shadow-md transform transition hover:scale-105 hover:bg-brand-600">
             まずは無料で試してみる<br><span class="text-xs font-normal opacity-90">（LINE友だち追加）</span>
@@ -54,92 +63,104 @@
             </li>
             <li class="flex items-start">
                 <span class="text-brand-500 mr-3 mt-0.5">💭</span>
-                <span class="leading-relaxed text-balance"><span class="inline-block">インボイス番号の確認</span>や<span class="inline-block">税率計算が面倒。</span></span>
+                <span class="leading-relaxed text-balance"><span class="inline-block">インボイス番号の確認</span>や<span class="inline-block">税率確認が面倒。</span></span>
             </li>
             <li class="flex items-start">
                 <span class="text-brand-500 mr-3 mt-0.5">💭</span>
-                <span class="leading-relaxed text-balance">経理に時間を奪われ、<span class="inline-block">本業に集中できない。</span></span>
+                <span class="leading-relaxed text-balance">経理に時間を奪われ、<span class="inline-block">本業に集中しづらい。</span></span>
             </li>
         </ul>
         <p class="text-center font-bold text-brand-600 mt-6 text-base">
-            そのお悩み、「撮るだけ経理」が解決します。
+            そのお悩み、「撮るだけ経理」が軽くします。
         </p>
     </section>
 
     <section class="py-12 px-5 bg-white rounded-3xl mx-2 shadow-sm border border-brand-50">
         <div class="max-w-lg mx-auto">
             <h2 class="text-lg font-bold text-center mb-10 text-stone-800 tracking-wider">
-                日常のスキマ時間で経理が完了
+                日常のスキマ時間で経理入力をぐっと軽く
             </h2>
-            
+
             <div class="space-y-10">
                 <div class="flex items-start">
                     <div class="bg-brand-100 text-brand-600 font-bold rounded-full w-12 h-12 flex items-center justify-center shrink-0 shadow-inner">1</div>
                     <div class="ml-5 overflow-hidden">
                         <h3 class="font-bold text-stone-800">LINEで送る</h3>
-                        <p class="text-sm text-stone-500 mt-2 leading-relaxed text-balance">スマホで領収書の写真を撮って<span class="inline-block">LINEに送信。</span><span class="inline-block">テキストや音声入力も可能です。</span></p>
+                        <p class="text-sm text-stone-500 mt-2 leading-relaxed text-balance">スマホで領収書の写真を撮って<span class="inline-block">LINEに送信。</span><span class="inline-block">テキスト入力にも対応します。</span></p>
                     </div>
                 </div>
-                
+
                 <div class="flex items-start">
                     <div class="bg-brand-100 text-brand-600 font-bold rounded-full w-12 h-12 flex items-center justify-center shrink-0 shadow-inner">2</div>
                     <div class="ml-5 overflow-hidden">
-                        <h3 class="font-bold text-stone-800">AIが瞬時に解析</h3>
-                        <p class="text-sm text-stone-500 mt-2 leading-relaxed text-balance"><span class="inline-block">日付・金額・勘定科目・<br>インボイス番号を</span>AIが実務レベルで自動推論します。</p>
+                        <h3 class="font-bold text-stone-800">AIが内容を解析</h3>
+                        <p class="text-sm text-stone-500 mt-2 leading-relaxed text-balance"><span class="inline-block">日付・金額・勘定科目候補・インボイス番号などを</span>AIが推測し、確認しやすい形で表示します。</p>
                     </div>
                 </div>
 
                 <div class="flex items-start">
                     <div class="bg-brand-100 text-brand-600 font-bold rounded-full w-12 h-12 flex items-center justify-center shrink-0 shadow-inner">3</div>
                     <div class="ml-5 overflow-hidden">
-                        <h3 class="font-bold text-stone-800">MFへワンタップ記帳</h3>
-                        <p class="text-sm text-stone-500 mt-2 leading-relaxed text-balance">解析結果を確認し「MFに<br>記帳」をタップするだけで、<span class="inline-block">マネーフォワードへ直接反映。</span>（※プレミアム限定）</p>
+                        <h3 class="font-bold text-stone-800">確認後にMFへ記帳</h3>
+                        <p class="text-sm text-stone-500 mt-2 leading-relaxed text-balance">解析結果を確認し「MFに記帳」をタップすると、<span class="inline-block">Money Forwardクラウド会計への記帳をサポートします。</span>（※プレミアム限定）</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="py-14 px-5 max-w-lg mx-auto">
+<section class="py-14 px-5 max-w-lg mx-auto">
         <h2 class="text-lg font-bold text-center mb-8 text-stone-800 tracking-wider">シンプルで明確な料金体系</h2>
-        
+
         <div class="space-y-8">
             <div class="bg-white rounded-3xl shadow-sm border-2 border-brand-100 p-8">
                 <h3 class="text-base font-bold text-stone-500 text-center tracking-widest">ENTRY PLAN</h3>
                 <div class="text-center my-4">
-                    <span class="text-4xl font-extrabold text-stone-800">500</span><span class="text-sm text-stone-500"> 円/月(税抜)</span>
+                    <span class="text-4xl font-extrabold text-stone-800">550</span><span class="text-sm text-stone-500"> 円/月（税込）</span>
                 </div>
-                <p class="text-xs text-center text-stone-500 mb-6 text-balance">AIの仕訳推論を無制限に使いたい方</p>
+                <p class="text-xs text-center text-stone-500 mb-6 text-balance">AIによる仕訳候補作成を気軽に使いたい方</p>
                 <ul class="text-sm space-y-3 mb-8 text-stone-600">
-                    <li class="flex items-center"><span class="text-brand-500 mr-3">✔</span>レシート画像解析：無制限</li>
-                    <li class="flex items-center"><span class="text-brand-500 mr-3">✔</span>仕訳・インボイス推論</li>
-                    <li class="flex items-center opacity-40"><span class="text-stone-400 mr-3">✖</span>マネーフォワード自動記帳</li>
+                    <li class="flex items-center"><span class="text-brand-500 mr-3">✔</span>レシート画像解析</li>
+                    <li class="flex items-center"><span class="text-brand-500 mr-3">✔</span>仕訳候補・インボイス情報の推測</li>
+                    <li class="flex items-center opacity-40"><span class="text-stone-400 mr-3">✖</span>Money Forward記帳サポート</li>
                 </ul>
+                <p class="text-xs text-stone-400 mb-6 text-center leading-relaxed">β期間中は、利用状況に応じて上限や提供内容を調整する場合があります。</p>
                 <a href="https://lin.ee/8zc0VBd" class="block text-center border-2 border-brand-500 text-brand-600 font-bold py-4 rounded-full hover:bg-brand-50 transition">LINEから登録</a>
             </div>
 
             <div class="bg-white rounded-3xl shadow-lg border-2 border-brand-500 p-8 relative overflow-hidden">
                 <div class="absolute top-0 inset-x-0 bg-brand-500 text-white text-xs font-bold text-center py-1.5 tracking-widest">
-                    おすすめ・完全自動化
+                    おすすめ・確認後に記帳サポート
                 </div>
                 <h3 class="text-base font-bold text-brand-600 text-center tracking-widest mt-4">PREMIUM PLAN</h3>
                 <div class="text-center my-4">
-                    <span class="text-4xl font-extrabold text-stone-800">1,000</span><span class="text-sm text-stone-500"> 円/月(税抜)</span>
+                    <span class="text-4xl font-extrabold text-stone-800">1,100</span><span class="text-sm text-stone-500"> 円/月（税込）</span>
                 </div>
-                <p class="text-xs text-center text-stone-500 mb-6 text-balance">MFへの自動記帳まで全自動化したい方</p>
+                <p class="text-xs text-center text-stone-500 mb-6 text-balance">確認後にMoney Forwardへの記帳まで進めたい方</p>
                 <ul class="text-sm space-y-3 mb-8 text-stone-700">
-                    <li class="flex items-center"><span class="text-brand-500 mr-3">✔</span>レシート画像解析：無制限</li>
-                    <li class="flex items-center"><span class="text-brand-500 mr-3">✔</span>仕訳・インボイス推論</li>
-                    <li class="flex items-center font-bold"><span class="text-brand-500 mr-3">✔</span>マネーフォワード連携・<br>ワンタップ記帳</li>
+                    <li class="flex items-center"><span class="text-brand-500 mr-3">✔</span>レシート画像解析</li>
+                    <li class="flex items-center"><span class="text-brand-500 mr-3">✔</span>仕訳候補・インボイス情報の推測</li>
+                    <li class="flex items-center font-bold"><span class="text-brand-500 mr-3">✔</span>Money Forward連携・確認後の記帳サポート</li>
                 </ul>
+                <p class="text-xs text-stone-400 mb-6 text-center leading-relaxed">β期間中は、利用状況に応じて上限や提供内容を調整する場合があります。</p>
                 <a href="https://lin.ee/8zc0VBd" class="block text-center bg-brand-500 text-white font-bold py-4 rounded-full shadow-md hover:bg-brand-600 transition">LINEから登録</a>
             </div>
         </div>
 
         <p class="text-sm mt-10 bg-white p-5 rounded-2xl text-stone-600 leading-relaxed shadow-sm border border-brand-50 text-center">
-            <span class="font-bold text-brand-600">1日たった約33円の経理革命を。</span><br><br>
-            月に数回、カフェでコーヒーを我慢するだけの価格で、毎月の経理入力作業が「ゼロ」になります。
+            <span class="font-bold text-brand-600">毎月の経理入力作業を、もっと軽く。</span><br><br>
+            月額550円から、領収書整理と会計入力の手間を大幅に減らせます。
         </p>
+    </section>
+
+    <section class="py-12 px-5 bg-white rounded-3xl mx-2 shadow-sm border border-brand-50">
+        <div class="max-w-lg mx-auto">
+            <h2 class="text-lg font-bold text-center mb-6 text-stone-800 tracking-wider">注意事項</h2>
+            <div class="text-xs text-stone-500 leading-loose bg-brand-50 p-6 rounded-2xl">
+                <p>本サービスは、AIを用いて仕訳候補、勘定科目候補、消費税区分候補、インボイス関連情報等を提示する会計入力補助サービスです。</p>
+                <p class="mt-3">税務申告、税務代理、税務相談、会計監査、法的助言を提供するものではありません。</p>
+                <p class="mt-3">AIによる出力結果は機械的な推測または補助情報であり、正確性、完全性、適法性、税務調査における有効性を保証するものではありません。記帳前には、ユーザー自身または顧問税理士等の専門家が内容を確認してください。</p>
+            </div>
+        </div>
     </section>
 
     <section class="py-12 px-5 bg-brand-100 rounded-t-3xl mt-4">
@@ -148,15 +169,19 @@
             <div class="space-y-5 text-sm">
                 <div class="bg-white p-5 rounded-2xl shadow-sm">
                     <p class="font-bold text-stone-800 flex items-center"><span class="text-brand-500 mr-2 font-bold">Q.</span> どんな画像でも読み取れますか？</p>
-                    <p class="text-stone-500 mt-2 ml-6 leading-relaxed text-balance">スマホで撮影した一般的な領収書や、電子領収書のスクリーンショットにも対応しています。</p>
+                    <p class="text-stone-500 mt-2 ml-6 leading-relaxed text-balance">スマホで撮影した一般的な領収書や、電子領収書のスクリーンショットに対応しています。ただし、画像の明るさ・文字の鮮明さ・レイアウトによって読み取り精度は変わります。</p>
                 </div>
                 <div class="bg-white p-5 rounded-2xl shadow-sm">
                     <p class="font-bold text-stone-800 flex items-center"><span class="text-brand-500 mr-2 font-bold">Q.</span> 対応している会計ソフトは？</p>
-                    <p class="text-stone-500 mt-2 ml-6 leading-relaxed text-balance">現在は「マネーフォワード クラウド会計」のみに対応しております。</p>
+                    <p class="text-stone-500 mt-2 ml-6 leading-relaxed text-balance">現在は「Money Forwardクラウド会計」に対応しています。</p>
+                </div>
+                <div class="bg-white p-5 rounded-2xl shadow-sm">
+                    <p class="font-bold text-stone-800 flex items-center"><span class="text-brand-500 mr-2 font-bold">Q.</span> 税理士の代わりになりますか？</p>
+                    <p class="text-stone-500 mt-2 ml-6 leading-relaxed text-balance">いいえ。本サービスは会計入力を補助するサービスであり、税務相談・税務申告・税務代理を行うものではありません。最終的な判断はユーザー自身または顧問税理士等の専門家にご確認ください。</p>
                 </div>
                 <div class="bg-white p-5 rounded-2xl shadow-sm">
                     <p class="font-bold text-stone-800 flex items-center"><span class="text-brand-500 mr-2 font-bold">Q.</span> プラン変更はいつでも可能ですか？</p>
-                    <p class="text-stone-500 mt-2 ml-6 leading-relaxed text-balance">はい。LINEのメニューからいつでもアップグレードが可能です。</p>
+                    <p class="text-stone-500 mt-2 ml-6 leading-relaxed text-balance">はい。LINEのメニューまたは決済ページから変更できるよう準備しています。解約については、Stripeのカスタマーポータルまたは問い合わせ先への連絡により対応します。</p>
                 </div>
             </div>
         </div>
@@ -164,10 +189,10 @@
 
     <footer class="bg-stone-800 text-stone-300 text-center py-10 text-xs">
         <p class="mb-4 text-stone-400">運営会社: <a href="https://tumugi-capital.github.io/" class="underline hover:text-white">紬キャピタル合同会社</a></p>
-        <div class="space-x-4 mb-6 text-stone-400 flex justify-center">
-            <a href="#" class="hover:text-white">利用規約</a>
-            <a href="#" class="hover:text-white">プライバシーポリシー</a>
-            <a href="#" class="hover:text-white">特定商取引法に基づく表記</a>
+        <div class="space-x-4 mb-6 text-stone-400 flex justify-center flex-wrap gap-y-2">
+            <a href="TERMS_URL_HERE" class="hover:text-white">利用規約</a>
+            <a href="PRIVACY_URL_HERE" class="hover:text-white">プライバシーポリシー</a>
+            <a href="LEGAL_URL_HERE" class="hover:text-white">特定商取引法に基づく表記</a>
         </div>
         <p class="text-stone-500">&copy; Tsumugi Capital LLC. All rights reserved.</p>
     </footer>
