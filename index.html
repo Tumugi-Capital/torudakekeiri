@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>撮るだけ経理 - LINE × AI × MF自動記帳</title>
+    <!-- Tailwind CSSを読み込み -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- おしゃれな配色（stone/rose）を使うためのカスタム設定 -->
     <script>
         tailwind.config = {
             theme: {
@@ -28,20 +30,21 @@
 </head>
 <body class="bg-brand-50 text-stone-700 leading-relaxed tracking-wide">
 
+    <!-- ヒーローセクション（ふんわりとしたグラデーション） -->
     <header class="bg-gradient-to-br from-brand-100 to-white text-center py-16 px-5 shadow-sm rounded-b-3xl">
         <h1 class="text-3xl font-extrabold mb-5 text-stone-800 leading-tight">
             領収書は、もう<br><span class="text-brand-600">「撮る」</span>だけで終わる。
         </h1>
         <p class="text-sm md:text-base text-stone-600 mb-8 max-w-md mx-auto leading-loose">
             LINEに領収書の写真を送るだけ。<br>
-            <span class="inline-block">AIが仕訳からマネーフォワード自動記帳まで</span><br>
-            <span class="inline-block">完了させる、次世代の経理アシスタント。</span>
+            AIが仕訳からマネーフォワード自動記帳まで完了させる、次世代の経理アシスタント。
         </p>
         <a href="https://lin.ee/8zc0VBd" class="inline-block bg-brand-500 text-white font-bold text-base py-4 px-10 rounded-full shadow-md transform transition hover:scale-105 hover:bg-brand-600">
             まずは無料で試してみる<br><span class="text-xs font-normal opacity-90">（LINE友だち追加）</span>
         </a>
     </header>
 
+    <!-- お悩みセクション -->
     <section class="py-12 px-5 max-w-lg mx-auto">
         <h2 class="text-lg font-bold text-center mb-6 text-stone-800 tracking-wider">
             月末の経理作業、<br>まだ手入力で消耗していませんか？
@@ -53,11 +56,11 @@
             </li>
             <li class="flex items-start">
                 <span class="text-brand-500 mr-3 mt-0.5">💭</span>
-                <span class="leading-relaxed">インボイス番号の確認や<span class="inline-block">税率計算が面倒。</span></span>
+                <span class="leading-relaxed">インボイス番号の確認や税率計算が面倒。</span>
             </li>
             <li class="flex items-start">
                 <span class="text-brand-500 mr-3 mt-0.5">💭</span>
-                <span class="leading-relaxed">経理に時間を奪われ、<span class="inline-block">本業に集中できない。</span></span>
+                <span class="leading-relaxed">経理に時間を奪われ、本業に集中できない。</span>
             </li>
         </ul>
         <p class="text-center font-bold text-brand-600 mt-6 text-base">
@@ -65,6 +68,7 @@
         </p>
     </section>
 
+    <!-- 使い方セクション -->
     <section class="py-12 px-5 bg-white rounded-3xl mx-2 shadow-sm border border-brand-50">
         <div class="max-w-lg mx-auto">
             <h2 class="text-lg font-bold text-center mb-10 text-stone-800 tracking-wider">
@@ -76,7 +80,7 @@
                     <div class="bg-brand-100 text-brand-600 font-bold rounded-full w-12 h-12 flex items-center justify-center shrink-0 shadow-inner">1</div>
                     <div class="ml-5">
                         <h3 class="font-bold text-stone-800">LINEで送る</h3>
-                        <p class="text-sm text-stone-500 mt-2 leading-relaxed">スマホで領収書の写真を撮ってLINEに送信。<br><span class="inline-block">テキストや音声入力も可能です。</span></p>
+                        <p class="text-sm text-stone-500 mt-2 leading-relaxed">スマホで領収書の写真を撮ってLINEに送信。テキストや音声入力も可能です。</p>
                     </div>
                 </div>
                 
@@ -84,7 +88,7 @@
                     <div class="bg-brand-100 text-brand-600 font-bold rounded-full w-12 h-12 flex items-center justify-center shrink-0 shadow-inner">2</div>
                     <div class="ml-5">
                         <h3 class="font-bold text-stone-800">AIが瞬時に解析</h3>
-                        <p class="text-sm text-stone-500 mt-2 leading-relaxed">日付・金額・勘定科目・インボイス番号を<br><span class="inline-block">AIが実務レベルで自動推論します。</span></p>
+                        <p class="text-sm text-stone-500 mt-2 leading-relaxed">日付・金額・勘定科目・インボイス番号をAIが実務レベルで自動推論します。</p>
                     </div>
                 </div>
 
@@ -99,10 +103,12 @@
         </div>
     </section>
 
+    <!-- 料金プランセクション -->
     <section class="py-14 px-5 max-w-lg mx-auto">
         <h2 class="text-lg font-bold text-center mb-8 text-stone-800 tracking-wider">シンプルで明確な料金体系</h2>
         
         <div class="space-y-8">
+            <!-- エントリープラン -->
             <div class="bg-white rounded-3xl shadow-sm border-2 border-brand-100 p-8">
                 <h3 class="text-base font-bold text-stone-500 text-center tracking-widest">ENTRY PLAN</h3>
                 <div class="text-center my-4">
@@ -117,6 +123,7 @@
                 <a href="https://lin.ee/8zc0VBd" class="block text-center border-2 border-brand-500 text-brand-600 font-bold py-4 rounded-full hover:bg-brand-50 transition">LINEから登録</a>
             </div>
 
+            <!-- プレミアムプラン -->
             <div class="bg-white rounded-3xl shadow-lg border-2 border-brand-500 p-8 relative overflow-hidden">
                 <div class="absolute top-0 inset-x-0 bg-brand-500 text-white text-xs font-bold text-center py-1.5 tracking-widest">
                     おすすめ・完全自動化
@@ -141,6 +148,7 @@
         </p>
     </section>
 
+    <!-- FAQセクション -->
     <section class="py-12 px-5 bg-brand-100 rounded-t-3xl mt-4">
         <div class="max-w-lg mx-auto">
             <h2 class="text-lg font-bold text-center mb-8 text-stone-800 tracking-wider">よくあるご質問</h2>
@@ -161,6 +169,7 @@
         </div>
     </section>
 
+    <!-- フッター -->
     <footer class="bg-stone-800 text-stone-300 text-center py-10 text-xs">
         <p class="mb-4 text-stone-400">運営会社: <a href="https://tumugi-capital.github.io/" class="underline hover:text-white">紬キャピタル合同会社</a></p>
         <div class="space-x-4 mb-6 text-stone-400 flex justify-center">
