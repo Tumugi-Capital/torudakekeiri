@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>撮るだけ経理 - LINEで領収書を送るだけ</title>
-  <meta name="description" content="撮るだけ経理は、LINEに領収書を送るだけでAIが内容を読み取り、Money Forwardへの記帳・証憑添付をサポートする会計入力アシスタントです。" />
-  <meta property="og:title" content="撮るだけ経理 - LINEで領収書を送るだけ" />
-  <meta property="og:description" content="AI領収書解析、Money Forward記帳、証憑添付、インボイス番号確認をサポート。" />
+  <title>撮るだけ経理 - LINEで領収書を送るだけでAI記帳サポート</title>
+  <meta name="description" content="撮るだけ経理は、LINEに領収書を送るだけでAIが内容を読み取り、科目・税区分の確認、Money Forwardへの記帳、証憑添付までサポートする会計入力アシスタントです。現在β版ユーザー募集中です。" />
+  <meta property="og:title" content="撮るだけ経理 - LINEで領収書を送るだけでAI記帳サポート" />
+  <meta property="og:description" content="LINEで領収書を送るだけ。AI領収書解析、Money Forward記帳、証憑添付、インボイス番号の確認をサポート。β版ユーザー募集中。" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://tumugi-capital.github.io/torudakekeiri/" />
   <meta name="twitter:card" content="summary" />
@@ -78,10 +78,10 @@
       </h1>
 
       <p class="mx-auto mt-5 max-w-sm text-sm leading-8 text-stone-600 sm:text-base">
-        <span class="phrase">AIが領収書を読み取り、</span>
+        <span class="phrase">AIが日付・金額・支払先を読み取り、</span>
         <span class="phrase">仕訳候補を作成。</span>
-        <span class="phrase">確認後にMoney Forwardへの</span>
-        <span class="phrase">記帳・証憑添付をサポートします。</span>
+        <span class="phrase">科目・税区分を確認してから、</span>
+        <span class="phrase">Money Forwardへの記帳・証憑添付までサポートします。</span>
       </p>
 
       <div class="mt-7 rounded-[1.6rem] border border-white bg-white/80 p-4 text-left shadow-soft backdrop-blur">
@@ -98,12 +98,12 @@
 
       <div class="mt-8 space-y-3">
         <a href="https://lin.ee/8zc0VBd" class="block w-full rounded-full bg-brand-500 px-6 py-4 text-center text-base font-bold text-white shadow-pop transition hover:bg-brand-600 active:scale-[0.99]">
-          まずはLINEで試してみる
-          <span class="block text-xs font-normal opacity-90">友だち追加して領収書を送る</span>
+          LINEでβ版を試してみる
+          <span class="block text-xs font-normal opacity-90">友だち追加して、まずは1枚送ってみる</span>
         </a>
         <p class="text-[11px] leading-5 text-stone-500">
-          <span class="phrase">無料プランは月10枚程度。</span>
-          <span class="phrase">MF記帳サポートはPREMIUM向けです。</span>
+          <span class="phrase">β版として少人数にテスト提供中。</span>
+          <span class="phrase">AI結果は必ず確認してから記帳できます。</span>
         </p>
       </div>
     </div>
@@ -177,15 +177,16 @@
         <p class="mx-auto mb-3 inline-flex rounded-full bg-honey px-4 py-2 text-xs font-extrabold text-stone-700">🌱 β版ユーザー募集中</p>
         <h2 class="text-xl font-bold leading-relaxed text-stone-800">少人数でβ版をテスト提供しています</h2>
         <p class="mt-4 text-sm leading-8 text-stone-600 text-left">
-          領収書入力やMoney Forwardへの記帳作業を少しでも減らしたい個人事業主・小規模法人の方に向けて、少人数でβ版を提供しています。
+          領収書入力やMoney Forwardへの記帳作業を少しでも減らしたい個人事業主・小規模法人の方に向けて、少人数でβ版をテスト提供しています。実際のレシートで使いやすさ・記帳成功率・証憑添付の確認を進めています。
         </p>
         <div class="mt-6 grid gap-3 text-left text-sm text-stone-600">
           <div class="rounded-3xl bg-brand-50 p-4">✅ LINEに領収書を送るだけでAIが解析</div>
-          <div class="rounded-3xl bg-brand-50 p-4">✅ 記帳前に科目・税区分を確認、修正可能</div>
+          <div class="rounded-3xl bg-brand-50 p-4">✅ 記帳前に科目・税区分・支払方法を確認</div>
           <div class="rounded-3xl bg-brand-50 p-4">✅ Money Forward記帳・証憑添付までサポート</div>
+          <div class="rounded-3xl bg-brand-50 p-4">✅ よくあるエラー・利用状況・フィードバック導線も用意</div>
         </div>
         <a href="https://lin.ee/8zc0VBd" class="mt-7 block rounded-full bg-brand-500 px-6 py-4 text-center font-bold text-white shadow-pop transition hover:bg-brand-600">LINEでβ版を試してみる</a>
-        <p class="mt-4 text-[11px] leading-5 text-stone-500">β期間中は、機能・表示・料金プランを調整する場合があります。</p>
+        <p class="mt-4 text-[11px] leading-5 text-stone-500">β期間中は、機能・表示・料金プランを調整する場合があります。ご利用後の感想をもとに改善を続けています。</p>
       </div>
     </section>
 
@@ -244,6 +245,7 @@
           <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>外貨レシートは使えますか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">外貨レシートの可能性がある場合は、日本円換算額の入力をお願いしています。クレジットカード利用の場合はカード明細の円貨額をご確認ください。</p></div>
           <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>科目や税区分が違う場合は？</p><p class="ml-6 mt-2 leading-7 text-stone-500">記帳前に「科目を変更」「税区分を変更」から修正できます。</p></div>
           <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>税理士の代わりになりますか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">いいえ。本サービスは会計入力を補助するサービスです。税務相談・税務申告・税務代理は行いません。</p></div>
+          <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>エラーが出た場合はどうすればよいですか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">LINEで「エラー」と送ると、よくある対処法を確認できます。エラーIDが表示された場合は、お問い合わせ時にそのIDをお知らせください。</p></div>
         </div>
       </div>
     </section>
@@ -262,7 +264,7 @@
   <div class="fixed inset-x-0 bottom-0 z-50 border-t border-brand-100 bg-white/95 px-4 py-3 shadow-[0_-8px_24px_rgba(0,0,0,0.08)] backdrop-blur safe-bottom">
     <div class="mx-auto flex max-w-md items-center gap-3">
       <div class="hidden min-w-0 flex-1 text-left sm:block"><p class="truncate text-xs font-bold text-stone-700">撮るだけ経理</p><p class="truncate text-[11px] text-stone-500">LINEで領収書を送るだけ</p></div>
-      <a href="https://lin.ee/8zc0VBd" class="block flex-1 rounded-full bg-brand-500 px-5 py-3 text-center text-sm font-bold text-white shadow-md transition hover:bg-brand-600 sm:flex-none sm:px-8">LINEで試す</a>
+      <a href="https://lin.ee/8zc0VBd" class="block flex-1 rounded-full bg-brand-500 px-5 py-3 text-center text-sm font-bold text-white shadow-md transition hover:bg-brand-600 sm:flex-none sm:px-8">LINEでβ版を試す</a>
     </div>
   </div>
 </body>
