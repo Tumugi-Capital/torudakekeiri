@@ -189,43 +189,35 @@
 
     <section class="mx-auto max-w-md px-4 py-12">
       <h2 class="text-center text-xl font-bold leading-relaxed text-stone-800">他のやり方と比べてみる</h2>
-      <div class="mt-6 overflow-x-auto rounded-[1.5rem] border border-brand-100 bg-white shadow-sm">
-        <table class="w-full min-w-[480px] text-left text-xs">
-          <thead>
-            <tr class="border-b border-brand-100 text-[11px] text-stone-500">
-              <th class="px-3 py-3 font-bold"></th>
-              <th class="px-3 py-3 font-bold">自分で手入力</th>
-              <th class="px-3 py-3 font-bold">従量課金型の<br />読み取りサービス</th>
-              <th class="bg-brand-50 px-3 py-3 font-extrabold text-brand-700">撮るだけ経理<br />PREMIUM</th>
-            </tr>
-          </thead>
-          <tbody class="text-stone-600">
-            <tr class="border-b border-brand-50">
-              <td class="px-3 py-3 font-bold text-stone-700">月あたりの費用</td>
-              <td class="px-3 py-3">0円<br /><span class="text-[10px] text-stone-400">ただし時間がかかる</span></td>
-              <td class="px-3 py-3">月額＋<br />1枚ごとの追加料金</td>
-              <td class="bg-brand-50 px-3 py-3 font-bold text-stone-800">1,100円（税込）<br /><span class="text-[10px] font-normal text-brand-600">追加料金なし</span></td>
-            </tr>
-            <tr class="border-b border-brand-50">
-              <td class="px-3 py-3 font-bold text-stone-700">枚数が増えた月</td>
-              <td class="px-3 py-3">作業時間が増える</td>
-              <td class="px-3 py-3">枚数の分だけ<br />料金が増える</td>
-              <td class="bg-brand-50 px-3 py-3 font-bold text-stone-800">何枚でも定額</td>
-            </tr>
-            <tr class="border-b border-brand-50">
-              <td class="px-3 py-3 font-bold text-stone-700">PDF請求書</td>
-              <td class="px-3 py-3">手入力</td>
-              <td class="px-3 py-3">サービスによる</td>
-              <td class="bg-brand-50 px-3 py-3 font-bold text-stone-800">そのまま送信OK</td>
-            </tr>
-            <tr>
-              <td class="px-3 py-3 font-bold text-stone-700">弥生会計</td>
-              <td class="px-3 py-3">手入力</td>
-              <td class="px-3 py-3">サービスによる</td>
-              <td class="bg-brand-50 px-3 py-3 font-bold text-stone-800">CSV出力対応</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="mt-6 space-y-4">
+        <div class="rounded-[1.5rem] border border-brand-100 bg-white p-5 shadow-sm">
+          <p class="text-sm font-bold text-stone-700">✍️ 自分で手入力</p>
+          <dl class="mt-3 space-y-2 text-xs text-stone-600">
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">月あたりの費用</dt><dd class="text-right">0円<span class="block text-[10px] text-stone-400">ただし時間がかかる</span></dd></div>
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">枚数が増えた月</dt><dd class="text-right">作業時間が増える</dd></div>
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">PDF請求書</dt><dd class="text-right">手入力</dd></div>
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">弥生会計</dt><dd class="text-right">手入力</dd></div>
+          </dl>
+        </div>
+        <div class="rounded-[1.5rem] border border-brand-100 bg-white p-5 shadow-sm">
+          <p class="text-sm font-bold text-stone-700">📱 従量課金型の読み取りサービス</p>
+          <dl class="mt-3 space-y-2 text-xs text-stone-600">
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">月あたりの費用</dt><dd class="text-right">月額＋1枚ごとの追加料金</dd></div>
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">枚数が増えた月</dt><dd class="text-right">枚数の分だけ料金が増える</dd></div>
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">PDF請求書</dt><dd class="text-right">サービスによる</dd></div>
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">弥生会計</dt><dd class="text-right">サービスによる</dd></div>
+          </dl>
+        </div>
+        <div class="relative overflow-hidden rounded-[1.5rem] border-2 border-brand-500 bg-white p-5 pt-9 shadow-pop">
+          <div class="absolute inset-x-0 top-0 bg-brand-500 py-1 text-center text-[10px] font-bold tracking-widest text-white">おすすめ</div>
+          <p class="text-sm font-extrabold text-brand-700">🧾 撮るだけ経理 PREMIUM</p>
+          <dl class="mt-3 space-y-2 text-xs text-stone-700">
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">月あたりの費用</dt><dd class="text-right font-bold">1,100円（税込）<span class="block text-[10px] font-bold text-brand-600">追加料金なし</span></dd></div>
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">枚数が増えた月</dt><dd class="text-right font-bold">何枚でも定額</dd></div>
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">PDF請求書</dt><dd class="text-right font-bold">そのまま送信OK</dd></div>
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">弥生会計</dt><dd class="text-right font-bold">CSV出力対応</dd></div>
+          </dl>
+        </div>
       </div>
       <p class="mt-4 text-center text-[10px] leading-5 text-stone-400">※「従量課金型の読み取りサービス」は一般的な例です。各サービスの正確な料金・仕様は公式情報をご確認ください。</p>
     </section>
