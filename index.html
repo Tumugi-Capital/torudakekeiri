@@ -56,6 +56,25 @@
 </head>
 <body class="bg-brand-50 text-stone-700 leading-relaxed tracking-wide pb-24">
 
+  <nav class="sticky top-0 z-50 border-b border-brand-100 bg-white/95 backdrop-blur">
+    <div class="mx-auto flex max-w-2xl items-center justify-between gap-2 px-4 py-2.5">
+      <a href="#" class="flex shrink-0 items-center gap-2 text-sm font-extrabold text-stone-800"><span class="text-lg">🧾</span>撮るだけ経理</a>
+      <a href="https://lin.ee/8zc0VBd" class="shrink-0 rounded-full bg-brand-500 px-4 py-1.5 text-xs font-bold text-white shadow-sm transition hover:bg-brand-600">LINEで試す</a>
+    </div>
+    <div class="overflow-x-auto border-t border-brand-50">
+      <div class="mx-auto flex w-max min-w-full max-w-2xl justify-center gap-1 whitespace-nowrap px-3 py-2 text-xs font-bold text-stone-600">
+        <a href="#tokucho" class="rounded-full px-3 py-1 transition hover:bg-brand-100 hover:text-brand-700">特徴</a>
+        <a href="#how" class="rounded-full px-3 py-1 transition hover:bg-brand-100 hover:text-brand-700">使い方</a>
+        <a href="#features" class="rounded-full px-3 py-1 transition hover:bg-brand-100 hover:text-brand-700">できること</a>
+        <a href="#compare" class="rounded-full px-3 py-1 transition hover:bg-brand-100 hover:text-brand-700">比較</a>
+        <a href="#pricing" class="rounded-full px-3 py-1 transition hover:bg-brand-100 hover:text-brand-700">料金</a>
+        <a href="#news" class="rounded-full px-3 py-1 transition hover:bg-brand-100 hover:text-brand-700">お知らせ</a>
+        <a href="#faq" class="rounded-full px-3 py-1 transition hover:bg-brand-100 hover:text-brand-700">FAQ</a>
+        <a href="./help.html" class="rounded-full px-3 py-1 transition hover:bg-brand-100 hover:text-brand-700">ヘルプ</a>
+      </div>
+    </div>
+  </nav>
+
   <header class="relative overflow-hidden rounded-b-[2.4rem] bg-gradient-to-br from-brand-100 via-cream to-mint px-4 pb-12 pt-8 text-center shadow-sm dot-bg">
     <div class="absolute -right-12 -top-10 h-36 w-36 rounded-full bg-white/60 blur-2xl"></div>
     <div class="absolute -bottom-16 -left-12 h-40 w-40 rounded-full bg-brand-200/60 blur-2xl"></div>
@@ -124,6 +143,43 @@
   </header>
 
   <main>
+    <section class="mx-auto max-w-md px-4 pt-10">
+      <h2 class="text-center text-xl font-bold leading-relaxed text-stone-800">撮るだけ経理とは</h2>
+      <p class="mt-3 text-center text-sm leading-7 text-stone-600">レシートや請求書をLINEに送ると、AIが仕訳候補を作って返してくれる<br class="hidden sm:block" />「会計入力アシスタント」です。</p>
+      <div class="mt-6 rounded-[1.6rem] bg-[#dfe8f0] p-4 text-left shadow-soft">
+        <p class="mb-3 text-center text-[10px] font-bold text-stone-500">— 使うときのイメージ —</p>
+        <div class="space-y-3 text-[12px] leading-6">
+          <div class="flex justify-end">
+            <div class="max-w-[75%] rounded-2xl rounded-tr-md bg-[#a5e08f] px-3 py-2 shadow-sm">
+              <span class="block rounded-xl bg-white/70 px-3 py-4 text-center text-2xl">🧾</span>
+              <span class="mt-1 block text-center text-[10px] text-stone-600">レシートを撮って送信</span>
+            </div>
+          </div>
+          <div class="flex justify-start">
+            <div class="max-w-[85%] rounded-2xl rounded-tl-md bg-white px-3 py-2 text-stone-700 shadow-sm">
+              解析が完了しました✨<br />
+              日付：2026/07/10<br />
+              金額：3,850円<br />
+              支払先：○○文具店<br />
+              借方：消耗品費<br />
+              税区分：課対仕入 10%<br />
+              <span class="mt-2 flex gap-2">
+                <span class="rounded-full bg-brand-100 px-3 py-1 text-[10px] font-bold text-brand-700">この内容で記帳</span>
+                <span class="rounded-full bg-stone-100 px-3 py-1 text-[10px] font-bold text-stone-500">科目を変更</span>
+              </span>
+            </div>
+          </div>
+          <div class="flex justify-end">
+            <div class="rounded-2xl rounded-tr-md bg-[#a5e08f] px-3 py-2 shadow-sm">この内容で記帳</div>
+          </div>
+          <div class="flex justify-start">
+            <div class="max-w-[85%] rounded-2xl rounded-tl-md bg-white px-3 py-2 text-stone-700 shadow-sm">✅ Money Forwardに記帳しました。証憑画像も添付済みです。</div>
+          </div>
+        </div>
+        <p class="mt-3 text-center text-[10px] text-stone-500">※画面はイメージです。実際の表示とは異なる場合があります。</p>
+      </div>
+    </section>
+
     <section class="mx-auto max-w-md px-4 py-10">
       <h2 class="text-center text-xl font-bold leading-relaxed text-stone-800">
         <span class="phrase">月末のレシート整理、</span><br />
@@ -140,6 +196,26 @@
       <p class="mt-6 text-center text-base font-bold text-brand-600">
         <span class="phrase">その手間を、</span><span class="phrase">LINEとAIで軽くします。</span>
       </p>
+    </section>
+
+    <section id="tokucho" class="mx-3 scroll-mt-24 rounded-[2rem] border border-brand-50 bg-white px-4 py-10 shadow-soft">
+      <div class="mx-auto max-w-md">
+        <h2 class="text-center text-xl font-bold leading-relaxed text-stone-800">撮るだけ経理の特徴</h2>
+        <div class="mt-7 grid gap-4">
+          <div class="rounded-3xl bg-brand-50 p-5 ring-2 ring-brand-200">
+            <p class="font-bold text-stone-800">💰 月額定額のシンプルな料金</p>
+            <p class="mt-2 text-sm leading-7 text-stone-500">PREMIUMは月額1,100円（税込）。枚数による従量課金がないので、レシートが多い月も料金を気にせず送れます。</p>
+          </div>
+          <div class="rounded-3xl bg-brand-50 p-5">
+            <p class="font-bold text-stone-800">📱 導入かんたん・アプリ不要</p>
+            <p class="mt-2 text-sm leading-7 text-stone-500">新しいアプリのインストールや難しい初期設定は不要。LINEの友だち追加だけで、数分で使い始められます。</p>
+          </div>
+          <div class="rounded-3xl bg-brand-50 p-5">
+            <p class="font-bold text-stone-800">✅ 記帳前に必ず確認できる安心設計</p>
+            <p class="mt-2 text-sm leading-7 text-stone-500">AIが勝手に記帳することはありません。科目・税区分・支払方法・取引先を確認・修正してから会計ソフトへ反映します。二重記帳の防止チェックつきです。</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="mx-3 rounded-[2rem] border-2 border-honey bg-white px-4 py-9 shadow-soft">
@@ -160,7 +236,7 @@
       </div>
     </section>
 
-    <section class="mx-3 rounded-[2rem] border border-brand-50 bg-white px-4 py-10 shadow-soft">
+    <section id="how" class="mx-3 scroll-mt-24 rounded-[2rem] border border-brand-50 bg-white px-4 py-10 shadow-soft">
       <div class="mx-auto max-w-md">
         <h2 class="text-center text-xl font-bold leading-relaxed text-stone-800">使い方はかんたん</h2>
         <div class="mt-8 space-y-7">
@@ -202,7 +278,7 @@
       </div>
     </section>
 
-    <section class="mx-auto max-w-md px-4 py-12">
+    <section id="features" class="mx-auto max-w-md scroll-mt-24 px-4 py-12">
       <h2 class="text-center text-xl font-bold text-stone-800">できること</h2>
       <div class="mt-7 grid gap-4">
         <div class="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm"><p class="font-bold text-stone-800">📷 領収書・レシート画像のAI解析</p><p class="mt-2 text-sm leading-7 text-stone-500">日付、金額、支払先、取引先、摘要などを読み取り、確認しやすい形で表示します。</p></div>
@@ -254,7 +330,42 @@
       </div>
     </section>
 
-    <section id="pricing" class="mx-auto max-w-md scroll-mt-6 px-4 py-12">
+    <section id="compare" class="mx-auto max-w-md scroll-mt-24 px-4 py-12">
+      <h2 class="text-center text-xl font-bold leading-relaxed text-stone-800">他のやり方と比べてみる</h2>
+      <div class="mt-6 space-y-4">
+        <div class="rounded-[1.5rem] border border-brand-100 bg-white p-5 shadow-sm">
+          <p class="text-sm font-bold text-stone-700">✍️ 自分で手入力</p>
+          <dl class="mt-3 space-y-2 text-xs text-stone-600">
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">月あたりの費用</dt><dd class="text-right">0円<span class="block text-[10px] text-stone-400">ただし時間がかかる</span></dd></div>
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">枚数が増えた月</dt><dd class="text-right">作業時間が増える</dd></div>
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">PDF請求書</dt><dd class="text-right">手入力</dd></div>
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">弥生会計</dt><dd class="text-right">手入力</dd></div>
+          </dl>
+        </div>
+        <div class="rounded-[1.5rem] border border-brand-100 bg-white p-5 shadow-sm">
+          <p class="text-sm font-bold text-stone-700">📱 従量課金型の読み取りサービス</p>
+          <dl class="mt-3 space-y-2 text-xs text-stone-600">
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">月あたりの費用</dt><dd class="text-right">月額＋1枚ごとの追加料金</dd></div>
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">枚数が増えた月</dt><dd class="text-right">枚数の分だけ料金が増える</dd></div>
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">PDF請求書</dt><dd class="text-right">サービスによる</dd></div>
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">弥生会計</dt><dd class="text-right">サービスによる</dd></div>
+          </dl>
+        </div>
+        <div class="relative overflow-hidden rounded-[1.5rem] border-2 border-brand-500 bg-white p-5 pt-9 shadow-pop">
+          <div class="absolute inset-x-0 top-0 bg-brand-500 py-1 text-center text-[10px] font-bold tracking-widest text-white">おすすめ</div>
+          <p class="text-sm font-extrabold text-brand-700">🧾 撮るだけ経理 PREMIUM</p>
+          <dl class="mt-3 space-y-2 text-xs text-stone-700">
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">月あたりの費用</dt><dd class="text-right font-bold">1,100円（税込）<span class="block text-[10px] font-bold text-brand-600">追加料金なし</span></dd></div>
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">枚数が増えた月</dt><dd class="text-right font-bold">何枚でも定額</dd></div>
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">PDF請求書</dt><dd class="text-right font-bold">そのまま送信OK</dd></div>
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">弥生会計</dt><dd class="text-right font-bold">CSV出力対応</dd></div>
+          </dl>
+        </div>
+      </div>
+      <p class="mt-4 text-center text-[10px] leading-5 text-stone-400">※「従量課金型の読み取りサービス」は一般的な例です。各サービスの正確な料金・仕様は公式情報をご確認ください。</p>
+    </section>
+
+    <section id="pricing" class="mx-auto max-w-md scroll-mt-24 px-4 py-12">
       <h2 class="text-center text-xl font-bold text-stone-800">料金プラン</h2>
       <p class="mx-auto mt-3 max-w-sm text-center text-xs leading-6 text-stone-500">
         <span class="phrase">ENTRYはAI解析・仕訳候補確認が中心。</span>
@@ -309,7 +420,27 @@
       </div>
     </section>
 
-    <section class="mt-10 rounded-t-[2rem] bg-brand-100 px-4 py-10">
+    <section id="news" class="mx-auto max-w-md scroll-mt-24 px-4 py-12">
+      <h2 class="text-center text-xl font-bold text-stone-800">お知らせ</h2>
+      <div class="mt-6 rounded-[1.75rem] border border-brand-100 bg-white p-6 shadow-sm">
+        <ul class="space-y-4 text-sm text-stone-600">
+          <li class="flex flex-col gap-1 border-b border-brand-50 pb-4 sm:flex-row sm:items-start sm:gap-4">
+            <span class="shrink-0 text-xs font-bold text-brand-600">2026.07.09</span>
+            <span>PDF請求書のAI読み取りと、取引先情報の会計ソフト転記に対応しました。</span>
+          </li>
+          <li class="flex flex-col gap-1 border-b border-brand-50 pb-4 sm:flex-row sm:items-start sm:gap-4">
+            <span class="shrink-0 text-xs font-bold text-brand-600">2026.07.05</span>
+            <span>弥生会計向けCSV出力（仕訳日記帳インポート形式）に対応しました。</span>
+          </li>
+          <li class="flex flex-col gap-1 sm:flex-row sm:items-start sm:gap-4">
+            <span class="shrink-0 text-xs font-bold text-brand-600">2026.05.31</span>
+            <span>「撮るだけ経理」β版ユーザーの募集を開始しました。</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="faq" class="mt-10 scroll-mt-24 rounded-t-[2rem] bg-brand-100 px-4 py-10">
       <div class="mx-auto max-w-md">
         <h2 class="text-center text-xl font-bold text-stone-800">よくあるご質問</h2>
         <div class="mt-7 space-y-4 text-sm">
@@ -341,6 +472,7 @@
 
   <footer class="bg-stone-800 px-4 py-10 text-center text-xs text-stone-300">
     <p class="mb-4 text-stone-400">運営会社: <a href="https://tumugi-capital.github.io/homepage/" class="underline hover:text-white" target="_blank" rel="noopener noreferrer">紬キャピタル合同会社</a></p>
+    <p class="mb-4 text-stone-400">サービスに関するご質問はLINEで「お問い合わせ」と送信してください。<br class="sm:hidden" />提携・メディア取材などのご連絡は<a href="https://tumugi-capital.github.io/homepage/" class="underline hover:text-white" target="_blank" rel="noopener noreferrer">運営会社サイト</a>からお願いします。</p>
     <div class="mx-auto mb-6 flex max-w-xs flex-col gap-3 text-stone-400 sm:max-w-none sm:flex-row sm:justify-center sm:gap-5">
       <a href="./help.html" class="hover:text-white">ヘルプセンター</a>
       <a href="https://tsumugi-capital.notion.site/37170d7a344e809b9768e5fbc2b639a6?source=copy_link" class="hover:text-white" target="_blank" rel="noopener noreferrer">利用規約</a>
