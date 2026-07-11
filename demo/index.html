@@ -3,139 +3,512 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>撮るだけ経理｜領収書送信デモ</title>
+<title>撮るだけ経理｜操作体験デモ</title>
 <style>
 :root{
-  --green:#06c755; --green2:#049943; --ink:#172019; --muted:#667068;
-  --line:#dfe6e1; --bg:#f4f7f5; --white:#fff; --soft:#eaf8ef;
+  --green:#06c755;
+  --green-dark:#049943;
+  --ink:#152019;
+  --muted:#68736c;
+  --line:#dde6e0;
+  --bg:#f2f7f4;
+  --soft:#eaf8ef;
+  --white:#fff;
+  --blue:#1e5aa8;
+  --blue-soft:#f7fbff;
+  --shadow:0 18px 50px rgba(24,70,43,.12);
 }
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
-  margin:0;background:linear-gradient(180deg,#f8fbf9,#eef4f0);
-  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic UI","Yu Gothic",Meiryo,sans-serif;
+  margin:0;
   color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Yu Gothic UI","Yu Gothic",Meiryo,sans-serif;
+  background:
+    radial-gradient(circle at 15% 0%,#dff7e8 0,transparent 32rem),
+    linear-gradient(180deg,#fbfdfb,var(--bg));
+  min-height:100vh;
 }
-.wrap{max-width:720px;margin:auto;padding:18px}
-.card{
-  background:#fff;border:1px solid var(--line);border-radius:22px;
-  box-shadow:0 16px 45px rgba(30,70,45,.10);overflow:hidden;
-}
-.head{padding:22px 20px 16px;border-bottom:1px solid var(--line)}
-.badge{
-  display:inline-block;background:var(--soft);color:var(--green2);
-  font-size:12px;font-weight:800;padding:7px 10px;border-radius:999px
-}
-h1{font-size:28px;line-height:1.25;margin:14px 0 8px}
-.lead{margin:0;color:var(--muted);line-height:1.7;font-size:15px}
-.chat{min-height:420px;padding:18px;background:#eef1ef}
-.msg{display:flex;margin-bottom:12px}
-.msg.bot{justify-content:flex-start}
-.msg.user{justify-content:flex-end}
-.bubble{
-  max-width:88%;border-radius:17px;padding:12px 14px;line-height:1.55;font-size:14px;
-  box-shadow:0 1px 2px rgba(0,0,0,.06)
-}
+button,input,select,a{font:inherit}
+button{cursor:pointer}
+a{text-decoration:none}
+.page{max-width:1160px;margin:0 auto;padding:30px 18px 55px}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) 430px;gap:52px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border-radius:999px;border:1px solid #bde7ca;background:#fff;color:var(--green-dark);font-size:13px;font-weight:800}
+.eyebrow-dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
+h1{margin:22px 0 18px;font-size:clamp(34px,5vw,62px);line-height:1.08;letter-spacing:-.045em}
+h1 span{color:var(--green-dark)}
+.lead{max-width:670px;color:#536159;font-size:17px;line-height:1.9;margin:0}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:28px;max-width:760px}
+.flow-item{background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 10px;font-size:12px;line-height:1.45;color:var(--muted)}
+.flow-item b{display:block;color:var(--ink);font-size:13px;margin-bottom:3px}
+.note{font-size:12px;line-height:1.7;color:#748078;margin-top:17px}
+
+.phone-wrap{position:relative;display:flex;justify-content:center}
+.phone-glow{position:absolute;width:360px;height:360px;border-radius:50%;background:#bceecb;filter:blur(48px);opacity:.55;top:170px}
+.phone{position:relative;width:390px;height:790px;padding:11px;border-radius:52px;background:#111;box-shadow:0 30px 80px rgba(0,0,0,.25),inset 0 0 0 2px #393939}
+.phone:before{content:"";position:absolute;z-index:3;top:18px;left:50%;transform:translateX(-50%);width:126px;height:30px;border-radius:18px;background:#111}
+.screen{height:100%;overflow:hidden;border-radius:42px;background:#eef1ef;display:flex;flex-direction:column}
+.status{height:44px;flex:0 0 auto;background:#fff;display:flex;justify-content:space-between;align-items:flex-end;padding:0 21px 9px;font-size:11px;font-weight:800}
+.appbar{height:58px;flex:0 0 auto;background:#fff;border-bottom:1px solid #e7ebe8;display:flex;align-items:center;justify-content:center;position:relative;font-size:15px;font-weight:850}
+.back{position:absolute;left:17px;font-size:24px;font-weight:400}
+.stepbar{background:#fff;padding:10px 13px;border-bottom:1px solid #e5ebe7}
+.steptext{display:flex;justify-content:space-between;font-size:10px;color:#738078;margin-bottom:6px}
+.progress{height:6px;border-radius:999px;background:#e6ece8;overflow:hidden}
+.progress span{display:block;height:100%;width:14%;background:var(--green);transition:width .35s ease}
+.chat{flex:1;overflow:auto;padding:15px 12px 23px;scroll-behavior:smooth}
+.message{display:flex;margin-bottom:11px;animation:rise .28s ease}
+.message.bot{justify-content:flex-start}
+.message.user{justify-content:flex-end}
+.bubble{max-width:92%;padding:12px 13px;border-radius:17px;font-size:13px;line-height:1.55;box-shadow:0 1px 2px rgba(0,0,0,.06)}
 .bot .bubble{background:#fff;border-top-left-radius:5px}
-.user .bubble{background:#a9ed9f;border-top-right-radius:5px}
-.controls{padding:16px;background:#fff;border-top:1px solid var(--line)}
-.action-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.file-label,.btn{
-  display:flex;align-items:center;justify-content:center;text-align:center;
-  min-height:52px;border-radius:14px;font-weight:800;font-size:15px;
-  padding:12px;border:0;cursor:pointer;text-decoration:none
-}
-.file-label{background:var(--green);color:#fff}
-.btn{background:#edf1ee;color:#344039}
-.btn.primary{background:var(--green);color:#fff;width:100%}
-.file-label:active,.btn:active{transform:scale(.99)}
-#receiptFile{position:absolute;opacity:0;width:1px;height:1px}
-.helper{font-size:12px;color:var(--muted);line-height:1.6;margin:10px 2px 0}
-.preview{
-  background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px;margin-top:8px
-}
-.preview img{display:block;max-width:100%;max-height:260px;margin:auto;border-radius:8px}
-.pdfbox{text-align:center;padding:24px 10px;background:#f7f8f7;border-radius:10px}
-.filename{font-size:12px;color:var(--muted);margin-top:8px;word-break:break-all}
-.result{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;margin-top:8px}
-.row{display:grid;grid-template-columns:90px 1fr;gap:8px;padding:7px 0;border-bottom:1px solid #edf1ee}
-.row:last-child{border-bottom:0}
-.key{font-size:12px;color:var(--muted);font-weight:700}
-.val{font-size:13px;font-weight:700}
-.loader{display:flex;align-items:center;gap:6px}
-.loader span{width:7px;height:7px;border-radius:50%;background:#8d9890;animation:b 1s infinite}
-.loader span:nth-child(2){animation-delay:.15s}.loader span:nth-child(3){animation-delay:.3s}
-.notice{background:#fff7df;border:1px solid #f1dfaa;border-radius:12px;padding:11px 12px;font-size:12px;line-height:1.6;margin-top:12px}
+.user .bubble{background:#a9ec9e;border-top-right-radius:5px}
+.actions{flex:0 0 auto;padding:10px 12px 16px;background:#fff;border-top:1px solid #e4e9e6;display:grid;gap:8px}
+.primary,.secondary,.cta,.cta-secondary{width:100%;min-height:48px;border:0;border-radius:13px;padding:12px 14px;font-weight:850;text-align:center;display:flex;align-items:center;justify-content:center}
+.primary{background:var(--green);color:#fff;box-shadow:0 8px 18px rgba(6,199,85,.22)}
+.primary:hover{background:var(--green-dark)}
+.secondary{background:#edf1ee;color:#334139}
+.cta{background:var(--green);color:#fff;box-shadow:0 8px 18px rgba(6,199,85,.18)}
+.cta-secondary{background:#eef4ff;color:var(--blue)}
+.primary:active,.secondary:active,.cta:active,.cta-secondary:active{transform:scale(.99)}
+.primary:disabled{opacity:.45;cursor:default}
+
+.receipt{width:225px;background:#fff;padding:17px 15px;margin:3px auto;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#262626;box-shadow:0 5px 18px rgba(0,0,0,.13);transform:rotate(-.7deg);font-size:10px}
+.receipt h3{text-align:center;margin:0 0 12px;font-size:14px}
+.rline{display:flex;justify-content:space-between;margin:5px 0}
+.dash{border-top:1px dashed #888;margin:8px 0}
+.total{font-size:15px;font-weight:900}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;margin-top:8px}
+.field{margin-bottom:9px}
+.field:last-child{margin-bottom:0}
+label{display:block;font-size:10px;font-weight:750;color:#6f7b73;margin-bottom:4px}
+input,select{width:100%;border:1px solid #d3ddd6;border-radius:9px;background:#fff;color:#1e2a22;padding:9px 10px;font-size:12px}
+.changed{border-color:#f0a93b!important;background:#fffaf0!important}
+.mini-note{font-size:10px;color:#758078;margin-top:7px;line-height:1.5}
+.pay-grid{display:grid;gap:7px;margin-top:8px}
+.pay{border:1px solid #d8e2dc;background:#fff;border-radius:11px;padding:10px 11px;text-align:left;color:#26332b;font-size:12px;font-weight:800}
+.pay small{display:block;color:#748078;font-weight:500;margin-top:2px}
+.pay.active{border-color:var(--green);background:var(--soft);box-shadow:0 0 0 2px rgba(6,199,85,.10)}
+.journal{width:100%;border-collapse:collapse;font-size:11px;margin-top:5px}
+.journal th,.journal td{border-bottom:1px solid #e8eeea;padding:8px 4px;text-align:left}
+.journal th{font-size:9px;color:#748078}
+.mfbox{border:1px solid #cdd8e8;border-radius:13px;background:var(--blue-soft);overflow:hidden;margin-top:8px}
+.mfhead{background:var(--blue);color:#fff;padding:9px 11px;font-size:11px;font-weight:850;display:flex;justify-content:space-between}
+.mfbody{padding:10px}
+.mfrow{display:grid;grid-template-columns:72px 1fr;gap:7px;padding:6px 0;border-bottom:1px solid #e3eaf2;font-size:10px}
+.mfrow:last-child{border-bottom:0}
+.mfkey{color:#708096}
+.mfval{font-weight:750;color:#233047}
+.success{text-align:center;padding:3px 0}
+.check{width:52px;height:52px;border-radius:50%;background:var(--green);color:#fff;margin:0 auto 10px;display:grid;place-items:center;font-size:28px;font-weight:900;animation:pop .4s ease}
+.loader{display:flex;gap:5px;align-items:center;margin-top:8px}
+.loader i{width:7px;height:7px;border-radius:50%;background:#89958d;animation:bounce 1s infinite}
+.loader i:nth-child(2){animation-delay:.15s} .loader i:nth-child(3){animation-delay:.3s}
 .hidden{display:none!important}
-@keyframes b{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
+.demo-tag{position:absolute;right:-27px;top:92px;background:#17231b;color:#fff;padding:9px 12px;border-radius:10px;font-size:11px;font-weight:800;transform:rotate(3deg);box-shadow:var(--shadow)}
+.demo-tag:after{content:"";position:absolute;left:22px;bottom:-8px;border:8px solid transparent;border-top-color:#17231b}
+.sample-list{display:grid;gap:8px;margin-top:8px}
+.sample-btn{width:100%;border:1px solid #dce5df;background:#fff;border-radius:12px;padding:11px 12px;text-align:left;color:#243129;font-size:12px;font-weight:800}
+.sample-btn small{display:block;font-weight:500;color:#738078;margin-top:3px}
+.sample-btn.active{border-color:var(--green);background:var(--soft);box-shadow:0 0 0 2px rgba(6,199,85,.1)}
+.tag{display:inline-block;background:#edf7f1;border:1px solid #d7ece0;color:var(--green-dark);font-size:10px;font-weight:800;padding:2px 7px;border-radius:999px;margin-bottom:6px}
+.cta-wrap{display:grid;gap:8px;margin-top:10px}
+@keyframes rise{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+@keyframes bounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
+@keyframes pop{0%{transform:scale(.3)}70%{transform:scale(1.12)}100%{transform:scale(1)}}
+@media(max-width:920px){
+  .hero{grid-template-columns:1fr;gap:36px}
+  .copy{text-align:center}
+  .lead{margin:auto}
+  .flow{margin-left:auto;margin-right:auto}
+}
 @media(max-width:520px){
-  .wrap{padding:0}
-  .card{border-radius:0;min-height:100vh}
-  h1{font-size:24px}
-  .chat{min-height:430px}
-  .action-grid{grid-template-columns:1fr}
+  .page{padding:14px 8px 35px}
+  h1{font-size:38px}
+  .lead{font-size:15px}
+  .flow{grid-template-columns:1fr 1fr;text-align:left}
+  .flow-item:last-child{grid-column:1/-1}
+  .phone{width:min(370px,96vw);height:760px;border-radius:44px}
+  .screen{border-radius:35px}
+  .demo-tag{display:none}
 }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="card">
-    <div class="head">
-      <span class="badge">操作体験デモ</span>
-      <h1>領収書・請求書を選んで送信</h1>
-      <p class="lead">写真を撮る、写真ライブラリから選ぶ、PDFを選ぶ操作を体験できます。</p>
+<main class="page">
+  <section class="hero">
+    <div class="copy">
+      <div class="eyebrow"><span class="eyebrow-dot"></span> サンプル操作体験</div>
+      <h1>4つの経費サンプルで、<br><span>仕訳になる流れを体験。</span></h1>
+      <p class="lead">
+        カフェ・交通費・文房具・個人立替の4パターンから選び、
+        AI読取結果の自動入力、勘定科目・税区分の修正、支払方法の選択、
+        仕訳作成、Money Forwardへの記帳イメージまで順番に確認できます。
+      </p>
+      <div class="flow">
+        <div class="flow-item"><b>1. サンプル選択</b>4パターンから選ぶ</div>
+        <div class="flow-item"><b>2. 自動入力</b>読取結果をフォーム表示</div>
+        <div class="flow-item"><b>3. 修正</b>科目・税区分を変更</div>
+        <div class="flow-item"><b>4. 仕訳作成</b>支払方法を反映</div>
+        <div class="flow-item"><b>5. LINE導線</b>最後に試用へ誘導</div>
+      </div>
+      <p class="note">
+        ※実際の領収書アップロード機能はありません。デモ内の情報は外部へ送信されず、
+        Money Forwardへの実記帳も行いません。
+      </p>
     </div>
 
-    <div class="chat" id="chat">
-      <div class="msg bot"><div class="bubble">
-        送信する領収書を選んでください。<br>
-        iPhoneでは「領収書・PDFを選ぶ」を押すと、カメラ・写真・ファイルを選択できます。
-      </div></div>
+    <div class="phone-wrap">
+      <div class="phone-glow"></div>
+      <div class="demo-tag">ここを操作できます</div>
+      <div class="phone">
+        <div class="screen">
+          <div class="status"><span>9:41</span><span>●●● 5G 100%</span></div>
+          <div class="appbar"><span class="back">‹</span>撮るだけ経理</div>
+          <div class="stepbar">
+            <div class="steptext"><span id="stepLabel">開始</span><span id="stepCount">1 / 7</span></div>
+            <div class="progress"><span id="progressFill"></span></div>
+          </div>
+          <div class="chat" id="chat">
+            <div class="message bot">
+              <div class="bubble">
+                4つのサンプルから1つ選んで、「撮るだけ経理」の流れを体験できます。<br><br>
+                まずは下のボタンを押してください。
+              </div>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="primary" id="mainBtn">サンプルを選ぶ</button>
+            <button class="secondary hidden" id="resetBtn">最初からやり直す</button>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="controls">
-      <div id="firstActions" class="action-grid">
-        <label class="file-label" for="receiptFile">領収書・PDFを選ぶ</label>
-        <input id="receiptFile" type="file" accept="image/*,application/pdf,.pdf" capture="environment">
-        <button class="btn" id="sampleBtn" type="button">サンプルで体験</button>
-      </div>
-
-      <button class="btn primary hidden" id="sendBtn" type="button">この領収書を送信</button>
-      <button class="btn hidden" id="resetBtn" type="button" style="width:100%;margin-top:9px">最初からやり直す</button>
-
-      <div class="helper">
-        選んだファイルはこの端末内でプレビューするだけで、外部には送信されません。
-      </div>
-      <div class="notice">
-        ChatGPTアプリのファイルプレビューでボタンが反応しない場合は、ファイルを保存してSafariで開いてください。
-      </div>
-    </div>
-  </div>
-</div>
+  </section>
+</main>
 
 <script>
 (function(){
   "use strict";
 
-  var fileInput = document.getElementById("receiptFile");
-  var sampleBtn = document.getElementById("sampleBtn");
-  var sendBtn = document.getElementById("sendBtn");
-  var resetBtn = document.getElementById("resetBtn");
-  var firstActions = document.getElementById("firstActions");
+  var LINE_URL = "https://line.me/R/ti/p/@027soqsv?ts=05241031&oat_content=url";
   var chat = document.getElementById("chat");
-  var chosen = null;
-  var objectUrl = null;
+  var mainBtn = document.getElementById("mainBtn");
+  var resetBtn = document.getElementById("resetBtn");
+  var stepLabel = document.getElementById("stepLabel");
+  var stepCount = document.getElementById("stepCount");
+  var progressFill = document.getElementById("progressFill");
+
+  var stage = 0;
+  var selectedSampleKey = "cafe";
+  var payment = "事業用クレカ";
+  var formValues = {};
+
+  var samples = {
+    cafe: {
+      name:"カフェ",
+      badge:"会議費の例",
+      receiptTitle:"CAFE TSUMUGI",
+      receiptDate:"2026年7月11日 14:32",
+      receiptLines:[["コーヒー","¥600"],["ランチセット","¥1,200"]],
+      total:"¥1,800",
+      tax:"¥164",
+      paymentDisplay:"クレジットカード",
+      defaults:{
+        date:"2026-07-11",
+        vendor:"CAFE TSUMUGI",
+        amount:"1800",
+        memo:"打ち合わせ時の飲食代",
+        account:"会議費",
+        tax:"課税仕入 10%"
+      },
+      recommendedPayment:"事業用クレカ"
+    },
+    train: {
+      name:"交通費",
+      badge:"旅費交通費の例",
+      receiptTitle:"JR WEST",
+      receiptDate:"2026年7月12日 08:15",
+      receiptLines:[["大阪→新大阪","¥420"]],
+      total:"¥420",
+      tax:"¥38",
+      paymentDisplay:"現金",
+      defaults:{
+        date:"2026-07-12",
+        vendor:"JR WEST",
+        amount:"420",
+        memo:"電車移動",
+        account:"旅費交通費",
+        tax:"課税仕入 10%"
+      },
+      recommendedPayment:"現金"
+    },
+    stationery: {
+      name:"文房具",
+      badge:"消耗品費の例",
+      receiptTitle:"OFFICE DEPOT",
+      receiptDate:"2026年7月13日 18:05",
+      receiptLines:[["ノート","¥280"],["ボールペン","¥320"]],
+      total:"¥600",
+      tax:"¥54",
+      paymentDisplay:"クレジットカード",
+      defaults:{
+        date:"2026-07-13",
+        vendor:"OFFICE DEPOT",
+        amount:"600",
+        memo:"文房具購入",
+        account:"消耗品費",
+        tax:"課税仕入 10%"
+      },
+      recommendedPayment:"事業用クレカ"
+    },
+    personal: {
+      name:"個人立替",
+      badge:"立替経費の例",
+      receiptTitle:"ドラッグストア",
+      receiptDate:"2026年7月14日 12:10",
+      receiptLines:[["コピー用紙","¥498"],["乾電池","¥302"]],
+      total:"¥800",
+      tax:"¥72",
+      paymentDisplay:"個人カード",
+      defaults:{
+        date:"2026-07-14",
+        vendor:"ドラッグストア",
+        amount:"800",
+        memo:"備品購入（個人立替）",
+        account:"消耗品費",
+        tax:"課税仕入 10%"
+      },
+      recommendedPayment:"個人立替"
+    }
+  };
+
+  var steps = [
+    ["開始","1 / 7",14],
+    ["サンプル選択","2 / 7",28],
+    ["AI読み取り","3 / 7",42],
+    ["内容を修正","4 / 7",57],
+    ["支払方法","5 / 7",71],
+    ["仕訳を作成","6 / 7",86],
+    ["MF記帳イメージ","7 / 7",100]
+  ];
+
+  function clone(obj){
+    return JSON.parse(JSON.stringify(obj));
+  }
+
+  function updateStep(index){
+    stepLabel.textContent = steps[index][0];
+    stepCount.textContent = steps[index][1];
+    progressFill.style.width = steps[index][2] + "%";
+  }
 
   function scrollBottom(){
-    setTimeout(function(){ chat.scrollTop = chat.scrollHeight; }, 20);
+    setTimeout(function(){
+      chat.scrollTo({top:chat.scrollHeight,behavior:"smooth"});
+    },30);
   }
 
   function addMessage(side, html){
-    var box = document.createElement("div");
-    box.className = "msg " + side;
-    box.innerHTML = '<div class="bubble">' + html + '</div>';
-    chat.appendChild(box);
+    var message = document.createElement("div");
+    message.className = "message " + side;
+    message.innerHTML = '<div class="bubble">' + html + '</div>';
+    chat.appendChild(message);
     scrollBottom();
-    return box;
+    return message;
+  }
+
+  function currentSample(){
+    return samples[selectedSampleKey];
+  }
+
+  function setSample(key){
+    selectedSampleKey = key;
+    formValues = clone(samples[key].defaults);
+    payment = samples[key].recommendedPayment;
+  }
+
+  function sampleChooserHtml(){
+    return '' +
+      '<b>どのサンプルで体験しますか？</b>' +
+      '<div class="sample-list">' +
+        sampleButtonHtml("cafe") +
+        sampleButtonHtml("train") +
+        sampleButtonHtml("stationery") +
+        sampleButtonHtml("personal") +
+      '</div>' +
+      '<div class="mini-note">ご自身の使い方に近いものを選んでください。</div>';
+  }
+
+  function sampleButtonHtml(key){
+    var s = samples[key];
+    var active = selectedSampleKey === key ? " active" : "";
+    return '<button class="sample-btn' + active + '" data-sample="' + key + '">' +
+      '<span class="tag">' + s.badge + '</span>' +
+      s.name +
+      '<small>' + s.defaults.vendor + ' / ' + Number(s.defaults.amount).toLocaleString("ja-JP") + '円</small>' +
+    '</button>';
+  }
+
+  function bindSampleButtons(){
+    var buttons = document.querySelectorAll(".sample-btn");
+    buttons.forEach(function(button){
+      button.addEventListener("click",function(){
+        buttons.forEach(function(b){ b.classList.remove("active"); });
+        button.classList.add("active");
+        setSample(button.getAttribute("data-sample"));
+      });
+    });
+  }
+
+  function receiptHtml(){
+    var s = currentSample();
+    var lines = s.receiptLines.map(function(line){
+      return '<div class="rline"><span>' + line[0] + '</span><span>' + line[1] + '</span></div>';
+    }).join("");
+    return '' +
+      '<div class="receipt">' +
+        '<h3>' + s.receiptTitle + '</h3>' +
+        '<div>' + s.receiptDate + '</div>' +
+        '<div class="dash"></div>' +
+        lines +
+        '<div class="dash"></div>' +
+        '<div class="rline total"><span>合計</span><span>' + s.total + '</span></div>' +
+        '<div class="rline"><span>うち消費税</span><span>' + s.tax + '</span></div>' +
+        '<div class="dash"></div>' +
+        '<div>' + s.paymentDisplay + '</div>' +
+      '</div>';
+  }
+
+  function formHtml(){
+    return '' +
+      '<b>読取結果をフォームへ自動入力しました。</b>' +
+      '<div class="card">' +
+        '<div class="field"><label>取引日</label><input id="dateField" type="date" value="' + escapeHtml(formValues.date) + '"></div>' +
+        '<div class="field"><label>支払先</label><input id="vendorField" value="' + escapeHtml(formValues.vendor) + '"></div>' +
+        '<div class="field"><label>金額</label><input id="amountField" type="number" min="0" value="' + escapeHtml(formValues.amount) + '"></div>' +
+        '<div class="field"><label>摘要</label><input id="memoField" value="' + escapeHtml(formValues.memo) + '"></div>' +
+        '<div class="field"><label>勘定科目</label>' +
+          '<select id="accountField">' +
+            optionHtml("会議費", formValues.account) +
+            optionHtml("接待交際費", formValues.account) +
+            optionHtml("旅費交通費", formValues.account) +
+            optionHtml("消耗品費", formValues.account) +
+          '</select>' +
+        '</div>' +
+        '<div class="field"><label>税区分</label>' +
+          '<select id="taxField">' +
+            optionHtml("課税仕入 10%", formValues.tax) +
+            optionHtml("課税仕入 8%", formValues.tax) +
+            optionHtml("対象外", formValues.tax) +
+          '</select>' +
+        '</div>' +
+      '</div>' +
+      '<div class="mini-note">この画面でAIの結果を確認し、必要な項目だけ修正できます。</div>';
+  }
+
+  function optionHtml(value, selected){
+    return '<option value="' + value + '"' + (value === selected ? ' selected' : '') + '>' + value + '</option>';
+  }
+
+  function readForm(){
+    var date = document.getElementById("dateField");
+    var vendor = document.getElementById("vendorField");
+    var amount = document.getElementById("amountField");
+    var memo = document.getElementById("memoField");
+    var account = document.getElementById("accountField");
+    var tax = document.getElementById("taxField");
+    if(date){
+      formValues.date = date.value || formValues.date;
+      formValues.vendor = vendor.value || formValues.vendor;
+      formValues.amount = amount.value || formValues.amount;
+      formValues.memo = memo.value || formValues.memo;
+      formValues.account = account.value || formValues.account;
+      formValues.tax = tax.value || formValues.tax;
+    }
+  }
+
+  function formattedAmount(){
+    return Number(formValues.amount || 0).toLocaleString("ja-JP");
+  }
+
+  function paymentHtml(){
+    return '' +
+      '<b>支払方法を選択してください。</b>' +
+      '<div class="pay-grid">' +
+        payButtonHtml("現金","貸方：現金") +
+        payButtonHtml("事業用クレカ","貸方：未払金") +
+        payButtonHtml("個人立替","貸方：短期借入金") +
+      '</div>';
+  }
+
+  function payButtonHtml(name, desc){
+    var active = payment === name ? " active" : "";
+    return '<button class="pay' + active + '" data-pay="' + name + '">' + name + '<small>' + desc + '</small></button>';
+  }
+
+  function bindPayments(){
+    var buttons = document.querySelectorAll(".pay");
+    buttons.forEach(function(button){
+      button.addEventListener("click",function(){
+        buttons.forEach(function(b){ b.classList.remove("active"); });
+        button.classList.add("active");
+        payment = button.getAttribute("data-pay");
+      });
+    });
+  }
+
+  function creditAccount(){
+    if(payment === "現金"){ return "現金"; }
+    if(payment === "個人立替"){ return "短期借入金"; }
+    return "未払金";
+  }
+
+  function journalHtml(){
+    return '' +
+      '<b>選択内容から仕訳を自動作成しました。</b>' +
+      '<div class="card">' +
+        '<table class="journal">' +
+          '<tr><th>借方科目</th><th>金額</th><th>貸方科目</th><th>金額</th></tr>' +
+          '<tr><td>' + escapeHtml(formValues.account) + '</td><td>¥' + formattedAmount() + '</td><td>' + creditAccount() + '</td><td>¥' + formattedAmount() + '</td></tr>' +
+        '</table>' +
+        '<div class="mini-note" style="margin-top:9px">' +
+          '摘要：' + escapeHtml(formValues.memo) + '<br>' +
+          '税区分：' + escapeHtml(formValues.tax) + '<br>' +
+          '支払先：' + escapeHtml(formValues.vendor) +
+        '</div>' +
+      '</div>';
+  }
+
+  function mfHtml(){
+    return '' +
+      '<b>Money Forwardへ記帳すると、次の内容になります。</b>' +
+      '<div class="mfbox">' +
+        '<div class="mfhead"><span>Money Forward クラウド会計</span><span>仕訳プレビュー</span></div>' +
+        '<div class="mfbody">' +
+          '<div class="mfrow"><div class="mfkey">取引日</div><div class="mfval">' + escapeHtml(formValues.date) + '</div></div>' +
+          '<div class="mfrow"><div class="mfkey">借方</div><div class="mfval">' + escapeHtml(formValues.account) + '　¥' + formattedAmount() + '</div></div>' +
+          '<div class="mfrow"><div class="mfkey">貸方</div><div class="mfval">' + creditAccount() + '　¥' + formattedAmount() + '</div></div>' +
+          '<div class="mfrow"><div class="mfkey">税区分</div><div class="mfval">' + escapeHtml(formValues.tax) + '</div></div>' +
+          '<div class="mfrow"><div class="mfkey">摘要</div><div class="mfval">' + escapeHtml(formValues.memo) + '</div></div>' +
+          '<div class="mfrow"><div class="mfkey">証憑</div><div class="mfval">' + currentSample().name + 'サンプルを添付</div></div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="mini-note">デモのため、実際のMoney Forwardには送信されません。</div>';
+  }
+
+  function finalHtml(){
+    return '' +
+      '<div class="success">' +
+        '<div class="check">✓</div>' +
+        '<b>操作体験は完了です</b><br>' +
+        '<span class="mini-note">サンプルの読取結果を確認し、仕訳内容をMFへ反映する流れをご体験いただきました。</span>' +
+      '</div>' +
+      '<div class="cta-wrap">' +
+        '<a class="cta" href="' + LINE_URL + '" target="_blank" rel="noopener noreferrer">LINEで友だち追加して試す</a>' +
+        '<a class="cta-secondary" href="' + LINE_URL + '" target="_blank" rel="noopener noreferrer">料金・機能を見る</a>' +
+      '</div>' +
+      '<div style="margin-top:12px;text-align:center"><div style="font-size:11px;font-weight:800;color:#334139;margin-bottom:7px">パソコンでご覧の方はスマートフォンで読み取ってください</div><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATgAAAE4AQAAAADnBNLHAAACFUlEQVR4nO1a0YrDMAyTjv3/L+seJKfdcbcOjs3JSGBblwpaGTuWnVB4anw9B9u4jdu4N+IgVQRrfHT6CWZ2Hl24G2CrgQBEUQAhkHd3ZufRaj8QUIwlUAAowqb09Ow8eu3nYVtRoPjq534K7mw/Ub9ev+K5n4Kz/cpWFCuA7Ynjzuw8Wu2XaKUYx2MSCUYcz86jC3cOU8L+RogCcY7g2Xl04ggSZMKVNiPl7EtPrMCjCyfaXJScg8VSgKwQXoFHB876mRCPXGH9PC7Z+X4r4AjY9+xxtp7KGbd+fjRuSNVGIAbLPyoJePvfBY7WfQ5fVk5O8RYHXIFHBy7tAusVe56qc8DTojg7j1b7OQGnXYCzbh4ycHYerThG6MFRzEhA92EmeL/ZcbKbOYpBQYJoJ/TcGjwacNXjG4VuqZasiNWImZ1Ha/2RfCulZgNsUR0dmBV4dOCyvqVpmoRr09X39r8LHAHR+VcCUwsToyPd/H4z48r/cHROLVkqfGPD2Xn06heqEgmR9TD7moyOWYJHA44aEgVZ67yROXKyZ2fn0do/qH1eRf0RFFhhvP3v0bg7f6DxlcaBRc0+f/DnuD9/MDovODbhsPPHJW5UvGRqOYie1tZ/z+K87CHJWJDL4GnebwEcVX2DEbw7f1zjVCfW3ME6bZ7XVtIaPN6P4/Cyal+dzrBhn7+6Gj+OCb3tuRu3cRv3f9w3GGsLVSeSHiMAAAAASUVORK5CYII=" alt="撮るだけ経理 LINE友だち追加QRコード" style="width:150px;height:150px;border-radius:12px;border:1px solid #dfe6e1;background:#fff;padding:7px;display:block;margin:0 auto"><div class="mini-note" style="margin-top:7px">スマートフォンでは上のボタンを押すと、LINEの友だち追加画面が開きます。</div></div>';
   }
 
   function escapeHtml(text){
@@ -144,92 +517,100 @@ h1{font-size:28px;line-height:1.25;margin:14px 0 8px}
     });
   }
 
-  function showChosen(file){
-    chosen = file;
-    if(objectUrl){
-      URL.revokeObjectURL(objectUrl);
-      objectUrl = null;
-    }
-
-    var html = '<b>このファイルを選びました。</b><div class="preview">';
-    if(file.type && file.type.indexOf("image/") === 0){
-      objectUrl = URL.createObjectURL(file);
-      html += '<img src="' + objectUrl + '" alt="選択した領収書">';
-    }else{
-      html += '<div class="pdfbox">📄<br><b>請求書PDF</b></div>';
-    }
-    html += '<div class="filename">' + escapeHtml(file.name || "選択したファイル") + '</div></div>';
-    addMessage("user", html);
-    firstActions.classList.add("hidden");
-    sendBtn.classList.remove("hidden");
-    resetBtn.classList.remove("hidden");
+  function bindFormChanges(){
+    ["dateField","vendorField","amountField","memoField","accountField","taxField"].forEach(function(id){
+      var el = document.getElementById(id);
+      if(!el){ return; }
+      el.addEventListener("change",function(){ el.classList.add("changed"); });
+      el.addEventListener("input",function(){ el.classList.add("changed"); });
+    });
   }
 
-  fileInput.addEventListener("change", function(){
-    if(fileInput.files && fileInput.files.length){
-      showChosen(fileInput.files[0]);
-    }
-  });
-
-  sampleBtn.addEventListener("click", function(){
-    chosen = {name:"sample_receipt.jpg",type:"image/sample"};
-    addMessage("user",
-      '<b>サンプル領収書を選びました。</b>' +
-      '<div class="preview"><div class="pdfbox" style="font-family:monospace;text-align:left">' +
-      '<div style="text-align:center;font-weight:bold;margin-bottom:10px">CAFE TSUMUGI</div>' +
-      '2026年7月11日<br><br>' +
-      'コーヒー　¥600<br>ランチ　　¥1,200<br>' +
-      '<hr><b>合計　　　¥1,800</b></div>' +
-      '<div class="filename">sample_receipt.jpg</div></div>'
-    );
-    firstActions.classList.add("hidden");
-    sendBtn.classList.remove("hidden");
-    resetBtn.classList.remove("hidden");
-  });
-
-  sendBtn.addEventListener("click", function(){
-    if(!chosen){ return; }
-    addMessage("user","この領収書を送信します。");
-    sendBtn.disabled = true;
-    var loading = addMessage("bot",
-      '<b>AIが読み取っています</b><div class="loader" style="margin-top:9px">' +
-      '<span></span><span></span><span></span></div>'
-    );
-
-    setTimeout(function(){
-      loading.parentNode.removeChild(loading);
-      addMessage("bot",
-        '<b>読み取りが完了しました。</b>' +
-        '<div class="result">' +
-        '<div class="row"><div class="key">取引日</div><div class="val">2026年7月11日</div></div>' +
-        '<div class="row"><div class="key">支払先</div><div class="val">CAFE TSUMUGI</div></div>' +
-        '<div class="row"><div class="key">金額</div><div class="val">1,800円</div></div>' +
-        '<div class="row"><div class="key">勘定科目</div><div class="val">会議費</div></div>' +
-        '<div class="row"><div class="key">税区分</div><div class="val">課税仕入 10%</div></div>' +
-        '</div>' +
-        '<div style="margin-top:9px;font-size:12px;color:#667068">これは疑似デモのため、実際の画像内容にかかわらずサンプル結果を表示します。</div>'
-      );
-      sendBtn.classList.add("hidden");
-    },1200);
-  });
-
-  resetBtn.addEventListener("click", function(){
-    chosen = null;
-    fileInput.value = "";
-    if(objectUrl){
-      URL.revokeObjectURL(objectUrl);
-      objectUrl = null;
-    }
+  function reset(){
+    stage = 0;
+    setSample("cafe");
     chat.innerHTML =
-      '<div class="msg bot"><div class="bubble">' +
-      '送信する領収書を選んでください。<br>' +
-      'iPhoneでは「領収書・PDFを選ぶ」を押すと、カメラ・写真・ファイルを選択できます。' +
+      '<div class="message bot"><div class="bubble">' +
+      '4つのサンプルから1つ選んで、「撮るだけ経理」の流れを体験できます。<br><br>' +
+      'まずは下のボタンを押してください。' +
       '</div></div>';
-    firstActions.classList.remove("hidden");
-    sendBtn.classList.add("hidden");
-    sendBtn.disabled = false;
+    mainBtn.textContent = "サンプルを選ぶ";
+    mainBtn.disabled = false;
     resetBtn.classList.add("hidden");
+    updateStep(0);
+    scrollBottom();
+  }
+
+  mainBtn.addEventListener("click",function(){
+    if(stage === 0){
+      addMessage("bot", sampleChooserHtml());
+      bindSampleButtons();
+      updateStep(1);
+      stage = 1;
+      mainBtn.textContent = "このサンプルで始める";
+      resetBtn.classList.remove("hidden");
+
+    } else if(stage === 1){
+      addMessage("user", currentSample().name + "サンプルで体験します。");
+      addMessage("user", receiptHtml());
+      updateStep(2);
+      mainBtn.disabled = true;
+
+      setTimeout(function(){
+        var loading = addMessage("bot",
+          '<b>AIがサンプル領収書を読み取っています…</b>' +
+          '<div class="loader"><i></i><i></i><i></i></div>'
+        );
+
+        setTimeout(function(){
+          loading.remove();
+          addMessage("bot", formHtml());
+          bindFormChanges();
+          stage = 2;
+          updateStep(3);
+          mainBtn.textContent = "入力内容を確認して次へ";
+          mainBtn.disabled = false;
+        }, 1300);
+      }, 250);
+
+    } else if(stage === 2){
+      readForm();
+      addMessage("user",
+        '内容を確認しました。<br>' +
+        '勘定科目：' + escapeHtml(formValues.account) + '<br>' +
+        '税区分：' + escapeHtml(formValues.tax)
+      );
+      addMessage("bot", paymentHtml());
+      bindPayments();
+      updateStep(4);
+      stage = 3;
+      mainBtn.textContent = "支払方法を確定";
+
+    } else if(stage === 3){
+      addMessage("user", escapeHtml(payment) + "で支払いました。");
+      addMessage("bot", journalHtml());
+      updateStep(5);
+      stage = 4;
+      mainBtn.textContent = "MFへの記帳内容を見る";
+
+    } else if(stage === 4){
+      addMessage("bot", mfHtml());
+      updateStep(6);
+      stage = 5;
+      mainBtn.textContent = "デモを完了する";
+
+    } else if(stage === 5){
+      addMessage("bot", finalHtml());
+      mainBtn.textContent = "もう一度体験する";
+      stage = 6;
+
+    } else {
+      reset();
+    }
   });
+
+  resetBtn.addEventListener("click", reset);
+  reset();
 })();
 </script>
 </body>
