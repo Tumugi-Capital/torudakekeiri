@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>撮るだけ経理 - 何枚送っても定額。個人事業主の経理はLINEに送るだけ</title>
-  <meta name="description" content="撮るだけ経理は、個人事業主・フリーランス・小規模事業者のための会計入力アシスタント。レシートを撮ってLINEに送るだけ、PDF請求書もそのまま送るだけでAIが仕訳候補を作成。何枚送っても月額1,100円（税込）の完全定額で、1枚ごとの従量課金はありません。Money Forward・freeeへの記帳に加えて、弥生会計向けCSV出力にも対応。新しいアプリのインストールは不要です。現在β版ユーザー募集中。" />
-  <meta property="og:title" content="撮るだけ経理 - 何枚送っても定額。個人事業主の経理はLINEに送るだけ" />
-  <meta property="og:description" content="レシートは撮って送るだけ。PDF請求書もそのまま送るだけ。AIが仕訳候補を作成し、Money Forward・freee記帳、弥生会計CSV出力までサポート。何枚送っても月額1,100円（税込）の完全定額。β版ユーザー募集中。" />
+  <title>撮るだけ経理 - レシートもPDF請求書もLINEでAI読み取り</title>
+  <meta name="description" content="撮るだけ経理は、LINEに領収書・レシート画像を送るだけでなく、PDFで届いた請求書もそのまま送信してAI読み取りできる会計入力アシスタントです。取引先入力、科目・税区分の確認、Money Forward・freeeへの記帳、弥生会計CSV出力までサポート。ENTRYはAI解析中心、PREMIUMは会計ソフト連携・CSV出力まで対応。現在β版ユーザー募集中です。" />
+  <meta property="og:title" content="撮るだけ経理 - レシートもPDF請求書もLINEでAI読み取り" />
+  <meta property="og:description" content="領収書・レシート画像だけでなく、PDFで届いた請求書もLINEにそのまま送ってAI読み取り。取引先入力、Money Forward・freee記帳、弥生会計CSV出力までサポート。β版ユーザー募集中。" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://tumugi-capital.github.io/torudakekeiri/" />
   <meta name="twitter:card" content="summary" />
@@ -26,9 +26,7 @@
             },
             cream: '#fffdf8',
             mint: '#eaf8f3',
-            honey: '#fff3c4',
-            chat: '#dfe8f0',
-            bubble: '#a5e08f'
+            honey: '#fff3c4'
           },
           boxShadow: {
             soft: '0 14px 34px rgba(135, 82, 82, 0.12)',
@@ -68,78 +66,58 @@
       </div>
 
       <p class="mb-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-4 py-2 text-[11px] font-bold text-brand-700 shadow-sm">
-        個人事業主・フリーランス・小さな会社の経理に
+        <span>LINE</span><span>×</span><span>AI</span><span>×</span><span>レシート画像・PDF請求書読み取り</span>
       </p>
       <p class="mb-4 inline-flex items-center gap-2 rounded-full bg-honey px-4 py-2 text-[12px] font-extrabold text-stone-700 shadow-sm ring-2 ring-white/80">
         🌱 β版ユーザー募集中
       </p>
 
       <h1 class="text-[28px] font-extrabold leading-snug text-stone-800 sm:text-4xl">
-        <span class="phrase">レシートも、</span>
-        <span class="phrase">PDF請求書も、</span><br />
-        <span class="phrase">LINEに送るだけ。</span><br />
-        <span class="phrase text-brand-600">何枚送っても、</span><br />
-        <span class="phrase text-brand-600">月額1,100円の完全定額。</span>
+        <span class="phrase">PDFの請求書も、</span><br />
+        <span class="phrase">LINEに送るだけでAI読み取り。</span><br />
+        <span class="phrase text-brand-600">経理入力をもっとラクに。</span>
       </h1>
 
       <p class="mx-auto mt-5 max-w-sm text-sm leading-8 text-stone-600 sm:text-base">
-        <span class="phrase">新しいアプリのインストールは不要。</span>
-        <span class="phrase">毎日使っているLINEに送るだけで、</span>
+        <span class="phrase">レシート画像だけでなく、</span>
+        <span class="phrase">メール等で届いたPDF請求書も送信可能。</span>
         <span class="phrase">AIが日付・金額・支払先・取引先を読み取り、</span>
-        <span class="phrase">勘定科目・税区分つきの仕訳候補を作成。</span>
-        <span class="phrase">内容を確認したら、</span>
+        <span class="phrase">仕訳候補を作成。</span>
+        <span class="phrase">科目・税区分を確認してから、</span>
         <span class="phrase">Money Forward・freeeへの記帳、</span>
-        <span class="phrase">弥生会計向けCSV出力まで進められます。</span>
+        <span class="phrase">弥生会計CSV出力までサポートします。</span>
+        <span class="phrase">取引先名もLINE上で入力・補足できます。</span>
       </p>
 
-      <div class="mt-5 grid grid-cols-3 gap-2 text-[11px] font-extrabold">
-        <div class="rounded-2xl bg-white/90 px-2 py-3 shadow-sm ring-1 ring-white"><span class="block text-lg">💰</span><span class="mt-1 block text-stone-700">1枚ごとの<br />追加料金 0円</span></div>
-        <div class="rounded-2xl bg-white/90 px-2 py-3 shadow-sm ring-1 ring-white"><span class="block text-lg">📑</span><span class="mt-1 block text-stone-700">PDF請求書も<br />そのまま送信</span></div>
-        <div class="rounded-2xl bg-white/90 px-2 py-3 shadow-sm ring-1 ring-white"><span class="block text-lg">📄</span><span class="mt-1 block text-stone-700">MF・freeeに加え<br />弥生会計も</span></div>
+      <div class="mt-5 rounded-[1.5rem] bg-white/80 px-4 py-3 text-center text-xs font-bold leading-6 text-stone-600 shadow-sm ring-1 ring-white/90">
+        <span class="phrase">PREMIUMは月額1,100円（税込）。</span>
+        <span class="phrase">従量課金を気にせず、毎月のレシート整理を進めやすい設計です。</span>
       </div>
 
-      <!-- LINEトーク画面イメージ -->
-      <div class="mt-7 rounded-[1.6rem] bg-chat p-4 text-left shadow-soft">
-        <p class="mb-3 text-center text-[10px] font-bold text-stone-500">— 使うときのイメージ —</p>
-        <div class="space-y-3 text-[12px] leading-6">
-          <div class="flex justify-end">
-            <div class="max-w-[75%] rounded-2xl rounded-tr-md bg-bubble px-3 py-2 shadow-sm">
-              <span class="block rounded-xl bg-white/70 px-3 py-4 text-center text-2xl">🧾</span>
-              <span class="mt-1 block text-center text-[10px] text-stone-600">レシートを撮って送信</span>
-            </div>
-          </div>
-          <div class="flex justify-start">
-            <div class="max-w-[85%] rounded-2xl rounded-tl-md bg-white px-3 py-2 text-stone-700 shadow-sm">
-              解析が完了しました✨<br />
-              日付：2026/07/10<br />
-              金額：3,850円<br />
-              支払先：○○文具店<br />
-              借方：消耗品費<br />
-              税区分：課対仕入 10%<br />
-              <span class="mt-2 flex gap-2">
-                <span class="rounded-full bg-brand-100 px-3 py-1 text-[10px] font-bold text-brand-700">この内容で記帳</span>
-                <span class="rounded-full bg-stone-100 px-3 py-1 text-[10px] font-bold text-stone-500">科目を変更</span>
-              </span>
-            </div>
-          </div>
-          <div class="flex justify-end">
-            <div class="rounded-2xl rounded-tr-md bg-bubble px-3 py-2 shadow-sm">この内容で記帳</div>
-          </div>
-          <div class="flex justify-start">
-            <div class="max-w-[85%] rounded-2xl rounded-tl-md bg-white px-3 py-2 text-stone-700 shadow-sm">✅ Money Forwardに記帳しました。証憑画像も添付済みです。</div>
-          </div>
+      <div class="mt-7 rounded-[1.6rem] border border-white bg-white/80 p-4 text-left shadow-soft backdrop-blur">
+        <p class="text-xs font-bold text-stone-700">いま対応していること</p>
+        <div class="mt-3 grid grid-cols-2 gap-2 text-[11px] font-bold text-stone-600">
+          <span class="rounded-full bg-brand-100 px-3 py-2 text-center">AI解析</span>
+          <span class="rounded-full bg-honey px-3 py-2 text-center text-stone-700 ring-1 ring-white">PDF請求書読み取り</span>
+          <span class="rounded-full bg-brand-100 px-3 py-2 text-center">MF記帳</span>
+          <span class="rounded-full bg-brand-100 px-3 py-2 text-center">freee記帳</span>
+          <span class="rounded-full bg-brand-100 px-3 py-2 text-center">弥生CSV</span>
+          <span class="rounded-full bg-brand-100 px-3 py-2 text-center">科目修正</span>
+          <span class="rounded-full bg-brand-100 px-3 py-2 text-center">税区分修正</span>
+          <span class="rounded-full bg-brand-100 px-3 py-2 text-center">用途メモ</span>
+          <span class="rounded-full bg-brand-100 px-3 py-2 text-center">取引先入力</span>
+          <span class="rounded-full bg-brand-100 px-3 py-2 text-center">証憑対応</span>
         </div>
-        <p class="mt-3 text-center text-[10px] text-stone-500">※画面はイメージです。実際の表示とは異なる場合があります。</p>
       </div>
 
       <div class="mt-8 space-y-3">
         <a href="https://lin.ee/8zc0VBd" class="block w-full rounded-full bg-brand-500 px-6 py-4 text-center text-base font-bold text-white shadow-pop transition hover:bg-brand-600 active:scale-[0.99]">
           LINEでβ版を試してみる
-          <span class="block text-xs font-normal opacity-90">友だち追加して、手元のレシートを1枚送ってみる</span>
+          <span class="block text-xs font-normal opacity-90">友だち追加して、まずは1枚送ってみる</span>
         </a>
         <p class="text-[11px] leading-5 text-stone-500">
-          <span class="phrase">登録は友だち追加だけ。数分で始められます。</span>
-          <span class="phrase">β版として少人数にテスト提供中です。</span>
+          <span class="phrase">β版として少人数にテスト提供中。</span>
+          <span class="phrase">レシート画像も、PDF請求書も、内容を確認しながら記帳まで進められます。</span>
         </p>
       </div>
     </div>
@@ -148,157 +126,59 @@
   <main>
     <section class="mx-auto max-w-md px-4 py-10">
       <h2 class="text-center text-xl font-bold leading-relaxed text-stone-800">
-        <span class="phrase">こんな「経理の後回し」、</span><br />
-        <span class="phrase">心当たりありませんか？</span>
+        <span class="phrase">月末のレシート整理、</span><br />
+        <span class="phrase">まだ手入力で頑張りますか？</span>
       </h2>
 
       <ul class="mt-6 space-y-4 rounded-[1.75rem] border border-brand-100 bg-white p-6 text-sm text-stone-600 shadow-sm">
-        <li class="flex items-start gap-3"><span class="mt-0.5 text-brand-500">💭</span><span>財布や封筒にレシートを溜め込んで、月末や確定申告前にまとめて処理している。</span></li>
-        <li class="flex items-start gap-3"><span class="mt-0.5 text-brand-500">💭</span><span>本業や店の営業が終わったあと、疲れた状態で会計ソフトに向かうのがつらい。</span></li>
-        <li class="flex items-start gap-3"><span class="mt-0.5 text-brand-500">💭</span><span>メールで届いたPDF請求書が受信箱に埋もれて、処理漏れが怖い。</span></li>
-        <li class="flex items-start gap-3"><span class="mt-0.5 text-brand-500">💭</span><span>勘定科目や税区分に自信がなくて、1枚ごとに手が止まる。</span></li>
-        <li class="flex items-start gap-3"><span class="mt-0.5 text-brand-500">💭</span><span>レシート読み取りサービスは1枚ごとの従量課金が多くて、枚数が増える月は料金が読めない。</span></li>
+        <li class="flex items-start gap-3"><span class="mt-0.5 text-brand-500">💭</span><span>紙の領収書だけでなく、メールで届いたPDF請求書の処理も後回しになりがち。</span></li>
+        <li class="flex items-start gap-3"><span class="mt-0.5 text-brand-500">💭</span><span>日付・金額・取引先・勘定科目・税区分の確認が面倒。</span></li>
+        <li class="flex items-start gap-3"><span class="mt-0.5 text-brand-500">💭</span><span>会計ソフトを開いて入力する時間を減らしたい。</span></li>
+        <li class="flex items-start gap-3"><span class="mt-0.5 text-brand-500">💭</span><span>レシート枚数が増えると、従量課金が気になる。</span></li>
       </ul>
 
       <p class="mt-6 text-center text-base font-bold text-brand-600">
-        <span class="phrase">その「あとでやる」を、</span><span class="phrase">レシートを受け取った</span><span class="phrase">その場の10秒に変えます。</span>
+        <span class="phrase">その手間を、</span><span class="phrase">LINEとAIで軽くします。</span>
       </p>
     </section>
 
-    <section class="mx-3 rounded-[2rem] border border-brand-50 bg-white px-4 py-10 shadow-soft">
-      <div class="mx-auto max-w-md">
-        <h2 class="text-center text-xl font-bold leading-relaxed text-stone-800">
-          <span class="phrase">撮るだけ経理が</span><span class="phrase">選ばれる3つの理由</span>
-        </h2>
-        <div class="mt-7 grid gap-4">
-          <div class="rounded-3xl bg-brand-50 p-5 ring-2 ring-brand-200">
-            <p class="font-bold text-stone-800">💰 何枚送っても、完全定額</p>
-            <p class="mt-2 text-sm leading-7 text-stone-500">PREMIUMは月額1,100円（税込）だけ。「11枚目からは1枚ごとに追加料金」のような従量課金はありません。仕入れや経費でレシートが多い月も、料金を気にせず全部送れます。</p>
-          </div>
-          <div class="rounded-3xl bg-brand-50 p-5">
-            <p class="font-bold text-stone-800">📑 レシートだけじゃない。PDF請求書もそのまま</p>
-            <p class="mt-2 text-sm leading-7 text-stone-500">メール添付で届いた請求書PDFを、印刷もスキャンもせずそのままLINEに転送するだけ。紙のレシートと同じように仕訳候補まで進みます。</p>
-          </div>
-          <div class="rounded-3xl bg-brand-50 p-5">
-            <p class="font-bold text-stone-800">📄 Money Forward・freeeに加えて、弥生会計にも</p>
-            <p class="mt-2 text-sm leading-7 text-stone-500">MF・freeeへはLINEから記帳。弥生会計にも、月末に「CSV出力」と送るだけでインポート用CSVを出力できます。いま使っている会計ソフトを乗り換える必要はありません。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="mx-auto max-w-md px-4 py-12">
-      <h2 class="text-center text-xl font-bold leading-relaxed text-stone-800">他のやり方と比べてみる</h2>
-      <div class="mt-6 space-y-4">
-        <div class="rounded-[1.5rem] border border-brand-100 bg-white p-5 shadow-sm">
-          <p class="text-sm font-bold text-stone-700">✍️ 自分で手入力</p>
-          <dl class="mt-3 space-y-2 text-xs text-stone-600">
-            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">月あたりの費用</dt><dd class="text-right">0円<span class="block text-[10px] text-stone-400">ただし時間がかかる</span></dd></div>
-            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">枚数が増えた月</dt><dd class="text-right">作業時間が増える</dd></div>
-            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">PDF請求書</dt><dd class="text-right">手入力</dd></div>
-            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">弥生会計</dt><dd class="text-right">手入力</dd></div>
-          </dl>
-        </div>
-        <div class="rounded-[1.5rem] border border-brand-100 bg-white p-5 shadow-sm">
-          <p class="text-sm font-bold text-stone-700">📱 従量課金型の読み取りサービス</p>
-          <dl class="mt-3 space-y-2 text-xs text-stone-600">
-            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">月あたりの費用</dt><dd class="text-right">月額＋1枚ごとの追加料金</dd></div>
-            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">枚数が増えた月</dt><dd class="text-right">枚数の分だけ料金が増える</dd></div>
-            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">PDF請求書</dt><dd class="text-right">サービスによる</dd></div>
-            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">弥生会計</dt><dd class="text-right">サービスによる</dd></div>
-          </dl>
-        </div>
-        <div class="relative overflow-hidden rounded-[1.5rem] border-2 border-brand-500 bg-white p-5 pt-9 shadow-pop">
-          <div class="absolute inset-x-0 top-0 bg-brand-500 py-1 text-center text-[10px] font-bold tracking-widest text-white">おすすめ</div>
-          <p class="text-sm font-extrabold text-brand-700">🧾 撮るだけ経理 PREMIUM</p>
-          <dl class="mt-3 space-y-2 text-xs text-stone-700">
-            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">月あたりの費用</dt><dd class="text-right font-bold">1,100円（税込）<span class="block text-[10px] font-bold text-brand-600">追加料金なし</span></dd></div>
-            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">枚数が増えた月</dt><dd class="text-right font-bold">何枚でも定額</dd></div>
-            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">PDF請求書</dt><dd class="text-right font-bold">そのまま送信OK</dd></div>
-            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">弥生会計</dt><dd class="text-right font-bold">CSV出力対応</dd></div>
-          </dl>
-        </div>
-      </div>
-      <p class="mt-4 text-center text-[10px] leading-5 text-stone-400">※「従量課金型の読み取りサービス」は一般的な例です。各サービスの正確な料金・仕様は公式情報をご確認ください。</p>
-    </section>
-
-    <section class="mx-auto max-w-md px-4 pb-12">
-      <h2 class="text-center text-xl font-bold leading-relaxed text-stone-800">こんな方に使われることを<br />想定しています</h2>
-      <div class="mt-7 grid gap-4">
-        <div class="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm">
-          <p class="font-bold text-stone-800">💻 フリーランス（デザイナー・エンジニア・ライターなど）</p>
-          <p class="mt-2 text-sm leading-7 text-stone-500">打ち合わせのカフェ代、書籍代、サブスクの領収書。案件の合間に送っておけば、確定申告前に領収書の山と格闘せずに済みます。</p>
-        </div>
-        <div class="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm">
-          <p class="font-bold text-stone-800">🍜 店舗を営む方（飲食・美容・小売など）</p>
-          <p class="mt-2 text-sm leading-7 text-stone-500">仕入れや消耗品のレシートは、営業の合間にレジ横で撮って送るだけ。枚数が多くても定額なので、全部送れます。閉店後の深夜に会計ソフトへ向かう時間を減らせます。</p>
-        </div>
-        <div class="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm">
-          <p class="font-bold text-stone-800">🔧 職人・一人親方（建設・設備・運送など）</p>
-          <p class="mt-2 text-sm leading-7 text-stone-500">材料費やガソリン代のレシートを現場でその場で送信。事務所に戻ってからのまとめ入力や、月末の請求書PDF処理もLINEで完結に近づきます。</p>
-        </div>
-        <div class="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm">
-          <p class="font-bold text-stone-800">🏢 経理担当がいない小さな会社・副業の方</p>
-          <p class="mt-2 text-sm leading-7 text-stone-500">社長やメンバーが自分で経理をしている会社、本業のかたわらで副業をしている方に。仕訳候補をAIが用意するので、簿記に自信がなくても確認から始められます。</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="mx-3 rounded-[2rem] bg-gradient-to-br from-brand-100 via-white to-honey px-4 py-10 shadow-soft">
-      <div class="mx-auto max-w-md">
-        <h2 class="text-center text-xl font-bold leading-relaxed text-stone-800">経理の時間は、こう変わる</h2>
-        <div class="mt-7 space-y-4">
-          <div class="rounded-3xl bg-white/90 p-5 shadow-sm">
-            <p class="text-xs font-extrabold tracking-widest text-stone-400">BEFORE</p>
-            <p class="mt-2 text-sm leading-7 text-stone-600">月末や申告前に、溜まったレシートと請求書PDFを机に広げて、1枚ずつ日付・金額・科目を会計ソフトへ手入力。数時間がかりの「憂鬱な作業日」に。</p>
-          </div>
-          <div class="text-center text-2xl">⬇️</div>
-          <div class="rounded-3xl bg-white/90 p-5 shadow-sm ring-2 ring-brand-200">
-            <p class="text-xs font-extrabold tracking-widest text-brand-600">AFTER</p>
-            <p class="mt-2 text-sm leading-7 text-stone-600">レシートは受け取った直後、請求書PDFは届いた直後にLINEへ転送。AIの仕訳候補をすきま時間に確認するだけで、月末には記帳・CSV出力を残すのみ。</p>
-          </div>
-        </div>
-        <p class="mt-5 text-center text-[11px] leading-5 text-stone-500">※ 作業時間の変化は利用状況・枚数により異なります。</p>
-      </div>
-    </section>
-
-    <section class="mx-3 mt-10 rounded-[2rem] border-2 border-honey bg-white px-4 py-9 shadow-soft">
+    <section class="mx-3 rounded-[2rem] border-2 border-honey bg-white px-4 py-9 shadow-soft">
       <div class="mx-auto max-w-md text-center">
         <p class="mx-auto mb-3 inline-flex rounded-full bg-honey px-4 py-2 text-xs font-extrabold text-stone-700">📑 請求書PDFも対応</p>
         <h2 class="text-xl font-extrabold leading-relaxed text-stone-800">
-          <span class="phrase">メールで届いた請求書も、</span><br />
-          <span class="phrase text-brand-600">LINEに転送するだけでAI読み取り。</span>
+          <span class="phrase">PDFで届いた請求書も、</span><br />
+          <span class="phrase text-brand-600">LINEに送るだけでAI読み取り。</span>
         </h2>
         <p class="mt-4 text-left text-sm leading-8 text-stone-600">
-          仕入先や外注先からメール添付で届く請求書、Webからダウンロードした請求書PDF。印刷もスキャンも不要で、そのままLINEに送るだけ。AIが日付・金額・取引先などを読み取り、仕訳候補の作成までサポートします。レシート読み取りだけのサービスでは拾いきれない「請求書の処理」までカバーします。
+          メール添付やWebからダウンロードした請求書PDFを、そのままLINEに送れます。AIが請求書に記載された日付・金額・取引先などを読み取り、仕訳候補作成までサポートします。
         </p>
         <div class="mt-5 grid gap-3 text-left text-sm text-stone-600">
-          <div class="rounded-3xl bg-brand-50 p-4">✅ 紙のレシート・領収書は、スマホで撮って送るだけ</div>
-          <div class="rounded-3xl bg-brand-50 p-4">✅ PDF請求書は、ファイルのままLINEに送るだけ</div>
-          <div class="rounded-3xl bg-brand-50 p-4">✅ 読み取りにくい取引先名は、LINE上で入力・補足できる</div>
+          <div class="rounded-3xl bg-brand-50 p-4">✅ 紙のレシート・領収書画像に対応</div>
+          <div class="rounded-3xl bg-brand-50 p-4">✅ PDFで届いた請求書ファイルにも対応</div>
+          <div class="rounded-3xl bg-brand-50 p-4">✅ 取引先名はLINE上で入力・補足可能</div>
         </div>
       </div>
     </section>
 
-    <section class="mx-3 mt-10 rounded-[2rem] border border-brand-50 bg-white px-4 py-10 shadow-soft">
+    <section class="mx-3 rounded-[2rem] border border-brand-50 bg-white px-4 py-10 shadow-soft">
       <div class="mx-auto max-w-md">
         <h2 class="text-center text-xl font-bold leading-relaxed text-stone-800">使い方はかんたん</h2>
         <div class="mt-8 space-y-7">
           <div class="flex gap-4">
             <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-100 text-lg font-bold text-brand-600 shadow-inner">1</div>
-            <div><h3 class="font-bold text-stone-800">レシートを撮って送る／PDFをそのまま送る</h3><p class="mt-2 text-sm leading-7 text-stone-500">スマホで撮った領収書・レシート画像も、メールで届いた請求書PDFも、そのままLINEに送るだけです。</p></div>
+            <div><h3 class="font-bold text-stone-800">必要なら用途・取引先を補足する</h3><p class="mt-2 text-sm leading-7 text-stone-500">「メモ: A社との打ち合わせ」「取引先: 株式会社○○」のように送ると、次の解析に内容を反映できます。</p></div>
           </div>
           <div class="flex gap-4">
             <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-100 text-lg font-bold text-brand-600 shadow-inner">2</div>
-            <div><h3 class="font-bold text-stone-800">AIが仕訳候補を作成</h3><p class="mt-2 text-sm leading-7 text-stone-500">日付・金額・支払先・取引先・摘要・勘定科目・税区分を読み取り、確認しやすい形で返信します。</p></div>
+            <div><h3 class="font-bold text-stone-800">LINEでレシート画像・PDF請求書を送る</h3><p class="mt-2 text-sm leading-7 text-stone-500">スマホで撮った領収書・レシート画像はもちろん、PDFで届いた請求書ファイルもそのままLINEに送れます。</p></div>
           </div>
           <div class="flex gap-4">
             <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-100 text-lg font-bold text-brand-600 shadow-inner">3</div>
-            <div><h3 class="font-bold text-stone-800">LINE上で確認・修正</h3><p class="mt-2 text-sm leading-7 text-stone-500">科目や税区分が違えばLINE上で修正。「メモ: A社との打ち合わせ」「取引先: 株式会社○○」のように送って、用途や取引先を補足することもできます。</p></div>
+            <div><h3 class="font-bold text-stone-800">AIが内容を解析</h3><p class="mt-2 text-sm leading-7 text-stone-500">レシート画像やPDF請求書から、日付・金額・支払先・取引先・摘要・勘定科目・税区分を読み取ります。足りない情報はLINE上で入力・補足できます。</p></div>
           </div>
           <div class="flex gap-4">
             <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-100 text-lg font-bold text-brand-600 shadow-inner">4</div>
-            <div><h3 class="font-bold text-stone-800">会計ソフトへ反映</h3><p class="mt-2 text-sm leading-7 text-stone-500">Money Forward・freeeへ記帳するか、月末に弥生会計向けCSVを出力。あとは確定申告や月次処理に進むだけです。</p></div>
+            <div><h3 class="font-bold text-stone-800">会計ソフトへ反映</h3><p class="mt-2 text-sm leading-7 text-stone-500">Money Forward・freeeへ記帳するか、月末に弥生会計向けCSVを出力できます。</p></div>
           </div>
         </div>
       </div>
@@ -306,69 +186,46 @@
 
     <section class="mx-auto max-w-md px-4 py-12">
       <div class="rounded-[2rem] border border-brand-100 bg-white p-6 shadow-soft">
-        <p class="mb-3 inline-flex rounded-full bg-honey px-4 py-2 text-xs font-extrabold text-stone-700">お使いの会計ソフトのままでOK</p>
-        <h2 class="text-xl font-bold leading-relaxed text-stone-800">Money Forward・freee・弥生会計に対応</h2>
+        <p class="mb-3 inline-flex rounded-full bg-honey px-4 py-2 text-xs font-extrabold text-stone-700">弥生会計をお使いの方へ</p>
+        <h2 class="text-xl font-bold leading-relaxed text-stone-800">月末に「CSV出力」で、弥生会計へ取り込み</h2>
         <p class="mt-4 text-sm leading-8 text-stone-600">
-          会計ソフトを乗り換える必要はありません。Money Forward・freeeにはLINEから記帳でき、弥生会計には月末に「CSV出力」と送るだけで、仕訳日記帳インポート形式のCSVをダウンロードできます。
+          LINEに領収書・請求書PDFを送って仕訳候補を確認しておけば、月末に「CSV出力」と送るだけで、弥生会計の仕訳日記帳インポート形式CSVをダウンロードできます。
         </p>
         <div class="mt-6 grid gap-3 text-sm text-stone-600">
-          <div class="rounded-3xl bg-brand-50 p-4">🔗 <span class="font-bold">Money Forward</span>：確認後にLINEから記帳。証憑添付にも対応</div>
-          <div class="rounded-3xl bg-brand-50 p-4">🔗 <span class="font-bold">freee</span>：取引登録とファイルボックスへの領収書アップロードに対応</div>
-          <div class="rounded-3xl bg-brand-50 p-4">📄 <span class="font-bold">弥生会計</span>：「CSV出力」と送るだけ。API設定不要でインポート用CSVを出力</div>
+          <div class="rounded-3xl bg-brand-50 p-4">1. LINEに領収書の写真、またはPDF請求書をそのまま送る</div>
+          <div class="rounded-3xl bg-brand-50 p-4">2. 科目・税区分・支払方法・取引先を確認</div>
+          <div class="rounded-3xl bg-brand-50 p-4">3. 月末に「CSV出力」→ 弥生会計にインポート</div>
         </div>
         <p class="mt-5 text-xs leading-6 text-stone-500">
-          弥生会計向けCSVは25列・ヘッダーなし形式（Shift_JIS・CRLF）で出力し、税額は弥生側の自動計算に任せる設計です。日々のレシート整理だけをLINEで軽くして、慣れた会計ソフトをそのまま使い続けられます。
+          CSVは弥生会計向けの25列・ヘッダーなし形式で出力します。API連携の設定は不要です。弥生会計をそのまま使い続けながら、日々のレシート整理だけLINEで軽くできます。
         </p>
       </div>
     </section>
 
-    <section class="mx-auto max-w-md px-4 pb-12">
+    <section class="mx-auto max-w-md px-4 py-12">
       <h2 class="text-center text-xl font-bold text-stone-800">できること</h2>
       <div class="mt-7 grid gap-4">
-        <div class="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm">
-          <p class="font-bold text-stone-800">📷 AI読み取り・仕訳候補の作成</p>
-          <ul class="mt-3 space-y-2 text-sm leading-7 text-stone-500">
-            <li>・領収書・レシート画像から日付・金額・支払先・取引先・摘要を読み取り</li>
-            <li>・PDF請求書もそのまま送信して解析</li>
-            <li>・「メモ: A社との打ち合わせ」などの用途メモを仕訳判断に反映</li>
-            <li>・外貨レシートの可能性がある場合は、日本円換算額を確認してから記帳</li>
-          </ul>
-        </div>
-        <div class="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm">
-          <p class="font-bold text-stone-800">🧮 記帳前の確認・修正</p>
-          <ul class="mt-3 space-y-2 text-sm leading-7 text-stone-500">
-            <li>・勘定科目・税区分をLINE上で修正してから記帳</li>
-            <li>・現金／事業用クレカ／個人カード・立替払い／事業用口座／電子マネー・QR決済など、支払方法に応じて貸方科目を判定</li>
-            <li>・読み取りにくい取引先名の入力・補足</li>
-            <li>・画像が小さい場合は、証憑保存に不向きな可能性を警告</li>
-          </ul>
-        </div>
-        <div class="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm">
-          <p class="font-bold text-stone-800">🔗 会計ソフトへの反映と証憑対応</p>
-          <ul class="mt-3 space-y-2 text-sm leading-7 text-stone-500">
-            <li>・Money Forward・freeeへの記帳サポート</li>
-            <li>・弥生会計向けCSV出力（当月・指定月）</li>
-            <li>・Money Forwardの証憑添付、freeeファイルボックスへの領収書アップロード</li>
-            <li>・会計ソフト別の登録履歴を確認でき、二重登録の防止にも</li>
-          </ul>
-        </div>
-        <div class="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm">
-          <p class="font-bold text-stone-800">📋 日々の管理・サポート</p>
-          <ul class="mt-3 space-y-2 text-sm leading-7 text-stone-500">
-            <li>・未処理・承認待ち・円換算待ちの候補をLINEで確認</li>
-            <li>・月末時点で残っている作業のチェック</li>
-            <li>・プラン確認・利用状況・会計ソフト設定などのLINEコマンド</li>
-            <li>・よくあるエラーの対処法表示、フィードバック送信</li>
-          </ul>
-        </div>
+        <div class="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm"><p class="font-bold text-stone-800">📷 領収書・レシート画像のAI解析</p><p class="mt-2 text-sm leading-7 text-stone-500">日付、金額、支払先、取引先、摘要などを読み取り、確認しやすい形で表示します。</p></div>
+        <div class="rounded-3xl border-2 border-honey bg-white p-5 shadow-sm"><p class="font-bold text-stone-800">📑 PDF請求書のAI読み取り</p><p class="mt-2 text-sm leading-7 text-stone-500">メールやWebからダウンロードしたPDF請求書も、LINEにそのまま送るだけで解析対象にできます。請求書に記載された日付・金額・取引先などを読み取り、仕訳候補作成につなげます。</p></div>
+        <div class="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm"><p class="font-bold text-stone-800">🏢 取引先入力・補足</p><p class="mt-2 text-sm leading-7 text-stone-500">AIで読み取りにくい取引先名や、あとから補足したい相手先をLINE上で入力・確認できます。</p></div>
+        <div class="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm"><p class="font-bold text-stone-800">💬 用途メモを解析に反映</p><p class="mt-2 text-sm leading-7 text-stone-500">「メモ: A社との打ち合わせ」のように送ると、レシートや請求書だけでは分かりにくい用途を仕訳判断に反映できます。</p></div>
+        <div class="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm"><p class="font-bold text-stone-800">🧮 勘定科目・税区分を記帳前に修正</p><p class="mt-2 text-sm leading-7 text-stone-500">AIの候補が違う場合でも、LINE上で科目や税区分を修正してから記帳できます。</p></div>
+        <div class="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm"><p class="font-bold text-stone-800">💳 支払方法に応じて貸方科目を判定</p><p class="mt-2 text-sm leading-7 text-stone-500">現金、事業用クレカ、個人カード・立替払い、事業用口座、電子マネー・QR決済などに対応します。</p></div>
+        <div class="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm"><p class="font-bold text-stone-800">🔗 Money Forward・freee連携</p><p class="mt-2 text-sm leading-7 text-stone-500">使っている会計ソフトを選び、確認後にMoney Forwardまたはfreeeへの記帳へ進めます。</p></div>
+        <div class="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm"><p class="font-bold text-stone-800">📄 弥生会計CSV出力</p><p class="mt-2 text-sm leading-7 text-stone-500">当月または指定月の確定済み仕訳を、弥生会計の仕訳日記帳インポート形式CSVで出力できます。</p></div>
+        <div class="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm"><p class="font-bold text-stone-800">📎 領収書画像の証憑対応</p><p class="mt-2 text-sm leading-7 text-stone-500">Money Forwardでは証憑添付、freeeではファイルボックスへの領収書アップロードをサポートします。</p></div>
+        <div class="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm"><p class="font-bold text-stone-800">🧾 会計ソフト別の登録履歴</p><p class="mt-2 text-sm leading-7 text-stone-500">Money Forward・freeeそれぞれの登録状況を確認しやすくし、二重登録の防止にもつなげます。</p></div>
+        <div class="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm"><p class="font-bold text-stone-800">📋 未処理・月次確認</p><p class="mt-2 text-sm leading-7 text-stone-500">未処理、承認待ち、円換算待ちの候補や、月末時点で残っている作業をLINEで確認できます。</p></div>
+        <div class="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm"><p class="font-bold text-stone-800">🌏 外貨レシートにも確認式で対応</p><p class="mt-2 text-sm leading-7 text-stone-500">外貨レシートの可能性がある場合は、日本円換算額の入力を促してから記帳します。</p></div>
+        <div class="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm"><p class="font-bold text-stone-800">⚠️ 画像品質警告</p><p class="mt-2 text-sm leading-7 text-stone-500">画像が小さい場合は、証憑保存に不向きな可能性を表示し、再撮影をおすすめします。</p></div>
+        <div class="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm"><p class="font-bold text-stone-800">💬 便利なLINEコマンド</p><p class="mt-2 text-sm leading-7 text-stone-500">CSV出力、プラン確認、利用状況、会計ソフト設定、登録履歴、取引先入力、よくあるエラー、フィードバック送信に対応しています。</p></div>
       </div>
     </section>
 
     <section class="mx-3 rounded-[2rem] bg-gradient-to-br from-brand-100 via-white to-honey px-4 py-10 shadow-soft">
       <div class="mx-auto max-w-md">
-        <h2 class="text-center text-xl font-bold text-stone-800">「AIに任せて大丈夫？」に<br />答える確認フロー</h2>
-        <p class="mt-4 text-center text-sm leading-7 text-stone-600">AIが勝手に記帳することはありません。反映前に必ずあなたが確認する設計です。</p>
-        <div class="mt-6 space-y-4 text-sm">
+        <h2 class="text-center text-xl font-bold text-stone-800">安心して使うための確認フロー</h2>
+        <div class="mt-7 space-y-4 text-sm">
           <div class="rounded-3xl bg-white/90 p-5 shadow-sm"><p class="font-bold text-stone-800">✅ 反映前に内容を確認</p><p class="mt-2 leading-7 text-stone-500">借方、貸方、支払方法、税区分、取引先を確認してから記帳・CSV出力へ進めます。</p></div>
           <div class="rounded-3xl bg-white/90 p-5 shadow-sm"><p class="font-bold text-stone-800">🔁 二重記帳を防止</p><p class="mt-2 leading-7 text-stone-500">同じ領収書を誤って二重登録しないように確認を入れます。</p></div>
           <div class="rounded-3xl bg-white/90 p-5 shadow-sm"><p class="font-bold text-stone-800">📌 記帳に必要な項目だけを表示</p><p class="mt-2 leading-7 text-stone-500">会計ソフトへの記帳に使う項目を中心に表示し、インボイス番号は画面に表示しません。</p></div>
@@ -376,12 +233,12 @@
       </div>
     </section>
 
-    <section class="mx-3 mt-10 rounded-[2rem] bg-white px-4 py-10 shadow-soft border border-brand-100">
+    <section class="mx-3 rounded-[2rem] bg-white px-4 py-10 shadow-soft border border-brand-100">
       <div class="mx-auto max-w-md text-center">
         <p class="mx-auto mb-3 inline-flex rounded-full bg-honey px-4 py-2 text-xs font-extrabold text-stone-700">🌱 β版ユーザー募集中</p>
-        <h2 class="text-xl font-bold leading-relaxed text-stone-800">一緒に育ててくれる<br />β版ユーザーを募集しています</h2>
+        <h2 class="text-xl font-bold leading-relaxed text-stone-800">少人数でβ版をテスト提供しています</h2>
         <p class="mt-4 text-sm leading-8 text-stone-600 text-left">
-          領収書入力、請求書PDFの整理、会計ソフトへの記帳・取り込み作業を少しでも減らしたい個人事業主・フリーランス・小規模法人の方に向けて、少人数でβ版をテスト提供しています。実際のレシート・請求書PDFで、使いやすさ・記帳成功率・CSV出力・証憑対応の確認を進めています。いただいた感想は、そのまま改善に反映しています。
+          領収書入力、請求書PDFの整理、会計ソフトへの記帳・取り込み作業を少しでも減らしたい個人事業主・小規模法人の方に向けて、少人数でβ版をテスト提供しています。実際のレシート・請求書PDFで使いやすさ・記帳成功率・CSV出力・証憑対応の確認を進めています。
         </p>
         <div class="mt-6 grid gap-3 text-left text-sm text-stone-600">
           <div class="rounded-3xl bg-brand-50 p-4">✅ LINEに領収書・請求書PDFを送るだけでAIが解析</div>
@@ -389,6 +246,7 @@
           <div class="rounded-3xl bg-brand-50 p-4">✅ 記帳前に科目・税区分・支払方法を確認</div>
           <div class="rounded-3xl bg-brand-50 p-4">✅ Money Forward・freeeへの記帳までサポート</div>
           <div class="rounded-3xl bg-brand-50 p-4">✅ 弥生会計向けCSV出力にも対応</div>
+          <div class="rounded-3xl bg-brand-50 p-4">✅ 会計ソフト設定・登録履歴の確認にも対応</div>
           <div class="rounded-3xl bg-brand-50 p-4">✅ よくあるエラー・利用状況・フィードバック導線も用意</div>
         </div>
         <a href="https://lin.ee/8zc0VBd" class="mt-7 block rounded-full bg-brand-500 px-6 py-4 text-center font-bold text-white shadow-pop transition hover:bg-brand-600">LINEでβ版を試してみる</a>
@@ -396,18 +254,17 @@
       </div>
     </section>
 
-    <section class="mx-auto max-w-md px-4 py-12">
+    <section id="pricing" class="mx-auto max-w-md scroll-mt-6 px-4 py-12">
       <h2 class="text-center text-xl font-bold text-stone-800">料金プラン</h2>
       <p class="mx-auto mt-3 max-w-sm text-center text-xs leading-6 text-stone-500">
         <span class="phrase">ENTRYはAI解析・仕訳候補確認が中心。</span>
         <span class="phrase">PREMIUMはMoney Forward・freee連携、弥生CSV出力まで対応します。</span>
-        <span class="phrase">どちらも月額固定で、枚数による従量課金はありません。</span>
       </p>
       <div class="mt-7 space-y-6">
         <div class="rounded-[2rem] border-2 border-brand-100 bg-white p-6 shadow-sm">
           <h3 class="text-center text-sm font-bold tracking-[0.2em] text-stone-500">ENTRY PLAN</h3>
           <div class="my-4 text-center"><span class="text-4xl font-extrabold text-stone-800">550</span><span class="text-sm text-stone-500"> 円/月（税込）</span></div>
-          <p class="mb-5 text-center text-xs leading-6 text-stone-500">まずはAIの読み取りと仕訳候補の確認を、気軽に試したい方向けです。会計ソフト連携は含まれません。</p>
+          <p class="mb-5 text-center text-xs leading-6 text-stone-500">AIによる読み取りと仕訳候補の確認を、気軽に使いたい方向けです。会計ソフト連携は含まれません。</p>
           <ul class="mb-6 space-y-3 text-sm text-stone-600">
             <li class="flex gap-3"><span class="text-brand-500">✔</span><span>レシート画像・PDF請求書のAI解析</span></li>
             <li class="flex gap-3"><span class="text-brand-500">✔</span><span>仕訳候補の作成</span></li>
@@ -423,7 +280,7 @@
           <div class="absolute inset-x-0 top-0 bg-brand-500 py-1.5 text-center text-xs font-bold tracking-widest text-white">おすすめ</div>
           <h3 class="text-center text-sm font-bold tracking-[0.2em] text-brand-600">PREMIUM PLAN</h3>
           <div class="my-4 text-center"><span class="text-4xl font-extrabold text-stone-800">1,100</span><span class="text-sm text-stone-500"> 円/月（税込）</span></div>
-          <p class="mb-5 rounded-2xl bg-honey px-4 py-3 text-center text-xs font-bold leading-6 text-stone-700">1日あたり約37円。何枚送っても追加料金0円で、会計ソフトへの記帳・弥生CSV出力まで、経理の流れをまるごと軽くできます。</p>
+          <p class="mb-5 rounded-2xl bg-honey px-4 py-3 text-center text-xs font-bold leading-6 text-stone-700">従量課金を気にせず、会計ソフト連携・弥生CSV出力まで進めたい方向けです。</p>
           <ul class="mb-6 space-y-3 text-sm text-stone-700">
             <li class="flex gap-3"><span class="text-brand-500">✔</span><span>レシート画像・PDF請求書のAI解析</span></li>
             <li class="flex gap-3"><span class="text-brand-500">✔</span><span>用途メモ・取引先入力の解析反映</span></li>
@@ -456,9 +313,6 @@
       <div class="mx-auto max-w-md">
         <h2 class="text-center text-xl font-bold text-stone-800">よくあるご質問</h2>
         <div class="mt-7 space-y-4 text-sm">
-          <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>他のレシート読み取りサービスとの違いは？</p><p class="ml-6 mt-2 leading-7 text-stone-500">大きく3つあります。①何枚送っても月額だけの完全定額（1枚ごとの従量課金なし）、②レシートに加えてPDF請求書もそのまま送信できること、③Money Forward・freeeに加えて弥生会計（CSV出力）にも対応していることです。</p></div>
-          <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>経理や簿記の知識がなくても使えますか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">勘定科目や税区分はAIが候補を提示するので、まずは内容の確認から始められます。候補が違うと感じたときはLINE上で修正でき、最終的な判断に迷う場合は税理士等の専門家にご相談ください。</p></div>
-          <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>確定申告の準備に使えますか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">日々のレシート・請求書PDFを送っておくことで、仕訳候補の確認・会計ソフトへの記帳・CSV出力まで進められるため、申告前のまとめ入力を減らすことにつながります。ただし、税務申告そのものの代行や税務相談は行いません。</p></div>
           <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>どんな書類を読み取れますか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">一般的な領収書・レシート画像、電子領収書のスクリーンショットに加えて、PDFで届いた請求書にも対応しています。画像やPDFの状態、文字の鮮明さにより、読み取り精度は変わります。</p></div>
           <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>ENTRYプランで会計ソフト連携は使えますか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">使えません。ENTRYはAI解析・仕訳候補確認が中心です。Money Forward・freeeへの記帳サポート、弥生会計CSV出力はPREMIUM対象です。</p></div>
           <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>freee連携は使えますか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">PREMIUM PLANで対応しています。LINEで「freee連携」と送信し、freeeログインを完了すると、解析結果の確認後にfreeeへ登録できます。</p></div>
@@ -466,7 +320,7 @@
           <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>PDFの請求書をそのまま読み取れますか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">はい。PDFで届いた請求書ファイルをLINEに送ると、AIが請求書の内容を読み取り、仕訳候補作成に進められます。紙の請求書を撮影するだけでなく、PDFファイルそのものを送れる点が特徴です。読み取り結果は記帳・CSV出力前に必ず確認できます。</p></div>
           <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>取引先名は入力・修正できますか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">はい。AIで読み取りにくい取引先名や、請求書・領収書だけでは分かりにくい相手先をLINE上で入力・補足できます。記帳・CSV出力前に確認できる設計です。</p></div>
           <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>用途メモはどう使いますか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">LINEで「メモ: A社との打ち合わせ」のように送ってからレシートや請求書PDFを送ると、その用途を解析に反映します。保存中のメモは「メモ確認」、不要な場合は「メモ削除」で操作できます。</p></div>
-          <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>従量課金はありますか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">ありません。ENTRY・PREMIUMいずれも月額固定で、枚数による追加料金は発生しません。大量利用や正式版移行時の条件は、提供状況に応じて事前にご案内します。</p></div>
+          <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>従量課金はありますか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">現在のPREMIUM PLANは月額1,100円（税込）で使いやすい料金設計です。大量利用や正式版移行時の条件は、提供状況に応じて事前にご案内します。</p></div>
           <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>β版では機能や利用条件が変わることがありますか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">はい。β期間中は、利用状況や改善状況に応じて提供内容・利用条件・料金プランを調整する場合があります。重要な変更は事前に分かりやすくご案内します。</p></div>
           <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>インボイス番号は表示されますか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">表示しません。会計ソフトへ直接転記しない項目のため、読み取り結果の画面には表示しない設計にしています。</p></div>
           <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>証憑対応すればインボイス制度に完全対応ですか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">領収書画像の保存・確認をサポートします。ただし、最終的な要件充足は領収書の記載内容や保存方法によって異なります。</p></div>
@@ -492,7 +346,7 @@
 
   <div class="fixed inset-x-0 bottom-0 z-50 border-t border-brand-100 bg-white/95 px-4 py-3 shadow-[0_-8px_24px_rgba(0,0,0,0.08)] backdrop-blur safe-bottom">
     <div class="mx-auto flex max-w-md items-center gap-3">
-      <div class="hidden min-w-0 flex-1 text-left sm:block"><p class="truncate text-xs font-bold text-stone-700">撮るだけ経理</p><p class="truncate text-[11px] text-stone-500">何枚送っても定額。経理はLINEに送るだけ</p></div>
+      <div class="hidden min-w-0 flex-1 text-left sm:block"><p class="truncate text-xs font-bold text-stone-700">撮るだけ経理</p><p class="truncate text-[11px] text-stone-500">レシートもPDF請求書もLINEでAI読み取り</p></div>
       <a href="https://lin.ee/8zc0VBd" class="block flex-1 rounded-full bg-brand-500 px-5 py-3 text-center text-sm font-bold text-white shadow-md transition hover:bg-brand-600 sm:flex-none sm:px-8">LINEでβ版を試す</a>
     </div>
   </div>
