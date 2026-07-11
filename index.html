@@ -3,1008 +3,498 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>紬キャピタル合同会社 | Tsumugi Capital LLC</title>
-  <meta name="description" content="紬キャピタル合同会社は、経営企画・経理の実務視点とプログラミング技術を掛け合わせ、日々の業務と生活を少し軽くするSaaSを開発しています。主力プロダクト「撮るだけ経理」のβ版ユーザーを募集中です。" />
-  <link rel="canonical" href="https://tumugi-capital.github.io/homepage/" />
-  <meta property="og:title" content="紬キャピタル合同会社 | Tsumugi Capital LLC" />
-  <meta property="og:description" content="日々の生活に、技術で「ゆとり」を紡ぐ。実務起点のSaaSを開発し、主力プロダクト「撮るだけ経理」のβ版ユーザーを募集しています。" />
+  <title>撮るだけ経理 - 何枚送っても定額。個人事業主の経理はLINEに送るだけ</title>
+  <meta name="description" content="撮るだけ経理は、個人事業主・フリーランス・小規模事業者のための会計入力アシスタント。レシートを撮ってLINEに送るだけ、PDF請求書もそのまま送るだけでAIが仕訳候補を作成。何枚送っても月額1,100円（税込）の完全定額で、1枚ごとの従量課金はありません。Money Forward・freeeへの記帳に加えて、弥生会計向けCSV出力にも対応。新しいアプリのインストールは不要です。現在β版ユーザー募集中。" />
+  <meta property="og:title" content="撮るだけ経理 - 何枚送っても定額。個人事業主の経理はLINEに送るだけ" />
+  <meta property="og:description" content="レシートは撮って送るだけ。PDF請求書もそのまま送るだけ。AIが仕訳候補を作成し、Money Forward・freee記帳、弥生会計CSV出力までサポート。何枚送っても月額1,100円（税込）の完全定額。β版ユーザー募集中。" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://tumugi-capital.github.io/homepage/" />
+  <meta property="og:url" content="https://tumugi-capital.github.io/torudakekeiri/" />
   <meta name="twitter:card" content="summary" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet" />
-
-  <style>
-    :root {
-      --kinari: #f7f5ef;        /* 生成り */
-      --paper: #fdfcf8;
-      --ink: #23252d;
-      --ink-soft: #55575f;
-      --mute: #8b8d94;
-      --ai: #2c4a7c;            /* 藍 */
-      --ai-deep: #1e3557;
-      --ai-pale: #eef2f8;
-      --akane: #b0563e;         /* 茜 */
-      --akane-pale: #f9efec;
-      --kincha: #a8842f;        /* 金茶 */
-      --kincha-pale: #f8f3e6;
-      --line: #e4e0d4;
-      --radius: 22px;
-      --serif: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
-      --sans: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
-      --en: "Jost", "Avenir Next", "Futura", var(--sans);
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#fff8f7',
+              100: '#faeeee',
+              200: '#f4d7d7',
+              500: '#d98b8b',
+              600: '#c96f78',
+              700: '#a85661'
+            },
+            cream: '#fffdf8',
+            mint: '#eaf8f3',
+            honey: '#fff3c4',
+            chat: '#dfe8f0',
+            bubble: '#a5e08f'
+          },
+          boxShadow: {
+            soft: '0 14px 34px rgba(135, 82, 82, 0.12)',
+            pop: '0 18px 50px rgba(217, 139, 139, 0.22)'
+          }
+        }
+      }
     }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+  </script>
+  <style>
     html { scroll-behavior: smooth; }
-
     body {
-      font-family: var(--sans);
-      background: var(--kinari);
-      color: var(--ink);
+      font-family: 'Helvetica Neue', Arial, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
       -webkit-font-smoothing: antialiased;
       line-break: strict;
-      overflow-x: hidden;
+      word-break: normal;
+      overflow-wrap: anywhere;
     }
-
-    /* 織物の地紋(ごく薄い格子) */
-    .weave {
-      background-image:
-        repeating-linear-gradient(0deg, rgba(44, 74, 124, 0.028) 0 1px, transparent 1px 8px),
-        repeating-linear-gradient(90deg, rgba(44, 74, 124, 0.028) 0 1px, transparent 1px 8px);
-    }
-
-    ::selection { background: var(--ai); color: #fff; }
-
-    img, svg { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
-    ul { list-style: none; }
-
-    .container { max-width: 1120px; margin-inline: auto; padding-inline: 24px; }
-
-    .en {
-      font-family: var(--en);
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      font-weight: 500;
-    }
-
-    /* ---------- reveal(常時表示。JSが動く環境でだけ軽くフェードを乗せる) ---------- */
-    .reveal.pre { opacity: 0; transform: translateY(22px); }
-    .reveal.in { opacity: 1; transform: none; transition: opacity 0.9s cubic-bezier(.22,.61,.36,1), transform 0.9s cubic-bezier(.22,.61,.36,1); }
-    .reveal.no-anim { transition: none !important; }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .reveal.pre { opacity: 1; transform: none; }
-      * { animation: none !important; transition: none !important; }
-    }
-
-    /* ---------- header ---------- */
-    header {
-      position: sticky; top: 0; z-index: 60;
-      background: rgba(253, 252, 248, 0.85);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid transparent;
-      transition: border-color .3s ease, box-shadow .3s ease;
-    }
-    header.scrolled {
-      border-bottom-color: var(--line);
-      box-shadow: 0 10px 34px rgba(30, 53, 87, 0.06);
-    }
-    .header-inner {
-      display: flex; align-items: center; justify-content: space-between;
-      padding-block: 18px;
-    }
-    .brand { display: flex; align-items: center; gap: 14px; }
-    .brand-mark {
-      width: 44px; height: 44px; border-radius: 12px;
-      background: var(--ai-deep);
-      color: var(--kinari);
-      font-family: var(--serif); font-weight: 600; font-size: 22px;
-      display: grid; place-items: center;
-      box-shadow: 0 8px 22px rgba(30, 53, 87, 0.25);
-    }
-    .brand-name { font-family: var(--serif); font-size: 19px; font-weight: 600; letter-spacing: 0.12em; }
-    .brand-sub { font-size: 10px; color: var(--mute); letter-spacing: 0.28em; margin-top: 2px; }
-
-    nav.pc { display: flex; align-items: center; gap: 34px; }
-    nav.pc a { font-size: 12px; letter-spacing: 0.2em; font-weight: 600; color: var(--ink-soft); position: relative; padding-block: 6px; font-family: var(--en); }
-    nav.pc a::after {
-      content: ""; position: absolute; left: 0; bottom: 0; height: 1px; width: 100%;
-      background: var(--ai); transform: scaleX(0); transform-origin: right; transition: transform .35s ease;
-    }
-    nav.pc a:hover { color: var(--ai); }
-    nav.pc a:hover::after { transform: scaleX(1); transform-origin: left; }
-    nav.pc a.cta {
-      background: var(--ink); color: #fff; padding: 12px 26px; border-radius: 999px;
-      transition: background .3s ease, transform .3s ease;
-    }
-    nav.pc a.cta::after { display: none; }
-    nav.pc a.cta:hover { background: var(--ai); color: #fff; transform: translateY(-1px); }
-
-    .menu-btn {
-      display: none; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 12px;
-      background: var(--paper); cursor: pointer; place-items: center;
-    }
-    .menu-btn span { display: block; width: 18px; height: 2px; background: var(--ink); position: relative; transition: background .2s; }
-    .menu-btn span::before, .menu-btn span::after {
-      content: ""; position: absolute; left: 0; width: 18px; height: 2px; background: var(--ink); transition: transform .3s ease, top .3s ease;
-    }
-    .menu-btn span::before { top: -6px; }
-    .menu-btn span::after { top: 6px; }
-    body.menu-open .menu-btn span { background: transparent; }
-    body.menu-open .menu-btn span::before { top: 0; transform: rotate(45deg); }
-    body.menu-open .menu-btn span::after { top: 0; transform: rotate(-45deg); }
-
-    .mobile-nav {
-      display: none;
-      position: fixed; inset: 0; z-index: 55;
-      background: rgba(247, 245, 239, 0.97);
-      backdrop-filter: blur(10px);
-      padding: 120px 32px 40px;
-    }
-    body.menu-open .mobile-nav { display: block; }
-    .mobile-nav a {
-      display: block; padding: 20px 4px; border-bottom: 1px solid var(--line);
-      font-family: var(--serif); font-size: 20px; letter-spacing: 0.1em;
-    }
-    .mobile-nav a small { display: block; font-family: var(--en); font-size: 10px; letter-spacing: 0.3em; color: var(--ai); margin-bottom: 6px; }
-
-    /* ---------- hero ---------- */
-    .hero {
-      position: relative;
-      padding: 110px 0 130px;
-      overflow: hidden;
-    }
-    .hero-kanji {
-      position: absolute; top: 50%; right: -3%;
-      transform: translateY(-52%);
-      font-family: var(--serif); font-weight: 500;
-      font-size: clamp(300px, 44vw, 560px);
-      line-height: 1; color: rgba(44, 74, 124, 0.055);
-      user-select: none; pointer-events: none;
-    }
-    .hero-thread {
-      position: absolute; inset: 0; width: 100%; height: 100%;
-      pointer-events: none;
-    }
-    .hero-thread path {
-      fill: none; stroke: rgba(44, 74, 124, 0.16); stroke-width: 1.2;
-      stroke-dasharray: 2400; stroke-dashoffset: 2400;
-      animation: draw 3.2s ease-out .3s forwards;
-    }
-    .hero-thread path:nth-child(2) { stroke: rgba(176, 86, 62, 0.14); animation-delay: .7s; animation-duration: 3.8s; }
-    @keyframes draw { to { stroke-dashoffset: 0; } }
-
-    .hero-inner { position: relative; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; }
-
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 10px;
-      border: 1px solid var(--line); background: rgba(253, 252, 248, 0.8);
-      border-radius: 999px; padding: 9px 20px;
-      font-size: 10.5px; color: var(--ai);
-    }
-    .hero-badge i { width: 7px; height: 7px; border-radius: 50%; background: var(--akane); animation: pulse 2.6s ease-in-out infinite; }
-    @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: .45; transform: scale(.8);} }
-
-    .hero h2 {
-      margin-top: 36px;
-      font-family: var(--serif);
-      font-weight: 600;
-      font-size: clamp(2.35rem, 5.6vw, 4.3rem);
-      line-height: 1.42;
-      letter-spacing: 0.06em;
-    }
-    .hero h2 .yutori {
-      color: var(--ai);
-      padding-inline: 2px;
-      background: linear-gradient(transparent 68%, rgba(44, 74, 124, 0.14) 68% 94%, transparent 94%);
-    }
-    .hero p.lead {
-      margin-top: 30px; max-width: 34em;
-      font-size: 15.5px; line-height: 2.3; color: var(--ink-soft);
-    }
-    .hero-actions { margin-top: 42px; display: flex; flex-wrap: wrap; gap: 14px; }
-    .hero-note { margin-top: 18px; display: flex; align-items: center; gap: 9px; font-size: 12px; color: var(--ink-soft); }
-    .hero-note::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--akane); box-shadow: 0 0 0 5px rgba(176,86,62,.1); }
-
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-      border-radius: 999px; padding: 17px 36px;
-      font-size: 13px; font-weight: 700; letter-spacing: 0.14em;
-      transition: transform .3s ease, box-shadow .3s ease, background .3s ease, color .3s ease, border-color .3s ease;
-    }
-    .btn svg { transition: transform .3s ease; }
-    .btn:hover svg { transform: translateX(4px); }
-    .btn-primary { background: var(--ai-deep); color: #fff; box-shadow: 0 14px 34px rgba(30, 53, 87, 0.22); }
-    .btn-primary:hover { background: var(--ai); transform: translateY(-2px); box-shadow: 0 20px 44px rgba(30, 53, 87, 0.28); }
-    .btn-ghost { border: 1px solid var(--line); background: rgba(253, 252, 248, 0.75); color: var(--ink); }
-    .btn-ghost:hover { border-color: var(--ai); color: var(--ai); transform: translateY(-2px); }
-
-    .hero-vertical {
-      writing-mode: vertical-rl;
-      font-family: var(--serif);
-      font-size: 15px; letter-spacing: 0.34em; line-height: 2.5;
-      color: var(--ink-soft);
-      border-left: 1px solid var(--line);
-      padding-left: 30px;
-      height: 12.5em;
-      align-self: center;
-    }
-    .hero-vertical b { color: var(--ai); font-weight: 600; }
-
-    /* ---------- theme strip ---------- */
-    .themes { position: relative; margin-top: 84px; }
-    .themes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .theme-card {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 30px 28px;
-      position: relative;
-      overflow: hidden;
-      transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
-    }
-    .theme-card:hover { transform: translateY(-4px); box-shadow: 0 22px 54px rgba(30,53,87,.1); border-color: rgba(44,74,124,.3); }
-    .theme-card::before {
-      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: var(--accent, var(--ai));
-      opacity: .85;
-    }
-    .theme-num { font-family: var(--en); font-size: 12px; letter-spacing: .3em; color: var(--accent, var(--ai)); }
-    .theme-card h4 { font-family: var(--serif); font-size: 18px; font-weight: 600; margin-top: 12px; letter-spacing: .06em; }
-    .theme-card p { margin-top: 12px; font-size: 13.5px; line-height: 2.1; color: var(--ink-soft); }
-
-    /* ---------- section head ---------- */
-    section { position: relative; }
-    section[id] { scroll-margin-top: 92px; }
-    .sec { padding: 110px 0; }
-    .sec-head { margin-bottom: 64px; }
-    .sec-label {
-      display: flex; align-items: center; gap: 16px;
-      font-size: 11px; color: var(--ai); font-family: var(--en); letter-spacing: .3em; font-weight: 600;
-    }
-    .sec-label::before { content: ""; width: 42px; height: 1px; background: var(--ai); }
-    .sec-head h2 {
-      margin-top: 18px;
-      font-family: var(--serif); font-weight: 600;
-      font-size: clamp(1.9rem, 3.6vw, 2.9rem);
-      letter-spacing: 0.08em; line-height: 1.5;
-    }
-    .sec-head p.desc { margin-top: 20px; max-width: 38em; font-size: 14.5px; line-height: 2.2; color: var(--ink-soft); text-wrap: balance; }
-
-    /* ---------- products ---------- */
-    #products { background: var(--paper); border-block: 1px solid var(--line); }
-    .products-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
-    .product {
-      display: flex; flex-direction: column;
-      background: var(--kinari);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 36px 32px;
-      position: relative;
-      transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease, background .35s ease;
-    }
-    .product-featured {
-      grid-column: 1 / -1;
-      display: grid;
-      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
-      gap: 42px;
-      align-items: center;
-      padding: 44px;
-      background: linear-gradient(135deg, var(--ai-pale), var(--paper));
-      border-color: rgba(44,74,124,.3);
-      box-shadow: 0 24px 62px rgba(30,53,87,.1);
-    }
-    .product-featured::before {
-      content: "MAIN PRODUCT";
-      position: absolute;
-      top: 0;
-      left: 44px;
-      transform: translateY(-50%);
-      border-radius: 999px;
-      background: var(--ai-deep);
-      color: #fff;
-      padding: 8px 18px;
-      font-family: var(--en);
-      font-size: 9px;
-      font-weight: 600;
-      letter-spacing: .24em;
-    }
-    .product-featured .product-visual { margin-top: 0; background: var(--paper); }
-    .product-content { display: flex; min-width: 0; flex-direction: column; align-self: stretch; }
-    .product-featured h3 { margin-top: 22px; font-size: clamp(27px, 3vw, 36px); }
-    .product-points { margin-top: 22px; display: grid; gap: 9px; }
-    .product-points li { display: flex; gap: 10px; font-size: 13px; line-height: 1.8; color: var(--ink-soft); }
-    .product-points li::before { content: "✓"; flex-shrink: 0; color: var(--ai); font-weight: 700; }
-    .product-actions { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px; }
-    .product-action {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      border-radius: 999px; padding: 13px 22px;
-      font-size: 12px; font-weight: 700; letter-spacing: .1em;
-      transition: transform .3s ease, background .3s ease, color .3s ease, border-color .3s ease;
-    }
-    .product-action.primary { background: var(--ai-deep); color: #fff; }
-    .product-action.primary:hover { background: var(--ai); transform: translateY(-2px); }
-    .product-action.secondary { border: 1px solid rgba(44,74,124,.35); background: var(--paper); color: var(--ai); }
-    .product-action.secondary:hover { border-color: var(--ai); transform: translateY(-2px); }
-    .product-status { margin-top: 24px; font-family: var(--en); font-size: 9px; letter-spacing: .22em; color: var(--mute); }
-    .product:hover {
-      transform: translateY(-6px);
-      background: var(--paper);
-      border-color: rgba(44,74,124,.32);
-      box-shadow: 0 28px 64px rgba(30, 53, 87, 0.12);
-    }
-    .product-top { display: flex; align-items: flex-start; justify-content: space-between; }
-    .product-num {
-      font-family: var(--en); font-size: 13px; letter-spacing: .26em; color: var(--mute);
-    }
-    .product-tag {
-      font-family: var(--en); font-size: 9.5px; letter-spacing: .22em; font-weight: 600;
-      padding: 7px 14px; border-radius: 999px;
-    }
-    .tag-ai { background: var(--ai-pale); color: var(--ai); }
-    .tag-akane { background: var(--akane-pale); color: var(--akane); }
-    .tag-kincha { background: var(--kincha-pale); color: var(--kincha); }
-
-    .product-visual {
-      margin-top: 28px;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-    }
-    .product-visual svg { width: 100%; height: auto; transition: transform .45s ease; }
-    .product:hover .product-visual svg { transform: scale(1.03); }
-    .visual-ai { background: var(--ai-pale); }
-    .visual-akane { background: var(--akane-pale); }
-    .visual-kincha { background: var(--kincha-pale); }
-
-    .product h3 { margin-top: 26px; font-family: var(--serif); font-size: 23px; font-weight: 600; letter-spacing: .05em; line-height: 1.5; }
-    .product .en-sub { margin-top: 10px; font-size: 10px; color: var(--mute); letter-spacing: .2em; }
-    .product p.body { margin-top: 20px; font-size: 13.5px; line-height: 2.2; color: var(--ink-soft); flex: 1; }
-    .product-link {
-      margin-top: 26px; display: inline-flex; align-items: center; gap: 8px;
-      font-size: 12px; font-weight: 700; letter-spacing: .12em; color: var(--ai);
-    }
-    .product-link svg { transition: transform .3s ease; }
-    .product-link:hover svg { transform: translateX(4px); }
-
-    /* ---------- about ---------- */
-    #about .about-grid {
-      display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 64px; align-items: start;
-    }
-    .about-sticky { position: sticky; top: 130px; }
-    .about-kanji {
-      margin-top: 40px;
-      font-family: var(--serif); font-size: clamp(120px, 16vw, 200px); line-height: 1;
-      color: rgba(44, 74, 124, 0.08); font-weight: 500; user-select: none;
-    }
-    .about-body {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: calc(var(--radius) + 6px);
-      padding: 52px;
-      box-shadow: 0 24px 60px rgba(30, 53, 87, 0.07);
-    }
-    .about-body p { font-size: 15.5px; line-height: 2.4; color: var(--ink-soft); }
-    .about-body p + p { margin-top: 28px; }
-    .about-body p strong { color: var(--ink); font-weight: 700; }
-
-    .value-grid { margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-    .value {
-      border-radius: 16px; padding: 20px 8px; text-align: center;
-      border: 1px solid var(--line);
-    }
-    .value .en { display: block; font-size: 9px; letter-spacing: .26em; margin-bottom: 10px; }
-    .value b { font-family: var(--serif); font-size: 14px; letter-spacing: .04em; font-weight: 600; white-space: nowrap; }
-    .value-ai { background: var(--ai-pale); } .value-ai .en { color: var(--ai); }
-    .value-akane { background: var(--akane-pale); } .value-akane .en { color: var(--akane); }
-    .value-kincha { background: var(--kincha-pale); } .value-kincha .en { color: var(--kincha); }
-
-    /* ---------- faq ---------- */
-    #faq { background: var(--paper); border-block: 1px solid var(--line); }
-    .faq-wrap { max-width: 780px; margin-inline: auto; }
-    .faq-wrap .sec-head { text-align: center; }
-    .faq-wrap .sec-label { justify-content: center; }
-    .faq-wrap .sec-label::after { content: ""; width: 42px; height: 1px; background: var(--ai); }
-
-    details {
-      background: var(--kinari);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      transition: border-color .3s ease, box-shadow .3s ease;
-    }
-    details + details { margin-top: 14px; }
-    details[open] { border-color: rgba(44,74,124,.35); box-shadow: 0 16px 40px rgba(30,53,87,.08); background: var(--paper); }
-    summary {
-      list-style: none; cursor: pointer;
-      display: flex; align-items: center; justify-content: space-between; gap: 24px;
-      padding: 26px 28px;
-      font-weight: 700; font-size: 15px; letter-spacing: .04em;
-    }
-    summary::-webkit-details-marker { display: none; }
-    summary .q-mark {
-      font-family: var(--serif); color: var(--ai); font-size: 18px; margin-right: 14px; font-weight: 600;
-    }
-    summary .toggle {
-      flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%;
-      border: 1px solid var(--line); background: var(--paper);
-      display: grid; place-items: center; position: relative;
-      transition: background .3s ease, border-color .3s ease;
-    }
-    summary .toggle::before, summary .toggle::after {
-      content: ""; position: absolute; background: var(--ai); transition: transform .3s ease;
-    }
-    summary .toggle::before { width: 12px; height: 1.5px; }
-    summary .toggle::after { width: 1.5px; height: 12px; }
-    details[open] summary .toggle { background: var(--ai); border-color: var(--ai); }
-    details[open] summary .toggle::before, details[open] summary .toggle::after { background: #fff; }
-    details[open] summary .toggle::after { transform: rotate(90deg); }
-    .answer {
-      padding: 0 28px 28px;
-      display: flex; gap: 14px;
-    }
-    .answer .a-mark { font-family: var(--serif); color: var(--akane); font-size: 18px; font-weight: 600; line-height: 1.9; }
-    .answer p { font-size: 14px; line-height: 2.2; color: var(--ink-soft); border-top: 1px solid var(--line); padding-top: 20px; flex: 1; }
-    .answer .a-mark { border-top: 1px solid var(--line); padding-top: 20px; }
-
-    /* ---------- contact ---------- */
-    #contact .contact-card {
-      max-width: 820px; margin-inline: auto;
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: calc(var(--radius) + 10px);
-      padding: 64px;
-      box-shadow: 0 30px 70px rgba(30, 53, 87, 0.09);
-      position: relative;
-      overflow: hidden;
-    }
-    #contact .contact-card::before {
-      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-      background: linear-gradient(90deg, var(--ai) 0 34%, var(--akane) 34% 67%, var(--kincha) 67% 100%);
-      opacity: .8;
-    }
-    #contact .sec-head { text-align: center; margin-bottom: 48px; }
-    #contact .sec-label { justify-content: center; }
-    #contact .sec-label::after { content: ""; width: 42px; height: 1px; background: var(--ai); }
-    #contact .sec-head p.desc { margin-inline: auto; }
-
-    .form-grid { display: grid; gap: 26px; text-align: left; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
-    label { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; margin-bottom: 10px; letter-spacing: .04em; }
-    .req {
-      font-size: 9.5px; font-weight: 700; letter-spacing: .1em;
-      color: #fff; background: var(--akane); border-radius: 5px; padding: 3px 8px;
-    }
-    .opt {
-      font-size: 9.5px; font-weight: 700; letter-spacing: .1em;
-      color: var(--mute); background: var(--kinari); border: 1px solid var(--line); border-radius: 5px; padding: 2px 8px;
-    }
-    input, textarea {
-      width: 100%;
-      font-family: var(--sans); font-size: 15px; color: var(--ink);
-      background: var(--kinari);
-      border: 1px solid var(--line); border-radius: 14px;
-      padding: 16px 18px;
-      outline: none;
-      transition: border-color .3s ease, box-shadow .3s ease, background .3s ease;
-    }
-    input::placeholder, textarea::placeholder { color: #b4b2a9; }
-    input:focus, textarea:focus {
-      border-color: var(--ai); background: var(--paper);
-      box-shadow: 0 0 0 4px rgba(44, 74, 124, 0.1);
-    }
-    textarea { resize: none; min-height: 160px; line-height: 1.9; }
-    .form-submit { text-align: center; margin-top: 8px; }
-
-    /* ---------- footer ---------- */
-    footer {
-      background: var(--ai-deep);
-      color: rgba(247, 245, 239, 0.85);
-      padding: 70px 0 40px;
-    }
-    .footer-grid { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; }
-    .footer-brand .brand-mark { background: rgba(247,245,239,.12); color: var(--kinari); box-shadow: none; }
-    .footer-brand { display: flex; gap: 16px; align-items: center; }
-    .footer-brand h3 { font-family: var(--serif); font-size: 18px; font-weight: 600; letter-spacing: .12em; color: var(--kinari); }
-    .footer-brand p { font-size: 10px; letter-spacing: .28em; color: rgba(247,245,239,.5); margin-top: 4px; }
-    footer nav { display: flex; gap: 30px; }
-    footer nav a { font-family: var(--en); font-size: 11px; letter-spacing: .22em; color: rgba(247,245,239,.65); transition: color .3s; }
-    footer nav a:hover { color: var(--kinari); }
-    .footer-bottom {
-      margin-top: 54px; padding-top: 26px;
-      border-top: 1px solid rgba(247,245,239,.14);
-      display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
-    }
-    .footer-bottom p { font-family: var(--en); font-size: 10px; letter-spacing: .24em; color: rgba(247,245,239,.45); }
-    .footer-tagline { font-family: var(--serif); font-size: 12px; letter-spacing: .3em; color: rgba(247,245,239,.55); }
-
-    /* ---------- responsive ---------- */
-    @media (max-width: 960px) {
-      .hero-inner { grid-template-columns: 1fr; }
-      .hero-vertical { display: none; }
-      .themes-grid, .products-grid { grid-template-columns: 1fr; }
-      .product-featured { grid-column: auto; grid-template-columns: 1fr; gap: 26px; padding: 40px 30px 34px; }
-      .product-featured::before { left: 30px; }
-      .product-featured .product-visual { order: 2; }
-      .product-featured .product-content { order: 1; }
-      #about .about-grid { grid-template-columns: 1fr; gap: 36px; }
-      .about-sticky { position: static; }
-      .about-kanji { display: none; }
-      .about-body { padding: 34px 26px; }
-      .value-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
-      nav.pc { display: none; }
-      .menu-btn { display: grid; }
-      #contact .contact-card { padding: 44px 26px; }
-      .form-row { grid-template-columns: 1fr; }
-      .sec { padding: 80px 0; }
-      .hero { padding: 70px 0 90px; }
-      .hero-kanji { right: -22%; opacity: .8; }
-    }
-    @media (max-width: 520px) {
-      .value-grid { grid-template-columns: 1fr; }
-      .hero h2 { font-size: 1.85rem; }
-      .hero p.lead { font-size: 14px; }
-      .product-actions { display: grid; }
-      .product-action { width: 100%; }
-      summary { padding: 22px 20px; font-size: 14px; }
-      .answer { padding: 0 20px 22px; }
+    p, li, h1, h2, h3 { text-wrap: pretty; }
+    .phrase { display: inline-block; }
+    .safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+    .dot-bg {
+      background-image: radial-gradient(rgba(217,139,139,.18) 1.2px, transparent 1.2px);
+      background-size: 18px 18px;
     }
   </style>
 </head>
-<body class="weave">
+<body class="bg-brand-50 text-stone-700 leading-relaxed tracking-wide pb-24">
 
-  <header id="header">
-    <div class="container header-inner">
-      <a href="#" class="brand" aria-label="紬キャピタル合同会社 トップへ">
-        <span class="brand-mark" aria-hidden="true">紬</span>
-        <span>
-          <span class="brand-name">紬キャピタル<span style="color:var(--ai)">合同会社</span></span>
-          <span class="brand-sub en" style="display:block">TSUMUGI CAPITAL LLC</span>
-        </span>
-      </a>
+  <header class="relative overflow-hidden rounded-b-[2.4rem] bg-gradient-to-br from-brand-100 via-cream to-mint px-4 pb-12 pt-8 text-center shadow-sm dot-bg">
+    <div class="absolute -right-12 -top-10 h-36 w-36 rounded-full bg-white/60 blur-2xl"></div>
+    <div class="absolute -bottom-16 -left-12 h-40 w-40 rounded-full bg-brand-200/60 blur-2xl"></div>
 
-      <nav class="pc" aria-label="メインナビゲーション">
-        <a href="#products">Products</a>
-        <a href="#about">About</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-        <a href="https://tumugi-capital.github.io/torudakekeiri/" class="cta" target="_blank" rel="noopener">撮るだけ経理</a>
-      </nav>
+    <div class="relative mx-auto max-w-md">
+      <div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-[1.5rem] bg-white text-3xl shadow-soft">
+        🧾
+      </div>
 
-      <button class="menu-btn" id="menuBtn" aria-label="メニューを開閉" aria-expanded="false"><span></span></button>
+      <p class="mb-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-4 py-2 text-[11px] font-bold text-brand-700 shadow-sm">
+        個人事業主・フリーランス・小さな会社の経理に
+      </p>
+      <p class="mb-4 inline-flex items-center gap-2 rounded-full bg-honey px-4 py-2 text-[12px] font-extrabold text-stone-700 shadow-sm ring-2 ring-white/80">
+        🌱 β版ユーザー募集中
+      </p>
+
+      <h1 class="text-[28px] font-extrabold leading-snug text-stone-800 sm:text-4xl">
+        <span class="phrase">レシートも、</span>
+        <span class="phrase">PDF請求書も、</span><br />
+        <span class="phrase">LINEに送るだけ。</span><br />
+        <span class="phrase text-brand-600">何枚送っても、</span><br />
+        <span class="phrase text-brand-600">月額1,100円の完全定額。</span>
+      </h1>
+
+      <p class="mx-auto mt-5 max-w-sm text-sm leading-8 text-stone-600 sm:text-base">
+        <span class="phrase">新しいアプリのインストールは不要。</span>
+        <span class="phrase">毎日使っているLINEに送るだけで、</span>
+        <span class="phrase">AIが日付・金額・支払先・取引先を読み取り、</span>
+        <span class="phrase">勘定科目・税区分つきの仕訳候補を作成。</span>
+        <span class="phrase">内容を確認したら、</span>
+        <span class="phrase">Money Forward・freeeへの記帳、</span>
+        <span class="phrase">弥生会計向けCSV出力まで進められます。</span>
+      </p>
+
+      <div class="mt-5 grid grid-cols-3 gap-2 text-[11px] font-extrabold">
+        <div class="rounded-2xl bg-white/90 px-2 py-3 shadow-sm ring-1 ring-white"><span class="block text-lg">💰</span><span class="mt-1 block text-stone-700">1枚ごとの<br />追加料金 0円</span></div>
+        <div class="rounded-2xl bg-white/90 px-2 py-3 shadow-sm ring-1 ring-white"><span class="block text-lg">📑</span><span class="mt-1 block text-stone-700">PDF請求書も<br />そのまま送信</span></div>
+        <div class="rounded-2xl bg-white/90 px-2 py-3 shadow-sm ring-1 ring-white"><span class="block text-lg">📄</span><span class="mt-1 block text-stone-700">MF・freeeに加え<br />弥生会計も</span></div>
+      </div>
+
+      <!-- LINEトーク画面イメージ -->
+      <div class="mt-7 rounded-[1.6rem] bg-chat p-4 text-left shadow-soft">
+        <p class="mb-3 text-center text-[10px] font-bold text-stone-500">— 使うときのイメージ —</p>
+        <div class="space-y-3 text-[12px] leading-6">
+          <div class="flex justify-end">
+            <div class="max-w-[75%] rounded-2xl rounded-tr-md bg-bubble px-3 py-2 shadow-sm">
+              <span class="block rounded-xl bg-white/70 px-3 py-4 text-center text-2xl">🧾</span>
+              <span class="mt-1 block text-center text-[10px] text-stone-600">レシートを撮って送信</span>
+            </div>
+          </div>
+          <div class="flex justify-start">
+            <div class="max-w-[85%] rounded-2xl rounded-tl-md bg-white px-3 py-2 text-stone-700 shadow-sm">
+              解析が完了しました✨<br />
+              日付：2026/07/10<br />
+              金額：3,850円<br />
+              支払先：○○文具店<br />
+              借方：消耗品費<br />
+              税区分：課対仕入 10%<br />
+              <span class="mt-2 flex gap-2">
+                <span class="rounded-full bg-brand-100 px-3 py-1 text-[10px] font-bold text-brand-700">この内容で記帳</span>
+                <span class="rounded-full bg-stone-100 px-3 py-1 text-[10px] font-bold text-stone-500">科目を変更</span>
+              </span>
+            </div>
+          </div>
+          <div class="flex justify-end">
+            <div class="rounded-2xl rounded-tr-md bg-bubble px-3 py-2 shadow-sm">この内容で記帳</div>
+          </div>
+          <div class="flex justify-start">
+            <div class="max-w-[85%] rounded-2xl rounded-tl-md bg-white px-3 py-2 text-stone-700 shadow-sm">✅ Money Forwardに記帳しました。証憑画像も添付済みです。</div>
+          </div>
+        </div>
+        <p class="mt-3 text-center text-[10px] text-stone-500">※画面はイメージです。実際の表示とは異なる場合があります。</p>
+      </div>
+
+      <div class="mt-8 space-y-3">
+        <a href="https://lin.ee/8zc0VBd" class="block w-full rounded-full bg-brand-500 px-6 py-4 text-center text-base font-bold text-white shadow-pop transition hover:bg-brand-600 active:scale-[0.99]">
+          LINEでβ版を試してみる
+          <span class="block text-xs font-normal opacity-90">友だち追加して、手元のレシートを1枚送ってみる</span>
+        </a>
+        <p class="text-[11px] leading-5 text-stone-500">
+          <span class="phrase">登録は友だち追加だけ。数分で始められます。</span>
+          <span class="phrase">β版として少人数にテスト提供中です。</span>
+        </p>
+      </div>
     </div>
   </header>
 
-  <div class="mobile-nav" id="mobileNav">
-    <nav aria-label="モバイルナビゲーション">
-      <a href="#products"><small>Products</small>開発プロダクト</a>
-      <a href="#about"><small>About</small>会社について</a>
-      <a href="#faq"><small>FAQ</small>よくあるご質問</a>
-      <a href="#contact"><small>Contact</small>お問い合わせ</a>
-      <a href="https://tumugi-capital.github.io/torudakekeiri/" target="_blank" rel="noopener"><small>Main Product</small>撮るだけ経理を試す</a>
-    </nav>
-  </div>
-
   <main>
-    <!-- ============ HERO ============ -->
-    <section class="hero">
-      <svg class="hero-thread" viewBox="0 0 1440 720" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M-40,530 C240,470 380,610 640,540 C900,470 1040,320 1480,390" />
-        <path d="M-40,570 C260,520 420,650 700,575 C960,505 1120,370 1480,440" />
-      </svg>
-      <p class="hero-kanji" aria-hidden="true">紬</p>
+    <section class="mx-auto max-w-md px-4 py-10">
+      <h2 class="text-center text-xl font-bold leading-relaxed text-stone-800">
+        <span class="phrase">こんな「経理の後回し」、</span><br />
+        <span class="phrase">心当たりありませんか？</span>
+      </h2>
 
-      <div class="container hero-inner">
-        <div>
-          <span class="hero-badge en reveal in"><i></i>Business, Entertainment and Technology</span>
+      <ul class="mt-6 space-y-4 rounded-[1.75rem] border border-brand-100 bg-white p-6 text-sm text-stone-600 shadow-sm">
+        <li class="flex items-start gap-3"><span class="mt-0.5 text-brand-500">💭</span><span>財布や封筒にレシートを溜め込んで、月末や確定申告前にまとめて処理している。</span></li>
+        <li class="flex items-start gap-3"><span class="mt-0.5 text-brand-500">💭</span><span>本業や店の営業が終わったあと、疲れた状態で会計ソフトに向かうのがつらい。</span></li>
+        <li class="flex items-start gap-3"><span class="mt-0.5 text-brand-500">💭</span><span>メールで届いたPDF請求書が受信箱に埋もれて、処理漏れが怖い。</span></li>
+        <li class="flex items-start gap-3"><span class="mt-0.5 text-brand-500">💭</span><span>勘定科目や税区分に自信がなくて、1枚ごとに手が止まる。</span></li>
+        <li class="flex items-start gap-3"><span class="mt-0.5 text-brand-500">💭</span><span>レシート読み取りサービスは1枚ごとの従量課金が多くて、枚数が増える月は料金が読めない。</span></li>
+      </ul>
 
-          <h2 class="reveal in">日々の生活に、<br />技術で<span class="yutori">ゆとり</span>を紡ぐ。</h2>
+      <p class="mt-6 text-center text-base font-bold text-brand-600">
+        <span class="phrase">その「あとでやる」を、</span><span class="phrase">レシートを受け取った</span><span class="phrase">その場の10秒に変えます。</span>
+      </p>
+    </section>
 
-          <p class="lead reveal in">
-            紬キャピタルは、経営企画・経理の実務視点とプログラミング技術を掛け合わせ、面倒な作業を軽減し、人の時間を本来の仕事や楽しみへ取り戻すSaaSを開発しています。
-          </p>
-
-          <div class="hero-actions reveal in">
-            <a href="https://tumugi-capital.github.io/torudakekeiri/" class="btn btn-primary" target="_blank" rel="noopener">
-              撮るだけ経理を試す
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
-            </a>
-            <a href="#products" class="btn btn-ghost">開発プロダクトを見る</a>
+    <section class="mx-3 rounded-[2rem] border border-brand-50 bg-white px-4 py-10 shadow-soft">
+      <div class="mx-auto max-w-md">
+        <h2 class="text-center text-xl font-bold leading-relaxed text-stone-800">
+          <span class="phrase">撮るだけ経理が</span><span class="phrase">選ばれる3つの理由</span>
+        </h2>
+        <div class="mt-7 grid gap-4">
+          <div class="rounded-3xl bg-brand-50 p-5 ring-2 ring-brand-200">
+            <p class="font-bold text-stone-800">💰 何枚送っても、完全定額</p>
+            <p class="mt-2 text-sm leading-7 text-stone-500">PREMIUMは月額1,100円（税込）だけ。「11枚目からは1枚ごとに追加料金」のような従量課金はありません。仕入れや経費でレシートが多い月も、料金を気にせず全部送れます。</p>
           </div>
-          <p class="hero-note reveal in">主力プロダクト「撮るだけ経理」β版ユーザー募集中</p>
-        </div>
-
-        <aside class="hero-vertical" aria-hidden="true">実務の視点と、<br /><b>技術のちから</b>を、<br />一本の糸に。</aside>
-      </div>
-
-      <div class="container themes">
-        <div class="themes-grid">
-          <div class="theme-card reveal" style="--accent: var(--ai)">
-            <p class="theme-num">01 — WORK</p>
-            <h4>業務の負担を減らす</h4>
-            <p>領収書・請求書処理や情報整理など、後回しになりがちな作業を軽減します。</p>
+          <div class="rounded-3xl bg-brand-50 p-5">
+            <p class="font-bold text-stone-800">📑 レシートだけじゃない。PDF請求書もそのまま</p>
+            <p class="mt-2 text-sm leading-7 text-stone-500">メール添付で届いた請求書PDFを、印刷もスキャンもせずそのままLINEに転送するだけ。紙のレシートと同じように仕訳候補まで進みます。</p>
           </div>
-          <div class="theme-card reveal" style="--accent: var(--akane)">
-            <p class="theme-num">02 — LIFE</p>
-            <h4>趣味の時間を豊かにする</h4>
-            <p>エンタメ領域でも、確認や通知の手間を自動化します。</p>
-          </div>
-          <div class="theme-card reveal" style="--accent: var(--kincha)">
-            <p class="theme-num">03 — INFORMATION</p>
-            <h4>必要な情報だけ届ける</h4>
-            <p>AIを使い、膨大な情報から日々の判断に役立つものを絞り込みます。</p>
+          <div class="rounded-3xl bg-brand-50 p-5">
+            <p class="font-bold text-stone-800">📄 Money Forward・freeeに加えて、弥生会計にも</p>
+            <p class="mt-2 text-sm leading-7 text-stone-500">MF・freeeへはLINEから記帳。弥生会計にも、月末に「CSV出力」と送るだけでインポート用CSVを出力できます。いま使っている会計ソフトを乗り換える必要はありません。</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ PRODUCTS ============ -->
-    <section id="products" class="sec">
-      <div class="container">
-        <div class="sec-head reveal">
-          <p class="sec-label">Our Products</p>
-          <h2>開発プロダクト</h2>
-          <p class="desc">
-            主力プロダクト「撮るだけ経理」を中心に、毎日の小さな面倒をきちんと減らすサービスを育てています。エンターテインメントや情報整理の領域でも、小さな実験と改善を続けています。
-          </p>
+    <section class="mx-auto max-w-md px-4 py-12">
+      <h2 class="text-center text-xl font-bold leading-relaxed text-stone-800">他のやり方と比べてみる</h2>
+      <div class="mt-6 space-y-4">
+        <div class="rounded-[1.5rem] border border-brand-100 bg-white p-5 shadow-sm">
+          <p class="text-sm font-bold text-stone-700">✍️ 自分で手入力</p>
+          <dl class="mt-3 space-y-2 text-xs text-stone-600">
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">月あたりの費用</dt><dd class="text-right">0円<span class="block text-[10px] text-stone-400">ただし時間がかかる</span></dd></div>
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">枚数が増えた月</dt><dd class="text-right">作業時間が増える</dd></div>
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">PDF請求書</dt><dd class="text-right">手入力</dd></div>
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">弥生会計</dt><dd class="text-right">手入力</dd></div>
+          </dl>
         </div>
+        <div class="rounded-[1.5rem] border border-brand-100 bg-white p-5 shadow-sm">
+          <p class="text-sm font-bold text-stone-700">📱 従量課金型の読み取りサービス</p>
+          <dl class="mt-3 space-y-2 text-xs text-stone-600">
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">月あたりの費用</dt><dd class="text-right">月額＋1枚ごとの追加料金</dd></div>
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">枚数が増えた月</dt><dd class="text-right">枚数の分だけ料金が増える</dd></div>
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">PDF請求書</dt><dd class="text-right">サービスによる</dd></div>
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">弥生会計</dt><dd class="text-right">サービスによる</dd></div>
+          </dl>
+        </div>
+        <div class="relative overflow-hidden rounded-[1.5rem] border-2 border-brand-500 bg-white p-5 pt-9 shadow-pop">
+          <div class="absolute inset-x-0 top-0 bg-brand-500 py-1 text-center text-[10px] font-bold tracking-widest text-white">おすすめ</div>
+          <p class="text-sm font-extrabold text-brand-700">🧾 撮るだけ経理 PREMIUM</p>
+          <dl class="mt-3 space-y-2 text-xs text-stone-700">
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">月あたりの費用</dt><dd class="text-right font-bold">1,100円（税込）<span class="block text-[10px] font-bold text-brand-600">追加料金なし</span></dd></div>
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">枚数が増えた月</dt><dd class="text-right font-bold">何枚でも定額</dd></div>
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">PDF請求書</dt><dd class="text-right font-bold">そのまま送信OK</dd></div>
+            <div class="flex justify-between gap-3"><dt class="shrink-0 font-bold text-stone-500">弥生会計</dt><dd class="text-right font-bold">CSV出力対応</dd></div>
+          </dl>
+        </div>
+      </div>
+      <p class="mt-4 text-center text-[10px] leading-5 text-stone-400">※「従量課金型の読み取りサービス」は一般的な例です。各サービスの正確な料金・仕様は公式情報をご確認ください。</p>
+    </section>
 
-        <div class="products-grid">
-          <article class="product product-featured reveal">
-            <div class="product-visual visual-ai">
-              <svg viewBox="0 0 320 176" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="LINEに領収書を送るとAIが仕訳候補を返すイメージ">
-                <!-- 送信バブル(領収書写真) -->
-                <rect x="170" y="16" width="132" height="66" rx="15" fill="#2c4a7c"/>
-                <rect x="186" y="27" width="34" height="44" rx="3" fill="#fdfcf8"/>
-                <path d="M186 66 l4 3 4-3 4 3 4-3 4 3 4-3 4 3 4-3 2 1.5" fill="none" stroke="#dde4ee" stroke-width="1.4"/>
-                <rect x="191" y="33" width="24" height="3" rx="1.5" fill="#b9c4d6"/>
-                <rect x="191" y="40" width="24" height="3" rx="1.5" fill="#b9c4d6"/>
-                <rect x="191" y="47" width="17" height="3" rx="1.5" fill="#b9c4d6"/>
-                <rect x="191" y="57" width="24" height="3.5" rx="1.75" fill="#2c4a7c" opacity=".55"/>
-                <circle cx="252" cy="41" r="13" fill="none" stroke="#fdfcf8" stroke-width="1.6" opacity=".9"/>
-                <circle cx="252" cy="41" r="5.5" fill="none" stroke="#fdfcf8" stroke-width="1.6" opacity=".9"/>
-                <rect x="246" y="24.5" width="12" height="4" rx="2" fill="#fdfcf8" opacity=".9"/>
-                <text x="236" y="70" font-size="9.5" fill="#dde4ee" letter-spacing="1">撮って送るだけ</text>
-                <!-- 接続ドット -->
-                <circle cx="160" cy="88" r="2" fill="#2c4a7c" opacity=".35"/>
-                <circle cx="150" cy="93" r="2" fill="#2c4a7c" opacity=".55"/>
-                <!-- 返信バブル(仕訳候補) -->
-                <rect x="18" y="86" width="186" height="74" rx="15" fill="#fdfcf8" stroke="#dde4ee"/>
-                <text x="34" y="107" font-size="10" font-weight="700" fill="#2c4a7c" letter-spacing="1">仕訳候補</text>
-                <circle cx="186" cy="103" r="9" fill="#3e8e63"/>
-                <path d="M182 103 l3 3 5.5-6" fill="none" stroke="#fdfcf8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                <rect x="34" y="116" width="66" height="6" rx="3" fill="#dde4ee"/>
-                <rect x="118" y="116" width="52" height="6" rx="3" fill="#eef2f8" stroke="#dde4ee" stroke-width=".8"/>
-                <rect x="34" y="130" width="50" height="6" rx="3" fill="#dde4ee"/>
-                <rect x="118" y="130" width="52" height="6" rx="3" fill="#eef2f8" stroke="#dde4ee" stroke-width=".8"/>
-                <rect x="34" y="144" width="136" height="7" rx="3.5" fill="#2c4a7c" opacity=".14"/>
-              </svg>
-            </div>
-            <div class="product-content">
-              <div class="product-top">
-                <span class="product-num">01</span>
-                <span class="product-tag tag-ai">β User Recruiting</span>
-              </div>
-              <h3>撮るだけ経理</h3>
-              <p class="en-sub en">Accounting SaaS for Small Business</p>
-              <p class="body">
-                レシート画像やPDF請求書をLINEに送るだけで、AIが仕訳候補を作成。取引先や用途メモの補足、Money Forward・freeeへの記帳、弥生会計向けCSV出力まで、個人事業主・フリーランス・小規模法人の日常経理を支援します。
-              </p>
-              <ul class="product-points">
-                <li>レシート画像・PDF請求書をLINEでAI解析</li>
-                <li>Money Forward・freeeへの記帳をサポート</li>
-                <li>弥生会計向けCSV出力にも対応</li>
-              </ul>
-              <div class="product-actions">
-                <a class="product-action primary" href="https://tumugi-capital.github.io/torudakekeiri/" target="_blank" rel="noopener">
-                  β版・サービス詳細
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
-                </a>
-                <a class="product-action secondary" href="https://lin.ee/8zc0VBd" target="_blank" rel="noopener">LINEで試す</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="product reveal">
-            <div class="product-top">
-              <span class="product-num">02</span>
-              <span class="product-tag tag-akane">Experimental</span>
-            </div>
-            <div class="product-visual visual-akane">
-              <svg viewBox="0 0 320 176" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="確定した払戻結果を動画でLINEに速報するイメージ">
-                <!-- 動画プレーヤー -->
-                <rect x="18" y="20" width="192" height="122" rx="13" fill="#fdfcf8" stroke="#eedcd4"/>
-                <rect x="28" y="30" width="172" height="82" rx="8" fill="#f6e4dc"/>
-                <ellipse cx="114" cy="71" rx="62" ry="26" fill="none" stroke="#b0563e" stroke-width="1.4" stroke-dasharray="5 5" opacity=".45"/>
-                <circle cx="114" cy="71" r="19" fill="#b0563e"/>
-                <path d="M109 63 l15 8 -15 8 z" fill="#fdfcf8"/>
-                <rect x="36" y="37" width="36" height="15" rx="7.5" fill="#b0563e"/>
-                <text x="54" y="48" font-size="8.5" font-weight="700" fill="#fdfcf8" text-anchor="middle" letter-spacing="2">確定</text>
-                <rect x="28" y="122" width="172" height="5" rx="2.5" fill="#f0e0d9"/>
-                <rect x="28" y="122" width="96" height="5" rx="2.5" fill="#b0563e"/>
-                <circle cx="124" cy="124.5" r="5" fill="#b0563e"/>
-                <!-- 結果カード -->
-                <rect x="222" y="26" width="80" height="110" rx="13" fill="#fdfcf8" stroke="#eedcd4"/>
-                <path d="M248 60 v-6 a14 14 0 1 1 28 0 v6" fill="none" stroke="#b0563e" stroke-width="5" stroke-linecap="round" transform="translate(-14 -2)"/>
-                <circle cx="240" cy="56" r="1.8" fill="#b0563e"/>
-                <circle cx="256" cy="41" r="1.8" fill="#b0563e"/>
-                <circle cx="272" cy="56" r="1.8" fill="#b0563e"/>
-                <!-- 着順 -->
-                <circle cx="240" cy="86" r="8" fill="#b0563e"/>
-                <text x="240" y="89.5" font-size="9" font-weight="700" fill="#fdfcf8" text-anchor="middle">1</text>
-                <rect x="254" y="82.5" width="38" height="7" rx="3.5" fill="#f0e0d9"/>
-                <circle cx="240" cy="106" r="8" fill="#b0563e" opacity=".55"/>
-                <text x="240" y="109.5" font-size="9" font-weight="700" fill="#fdfcf8" text-anchor="middle">2</text>
-                <rect x="254" y="102.5" width="30" height="7" rx="3.5" fill="#f6e8e2"/>
-                <circle cx="240" cy="126" r="8" fill="#b0563e" opacity=".3"/>
-                <text x="240" y="129.5" font-size="9" font-weight="700" fill="#fdfcf8" text-anchor="middle">3</text>
-                <rect x="254" y="122.5" width="34" height="7" rx="3.5" fill="#f6e8e2"/>
-              </svg>
-            </div>
-            <h3>中央競馬 払戻動画速報</h3>
-            <p class="en-sub en">Entertainment Automation</p>
-            <p class="body">
-              中央競馬の確定結果をLINEへ即時通知。外出先でも結果を確認しやすく、週末の趣味時間をよりスムーズに楽しめるようにします。
-            </p>
-            <p class="product-status">EXPERIMENTAL PRODUCT</p>
-          </article>
-
-          <article class="product reveal">
-            <div class="product-top">
-              <span class="product-num">03</span>
-              <span class="product-tag tag-kincha">Experimental</span>
-            </div>
-            <div class="product-visual visual-kincha">
-              <svg viewBox="0 0 320 176" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="大量のニュースをAIが選別して必要な情報だけ届けるイメージ">
-                <!-- 大量の記事(上段・薄く) -->
-                <g opacity=".6">
-                  <g transform="rotate(-4 66 40)">
-                    <rect x="28" y="20" width="76" height="40" rx="8" fill="#fdfcf8" stroke="#e8e0cc"/>
-                    <rect x="38" y="30" width="44" height="5" rx="2.5" fill="#e7dcc2"/>
-                    <rect x="38" y="42" width="56" height="5" rx="2.5" fill="#f0e9d8"/>
-                  </g>
-                  <g>
-                    <rect x="122" y="14" width="76" height="40" rx="8" fill="#fdfcf8" stroke="#e8e0cc"/>
-                    <rect x="132" y="24" width="50" height="5" rx="2.5" fill="#e7dcc2"/>
-                    <rect x="132" y="36" width="38" height="5" rx="2.5" fill="#f0e9d8"/>
-                  </g>
-                  <g transform="rotate(4 254 40)">
-                    <rect x="216" y="20" width="76" height="40" rx="8" fill="#fdfcf8" stroke="#e8e0cc"/>
-                    <rect x="226" y="30" width="40" height="5" rx="2.5" fill="#e7dcc2"/>
-                    <rect x="226" y="42" width="54" height="5" rx="2.5" fill="#f0e9d8"/>
-                  </g>
-                </g>
-                <!-- AIで絞り込み -->
-                <path d="M74 64 q40 22 66 26 M160 60 v28 M246 64 q-40 22 -66 26" fill="none" stroke="#a8842f" stroke-width="1.3" stroke-dasharray="3 4" opacity=".55"/>
-                <rect x="134" y="92" width="52" height="22" rx="11" fill="#a8842f"/>
-                <text x="160" y="107" font-size="11" font-weight="700" fill="#fdfcf8" text-anchor="middle" letter-spacing="2">AI</text>
-                <path d="M126 95 l2.4 5 5 2.4 -5 2.4 -2.4 5 -2.4 -5 -5 -2.4 5 -2.4 z" fill="#a8842f" opacity=".7"/>
-                <path d="M194 108 l1.8 3.8 3.8 1.8 -3.8 1.8 -1.8 3.8 -1.8 -3.8 -3.8 -1.8 3.8 -1.8 z" fill="#a8842f" opacity=".5"/>
-                <!-- 届く1枚(下段・くっきり) -->
-                <rect x="68" y="124" width="184" height="40" rx="10" fill="#fdfcf8" stroke="#a8842f" stroke-opacity=".45"/>
-                <circle cx="90" cy="144" r="9" fill="#f8f3e6" stroke="#a8842f" stroke-opacity=".6"/>
-                <path d="M86 144 l3 3 5.5-6" fill="none" stroke="#a8842f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                <rect x="110" y="134" width="112" height="6" rx="3" fill="#e7dcc2"/>
-                <rect x="110" y="148" width="80" height="6" rx="3" fill="#f0e9d8"/>
-              </svg>
-            </div>
-            <h3>AIデイリーニュース</h3>
-            <p class="en-sub en">AI Daily News Curation</p>
-            <p class="body">
-              あふれるニュースの中から、必要な情報だけをAIが整理。毎日の情報収集にかかる時間を減らし、判断の土台を整えます。
-            </p>
-            <p class="product-status">EXPERIMENTAL PRODUCT</p>
-          </article>
+    <section class="mx-auto max-w-md px-4 pb-12">
+      <h2 class="text-center text-xl font-bold leading-relaxed text-stone-800">こんな方に使われることを<br />想定しています</h2>
+      <div class="mt-7 grid gap-4">
+        <div class="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm">
+          <p class="font-bold text-stone-800">💻 フリーランス（デザイナー・エンジニア・ライターなど）</p>
+          <p class="mt-2 text-sm leading-7 text-stone-500">打ち合わせのカフェ代、書籍代、サブスクの領収書。案件の合間に送っておけば、確定申告前に領収書の山と格闘せずに済みます。</p>
+        </div>
+        <div class="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm">
+          <p class="font-bold text-stone-800">🍜 店舗を営む方（飲食・美容・小売など）</p>
+          <p class="mt-2 text-sm leading-7 text-stone-500">仕入れや消耗品のレシートは、営業の合間にレジ横で撮って送るだけ。枚数が多くても定額なので、全部送れます。閉店後の深夜に会計ソフトへ向かう時間を減らせます。</p>
+        </div>
+        <div class="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm">
+          <p class="font-bold text-stone-800">🔧 職人・一人親方（建設・設備・運送など）</p>
+          <p class="mt-2 text-sm leading-7 text-stone-500">材料費やガソリン代のレシートを現場でその場で送信。事務所に戻ってからのまとめ入力や、月末の請求書PDF処理もLINEで完結に近づきます。</p>
+        </div>
+        <div class="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm">
+          <p class="font-bold text-stone-800">🏢 経理担当がいない小さな会社・副業の方</p>
+          <p class="mt-2 text-sm leading-7 text-stone-500">社長やメンバーが自分で経理をしている会社、本業のかたわらで副業をしている方に。仕訳候補をAIが用意するので、簿記に自信がなくても確認から始められます。</p>
         </div>
       </div>
     </section>
 
-    <!-- ============ ABOUT ============ -->
-    <section id="about" class="sec">
-      <div class="container about-grid">
-        <div class="about-sticky reveal">
-          <p class="sec-label">About Tsumugi Capital</p>
-          <h2 class="sec-head" style="margin-bottom:0;">
-            <span style="display:block; font-family:var(--serif); font-weight:600; font-size:clamp(1.9rem,3.6vw,2.9rem); letter-spacing:.08em; line-height:1.6; margin-top:18px;">
-              現場感覚と、<br />技術実装力を紡ぐ。
-            </span>
-          </h2>
-          <p class="about-kanji" aria-hidden="true">紡</p>
+    <section class="mx-3 rounded-[2rem] bg-gradient-to-br from-brand-100 via-white to-honey px-4 py-10 shadow-soft">
+      <div class="mx-auto max-w-md">
+        <h2 class="text-center text-xl font-bold leading-relaxed text-stone-800">経理の時間は、こう変わる</h2>
+        <div class="mt-7 space-y-4">
+          <div class="rounded-3xl bg-white/90 p-5 shadow-sm">
+            <p class="text-xs font-extrabold tracking-widest text-stone-400">BEFORE</p>
+            <p class="mt-2 text-sm leading-7 text-stone-600">月末や申告前に、溜まったレシートと請求書PDFを机に広げて、1枚ずつ日付・金額・科目を会計ソフトへ手入力。数時間がかりの「憂鬱な作業日」に。</p>
+          </div>
+          <div class="text-center text-2xl">⬇️</div>
+          <div class="rounded-3xl bg-white/90 p-5 shadow-sm ring-2 ring-brand-200">
+            <p class="text-xs font-extrabold tracking-widest text-brand-600">AFTER</p>
+            <p class="mt-2 text-sm leading-7 text-stone-600">レシートは受け取った直後、請求書PDFは届いた直後にLINEへ転送。AIの仕訳候補をすきま時間に確認するだけで、月末には記帳・CSV出力を残すのみ。</p>
+          </div>
         </div>
+        <p class="mt-5 text-center text-[11px] leading-5 text-stone-500">※ 作業時間の変化は利用状況・枚数により異なります。</p>
+      </div>
+    </section>
 
-        <div class="about-body reveal">
-          <p>
-            私たちは、企業における経営企画・経理の実務経験で培った<strong>「現場のリアルな視点」</strong>と、それを解決するための<strong>「プログラミング技術」</strong>を掛け合わせたサービス開発を行っています。
-          </p>
-          <p>
-            単なるシステム開発にとどまらず、ビジネスの効率化とエンターテインメントの体験向上を通じて、利用者の皆様の時間と選択肢を少しずつ広げていくことを目指しています。
-          </p>
+    <section class="mx-3 mt-10 rounded-[2rem] border-2 border-honey bg-white px-4 py-9 shadow-soft">
+      <div class="mx-auto max-w-md text-center">
+        <p class="mx-auto mb-3 inline-flex rounded-full bg-honey px-4 py-2 text-xs font-extrabold text-stone-700">📑 請求書PDFも対応</p>
+        <h2 class="text-xl font-extrabold leading-relaxed text-stone-800">
+          <span class="phrase">メールで届いた請求書も、</span><br />
+          <span class="phrase text-brand-600">LINEに転送するだけでAI読み取り。</span>
+        </h2>
+        <p class="mt-4 text-left text-sm leading-8 text-stone-600">
+          仕入先や外注先からメール添付で届く請求書、Webからダウンロードした請求書PDF。印刷もスキャンも不要で、そのままLINEに送るだけ。AIが日付・金額・取引先などを読み取り、仕訳候補の作成までサポートします。レシート読み取りだけのサービスでは拾いきれない「請求書の処理」までカバーします。
+        </p>
+        <div class="mt-5 grid gap-3 text-left text-sm text-stone-600">
+          <div class="rounded-3xl bg-brand-50 p-4">✅ 紙のレシート・領収書は、スマホで撮って送るだけ</div>
+          <div class="rounded-3xl bg-brand-50 p-4">✅ PDF請求書は、ファイルのままLINEに送るだけ</div>
+          <div class="rounded-3xl bg-brand-50 p-4">✅ 読み取りにくい取引先名は、LINE上で入力・補足できる</div>
+        </div>
+      </div>
+    </section>
 
-          <div class="value-grid">
-            <div class="value value-ai">
-              <span class="en">Viewpoint</span>
-              <b>実務起点</b>
-            </div>
-            <div class="value value-akane">
-              <span class="en">Build</span>
-              <b>小さく早く改善</b>
-            </div>
-            <div class="value value-kincha">
-              <span class="en">Goal</span>
-              <b>時間を取り戻す</b>
-            </div>
+    <section class="mx-3 mt-10 rounded-[2rem] border border-brand-50 bg-white px-4 py-10 shadow-soft">
+      <div class="mx-auto max-w-md">
+        <h2 class="text-center text-xl font-bold leading-relaxed text-stone-800">使い方はかんたん</h2>
+        <div class="mt-8 space-y-7">
+          <div class="flex gap-4">
+            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-100 text-lg font-bold text-brand-600 shadow-inner">1</div>
+            <div><h3 class="font-bold text-stone-800">レシートを撮って送る／PDFをそのまま送る</h3><p class="mt-2 text-sm leading-7 text-stone-500">スマホで撮った領収書・レシート画像も、メールで届いた請求書PDFも、そのままLINEに送るだけです。</p></div>
+          </div>
+          <div class="flex gap-4">
+            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-100 text-lg font-bold text-brand-600 shadow-inner">2</div>
+            <div><h3 class="font-bold text-stone-800">AIが仕訳候補を作成</h3><p class="mt-2 text-sm leading-7 text-stone-500">日付・金額・支払先・取引先・摘要・勘定科目・税区分を読み取り、確認しやすい形で返信します。</p></div>
+          </div>
+          <div class="flex gap-4">
+            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-100 text-lg font-bold text-brand-600 shadow-inner">3</div>
+            <div><h3 class="font-bold text-stone-800">LINE上で確認・修正</h3><p class="mt-2 text-sm leading-7 text-stone-500">科目や税区分が違えばLINE上で修正。「メモ: A社との打ち合わせ」「取引先: 株式会社○○」のように送って、用途や取引先を補足することもできます。</p></div>
+          </div>
+          <div class="flex gap-4">
+            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-100 text-lg font-bold text-brand-600 shadow-inner">4</div>
+            <div><h3 class="font-bold text-stone-800">会計ソフトへ反映</h3><p class="mt-2 text-sm leading-7 text-stone-500">Money Forward・freeeへ記帳するか、月末に弥生会計向けCSVを出力。あとは確定申告や月次処理に進むだけです。</p></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ FAQ ============ -->
-    <section id="faq" class="sec">
-      <div class="container faq-wrap">
-        <div class="sec-head reveal">
-          <p class="sec-label">FAQ</p>
-          <h2>よくあるご質問</h2>
+    <section class="mx-auto max-w-md px-4 py-12">
+      <div class="rounded-[2rem] border border-brand-100 bg-white p-6 shadow-soft">
+        <p class="mb-3 inline-flex rounded-full bg-honey px-4 py-2 text-xs font-extrabold text-stone-700">お使いの会計ソフトのままでOK</p>
+        <h2 class="text-xl font-bold leading-relaxed text-stone-800">Money Forward・freee・弥生会計に対応</h2>
+        <p class="mt-4 text-sm leading-8 text-stone-600">
+          会計ソフトを乗り換える必要はありません。Money Forward・freeeにはLINEから記帳でき、弥生会計には月末に「CSV出力」と送るだけで、仕訳日記帳インポート形式のCSVをダウンロードできます。
+        </p>
+        <div class="mt-6 grid gap-3 text-sm text-stone-600">
+          <div class="rounded-3xl bg-brand-50 p-4">🔗 <span class="font-bold">Money Forward</span>：確認後にLINEから記帳。証憑添付にも対応</div>
+          <div class="rounded-3xl bg-brand-50 p-4">🔗 <span class="font-bold">freee</span>：取引登録とファイルボックスへの領収書アップロードに対応</div>
+          <div class="rounded-3xl bg-brand-50 p-4">📄 <span class="font-bold">弥生会計</span>：「CSV出力」と送るだけ。API設定不要でインポート用CSVを出力</div>
         </div>
+        <p class="mt-5 text-xs leading-6 text-stone-500">
+          弥生会計向けCSVは25列・ヘッダーなし形式（Shift_JIS・CRLF）で出力し、税額は弥生側の自動計算に任せる設計です。日々のレシート整理だけをLINEで軽くして、慣れた会計ソフトをそのまま使い続けられます。
+        </p>
+      </div>
+    </section>
 
-        <div class="reveal">
-          <details>
-            <summary><span><span class="q-mark">Q.</span>サービスの利用料金について教えてください。</span><span class="toggle" aria-hidden="true"></span></summary>
-            <div class="answer">
-              <span class="a-mark">A.</span>
-              <p>各サービスのご利用条件はプロダクトごとに異なります。中央競馬 払戻動画速報およびAIデイリーニュースは無料で提供しており、撮るだけ経理についてはサービスサイトにて詳細を記載しています。</p>
-            </div>
-          </details>
-
-          <details>
-            <summary><span><span class="q-mark">Q.</span>「撮るだけ経理」は法人決算にも対応していますか？</span><span class="toggle" aria-hidden="true"></span></summary>
-            <div class="answer">
-              <span class="a-mark">A.</span>
-              <p>個人事業主・フリーランス・経理担当者のいない小規模法人の日常的な会計入力を支援します。レシートやPDF請求書の読み取り、仕訳候補作成、対応する会計ソフトへの反映をサポートしますが、法人決算や税務申告そのものを行うサービスではありません。</p>
-            </div>
-          </details>
-
-          <details>
-            <summary><span><span class="q-mark">Q.</span>「撮るだけ経理」はどの会計ソフトに対応していますか？</span><span class="toggle" aria-hidden="true"></span></summary>
-            <div class="answer">
-              <span class="a-mark">A.</span>
-              <p>PREMIUM PLANでは、Money Forward・freeeへの記帳サポートと、弥生会計向けCSV出力に対応しています。レシート画像だけでなくPDF請求書もLINEに送って解析できます。詳細や最新の提供条件はサービスサイトをご確認ください。</p>
-            </div>
-          </details>
-
-          <details>
-            <summary><span><span class="q-mark">Q.</span>新規のシステム開発は受けていますか？</span><span class="toggle" aria-hidden="true"></span></summary>
-            <div class="answer">
-              <span class="a-mark">A.</span>
-              <p>現在は自社プロダクトの開発および自動化モデルの運営にリソースを集中しているため、外部企業様からの個別のシステム開発案件はお受けしていません。</p>
-            </div>
-          </details>
-
-          <details>
-            <summary><span><span class="q-mark">Q.</span>サービスの退会方法を教えてください。</span><span class="toggle" aria-hidden="true"></span></summary>
-            <div class="answer">
-              <span class="a-mark">A.</span>
-              <p>LINE公式アカウントのメニュー内にある「設定・連携解除」から、いつでも停止できます。</p>
-            </div>
-          </details>
+    <section class="mx-auto max-w-md px-4 pb-12">
+      <h2 class="text-center text-xl font-bold text-stone-800">できること</h2>
+      <div class="mt-7 grid gap-4">
+        <div class="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm">
+          <p class="font-bold text-stone-800">📷 AI読み取り・仕訳候補の作成</p>
+          <ul class="mt-3 space-y-2 text-sm leading-7 text-stone-500">
+            <li>・領収書・レシート画像から日付・金額・支払先・取引先・摘要を読み取り</li>
+            <li>・PDF請求書もそのまま送信して解析</li>
+            <li>・「メモ: A社との打ち合わせ」などの用途メモを仕訳判断に反映</li>
+            <li>・外貨レシートの可能性がある場合は、日本円換算額を確認してから記帳</li>
+          </ul>
+        </div>
+        <div class="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm">
+          <p class="font-bold text-stone-800">🧮 記帳前の確認・修正</p>
+          <ul class="mt-3 space-y-2 text-sm leading-7 text-stone-500">
+            <li>・勘定科目・税区分をLINE上で修正してから記帳</li>
+            <li>・現金／事業用クレカ／個人カード・立替払い／事業用口座／電子マネー・QR決済など、支払方法に応じて貸方科目を判定</li>
+            <li>・読み取りにくい取引先名の入力・補足</li>
+            <li>・画像が小さい場合は、証憑保存に不向きな可能性を警告</li>
+          </ul>
+        </div>
+        <div class="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm">
+          <p class="font-bold text-stone-800">🔗 会計ソフトへの反映と証憑対応</p>
+          <ul class="mt-3 space-y-2 text-sm leading-7 text-stone-500">
+            <li>・Money Forward・freeeへの記帳サポート</li>
+            <li>・弥生会計向けCSV出力（当月・指定月）</li>
+            <li>・Money Forwardの証憑添付、freeeファイルボックスへの領収書アップロード</li>
+            <li>・会計ソフト別の登録履歴を確認でき、二重登録の防止にも</li>
+          </ul>
+        </div>
+        <div class="rounded-3xl border border-brand-100 bg-white p-5 shadow-sm">
+          <p class="font-bold text-stone-800">📋 日々の管理・サポート</p>
+          <ul class="mt-3 space-y-2 text-sm leading-7 text-stone-500">
+            <li>・未処理・承認待ち・円換算待ちの候補をLINEで確認</li>
+            <li>・月末時点で残っている作業のチェック</li>
+            <li>・プラン確認・利用状況・会計ソフト設定などのLINEコマンド</li>
+            <li>・よくあるエラーの対処法表示、フィードバック送信</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- ============ CONTACT ============ -->
-    <section id="contact" class="sec">
-      <div class="container">
-        <div class="contact-card reveal">
-          <div class="sec-head">
-            <p class="sec-label">Contact</p>
-            <h2>お問い合わせ</h2>
-            <p class="desc">ご不明な点やご相談がございましたら、以下のフォームよりお気軽にお尋ねください。</p>
-          </div>
+    <section class="mx-3 rounded-[2rem] bg-gradient-to-br from-brand-100 via-white to-honey px-4 py-10 shadow-soft">
+      <div class="mx-auto max-w-md">
+        <h2 class="text-center text-xl font-bold text-stone-800">「AIに任せて大丈夫？」に<br />答える確認フロー</h2>
+        <p class="mt-4 text-center text-sm leading-7 text-stone-600">AIが勝手に記帳することはありません。反映前に必ずあなたが確認する設計です。</p>
+        <div class="mt-6 space-y-4 text-sm">
+          <div class="rounded-3xl bg-white/90 p-5 shadow-sm"><p class="font-bold text-stone-800">✅ 反映前に内容を確認</p><p class="mt-2 leading-7 text-stone-500">借方、貸方、支払方法、税区分、取引先を確認してから記帳・CSV出力へ進めます。</p></div>
+          <div class="rounded-3xl bg-white/90 p-5 shadow-sm"><p class="font-bold text-stone-800">🔁 二重記帳を防止</p><p class="mt-2 leading-7 text-stone-500">同じ領収書を誤って二重登録しないように確認を入れます。</p></div>
+          <div class="rounded-3xl bg-white/90 p-5 shadow-sm"><p class="font-bold text-stone-800">📌 記帳に必要な項目だけを表示</p><p class="mt-2 leading-7 text-stone-500">会計ソフトへの記帳に使う項目を中心に表示し、インボイス番号は画面に表示しません。</p></div>
+        </div>
+      </div>
+    </section>
 
-          <form action="https://formspree.io/f/mgoqbker" method="POST" class="form-grid">
-            <div class="form-row">
-              <div>
-                <label for="name">お名前 <span class="req">必須</span></label>
-                <input type="text" id="name" name="name" required autocomplete="name" placeholder="山田 太郎" />
-              </div>
-              <div>
-                <label for="company">会社名 <span class="opt">任意</span></label>
-                <input type="text" id="company" name="company" autocomplete="organization" placeholder="〇〇株式会社" />
-              </div>
-            </div>
-            <div>
-              <label for="email">メールアドレス <span class="req">必須</span></label>
-              <input type="email" id="email" name="email" required autocomplete="email" placeholder="example@tsumugi-capital.llc" />
-            </div>
-            <div>
-              <label for="message">お問い合わせ内容 <span class="req">必須</span></label>
-              <textarea id="message" name="message" rows="5" required placeholder="ご質問やご相談内容をご記入ください。"></textarea>
-            </div>
-            <div class="form-submit">
-              <button type="submit" class="btn btn-primary" style="border:none; cursor:pointer; font-family:var(--sans);">
-                内容を送信する
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
-              </button>
-            </div>
-          </form>
+    <section class="mx-3 mt-10 rounded-[2rem] bg-white px-4 py-10 shadow-soft border border-brand-100">
+      <div class="mx-auto max-w-md text-center">
+        <p class="mx-auto mb-3 inline-flex rounded-full bg-honey px-4 py-2 text-xs font-extrabold text-stone-700">🌱 β版ユーザー募集中</p>
+        <h2 class="text-xl font-bold leading-relaxed text-stone-800">一緒に育ててくれる<br />β版ユーザーを募集しています</h2>
+        <p class="mt-4 text-sm leading-8 text-stone-600 text-left">
+          領収書入力、請求書PDFの整理、会計ソフトへの記帳・取り込み作業を少しでも減らしたい個人事業主・フリーランス・小規模法人の方に向けて、少人数でβ版をテスト提供しています。実際のレシート・請求書PDFで、使いやすさ・記帳成功率・CSV出力・証憑対応の確認を進めています。いただいた感想は、そのまま改善に反映しています。
+        </p>
+        <div class="mt-6 grid gap-3 text-left text-sm text-stone-600">
+          <div class="rounded-3xl bg-brand-50 p-4">✅ LINEに領収書・請求書PDFを送るだけでAIが解析</div>
+          <div class="rounded-3xl bg-brand-50 p-4">✅ 用途メモや取引先入力で内容を補足可能</div>
+          <div class="rounded-3xl bg-brand-50 p-4">✅ 記帳前に科目・税区分・支払方法を確認</div>
+          <div class="rounded-3xl bg-brand-50 p-4">✅ Money Forward・freeeへの記帳までサポート</div>
+          <div class="rounded-3xl bg-brand-50 p-4">✅ 弥生会計向けCSV出力にも対応</div>
+          <div class="rounded-3xl bg-brand-50 p-4">✅ よくあるエラー・利用状況・フィードバック導線も用意</div>
+        </div>
+        <a href="https://lin.ee/8zc0VBd" class="mt-7 block rounded-full bg-brand-500 px-6 py-4 text-center font-bold text-white shadow-pop transition hover:bg-brand-600">LINEでβ版を試してみる</a>
+        <p class="mt-4 text-[11px] leading-5 text-stone-500">β期間中は、機能・表示・料金プランを調整する場合があります。ご利用後の感想をもとに改善を続けています。</p>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-md px-4 py-12">
+      <h2 class="text-center text-xl font-bold text-stone-800">料金プラン</h2>
+      <p class="mx-auto mt-3 max-w-sm text-center text-xs leading-6 text-stone-500">
+        <span class="phrase">ENTRYはAI解析・仕訳候補確認が中心。</span>
+        <span class="phrase">PREMIUMはMoney Forward・freee連携、弥生CSV出力まで対応します。</span>
+        <span class="phrase">どちらも月額固定で、枚数による従量課金はありません。</span>
+      </p>
+      <div class="mt-7 space-y-6">
+        <div class="rounded-[2rem] border-2 border-brand-100 bg-white p-6 shadow-sm">
+          <h3 class="text-center text-sm font-bold tracking-[0.2em] text-stone-500">ENTRY PLAN</h3>
+          <div class="my-4 text-center"><span class="text-4xl font-extrabold text-stone-800">550</span><span class="text-sm text-stone-500"> 円/月（税込）</span></div>
+          <p class="mb-5 text-center text-xs leading-6 text-stone-500">まずはAIの読み取りと仕訳候補の確認を、気軽に試したい方向けです。会計ソフト連携は含まれません。</p>
+          <ul class="mb-6 space-y-3 text-sm text-stone-600">
+            <li class="flex gap-3"><span class="text-brand-500">✔</span><span>レシート画像・PDF請求書のAI解析</span></li>
+            <li class="flex gap-3"><span class="text-brand-500">✔</span><span>仕訳候補の作成</span></li>
+            <li class="flex gap-3"><span class="text-brand-500">✔</span><span>用途メモ・取引先入力の解析反映</span></li>
+            <li class="flex gap-3"><span class="text-brand-500">✔</span><span>科目・税区分の確認サポート</span></li>
+            <li class="flex gap-3 font-bold text-stone-500"><span>✖</span><span>会計ソフト記帳・CSV出力サポートなし</span></li>
+            <li class="flex gap-3 font-bold text-stone-500"><span>✖</span><span>証憑対応サポートなし</span></li>
+          </ul>
+          <a href="https://buy.stripe.com/8x214h3vX5Kkc1bbrHeUU05" class="block rounded-full border-2 border-brand-500 py-4 text-center font-bold text-brand-600 transition hover:bg-brand-50">ENTRYで申し込む</a>
+        </div>
+
+        <div class="relative overflow-hidden rounded-[2rem] border-2 border-brand-500 bg-white p-6 pt-10 shadow-pop">
+          <div class="absolute inset-x-0 top-0 bg-brand-500 py-1.5 text-center text-xs font-bold tracking-widest text-white">おすすめ</div>
+          <h3 class="text-center text-sm font-bold tracking-[0.2em] text-brand-600">PREMIUM PLAN</h3>
+          <div class="my-4 text-center"><span class="text-4xl font-extrabold text-stone-800">1,100</span><span class="text-sm text-stone-500"> 円/月（税込）</span></div>
+          <p class="mb-5 rounded-2xl bg-honey px-4 py-3 text-center text-xs font-bold leading-6 text-stone-700">1日あたり約37円。何枚送っても追加料金0円で、会計ソフトへの記帳・弥生CSV出力まで、経理の流れをまるごと軽くできます。</p>
+          <ul class="mb-6 space-y-3 text-sm text-stone-700">
+            <li class="flex gap-3"><span class="text-brand-500">✔</span><span>レシート画像・PDF請求書のAI解析</span></li>
+            <li class="flex gap-3"><span class="text-brand-500">✔</span><span>用途メモ・取引先入力の解析反映</span></li>
+            <li class="flex gap-3"><span class="text-brand-500">✔</span><span>科目・税区分の記帳前修正</span></li>
+            <li class="flex gap-3 font-bold"><span class="text-brand-500">✔</span><span>Money Forward記帳サポートあり</span></li>
+            <li class="flex gap-3 font-bold"><span class="text-brand-500">✔</span><span>freee取引登録サポートあり</span></li>
+            <li class="flex gap-3 font-bold"><span class="text-brand-500">✔</span><span>弥生会計CSV出力サポートあり</span></li>
+            <li class="flex gap-3 font-bold"><span class="text-brand-500">✔</span><span>領収書画像の証憑対応あり</span></li>
+            <li class="flex gap-3"><span class="text-brand-500">✔</span><span>外貨レシート・画像品質警告</span></li>
+          </ul>
+          <a href="https://buy.stripe.com/eVq14hc2tb4E9T3cvLeUU06" class="block rounded-full bg-brand-500 py-4 text-center font-bold text-white shadow-md transition hover:bg-brand-600">PREMIUMで申し込む</a>
+        </div>
+      </div>
+      <p class="mt-6 text-center text-[11px] leading-5 text-stone-500">お申し込み後は、LINEで案内に沿ってご利用ください。β期間中は、利用状況や改善状況に応じて提供内容・利用条件・料金プランを調整する場合があります。</p>
+    </section>
+
+    <section class="mx-3 rounded-[2rem] border border-brand-50 bg-white px-4 py-10 shadow-sm">
+      <div class="mx-auto max-w-md">
+        <h2 class="text-center text-xl font-bold text-stone-800">対応範囲・ご利用前の注意事項</h2>
+        <div class="mt-6 rounded-3xl bg-brand-50 p-5 text-xs leading-7 text-stone-500">
+          <p class="font-bold text-stone-700">撮るだけ経理は、レシート画像・PDF請求書のAI読み取り、仕訳候補作成、取引先入力、Money Forward・freeeへの記帳、弥生会計CSV出力、領収書画像の証憑対応をサポートするサービスです。</p>
+          <p class="mt-3">AIの読み取り結果は、画像の状態や記載内容によって誤読・誤判定が発生する場合があります。</p>
+          <p class="mt-3">本サービスは、税務申告、税務代理、税務相談、会計監査、法的助言を提供するものではありません。</p>
+          <p class="mt-3">税務判断が必要な場合は、税理士等の専門家にご相談ください。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-10 rounded-t-[2rem] bg-brand-100 px-4 py-10">
+      <div class="mx-auto max-w-md">
+        <h2 class="text-center text-xl font-bold text-stone-800">よくあるご質問</h2>
+        <div class="mt-7 space-y-4 text-sm">
+          <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>他のレシート読み取りサービスとの違いは？</p><p class="ml-6 mt-2 leading-7 text-stone-500">大きく3つあります。①何枚送っても月額だけの完全定額（1枚ごとの従量課金なし）、②レシートに加えてPDF請求書もそのまま送信できること、③Money Forward・freeeに加えて弥生会計（CSV出力）にも対応していることです。</p></div>
+          <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>経理や簿記の知識がなくても使えますか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">勘定科目や税区分はAIが候補を提示するので、まずは内容の確認から始められます。候補が違うと感じたときはLINE上で修正でき、最終的な判断に迷う場合は税理士等の専門家にご相談ください。</p></div>
+          <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>確定申告の準備に使えますか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">日々のレシート・請求書PDFを送っておくことで、仕訳候補の確認・会計ソフトへの記帳・CSV出力まで進められるため、申告前のまとめ入力を減らすことにつながります。ただし、税務申告そのものの代行や税務相談は行いません。</p></div>
+          <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>どんな書類を読み取れますか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">一般的な領収書・レシート画像、電子領収書のスクリーンショットに加えて、PDFで届いた請求書にも対応しています。画像やPDFの状態、文字の鮮明さにより、読み取り精度は変わります。</p></div>
+          <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>ENTRYプランで会計ソフト連携は使えますか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">使えません。ENTRYはAI解析・仕訳候補確認が中心です。Money Forward・freeeへの記帳サポート、弥生会計CSV出力はPREMIUM対象です。</p></div>
+          <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>freee連携は使えますか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">PREMIUM PLANで対応しています。LINEで「freee連携」と送信し、freeeログインを完了すると、解析結果の確認後にfreeeへ登録できます。</p></div>
+          <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>弥生会計でも使えますか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">はい。PREMIUM PLANでは、LINEで「CSV出力」と送ると、その月の確定済み仕訳を弥生会計の仕訳日記帳インポート形式CSVでダウンロードできます。「CSV出力 2026-06」のように月指定も可能です。CSVはShift_JIS・CRLFで出力し、税額は弥生側の自動計算に任せる設計です。</p></div>
+          <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>PDFの請求書をそのまま読み取れますか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">はい。PDFで届いた請求書ファイルをLINEに送ると、AIが請求書の内容を読み取り、仕訳候補作成に進められます。紙の請求書を撮影するだけでなく、PDFファイルそのものを送れる点が特徴です。読み取り結果は記帳・CSV出力前に必ず確認できます。</p></div>
+          <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>取引先名は入力・修正できますか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">はい。AIで読み取りにくい取引先名や、請求書・領収書だけでは分かりにくい相手先をLINE上で入力・補足できます。記帳・CSV出力前に確認できる設計です。</p></div>
+          <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>用途メモはどう使いますか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">LINEで「メモ: A社との打ち合わせ」のように送ってからレシートや請求書PDFを送ると、その用途を解析に反映します。保存中のメモは「メモ確認」、不要な場合は「メモ削除」で操作できます。</p></div>
+          <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>従量課金はありますか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">ありません。ENTRY・PREMIUMいずれも月額固定で、枚数による追加料金は発生しません。大量利用や正式版移行時の条件は、提供状況に応じて事前にご案内します。</p></div>
+          <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>β版では機能や利用条件が変わることがありますか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">はい。β期間中は、利用状況や改善状況に応じて提供内容・利用条件・料金プランを調整する場合があります。重要な変更は事前に分かりやすくご案内します。</p></div>
+          <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>インボイス番号は表示されますか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">表示しません。会計ソフトへ直接転記しない項目のため、読み取り結果の画面には表示しない設計にしています。</p></div>
+          <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>証憑対応すればインボイス制度に完全対応ですか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">領収書画像の保存・確認をサポートします。ただし、最終的な要件充足は領収書の記載内容や保存方法によって異なります。</p></div>
+          <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>外貨レシートは使えますか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">外貨レシートの可能性がある場合は、日本円換算額の入力をお願いしています。クレジットカード利用の場合はカード明細の円貨額をご確認ください。</p></div>
+          <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>科目や税区分が違う場合は？</p><p class="ml-6 mt-2 leading-7 text-stone-500">記帳前に「科目を変更」「税区分を変更」から修正できます。</p></div>
+          <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>税理士の代わりになりますか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">いいえ。本サービスは会計入力を補助するサービスです。税務相談・税務申告・税務代理は行いません。</p></div>
+          <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>LINEの返信が遅い、または返らない場合は？</p><p class="ml-6 mt-2 leading-7 text-stone-500">LINE公式アカウントの月間通数上限や一時的な通信状況により、返信が遅れる場合があります。時間をおいて再度お試しください。β期間中は安定運用に向けて順次改善しています。</p></div>
+          <div class="rounded-3xl bg-white p-5 shadow-sm"><p class="flex items-start font-bold text-stone-800"><span class="mr-2 text-brand-500">Q.</span>エラーが出た場合はどうすればよいですか？</p><p class="ml-6 mt-2 leading-7 text-stone-500">LINEで「エラー」と送ると、よくある対処法を確認できます。エラーIDが表示された場合は、お問い合わせ時にそのIDをお知らせください。</p></div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ============ FOOTER ============ -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <span class="brand-mark" aria-hidden="true">紬</span>
-          <div>
-            <h3>紬キャピタル合同会社</h3>
-            <p class="en">TSUMUGI CAPITAL LLC</p>
-          </div>
-        </div>
-        <nav aria-label="フッターナビゲーション">
-          <a href="#products">Products</a>
-          <a href="#about">About</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact">Contact</a>
-          <a href="https://tumugi-capital.github.io/torudakekeiri/" target="_blank" rel="noopener">撮るだけ経理</a>
-        </nav>
-      </div>
-      <div class="footer-bottom">
-        <p class="footer-tagline">技術で、ゆとりを紡ぐ。</p>
-        <p>&copy; 2026 Tsumugi Capital LLC. All rights reserved.</p>
-      </div>
+  <footer class="bg-stone-800 px-4 py-10 text-center text-xs text-stone-300">
+    <p class="mb-4 text-stone-400">運営会社: <a href="https://tumugi-capital.github.io/homepage/" class="underline hover:text-white" target="_blank" rel="noopener noreferrer">紬キャピタル合同会社</a></p>
+    <div class="mx-auto mb-6 flex max-w-xs flex-col gap-3 text-stone-400 sm:max-w-none sm:flex-row sm:justify-center sm:gap-5">
+      <a href="https://tsumugi-capital.notion.site/37170d7a344e809b9768e5fbc2b639a6?source=copy_link" class="hover:text-white" target="_blank" rel="noopener noreferrer">利用規約</a>
+      <a href="https://tsumugi-capital.notion.site/37f70d7a344e805ca6e8de022747954e" class="hover:text-white" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>
+      <a href="https://tsumugi-capital.notion.site/37f70d7a344e8061a27cf23cef4895e0" class="hover:text-white" target="_blank" rel="noopener noreferrer">特定商取引法に基づく表記</a>
     </div>
+    <p class="text-stone-500">&copy; Tsumugi Capital LLC. All rights reserved.</p>
   </footer>
 
-  <script>
-    // ヘッダーのスクロール影
-    const header = document.getElementById('header');
-    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-
-    // モバイルメニュー
-    const menuBtn = document.getElementById('menuBtn');
-    menuBtn.addEventListener('click', () => {
-      const open = document.body.classList.toggle('menu-open');
-      menuBtn.setAttribute('aria-expanded', open);
-    });
-    document.querySelectorAll('.mobile-nav a').forEach(a =>
-      a.addEventListener('click', () => {
-        document.body.classList.remove('menu-open');
-        menuBtn.setAttribute('aria-expanded', 'false');
-      })
-    );
-
-    // スクロールで要素をフェードイン。
-    // 画面外の要素だけを一時的に隠し、スクロールで順次表示する。
-    // 万一スクロール検知が働かない環境でも、一定時間後に必ず全表示する。
-    const pres = [];
-    document.querySelectorAll('.reveal').forEach(el => {
-      if (!el.classList.contains('in') && el.getBoundingClientRect().top > innerHeight * 0.92) {
-        el.classList.add('pre');
-        pres.push(el);
-      }
-    });
-    const revealCheck = () => {
-      pres.forEach(el => {
-        if (!el.classList.contains('in') && el.getBoundingClientRect().top < innerHeight * 0.94) {
-          el.classList.add('in');
-        }
-      });
-    };
-    window.addEventListener('scroll', revealCheck, { passive: true });
-    window.addEventListener('resize', revealCheck, { passive: true });
-    revealCheck();
-    setTimeout(() => pres.forEach(el => {
-      if (!el.classList.contains('in')) el.classList.add('no-anim');
-      el.classList.add('in');
-    }), 1800);
-  </script>
+  <div class="fixed inset-x-0 bottom-0 z-50 border-t border-brand-100 bg-white/95 px-4 py-3 shadow-[0_-8px_24px_rgba(0,0,0,0.08)] backdrop-blur safe-bottom">
+    <div class="mx-auto flex max-w-md items-center gap-3">
+      <div class="hidden min-w-0 flex-1 text-left sm:block"><p class="truncate text-xs font-bold text-stone-700">撮るだけ経理</p><p class="truncate text-[11px] text-stone-500">何枚送っても定額。経理はLINEに送るだけ</p></div>
+      <a href="https://lin.ee/8zc0VBd" class="block flex-1 rounded-full bg-brand-500 px-5 py-3 text-center text-sm font-bold text-white shadow-md transition hover:bg-brand-600 sm:flex-none sm:px-8">LINEでβ版を試す</a>
+    </div>
+  </div>
 </body>
 </html>
