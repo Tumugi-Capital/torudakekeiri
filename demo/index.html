@@ -79,6 +79,17 @@ h1 span{color:var(--green-dark)}
 .dash{border-top:1px dashed #888;margin:8px 0}
 .total{font-size:15px;font-weight:900}
 .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;margin-top:8px}
+.result-row{
+  display:grid;grid-template-columns:74px 1fr;gap:8px;align-items:center;
+  padding:8px 0;border-bottom:1px solid #edf1ee;
+}
+.result-row:last-of-type{border-bottom:0}
+.result-key{font-size:10px;font-weight:750;color:#6f7b73}
+.result-value{font-size:12px;font-weight:750;color:#1e2a22;word-break:break-word}
+.readonly-note{
+  margin:0 0 10px;padding:8px 9px;border-radius:9px;
+  background:#f4f7f5;color:#68736c;font-size:10px;line-height:1.5;
+}
 .field{margin-bottom:9px}
 .field:last-child{margin-bottom:0}
 label{display:block;font-size:10px;font-weight:750;color:#6f7b73;margin-bottom:4px}
@@ -142,12 +153,12 @@ input,select{width:100%;border:1px solid #d3ddd6;border-radius:9px;background:#f
       <h1>4つの経費サンプルで、<br><span>仕訳になる流れを体験。</span></h1>
       <p class="lead">
         カフェ・交通費・文房具・個人立替の4パターンから選び、
-        AI読取結果の自動入力、勘定科目・税区分の修正、支払方法の選択、
+        AI読取結果の表示、勘定科目・税区分の修正、支払方法の選択、
         仕訳作成、Money Forwardへの記帳イメージまで順番に確認できます。
       </p>
       <div class="flow">
         <div class="flow-item"><b>1. サンプル選択</b>4パターンから選ぶ</div>
-        <div class="flow-item"><b>2. 自動入力</b>読取結果をフォーム表示</div>
+        <div class="flow-item"><b>2. 結果表示</b>読取内容を確認</div>
         <div class="flow-item"><b>3. 修正</b>科目・税区分を変更</div>
         <div class="flow-item"><b>4. 仕訳作成</b>支払方法を反映</div>
         <div class="flow-item"><b>5. LINE導線</b>最後に試用へ誘導</div>
@@ -382,13 +393,14 @@ input,select{width:100%;border:1px solid #d3ddd6;border-radius:9px;background:#f
 
   function formHtml(){
     return '' +
-      '<b>読取結果をフォームへ自動入力しました。</b>' +
+      '<b>AIの読取結果です。</b>' +
       '<div class="card">' +
-        '<div class="field"><label>取引日</label><input id="dateField" type="date" value="' + escapeHtml(formValues.date) + '"></div>' +
-        '<div class="field"><label>支払先</label><input id="vendorField" value="' + escapeHtml(formValues.vendor) + '"></div>' +
-        '<div class="field"><label>金額</label><input id="amountField" type="number" min="0" value="' + escapeHtml(formValues.amount) + '"></div>' +
-        '<div class="field"><label>摘要</label><input id="memoField" value="' + escapeHtml(formValues.memo) + '"></div>' +
-        '<div class="field"><label>勘定科目</label>' +
+        '<div class="readonly-note">取引日・支払先・金額・摘要は確認用の表示です。</div>' +
+        '<div class="result-row"><div class="result-key">取引日</div><div class="result-value">' + escapeHtml(formValues.date) + '</div></div>' +
+        '<div class="result-row"><div class="result-key">支払先</div><div class="result-value">' + escapeHtml(formValues.vendor) + '</div></div>' +
+        '<div class="result-row"><div class="result-key">金額</div><div class="result-value">' + Number(formValues.amount).toLocaleString("ja-JP") + '円</div></div>' +
+        '<div class="result-row"><div class="result-key">摘要</div><div class="result-value">' + escapeHtml(formValues.memo) + '</div></div>' +
+        '<div class="field" style="margin-top:11px"><label>勘定科目（確認・修正できます）</label>' +
           '<select id="accountField">' +
             optionHtml("会議費", formValues.account) +
             optionHtml("接待交際費", formValues.account) +
@@ -396,7 +408,7 @@ input,select{width:100%;border:1px solid #d3ddd6;border-radius:9px;background:#f
             optionHtml("消耗品費", formValues.account) +
           '</select>' +
         '</div>' +
-        '<div class="field"><label>税区分</label>' +
+        '<div class="field"><label>税区分（確認・修正できます）</label>' +
           '<select id="taxField">' +
             optionHtml("課税仕入 10%", formValues.tax) +
             optionHtml("課税仕入 8%", formValues.tax) +
@@ -404,7 +416,7 @@ input,select{width:100%;border:1px solid #d3ddd6;border-radius:9px;background:#f
           '</select>' +
         '</div>' +
       '</div>' +
-      '<div class="mini-note">この画面でAIの結果を確認し、必要な項目だけ修正できます。</div>';
+      '<div class="mini-note">金額などをシート上で手入力して修正する機能を示すものではありません。</div>';
   }
 
   function optionHtml(value, selected){
@@ -412,17 +424,9 @@ input,select{width:100%;border:1px solid #d3ddd6;border-radius:9px;background:#f
   }
 
   function readForm(){
-    var date = document.getElementById("dateField");
-    var vendor = document.getElementById("vendorField");
-    var amount = document.getElementById("amountField");
-    var memo = document.getElementById("memoField");
     var account = document.getElementById("accountField");
     var tax = document.getElementById("taxField");
-    if(date){
-      formValues.date = date.value || formValues.date;
-      formValues.vendor = vendor.value || formValues.vendor;
-      formValues.amount = amount.value || formValues.amount;
-      formValues.memo = memo.value || formValues.memo;
+    if(account){
       formValues.account = account.value || formValues.account;
       formValues.tax = tax.value || formValues.tax;
     }
@@ -518,7 +522,7 @@ input,select{width:100%;border:1px solid #d3ddd6;border-radius:9px;background:#f
   }
 
   function bindFormChanges(){
-    ["dateField","vendorField","amountField","memoField","accountField","taxField"].forEach(function(id){
+    ["accountField","taxField"].forEach(function(id){
       var el = document.getElementById(id);
       if(!el){ return; }
       el.addEventListener("change",function(){ el.classList.add("changed"); });
@@ -568,7 +572,7 @@ input,select{width:100%;border:1px solid #d3ddd6;border-radius:9px;background:#f
           bindFormChanges();
           stage = 2;
           updateStep(3);
-          mainBtn.textContent = "入力内容を確認して次へ";
+          mainBtn.textContent = "読取結果を確認して次へ";
           mainBtn.disabled = false;
         }, 1300);
       }, 250);
@@ -576,7 +580,7 @@ input,select{width:100%;border:1px solid #d3ddd6;border-radius:9px;background:#f
     } else if(stage === 2){
       readForm();
       addMessage("user",
-        '内容を確認しました。<br>' +
+        '読取結果を確認しました。<br>' +
         '勘定科目：' + escapeHtml(formValues.account) + '<br>' +
         '税区分：' + escapeHtml(formValues.tax)
       );
