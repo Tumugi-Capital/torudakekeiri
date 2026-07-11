@@ -1,1 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>撮るだけ経理｜領収書送信デモ</title>
+<style>
+:root{
+  --green:#06c755; --green2:#049943; --ink:#172019; --muted:#667068;
+  --line:#dfe6e1; --bg:#f4f7f5; --white:#fff; --soft:#eaf8ef;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:linear-gradient(180deg,#f8fbf9,#eef4f0);
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic UI","Yu Gothic",Meiryo,sans-serif;
+  color:var(--ink);
+}
+.wrap{max-width:720px;margin:auto;padding:18px}
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:22px;
+  box-shadow:0 16px 45px rgba(30,70,45,.10);overflow:hidden;
+}
+.head{padding:22px 20px 16px;border-bottom:1px solid var(--line)}
+.badge{
+  display:inline-block;background:var(--soft);color:var(--green2);
+  font-size:12px;font-weight:800;padding:7px 10px;border-radius:999px
+}
+h1{font-size:28px;line-height:1.25;margin:14px 0 8px}
+.lead{margin:0;color:var(--muted);line-height:1.7;font-size:15px}
+.chat{min-height:420px;padding:18px;background:#eef1ef}
+.msg{display:flex;margin-bottom:12px}
+.msg.bot{justify-content:flex-start}
+.msg.user{justify-content:flex-end}
+.bubble{
+  max-width:88%;border-radius:17px;padding:12px 14px;line-height:1.55;font-size:14px;
+  box-shadow:0 1px 2px rgba(0,0,0,.06)
+}
+.bot .bubble{background:#fff;border-top-left-radius:5px}
+.user .bubble{background:#a9ed9f;border-top-right-radius:5px}
+.controls{padding:16px;background:#fff;border-top:1px solid var(--line)}
+.action-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.file-label,.btn{
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  min-height:52px;border-radius:14px;font-weight:800;font-size:15px;
+  padding:12px;border:0;cursor:pointer;text-decoration:none
+}
+.file-label{background:var(--green);color:#fff}
+.btn{background:#edf1ee;color:#344039}
+.btn.primary{background:var(--green);color:#fff;width:100%}
+.file-label:active,.btn:active{transform:scale(.99)}
+#receiptFile{position:absolute;opacity:0;width:1px;height:1px}
+.helper{font-size:12px;color:var(--muted);line-height:1.6;margin:10px 2px 0}
+.preview{
+  background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px;margin-top:8px
+}
+.preview img{display:block;max-width:100%;max-height:260px;margin:auto;border-radius:8px}
+.pdfbox{text-align:center;padding:24px 10px;background:#f7f8f7;border-radius:10px}
+.filename{font-size:12px;color:var(--muted);margin-top:8px;word-break:break-all}
+.result{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;margin-top:8px}
+.row{display:grid;grid-template-columns:90px 1fr;gap:8px;padding:7px 0;border-bottom:1px solid #edf1ee}
+.row:last-child{border-bottom:0}
+.key{font-size:12px;color:var(--muted);font-weight:700}
+.val{font-size:13px;font-weight:700}
+.loader{display:flex;align-items:center;gap:6px}
+.loader span{width:7px;height:7px;border-radius:50%;background:#8d9890;animation:b 1s infinite}
+.loader span:nth-child(2){animation-delay:.15s}.loader span:nth-child(3){animation-delay:.3s}
+.notice{background:#fff7df;border:1px solid #f1dfaa;border-radius:12px;padding:11px 12px;font-size:12px;line-height:1.6;margin-top:12px}
+.hidden{display:none!important}
+@keyframes b{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
+@media(max-width:520px){
+  .wrap{padding:0}
+  .card{border-radius:0;min-height:100vh}
+  h1{font-size:24px}
+  .chat{min-height:430px}
+  .action-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <div class="head">
+      <span class="badge">操作体験デモ</span>
+      <h1>領収書・請求書を選んで送信</h1>
+      <p class="lead">写真を撮る、写真ライブラリから選ぶ、PDFを選ぶ操作を体験できます。</p>
+    </div>
 
+    <div class="chat" id="chat">
+      <div class="msg bot"><div class="bubble">
+        送信する領収書を選んでください。<br>
+        iPhoneでは「領収書・PDFを選ぶ」を押すと、カメラ・写真・ファイルを選択できます。
+      </div></div>
+    </div>
+
+    <div class="controls">
+      <div id="firstActions" class="action-grid">
+        <label class="file-label" for="receiptFile">領収書・PDFを選ぶ</label>
+        <input id="receiptFile" type="file" accept="image/*,application/pdf,.pdf" capture="environment">
+        <button class="btn" id="sampleBtn" type="button">サンプルで体験</button>
+      </div>
+
+      <button class="btn primary hidden" id="sendBtn" type="button">この領収書を送信</button>
+      <button class="btn hidden" id="resetBtn" type="button" style="width:100%;margin-top:9px">最初からやり直す</button>
+
+      <div class="helper">
+        選んだファイルはこの端末内でプレビューするだけで、外部には送信されません。
+      </div>
+      <div class="notice">
+        ChatGPTアプリのファイルプレビューでボタンが反応しない場合は、ファイルを保存してSafariで開いてください。
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var fileInput = document.getElementById("receiptFile");
+  var sampleBtn = document.getElementById("sampleBtn");
+  var sendBtn = document.getElementById("sendBtn");
+  var resetBtn = document.getElementById("resetBtn");
+  var firstActions = document.getElementById("firstActions");
+  var chat = document.getElementById("chat");
+  var chosen = null;
+  var objectUrl = null;
+
+  function scrollBottom(){
+    setTimeout(function(){ chat.scrollTop = chat.scrollHeight; }, 20);
+  }
+
+  function addMessage(side, html){
+    var box = document.createElement("div");
+    box.className = "msg " + side;
+    box.innerHTML = '<div class="bubble">' + html + '</div>';
+    chat.appendChild(box);
+    scrollBottom();
+    return box;
+  }
+
+  function escapeHtml(text){
+    return String(text).replace(/[&<>"']/g,function(c){
+      return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c];
+    });
+  }
+
+  function showChosen(file){
+    chosen = file;
+    if(objectUrl){
+      URL.revokeObjectURL(objectUrl);
+      objectUrl = null;
+    }
+
+    var html = '<b>このファイルを選びました。</b><div class="preview">';
+    if(file.type && file.type.indexOf("image/") === 0){
+      objectUrl = URL.createObjectURL(file);
+      html += '<img src="' + objectUrl + '" alt="選択した領収書">';
+    }else{
+      html += '<div class="pdfbox">📄<br><b>請求書PDF</b></div>';
+    }
+    html += '<div class="filename">' + escapeHtml(file.name || "選択したファイル") + '</div></div>';
+    addMessage("user", html);
+    firstActions.classList.add("hidden");
+    sendBtn.classList.remove("hidden");
+    resetBtn.classList.remove("hidden");
+  }
+
+  fileInput.addEventListener("change", function(){
+    if(fileInput.files && fileInput.files.length){
+      showChosen(fileInput.files[0]);
+    }
+  });
+
+  sampleBtn.addEventListener("click", function(){
+    chosen = {name:"sample_receipt.jpg",type:"image/sample"};
+    addMessage("user",
+      '<b>サンプル領収書を選びました。</b>' +
+      '<div class="preview"><div class="pdfbox" style="font-family:monospace;text-align:left">' +
+      '<div style="text-align:center;font-weight:bold;margin-bottom:10px">CAFE TSUMUGI</div>' +
+      '2026年7月11日<br><br>' +
+      'コーヒー　¥600<br>ランチ　　¥1,200<br>' +
+      '<hr><b>合計　　　¥1,800</b></div>' +
+      '<div class="filename">sample_receipt.jpg</div></div>'
+    );
+    firstActions.classList.add("hidden");
+    sendBtn.classList.remove("hidden");
+    resetBtn.classList.remove("hidden");
+  });
+
+  sendBtn.addEventListener("click", function(){
+    if(!chosen){ return; }
+    addMessage("user","この領収書を送信します。");
+    sendBtn.disabled = true;
+    var loading = addMessage("bot",
+      '<b>AIが読み取っています</b><div class="loader" style="margin-top:9px">' +
+      '<span></span><span></span><span></span></div>'
+    );
+
+    setTimeout(function(){
+      loading.parentNode.removeChild(loading);
+      addMessage("bot",
+        '<b>読み取りが完了しました。</b>' +
+        '<div class="result">' +
+        '<div class="row"><div class="key">取引日</div><div class="val">2026年7月11日</div></div>' +
+        '<div class="row"><div class="key">支払先</div><div class="val">CAFE TSUMUGI</div></div>' +
+        '<div class="row"><div class="key">金額</div><div class="val">1,800円</div></div>' +
+        '<div class="row"><div class="key">勘定科目</div><div class="val">会議費</div></div>' +
+        '<div class="row"><div class="key">税区分</div><div class="val">課税仕入 10%</div></div>' +
+        '</div>' +
+        '<div style="margin-top:9px;font-size:12px;color:#667068">これは疑似デモのため、実際の画像内容にかかわらずサンプル結果を表示します。</div>'
+      );
+      sendBtn.classList.add("hidden");
+    },1200);
+  });
+
+  resetBtn.addEventListener("click", function(){
+    chosen = null;
+    fileInput.value = "";
+    if(objectUrl){
+      URL.revokeObjectURL(objectUrl);
+      objectUrl = null;
+    }
+    chat.innerHTML =
+      '<div class="msg bot"><div class="bubble">' +
+      '送信する領収書を選んでください。<br>' +
+      'iPhoneでは「領収書・PDFを選ぶ」を押すと、カメラ・写真・ファイルを選択できます。' +
+      '</div></div>';
+    firstActions.classList.remove("hidden");
+    sendBtn.classList.add("hidden");
+    sendBtn.disabled = false;
+    resetBtn.classList.add("hidden");
+  });
+})();
+</script>
+</body>
+</html>
