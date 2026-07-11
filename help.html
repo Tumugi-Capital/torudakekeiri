@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ヘルプセンター | 撮るだけ経理</title>
+  <meta name="description" content="撮るだけ経理のヘルプセンター。はじめての使い方、レシート・PDF請求書の送り方、Money Forward・freee・弥生会計との連携、料金プラン、よくあるエラーの対処法をまとめています。" />
+  <meta property="og:title" content="ヘルプセンター | 撮るだけ経理" />
+  <meta property="og:description" content="撮るだけ経理の使い方・コマンド一覧・会計ソフト連携・トラブル対処法をまとめたヘルプセンターです。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tumugi-capital.github.io/torudakekeiri/help.html" />
+  <meta name="twitter:card" content="summary" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#fff8f7',
+              100: '#faeeee',
+              200: '#f4d7d7',
+              500: '#d98b8b',
+              600: '#c96f78',
+              700: '#a85661'
+            },
+            cream: '#fffdf8',
+            mint: '#eaf8f3',
+            honey: '#fff3c4'
+          },
+          boxShadow: {
+            soft: '0 14px 34px rgba(135, 82, 82, 0.12)',
+            pop: '0 18px 50px rgba(217, 139, 139, 0.22)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Helvetica Neue', Arial, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      line-break: strict;
+      word-break: normal;
+      overflow-wrap: anywhere;
+    }
+    p, li, h1, h2, h3 { text-wrap: pretty; }
+    details > summary { list-style: none; cursor: pointer; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .chevron { transform: rotate(90deg); }
+    .chevron { transition: transform .15s ease; }
+    .dot-bg {
+      background-image: radial-gradient(rgba(217,139,139,.18) 1.2px, transparent 1.2px);
+      background-size: 18px 18px;
+    }
+    .cmd {
+      display: inline-block;
+      border-radius: 9999px;
+      background: #faeeee;
+      padding: 1px 10px;
+      font-weight: 700;
+      color: #a85661;
+      font-size: 0.85em;
+    }
+  </style>
+</head>
+<body class="bg-brand-50 text-stone-700 leading-relaxed tracking-wide">
+
+  <nav class="sticky top-0 z-50 border-b border-brand-100 bg-white/95 px-4 py-3 backdrop-blur">
+    <div class="mx-auto flex max-w-2xl items-center justify-between gap-3">
+      <a href="./" class="flex items-center gap-2 text-sm font-extrabold text-stone-800"><span class="text-lg">🧾</span>撮るだけ経理</a>
+      <a href="./" class="rounded-full bg-brand-100 px-4 py-1.5 text-xs font-bold text-brand-700 transition hover:bg-brand-200">← サービス紹介へ戻る</a>
+    </div>
+  </nav>
+
+  <header class="relative overflow-hidden bg-gradient-to-br from-brand-100 via-cream to-mint px-4 pb-10 pt-10 text-center shadow-sm dot-bg">
+    <div class="absolute -right-12 -top-10 h-36 w-36 rounded-full bg-white/60 blur-2xl"></div>
+    <div class="absolute -bottom-16 -left-12 h-40 w-40 rounded-full bg-brand-200/60 blur-2xl"></div>
+    <div class="relative mx-auto max-w-2xl">
+      <h1 class="text-2xl font-extrabold text-stone-800 sm:text-3xl">ヘルプセンター</h1>
+      <p class="mt-3 text-sm leading-7 text-stone-600">使い方・コマンド・トラブル対処法をまとめています。<br />お困りのことをキーワードで検索してください。</p>
+      <div class="mx-auto mt-6 max-w-md">
+        <div class="flex items-center gap-2 rounded-full bg-white px-5 py-3 shadow-soft ring-1 ring-white">
+          <span class="text-stone-400">🔍</span>
+          <input id="help-search" type="search" placeholder="例: 弥生 / 科目 / エラー / 解約" class="w-full bg-transparent text-sm text-stone-700 outline-none placeholder:text-stone-400" autocomplete="off" />
+        </div>
+        <p id="search-count" class="mt-2 hidden text-xs text-stone-500"></p>
+      </div>
+    </div>
+  </header>
+
+  <!-- カテゴリジャンプ -->
+  <div id="category-nav" class="mx-auto max-w-2xl px-4 pt-8">
+    <div class="grid grid-cols-2 gap-3 text-center text-xs font-bold text-stone-700 sm:grid-cols-3">
+      <a href="#getting-started" class="rounded-2xl border border-brand-100 bg-white px-3 py-4 shadow-sm transition hover:shadow-soft"><span class="block text-xl">🌱</span><span class="mt-1 block">はじめに</span></a>
+      <a href="#receipts" class="rounded-2xl border border-brand-100 bg-white px-3 py-4 shadow-sm transition hover:shadow-soft"><span class="block text-xl">📷</span><span class="mt-1 block">レシート・請求書の処理</span></a>
+      <a href="#integrations" class="rounded-2xl border border-brand-100 bg-white px-3 py-4 shadow-sm transition hover:shadow-soft"><span class="block text-xl">🔗</span><span class="mt-1 block">会計ソフト連携</span></a>
+      <a href="#commands" class="rounded-2xl border border-brand-100 bg-white px-3 py-4 shadow-sm transition hover:shadow-soft"><span class="block text-xl">💬</span><span class="mt-1 block">確認・管理コマンド</span></a>
+      <a href="#billing" class="rounded-2xl border border-brand-100 bg-white px-3 py-4 shadow-sm transition hover:shadow-soft"><span class="block text-xl">💳</span><span class="mt-1 block">料金・お支払い</span></a>
+      <a href="#troubleshooting" class="rounded-2xl border border-brand-100 bg-white px-3 py-4 shadow-sm transition hover:shadow-soft"><span class="block text-xl">🛠</span><span class="mt-1 block">トラブル・お問い合わせ</span></a>
+    </div>
+  </div>
+
+  <main class="mx-auto max-w-2xl px-4 pb-16 pt-4">
+
+    <p id="no-results" class="mt-8 hidden rounded-3xl border border-brand-100 bg-white p-6 text-center text-sm text-stone-500 shadow-sm">
+      該当する記事が見つかりませんでした。<br />別のキーワードでお試しいただくか、LINEで「お問い合わせ」と送ってご質問ください。
+    </p>
+
+    <!-- ============ はじめに ============ -->
+    <section id="getting-started" class="help-category pt-8">
+      <h2 class="flex items-center gap-2 text-lg font-extrabold text-stone-800"><span>🌱</span>はじめに</h2>
+      <div class="mt-4 space-y-3">
+
+        <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
+          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>撮るだけ経理とは</span><span class="chevron text-brand-500">›</span></summary>
+          <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
+            <p>撮るだけ経理は、LINEに領収書・レシートの写真やPDF請求書を送るだけで、AIが日付・金額・支払先・取引先・勘定科目・税区分を読み取り、仕訳候補を作成する会計入力アシスタントです。</p>
+            <p class="mt-3">内容を確認・修正したあと、Money Forward・freeeへの記帳や、弥生会計向けCSV出力まで進められます。新しいアプリのインストールは不要で、操作はすべてLINEの中で完結します。</p>
+            <p class="mt-3 rounded-2xl bg-brand-50 p-4 text-xs leading-6 text-stone-500">本サービスは会計入力を補助するサービスです。税務申告、税務代理、税務相談、会計監査、法的助言は提供していません。税務判断が必要な場合は、税理士等の専門家にご相談ください。</p>
+          </div>
+        </details>
+
+        <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
+          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>登録と初期設定（友だち追加〜プラン申込）</span><span class="chevron text-brand-500">›</span></summary>
+          <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
+            <ol class="list-decimal space-y-2 pl-5">
+              <li><a href="https://lin.ee/8zc0VBd" class="font-bold text-brand-600 underline">LINE友だち追加</a>から「撮るだけ経理」を友だちに追加します。</li>
+              <li>LINEで<span class="cmd">はじめて</span>または<span class="cmd">スタート</span>と送ると、初回の使い方が表示されます。</li>
+              <li>料金プラン（ENTRY / PREMIUM）は<a href="./#pricing" class="font-bold text-brand-600 underline">サービス紹介ページ</a>からお申し込みください。お支払いはクレジットカード（Stripe決済）に対応しています。</li>
+              <li>お申し込み後は、LINEの案内に沿ってご利用ください。</li>
+            </ol>
+            <p class="mt-3 text-xs leading-6 text-stone-500">現在はβ版として少人数にテスト提供中です。提供内容・利用条件は改善のため変更する場合があります。</p>
+          </div>
+        </details>
+
+        <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
+          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>まずは1枚送ってみる（基本の流れ）</span><span class="chevron text-brand-500">›</span></summary>
+          <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
+            <ol class="list-decimal space-y-2 pl-5">
+              <li>LINEに領収書・レシートの写真を送ります（PDF請求書はファイルのまま送信できます）。</li>
+              <li>AIが日付・金額・支払先・勘定科目・税区分を読み取り、確認画面を返信します。</li>
+              <li>内容が違う場合は「科目を変更」「税区分を変更」から修正します。</li>
+              <li>支払方法（現金・事業用クレカ・個人カードなど）を選択します。</li>
+              <li>最終確認して、Money Forward・freeeへの記帳、または後日の弥生CSV出力へ進みます。</li>
+            </ol>
+            <p class="mt-3">操作に迷ったら、いつでもLINEで<span class="cmd">ヘルプ</span>と送ると、使い方とコマンド一覧を確認できます。</p>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- ============ レシート・請求書の処理 ============ -->
+    <section id="receipts" class="help-category pt-10">
+      <h2 class="flex items-center gap-2 text-lg font-extrabold text-stone-800"><span>📷</span>レシート・請求書の処理</h2>
+      <div class="mt-4 space-y-3">
+
+        <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
+          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>レシート・領収書を送って仕訳する</span><span class="chevron text-brand-500">›</span></summary>
+          <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
+            <p>スマホで撮影した領収書・レシート画像をLINEに送ると、AIが解析して仕訳候補を返信します。電子領収書のスクリーンショットにも対応しています。</p>
+            <p class="mt-3">きれいに読み取るコツ:</p>
+            <ul class="mt-2 list-disc space-y-1 pl-5">
+              <li>明るい場所で、領収書全体が入るように撮影する</li>
+              <li>文字がはっきり読める距離から撮る（近すぎ・遠すぎに注意）</li>
+              <li>しわを伸ばし、影が入らないようにする</li>
+            </ul>
+            <p class="mt-3 rounded-2xl bg-honey/60 p-4 text-xs leading-6 text-stone-600">⚠️ クレジットカード決済の「売上票（控え）」と「レシート」は同じ支払いです。二重計上を防ぐため、どちらか一方だけを送ってください。</p>
+          </div>
+        </details>
+
+        <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
+          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>PDF請求書を送る</span><span class="chevron text-brand-500">›</span></summary>
+          <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
+            <p>メール添付やWebからダウンロードした請求書PDFを、印刷せずそのままLINEに送信できます。AIが請求書に記載された日付・金額・取引先などを読み取り、仕訳候補を作成します。</p>
+            <p class="mt-3">スマホでの送り方の例（メールで届いた場合）:</p>
+            <ol class="mt-2 list-decimal space-y-1 pl-5">
+              <li>メールの添付PDFを開き、共有ボタンをタップ</li>
+              <li>共有先に「LINE」を選択</li>
+              <li>送信先に「撮るだけ経理」を選んで送信</li>
+            </ol>
+            <p class="mt-3">読み取り結果は、記帳・CSV出力の前に必ず確認できます。</p>
+          </div>
+        </details>
+
+        <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
+          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>用途メモで解析の精度を上げる</span><span class="chevron text-brand-500">›</span></summary>
+          <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
+            <p>レシートだけでは分かりにくい用途を、解析に反映できます。レシートを送る<span class="font-bold">前に</span>、次のように送ってください。</p>
+            <p class="mt-3"><span class="cmd">メモ: A社との打ち合わせ</span>　<span class="cmd">メモ: 東京出張のホテル代</span></p>
+            <ul class="mt-3 list-disc space-y-1 pl-5">
+              <li><span class="cmd">メモ確認</span> — 保存中のメモを確認</li>
+              <li><span class="cmd">メモ削除</span> — 保存中のメモを削除</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
+          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>取引先名を入力・補足する</span><span class="chevron text-brand-500">›</span></summary>
+          <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
+            <p>AIで読み取りにくい取引先名や、領収書・請求書だけでは分かりにくい相手先は、LINE上で入力・補足できます。</p>
+            <p class="mt-3"><span class="cmd">取引先: 株式会社○○</span>のように送ると、解析・記帳に反映されます。取引先情報は記帳・CSV出力の前に確認できます。</p>
+          </div>
+        </details>
+
+        <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
+          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>勘定科目・税区分を修正する</span><span class="chevron text-brand-500">›</span></summary>
+          <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
+            <p>AIの候補が違う場合は、<span class="font-bold">支払方法を選ぶ前に</span>確認画面の「科目を変更」「税区分を変更」ボタンから修正できます。</p>
+            <p class="mt-3">Money Forward・freeeへ記帳したあとの修正は、各会計ソフト側で行ってください。</p>
+          </div>
+        </details>
+
+        <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
+          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>支払方法の選び方（貸方科目の扱い）</span><span class="chevron text-brand-500">›</span></summary>
+          <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
+            <p>実際の支払方法に合わせて選んでください。選択に応じて貸方科目が決まります。</p>
+            <ul class="mt-3 list-disc space-y-1 pl-5">
+              <li><span class="font-bold">現金</span> → 現金</li>
+              <li><span class="font-bold">事業用クレジットカード</span> → 未払金</li>
+              <li><span class="font-bold">個人カード・立替払い</span> → 原則として短期借入金（事業主借等の方針がある場合はそちらを優先）</li>
+              <li><span class="font-bold">事業用口座・電子マネー・QR決済</span> にも対応</li>
+            </ul>
+            <p class="mt-3 text-xs leading-6 text-stone-500">会社や税理士の会計方針がある場合は、そちらを優先してください。</p>
+          </div>
+        </details>
+
+        <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
+          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>外貨レシートの扱い</span><span class="chevron text-brand-500">›</span></summary>
+          <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
+            <p>外貨レシートの可能性がある場合は、記帳前に日本円換算額の入力をお願いしています。</p>
+            <p class="mt-3">クレジットカード払いの場合は、カード明細に記載された円貨額をご確認のうえ入力してください。実際に使用する換算額は、ご自身または税理士等にてご確認ください。</p>
+          </div>
+        </details>
+
+        <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
+          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>証憑（領収書画像）の保存について</span><span class="chevron text-brand-500">›</span></summary>
+          <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
+            <p>PREMIUM PLANでは、Money Forwardへの記帳時に領収書画像を証憑として添付、freeeではファイルボックスへのアップロードをサポートします。</p>
+            <p class="mt-3">画像が小さい・不鮮明な場合は「証憑保存に不向きな可能性」を警告します。その場合は明るい場所で再撮影してください。</p>
+            <p class="mt-3 rounded-2xl bg-brand-50 p-4 text-xs leading-6 text-stone-500">インボイス番号はLINE画面に表示しません（読み取り誤りによる誤解を避けるため）。番号の確認が必要な場合は、添付された領収書画像や原本をご確認ください。証憑対応はインボイス制度への完全対応を保証するものではありません。</p>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- ============ 会計ソフト連携 ============ -->
+    <section id="integrations" class="help-category pt-10">
+      <h2 class="flex items-center gap-2 text-lg font-extrabold text-stone-800"><span>🔗</span>会計ソフト連携</h2>
+      <div class="mt-4 space-y-3">
+
+        <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
+          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>Money Forward クラウド会計と連携する</span><span class="chevron text-brand-500">›</span></summary>
+          <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
+            <ol class="list-decimal space-y-2 pl-5">
+              <li>LINEで<span class="cmd">連携</span>と送ります。</li>
+              <li>表示されたリンクからMoney Forwardにログインし、連携を許可します。</li>
+              <li>以降、解析結果の確認後に「記帳」へ進むと、Money Forwardへ仕訳が登録されます。領収書画像の証憑添付にも対応しています。</li>
+            </ol>
+            <p class="mt-3">記帳できなくなった場合は、連携の有効期限切れの可能性があります。もう一度<span class="cmd">連携</span>と送って再連携してください。</p>
+            <p class="mt-3">記帳確認画面でMoney Forwardを優先表示したい場合は<span class="cmd">MFを使う</span>と送ってください。</p>
+          </div>
+        </details>
+
+        <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
+          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>freee会計と連携する</span><span class="chevron text-brand-500">›</span></summary>
+          <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
+            <ol class="list-decimal space-y-2 pl-5">
+              <li>LINEで<span class="cmd">freee連携</span>と送ります。</li>
+              <li>表示されたリンクからfreeeにログインし、連携を許可します。</li>
+              <li>以降、解析結果の確認後にfreeeへ取引を登録できます。ファイルボックスへの領収書アップロードにも対応しています。</li>
+            </ol>
+            <p class="mt-3">直近のfreee登録結果は<span class="cmd">freee履歴</span>で確認できます。記帳確認画面でfreeeを優先表示したい場合は<span class="cmd">freeeを使う</span>と送ってください。</p>
+          </div>
+        </details>
+
+        <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
+          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>弥生会計へCSVで取り込む</span><span class="chevron text-brand-500">›</span></summary>
+          <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
+            <p>弥生会計はAPI連携の設定が不要です。日々のレシート・請求書PDFをLINEで処理しておき、月末にまとめて取り込みます。</p>
+            <ol class="mt-3 list-decimal space-y-2 pl-5">
+              <li>LINEで<span class="cmd">CSV出力</span>と送ると、当月の確定済み仕訳のCSVをダウンロードできます。</li>
+              <li>月を指定する場合は<span class="cmd">CSV出力 2026-06</span>のように送ります。</li>
+              <li>ダウンロードしたCSVを、弥生会計の「仕訳日記帳インポート」から取り込みます。</li>
+            </ol>
+            <p class="mt-3 text-xs leading-6 text-stone-500">CSVは弥生会計向けの25列・ヘッダーなし形式（Shift_JIS・CRLF）で出力します。税額は弥生側の自動計算に任せる設計です。</p>
+          </div>
+        </details>
+
+        <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
+          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>主に使う会計ソフトを設定・切り替える</span><span class="chevron text-brand-500">›</span></summary>
+          <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
+            <ul class="list-disc space-y-2 pl-5">
+              <li><span class="cmd">会計ソフト</span> — 現在の会計ソフト設定を確認</li>
+              <li><span class="cmd">MFを使う</span> / <span class="cmd">freeeを使う</span> — 記帳確認画面で優先表示する会計ソフトを切り替え</li>
+              <li><span class="cmd">登録履歴</span> — Money Forward・freee・承認状況をまとめて確認（二重登録の防止にも役立ちます）</li>
+            </ul>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- ============ 確認・管理コマンド ============ -->
+    <section id="commands" class="help-category pt-10">
+      <h2 class="flex items-center gap-2 text-lg font-extrabold text-stone-800"><span>💬</span>確認・管理コマンド</h2>
+      <div class="mt-4 space-y-3">
+
+        <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
+          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>LINEコマンド一覧</span><span class="chevron text-brand-500">›</span></summary>
+          <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
+            <p>LINEのトークに以下の言葉を送ると、それぞれの機能を呼び出せます。</p>
+            <div class="mt-4 space-y-4 text-[13px] leading-7">
+              <div>
+                <p class="font-bold text-stone-700">はじめる・使い方</p>
+                <ul class="mt-1 list-disc space-y-1 pl-5">
+                  <li><span class="cmd">はじめて</span> / <span class="cmd">スタート</span> — 初回の使い方を表示</li>
+                  <li><span class="cmd">β版案内</span> — βユーザー向けの利用手順</li>
+                  <li><span class="cmd">ヘルプ</span> / <span class="cmd">使い方</span> — コマンド一覧を表示</li>
+                  <li><span class="cmd">FAQ</span> / <span class="cmd">よくある質問</span> — よくある質問と対処法</li>
+                </ul>
+              </div>
+              <div>
+                <p class="font-bold text-stone-700">解析の補足</p>
+                <ul class="mt-1 list-disc space-y-1 pl-5">
+                  <li><span class="cmd">メモ: ○○</span> — 次に送るレシートの用途を解析に反映</li>
+                  <li><span class="cmd">メモ確認</span> / <span class="cmd">メモ削除</span> — 保存中の用途メモの確認・削除</li>
+                  <li><span class="cmd">取引先: ○○</span> — 取引先名の入力・補足</li>
+                </ul>
+              </div>
+              <div>
+                <p class="font-bold text-stone-700">状況の確認</p>
+                <ul class="mt-1 list-disc space-y-1 pl-5">
+                  <li><span class="cmd">利用状況</span> — 今月の解析・記帳状況</li>
+                  <li><span class="cmd">未処理</span> — 未処理・承認待ち・円換算待ちの候補</li>
+                  <li><span class="cmd">月次確認</span> — 今月の経理の残作業チェック</li>
+                  <li><span class="cmd">承認状況</span> — 直近の承認依頼の状態</li>
+                  <li><span class="cmd">登録履歴</span> — MF・freee・承認状況のまとめ</li>
+                  <li><span class="cmd">freee履歴</span> — 直近のfreee登録結果</li>
+                </ul>
+              </div>
+              <div>
+                <p class="font-bold text-stone-700">連携・出力</p>
+                <ul class="mt-1 list-disc space-y-1 pl-5">
+                  <li><span class="cmd">連携</span> — Money Forwardとの連携を開始</li>
+                  <li><span class="cmd">freee連携</span> — freeeとの連携を開始</li>
+                  <li><span class="cmd">会計ソフト</span> — 会計ソフト設定の確認</li>
+                  <li><span class="cmd">MFを使う</span> / <span class="cmd">freeeを使う</span> — 優先表示の切り替え</li>
+                  <li><span class="cmd">CSV出力</span> / <span class="cmd">CSV出力 2026-06</span> — 弥生会計向けCSVのダウンロード</li>
+                </ul>
+              </div>
+              <div>
+                <p class="font-bold text-stone-700">契約・サポート</p>
+                <ul class="mt-1 list-disc space-y-1 pl-5">
+                  <li><span class="cmd">プラン</span> — 現在の契約プランを確認</li>
+                  <li><span class="cmd">解約</span> / <span class="cmd">プラン変更</span> — 解約・プラン変更の案内</li>
+                  <li><span class="cmd">エラー</span> / <span class="cmd">記帳できない</span> — よくあるエラーと対処法</li>
+                  <li><span class="cmd">フィードバック</span> — 感想・改善要望の送信方法</li>
+                  <li><span class="cmd">お問い合わせ</span> / <span class="cmd">サポート</span> — 連絡方法の案内</li>
+                  <li><span class="cmd">バージョン</span> — 現在のシステムの版と主な機能</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
+          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>月末の残作業を確認する（未処理・月次確認）</span><span class="chevron text-brand-500">›</span></summary>
+          <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
+            <p>処理し忘れがないか、LINEでいつでも確認できます。</p>
+            <ul class="mt-3 list-disc space-y-2 pl-5">
+              <li><span class="cmd">未処理</span> — 未処理・承認待ち・円換算待ちの仕訳候補を一覧表示</li>
+              <li><span class="cmd">月次確認</span> — 月末時点で残っている経理作業をチェック</li>
+              <li><span class="cmd">利用状況</span> — 今月どれだけ解析・記帳したかを確認</li>
+            </ul>
+            <p class="mt-3">月末は「未処理を確認 → 残りを処理 → 弥生ユーザーはCSV出力」の流れがおすすめです。</p>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- ============ 料金・お支払い ============ -->
+    <section id="billing" class="help-category pt-10">
+      <h2 class="flex items-center gap-2 text-lg font-extrabold text-stone-800"><span>💳</span>料金・お支払い</h2>
+      <div class="mt-4 space-y-3">
+
+        <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
+          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>料金プランの内容（ENTRY / PREMIUM）</span><span class="chevron text-brand-500">›</span></summary>
+          <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
+            <ul class="list-disc space-y-2 pl-5">
+              <li><span class="font-bold">ENTRY PLAN — 550円/月（税込）</span>：レシート画像・PDF請求書のAI解析、仕訳候補の作成、用途メモ・取引先入力、科目・税区分の確認。会計ソフト連携・証憑対応は含まれません。</li>
+              <li><span class="font-bold">PREMIUM PLAN — 1,100円/月（税込）</span>：ENTRYの内容に加えて、Money Forward記帳、freee取引登録、弥生会計CSV出力、領収書画像の証憑対応。</li>
+            </ul>
+            <p class="mt-3 font-bold text-brand-600">どちらも月額固定で、枚数による従量課金はありません。</p>
+            <p class="mt-3">現在の契約プランはLINEで<span class="cmd">プラン</span>と送ると確認できます。お申し込みは<a href="./#pricing" class="font-bold text-brand-600 underline">サービス紹介ページ</a>から。</p>
+          </div>
+        </details>
+
+        <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
+          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>プラン変更・解約する</span><span class="chevron text-brand-500">›</span></summary>
+          <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
+            <p>LINEで<span class="cmd">解約</span>または<span class="cmd">プラン変更</span>と送ると、手続きの案内が表示されます。案内に沿ってお手続きください。</p>
+            <p class="mt-3 text-xs leading-6 text-stone-500">β期間中は、利用状況や改善状況に応じて提供内容・利用条件・料金プランを調整する場合があります。重要な変更は事前にご案内します。</p>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- ============ トラブル・お問い合わせ ============ -->
+    <section id="troubleshooting" class="help-category pt-10">
+      <h2 class="flex items-center gap-2 text-lg font-extrabold text-stone-800"><span>🛠</span>トラブル・お問い合わせ</h2>
+      <div class="mt-4 space-y-3">
+
+        <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
+          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>よくあるエラーと対処法</span><span class="chevron text-brand-500">›</span></summary>
+          <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
+            <ol class="list-decimal space-y-3 pl-5">
+              <li><span class="font-bold">Money Forwardに記帳できない</span><br />LINEで<span class="cmd">連携</span>と送って、Money Forwardを再連携してください。</li>
+              <li><span class="font-bold">連携したのにエラーになる</span><br />権限や有効期限の問題の可能性があります。まず<span class="cmd">連携</span>と送って再連携してください。</li>
+              <li><span class="font-bold">証憑添付だけ失敗した</span><br />記帳自体は完了している場合があります。必要に応じて、Money Forward側で画像を手動添付してください。</li>
+              <li><span class="font-bold">「画像が小さい」と表示された</span><br />証憑保存に不向きな可能性があります。明るい場所で、文字がはっきり読める距離から再撮影してください。</li>
+              <li><span class="font-bold">勘定科目・税区分が違う</span><br />支払方法を選ぶ前に「科目を変更」「税区分を変更」ボタンから修正できます。</li>
+              <li><span class="font-bold">外貨レシートと判定された</span><br />カード明細などで日本円換算額を確認し、円換算額を入力してください。</li>
+            </ol>
+            <p class="mt-4">解決しない場合は、スクリーンショット・操作内容・エラーIDをLINEに送ってください。LINEで<span class="cmd">エラー</span>と送ると、この対処法一覧をいつでも確認できます。</p>
+          </div>
+        </details>
+
+        <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
+          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>エラーIDについて</span><span class="chevron text-brand-500">›</span></summary>
+          <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
+            <p>処理に失敗した際、メッセージにエラーIDが表示されることがあります。お問い合わせの際にこのIDを添えていただくと、原因の確認がスムーズになります。</p>
+            <p class="mt-3">エラーIDと、発生した操作の内容・スクリーンショットをそのままLINEに送ってください。</p>
+          </div>
+        </details>
+
+        <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
+          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>LINEの返信が遅い・返ってこない</span><span class="chevron text-brand-500">›</span></summary>
+          <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
+            <p>LINE公式アカウントの月間通数上限や、一時的な通信状況により返信が遅れる場合があります。時間をおいて再度お試しください。</p>
+            <p class="mt-3">β期間中は安定運用に向けて順次改善しています。長時間返信がない場合は、お手数ですが時間を変えてもう一度お送りください。</p>
+          </div>
+        </details>
+
+        <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
+          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>お問い合わせ・フィードバックを送る</span><span class="chevron text-brand-500">›</span></summary>
+          <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
+            <p>不具合のご報告・ご質問・ご要望は、LINEで<span class="cmd">お問い合わせ</span>または<span class="cmd">サポート</span>と送ると連絡方法をご案内します。</p>
+            <p class="mt-3">使ってみた感想は<span class="cmd">フィードバック</span>と送ってください。読み取り精度、勘定科目の自然さ、記帳の分かりやすさなど、ひとことでも改善の参考になります。</p>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- 解決しないとき -->
+    <section class="pt-12">
+      <div class="rounded-[2rem] bg-gradient-to-br from-brand-100 via-white to-honey p-6 text-center shadow-soft">
+        <p class="text-lg font-extrabold text-stone-800">解決しませんでしたか？</p>
+        <p class="mt-2 text-sm leading-7 text-stone-600">LINEで「お問い合わせ」と送っていただければ、直接ご案内します。</p>
+        <a href="https://lin.ee/8zc0VBd" class="mt-5 inline-block rounded-full bg-brand-500 px-8 py-3.5 text-sm font-bold text-white shadow-pop transition hover:bg-brand-600">LINEで質問する</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-stone-800 px-4 py-10 text-center text-xs text-stone-300">
+    <p class="mb-4"><a href="./" class="underline hover:text-white">撮るだけ経理 サービス紹介ページ</a></p>
+    <p class="mb-4 text-stone-400">運営会社: <a href="https://tumugi-capital.github.io/homepage/" class="underline hover:text-white" target="_blank" rel="noopener noreferrer">紬キャピタル合同会社</a></p>
+    <div class="mx-auto mb-6 flex max-w-xs flex-col gap-3 text-stone-400 sm:max-w-none sm:flex-row sm:justify-center sm:gap-5">
+      <a href="https://tsumugi-capital.notion.site/37170d7a344e809b9768e5fbc2b639a6?source=copy_link" class="hover:text-white" target="_blank" rel="noopener noreferrer">利用規約</a>
+      <a href="https://tsumugi-capital.notion.site/37f70d7a344e805ca6e8de022747954e" class="hover:text-white" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>
+      <a href="https://tsumugi-capital.notion.site/37f70d7a344e8061a27cf23cef4895e0" class="hover:text-white" target="_blank" rel="noopener noreferrer">特定商取引法に基づく表記</a>
+    </div>
+    <p class="text-stone-500">&copy; Tsumugi Capital LLC. All rights reserved.</p>
+  </footer>
+
+  <script>
+    (function () {
+      var input = document.getElementById('help-search');
+      var articles = Array.prototype.slice.call(document.querySelectorAll('.help-article'));
+      var categories = Array.prototype.slice.call(document.querySelectorAll('.help-category'));
+      var noResults = document.getElementById('no-results');
+      var countLabel = document.getElementById('search-count');
+      var categoryNav = document.getElementById('category-nav');
+
+      function normalize(s) { return (s || '').toLowerCase().replace(/\s+/g, ''); }
+
+      input.addEventListener('input', function () {
+        var q = normalize(input.value);
+        if (!q) {
+          articles.forEach(function (a) { a.style.display = ''; a.open = false; });
+          categories.forEach(function (c) { c.style.display = ''; });
+          noResults.classList.add('hidden');
+          countLabel.classList.add('hidden');
+          categoryNav.style.display = '';
+          return;
+        }
+        categoryNav.style.display = 'none';
+        var hits = 0;
+        articles.forEach(function (a) {
+          var match = normalize(a.textContent).indexOf(q) !== -1;
+          a.style.display = match ? '' : 'none';
+          a.open = match;
+          if (match) hits++;
+        });
+        categories.forEach(function (c) {
+          var visible = c.querySelectorAll('.help-article:not([style*="display: none"])').length;
+          c.style.display = visible > 0 ? '' : 'none';
+        });
+        noResults.classList.toggle('hidden', hits > 0);
+        countLabel.classList.remove('hidden');
+        countLabel.textContent = hits > 0 ? hits + '件の記事が見つかりました' : '';
+      });
+    })();
+  </script>
+</body>
+</html>
