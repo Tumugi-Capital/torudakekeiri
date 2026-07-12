@@ -10,6 +10,9 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://tumugi-capital.github.io/torudakekeiri/help.html" />
   <meta name="twitter:card" content="summary" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -17,20 +20,20 @@
         extend: {
           colors: {
             brand: {
-              50: '#fff8f7',
-              100: '#faeeee',
-              200: '#f4d7d7',
-              500: '#d98b8b',
-              600: '#c96f78',
-              700: '#a85661'
+              50: '#f7f5f0',
+              100: '#eee9df',
+              200: '#ddd3bf',
+              500: '#3f6252',
+              600: '#345244',
+              700: '#263f35'
             },
-            cream: '#fffdf8',
-            mint: '#eaf8f3',
-            honey: '#fff3c4'
+            cream: '#fcfbf8',
+            mint: '#e8ede6',
+            honey: '#e9ddb8'
           },
           boxShadow: {
-            soft: '0 14px 34px rgba(135, 82, 82, 0.12)',
-            pop: '0 18px 50px rgba(217, 139, 139, 0.22)'
+            soft: '0 14px 34px rgba(45, 55, 45, 0.10)',
+            pop: '0 18px 44px rgba(38, 63, 53, 0.24)'
           }
         }
       }
@@ -39,11 +42,15 @@
   <style>
     html { scroll-behavior: smooth; }
     body {
-      font-family: 'Helvetica Neue', Arial, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+      font-family: 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
       -webkit-font-smoothing: antialiased;
       line-break: strict;
       word-break: normal;
       overflow-wrap: anywhere;
+    }
+    h1, h2 {
+      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+      letter-spacing: 0.04em;
     }
     p, li, h1, h2, h3 { text-wrap: pretty; }
     details > summary { list-style: none; cursor: pointer; }
@@ -51,16 +58,16 @@
     details[open] .chevron { transform: rotate(90deg); }
     .chevron { transition: transform .15s ease; }
     .dot-bg {
-      background-image: radial-gradient(rgba(217,139,139,.18) 1.2px, transparent 1.2px);
+      background-image: radial-gradient(rgba(63, 98, 82, 0.14) 1.2px, transparent 1.2px);
       background-size: 18px 18px;
     }
     .cmd {
       display: inline-block;
       border-radius: 9999px;
-      background: #faeeee;
+      background: #eee9df;
       padding: 1px 10px;
       font-weight: 700;
-      color: #a85661;
+      color: #263f35;
       font-size: 0.85em;
     }
   </style>
