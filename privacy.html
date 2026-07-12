@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>プライバシーポリシー | 撮るだけ経理</title>
+  <meta name="description" content="「撮るだけ経理」のプライバシーポリシーです。" />
+  <meta name="robots" content="noindex" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50: '#fff8f7', 100: '#faeeee', 200: '#f4d7d7', 500: '#d98b8b', 600: '#c96f78', 700: '#a85661' },
+            cream: '#fffdf8',
+            mint: '#eaf8f3',
+            honey: '#fff3c4'
+          },
+          boxShadow: {
+            soft: '0 14px 34px rgba(135, 82, 82, 0.12)',
+            pop: '0 18px 50px rgba(217, 139, 139, 0.22)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Helvetica Neue', Arial, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      line-break: strict;
+      word-break: normal;
+      overflow-wrap: anywhere;
+    }
+    p, li, h1, h2, h3 { text-wrap: pretty; }
+    .dot-bg {
+      background-image: radial-gradient(rgba(217,139,139,.18) 1.2px, transparent 1.2px);
+      background-size: 18px 18px;
+    }
+  </style>
+</head>
+<body class="bg-brand-50 text-stone-700 leading-relaxed tracking-wide">
+
+  <nav class="sticky top-0 z-50 border-b border-brand-100 bg-white/95 px-4 py-3 backdrop-blur">
+    <div class="mx-auto flex max-w-2xl items-center justify-between gap-3">
+      <a href="./" class="flex items-center gap-2 text-sm font-extrabold text-stone-800"><span class="text-lg">🧾</span>撮るだけ経理</a>
+      <a href="./" class="rounded-full bg-brand-100 px-4 py-1.5 text-xs font-bold text-brand-700 transition hover:bg-brand-200">← サービス紹介へ戻る</a>
+    </div>
+  </nav>
+
+  <header class="relative overflow-hidden bg-gradient-to-br from-brand-100 via-cream to-mint px-4 py-10 text-center shadow-sm dot-bg">
+    <div class="absolute -right-12 -top-10 h-36 w-36 rounded-full bg-white/60 blur-2xl"></div>
+    <div class="absolute -bottom-16 -left-12 h-40 w-40 rounded-full bg-brand-200/60 blur-2xl"></div>
+    <div class="relative mx-auto max-w-2xl">
+      <h1 class="text-2xl font-extrabold text-stone-800 sm:text-3xl">「撮るだけ経理」プライバシーポリシー</h1>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-2xl px-4 py-10">
+    <article class="rounded-[2rem] border border-brand-100 bg-white p-6 shadow-soft sm:p-10">
+
+      <p class="text-sm leading-8">本プライバシーポリシーは、「撮るだけ経理」（以下「本サービス」といいます。）における、ユーザー情報および個人情報の取扱いについて定めるものです。</p>
+
+      <section class="mt-10">
+        <h2 class="border-b-2 border-brand-100 pb-2 text-lg font-bold text-stone-800">1. 取得する情報</h2>
+        <p class="mt-4 text-sm leading-8">本サービスは、サービス提供のため、以下の情報を取得する場合があります。</p>
+        <ol class="mt-3 list-decimal space-y-2 pl-6 text-sm leading-8">
+          <li>ユーザー識別情報、LINEユーザーID、サービス内ユーザーID、Money Forward連携に必要な識別情報、Stripe決済に関連する顧客識別情報</li>
+          <li>ユーザーが送信する情報　領収書、レシート、請求書その他の画像またはテキスト情報、支払先、日付、金額、摘要、勘定科目、消費税区分、インボイス登録番号その他の会計処理に関連する情報</li>
+          <li>外部サービス連携情報　Money Forwardクラウド会計との連携に必要なアクセストークン、リフレッシュトークン、事業者情報、勘定科目情報、税区分情報、記帳結果情報</li>
+          <li>決済関連情報　Stripeを通じて処理される決済状況、サブスクリプション状態、顧客ID、支払成功・失敗情報。なお、クレジットカード番号等の詳細な決済情報は、原則としてStripeが管理し、運営者は直接保持しません。</li>
+          <li>利用状況・ログ情報　利用日時、利用回数、処理結果、エラー内容、記帳成功・失敗履歴、アクセスログ、端末・ブラウザ等に関する技術情報</li>
+        </ol>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="border-b-2 border-brand-100 pb-2 text-lg font-bold text-stone-800">2. 利用目的</h2>
+        <p class="mt-4 text-sm leading-8">本サービスは、取得した情報を以下の目的で利用します。</p>
+        <ol class="mt-3 list-decimal space-y-2 pl-6 text-sm leading-8">
+          <li>本サービスの提供、本人確認、ユーザー管理のため</li>
+          <li>領収書、レシート、請求書等の解析、仕訳候補、勘定科目候補、消費税区分候補、インボイス関連情報および各種確認アラートの生成のため</li>
+          <li>ユーザーの確認に基づき、Money Forwardクラウド会計その他の外部サービスへ記帳または連携するため</li>
+          <li>サブスクリプション、決済、課金、無料利用枠の管理のため</li>
+          <li>不具合、障害、エラー、問い合わせへの対応のため</li>
+          <li>本サービスの品質改善、機能改善、利用状況分析のため</li>
+          <li>不正利用、規約違反、セキュリティ事故の防止および調査のため</li>
+          <li>法令または行政機関・裁判所等の要請に対応するため</li>
+          <li>重要なお知らせ、利用規約またはプライバシーポリシーの変更通知、その他サービス運営上必要な連絡のため</li>
+        </ol>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="border-b-2 border-brand-100 pb-2 text-lg font-bold text-stone-800">3. AI解析および外部サービスへの送信</h2>
+        <p class="mt-4 text-sm leading-8">本サービスは、領収書、レシート、請求書等の画像またはテキスト情報を解析するため、OpenAIその他のAI関連サービスを利用する場合があります。</p>
+        <p class="mt-3 text-sm leading-8">また、本サービスは、Money Forwardクラウド会計、LINE、Stripe、Supabase、OpenAIその他の外部サービスを利用して提供されます。これらの外部サービスに対し、サービス提供に必要な範囲でユーザー情報または取引情報が送信される場合があります。</p>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="border-b-2 border-brand-100 pb-2 text-lg font-bold text-stone-800">4. 第三者提供</h2>
+        <p class="mt-4 text-sm leading-8">運営者は、次の場合を除き、取得した個人情報を第三者に提供しません。</p>
+        <ol class="mt-3 list-decimal space-y-2 pl-6 text-sm leading-8">
+          <li>ユーザー本人の同意がある場合</li>
+          <li>本サービスの提供に必要な範囲で外部サービスまたは業務委託先に提供する場合</li>
+          <li>法令に基づく場合</li>
+          <li>人の生命、身体または財産の保護のために必要がある場合</li>
+          <li>公的機関またはこれに準じる機関から適法な要請を受けた場合</li>
+          <li>不正利用、セキュリティ事故、規約違反への対応に必要な場合</li>
+        </ol>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="border-b-2 border-brand-100 pb-2 text-lg font-bold text-stone-800">5. 業務委託</h2>
+        <p class="mt-4 text-sm leading-8">運営者は、本サービスの運営、決済、データ保存、AI解析、通知、問い合わせ対応その他の業務の一部を外部事業者に委託する場合があります。この場合、運営者は、委託先に対して必要かつ適切な管理を行います。</p>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="border-b-2 border-brand-100 pb-2 text-lg font-bold text-stone-800">6. 安全管理措置</h2>
+        <p class="mt-4 text-sm leading-8">運営者は、取得した情報について、不正アクセス、紛失、破壊、改ざん、漏えい等を防止するため、必要かつ適切な安全管理措置を講じます。</p>
+        <p class="mt-3 text-sm leading-8">本サービスでは、外部サービス連携に必要な認証情報について、暗号化その他の方法により保護するよう努めます。</p>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="border-b-2 border-brand-100 pb-2 text-lg font-bold text-stone-800">7. データの保存期間</h2>
+        <p class="mt-4 text-sm leading-8">運営者は、本サービスの提供、法令対応、問い合わせ対応、監査、障害対応、課金管理その他の正当な目的に必要な範囲で、ユーザー情報および取引情報を保存します。</p>
+        <p class="mt-3 text-sm leading-8">ユーザーが退会または連携解除を行った場合でも、法令上または運営上必要な範囲で、一定期間情報を保存する場合があります。</p>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="border-b-2 border-brand-100 pb-2 text-lg font-bold text-stone-800">8. ユーザーによる確認、訂正、削除等</h2>
+        <p class="mt-4 text-sm leading-8">ユーザーは、運営者に対し、自己の個人情報について、開示、訂正、追加、削除、利用停止、第三者提供の停止等を求めることができます。</p>
+        <p class="mt-3 text-sm leading-8">請求を希望する場合は、本ポリシー末尾の問い合わせ先までご連絡ください。本人確認のうえ、法令に従い合理的な範囲で対応します。</p>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="border-b-2 border-brand-100 pb-2 text-lg font-bold text-stone-800">9. 外部サービスのプライバシーポリシー</h2>
+        <p class="mt-4 text-sm leading-8">本サービスは、LINE、Money Forwardクラウド会計、Stripe、OpenAI、Supabaseその他の外部サービスと連携して提供されます。これら外部サービスにおける情報の取扱いについては、各外部サービスの利用規約およびプライバシーポリシーをご確認ください。</p>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="border-b-2 border-brand-100 pb-2 text-lg font-bold text-stone-800">10. Cookie等の利用</h2>
+        <p class="mt-4 text-sm leading-8">本サービスのWebページまたは決済ページでは、サービス提供、ログ解析、セキュリティ確保、決済処理等のため、Cookieその他の類似技術が利用される場合があります。</p>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="border-b-2 border-brand-100 pb-2 text-lg font-bold text-stone-800">11. 未成年者の利用</h2>
+        <p class="mt-4 text-sm leading-8">未成年者が本サービスを利用する場合は、親権者その他の法定代理人の同意を得たうえで利用するものとします。</p>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="border-b-2 border-brand-100 pb-2 text-lg font-bold text-stone-800">12. 本ポリシーの変更</h2>
+        <p class="mt-4 text-sm leading-8">運営者は、必要に応じて本プライバシーポリシーを変更することがあります。重要な変更を行う場合は、本サービス上での表示その他適切な方法により通知します。</p>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="border-b-2 border-brand-100 pb-2 text-lg font-bold text-stone-800">13. 問い合わせ先</h2>
+        <p class="mt-4 text-sm leading-8">本ポリシーに関する問い合わせは、以下までご連絡ください。</p>
+        <div class="mt-4 rounded-2xl bg-brand-50 p-5 text-sm leading-8">
+          <p>運営者： 紬キャピタル合同会社</p>
+          <p>メールアドレス： hndnyk@icloud.com</p>
+          <p>所在地： 法令に基づき、本人から開示請求があった場合には、本人確認のうえ遅滞なく開示します。</p>
+        </div>
+        <p class="mt-6 text-xs leading-6 text-stone-500">制定日： 2026年6月14日<br />最終改定日： 2026年6月14日</p>
+      </section>
+
+    </article>
+
+    <div class="mt-8 flex flex-col items-center gap-3 text-center text-xs font-bold sm:flex-row sm:justify-center sm:gap-5">
+      <a href="./terms.html" class="rounded-full bg-white px-5 py-2.5 text-brand-700 shadow-sm ring-1 ring-brand-100 transition hover:bg-brand-100">利用規約</a>
+      <a href="./tokushoho.html" class="rounded-full bg-white px-5 py-2.5 text-brand-700 shadow-sm ring-1 ring-brand-100 transition hover:bg-brand-100">特定商取引法に基づく表記</a>
+      <a href="./help.html" class="rounded-full bg-white px-5 py-2.5 text-brand-700 shadow-sm ring-1 ring-brand-100 transition hover:bg-brand-100">ヘルプセンター</a>
+    </div>
+  </main>
+
+  <footer class="bg-stone-800 px-4 py-10 text-center text-xs text-stone-300">
+    <p class="mb-4"><a href="./" class="underline hover:text-white">撮るだけ経理 サービス紹介ページ</a></p>
+    <p class="mb-4 text-stone-400">運営会社: <a href="https://tumugi-capital.github.io/homepage/" class="underline hover:text-white" target="_blank" rel="noopener noreferrer">紬キャピタル合同会社</a></p>
+    <div class="mx-auto mb-6 flex max-w-xs flex-col gap-3 text-stone-400 sm:max-w-none sm:flex-row sm:justify-center sm:gap-5">
+      <a href="./terms.html" class="hover:text-white">利用規約</a>
+      <a href="./privacy.html" class="hover:text-white">プライバシーポリシー</a>
+      <a href="./tokushoho.html" class="hover:text-white">特定商取引法に基づく表記</a>
+    </div>
+    <p class="text-stone-500">&copy; Tsumugi Capital LLC. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>免責事項・利用規約 | 撮るだけ経理</title>
+  <meta name="description" content="「撮るだけ経理」の免責事項・利用規約です。" />
+  <meta name="robots" content="noindex" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50: '#fff8f7', 100: '#faeeee', 200: '#f4d7d7', 500: '#d98b8b', 600: '#c96f78', 700: '#a85661' },
+            cream: '#fffdf8',
+            mint: '#eaf8f3',
+            honey: '#fff3c4'
+          },
+          boxShadow: {
+            soft: '0 14px 34px rgba(135, 82, 82, 0.12)',
+            pop: '0 18px 50px rgba(217, 139, 139, 0.22)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Helvetica Neue', Arial, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      line-break: strict;
+      word-break: normal;
+      overflow-wrap: anywhere;
+    }
+    p, li, h1, h2, h3 { text-wrap: pretty; }
+    .dot-bg {
+      background-image: radial-gradient(rgba(217,139,139,.18) 1.2px, transparent 1.2px);
+      background-size: 18px 18px;
+    }
+  </style>
+</head>
+<body class="bg-brand-50 text-stone-700 leading-relaxed tracking-wide">
+
+  <nav class="sticky top-0 z-50 border-b border-brand-100 bg-white/95 px-4 py-3 backdrop-blur">
+    <div class="mx-auto flex max-w-2xl items-center justify-between gap-3">
+      <a href="./" class="flex items-center gap-2 text-sm font-extrabold text-stone-800"><span class="text-lg">🧾</span>撮るだけ経理</a>
+      <a href="./" class="rounded-full bg-brand-100 px-4 py-1.5 text-xs font-bold text-brand-700 transition hover:bg-brand-200">← サービス紹介へ戻る</a>
+    </div>
+  </nav>
+
+  <header class="relative overflow-hidden bg-gradient-to-br from-brand-100 via-cream to-mint px-4 py-10 text-center shadow-sm dot-bg">
+    <div class="absolute -right-12 -top-10 h-36 w-36 rounded-full bg-white/60 blur-2xl"></div>
+    <div class="absolute -bottom-16 -left-12 h-40 w-40 rounded-full bg-brand-200/60 blur-2xl"></div>
+    <div class="relative mx-auto max-w-2xl">
+      <h1 class="text-2xl font-extrabold text-stone-800 sm:text-3xl">「撮るだけ経理」免責事項・利用規約</h1>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-2xl px-4 py-10">
+    <article class="rounded-[2rem] border border-brand-100 bg-white p-6 shadow-soft sm:p-10">
+
+      <section>
+        <h2 class="border-b-2 border-brand-100 pb-2 text-lg font-bold text-stone-800">1. 本サービスの位置づけ</h2>
+        <p class="mt-4 text-sm leading-8">本サービスは、ユーザーが送信した領収書、レシート、請求書その他の取引情報をもとに、AIモデル等を用いて仕訳候補、勘定科目候補、消費税区分候補、インボイス関連情報および各種確認アラートを提示する会計入力補助サービスです。</p>
+        <p class="mt-3 text-sm leading-8">本サービスは、税務申告、税務代理、税務相談、会計監査、法的助言その他の専門業務を提供するものではありません。</p>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="border-b-2 border-brand-100 pb-2 text-lg font-bold text-stone-800">2. 成果物の非保証</h2>
+        <p class="mt-4 text-sm leading-8">本サービスが提示する仕訳候補、勘定科目、消費税区分、インボイス関連情報、アラートその他の出力結果は、AIモデルおよびシステムによる機械的な推測または補助情報であり、その正確性、完全性、適法性、最新性、有用性、税務調査における有効性または特定の目的への適合性を保証するものではありません。</p>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="border-b-2 border-brand-100 pb-2 text-lg font-bold text-stone-800">3. ユーザーによる最終確認義務</h2>
+        <p class="mt-4 text-sm leading-8">ユーザーは、本サービスが出力した内容を自己の責任において確認し、必要に応じて修正したうえで利用するものとします。</p>
+        <p class="mt-3 text-sm leading-8">確定申告、決算、税務申告、会計処理、消費税判定、インボイス制度への対応その他の最終的な判断は、ユーザー自身または顧問税理士、公認会計士その他の専門家の確認に基づいて行うものとします。</p>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="border-b-2 border-brand-100 pb-2 text-lg font-bold text-stone-800">4. 外部サービス連携に関する免責</h2>
+        <p class="mt-4 text-sm leading-8">本サービスは、Money Forwardクラウド会計、Stripe、LINE、OpenAI、Supabaseその他の外部サービスと連携する場合があります。</p>
+        <p class="mt-3 text-sm leading-8">これら外部サービスの仕様変更、障害、停止、認証エラー、API制限その他の事情により、本サービスの一部または全部が利用できない場合があります。運営者は、外部サービスに起因して生じた損害について、運営者の故意または重過失がある場合を除き、責任を負いません。</p>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="border-b-2 border-brand-100 pb-2 text-lg font-bold text-stone-800">5. 損害賠償の制限</h2>
+        <p class="mt-4 text-sm leading-8">本サービスの利用または利用不能によりユーザーに生じた損害について、運営者は、運営者の故意または重過失がある場合を除き、責任を負いません。</p>
+        <p class="mt-3 text-sm leading-8">運営者が責任を負う場合であっても、法令上許される範囲において、運営者の損害賠償責任は、当該損害発生時点から過去1か月間にユーザーが本サービスに対して実際に支払った利用料金の総額を上限とします。</p>
+        <p class="mt-3 text-sm leading-8">なお、損害には、追徴課税、重加算税、延滞税、過少申告加算税、無申告加算税、弁護士費用、税理士費用、逸失利益、事業機会の喪失、データ喪失、信用毀損その他の間接損害、特別損害、付随的損害を含みます。</p>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="border-b-2 border-brand-100 pb-2 text-lg font-bold text-stone-800">6. ユーザーの責任</h2>
+        <p class="mt-4 text-sm leading-8">ユーザーは、本サービスに入力または送信する情報について、適法な権限を有していることを保証するものとします。</p>
+        <p class="mt-3 text-sm leading-8">ユーザーは、本サービスの出力結果を利用するにあたり、関連法令、会計基準、税務上の取扱い、顧問税理士等の助言を踏まえ、自らの責任で判断するものとします。</p>
+      </section>
+
+    </article>
+
+    <div class="mt-8 flex flex-col items-center gap-3 text-center text-xs font-bold sm:flex-row sm:justify-center sm:gap-5">
+      <a href="./privacy.html" class="rounded-full bg-white px-5 py-2.5 text-brand-700 shadow-sm ring-1 ring-brand-100 transition hover:bg-brand-100">プライバシーポリシー</a>
+      <a href="./tokushoho.html" class="rounded-full bg-white px-5 py-2.5 text-brand-700 shadow-sm ring-1 ring-brand-100 transition hover:bg-brand-100">特定商取引法に基づく表記</a>
+      <a href="./help.html" class="rounded-full bg-white px-5 py-2.5 text-brand-700 shadow-sm ring-1 ring-brand-100 transition hover:bg-brand-100">ヘルプセンター</a>
+    </div>
+  </main>
+
+  <footer class="bg-stone-800 px-4 py-10 text-center text-xs text-stone-300">
+    <p class="mb-4"><a href="./" class="underline hover:text-white">撮るだけ経理 サービス紹介ページ</a></p>
+    <p class="mb-4 text-stone-400">運営会社: <a href="https://tumugi-capital.github.io/homepage/" class="underline hover:text-white" target="_blank" rel="noopener noreferrer">紬キャピタル合同会社</a></p>
+    <div class="mx-auto mb-6 flex max-w-xs flex-col gap-3 text-stone-400 sm:max-w-none sm:flex-row sm:justify-center sm:gap-5">
+      <a href="./terms.html" class="hover:text-white">利用規約</a>
+      <a href="./privacy.html" class="hover:text-white">プライバシーポリシー</a>
+      <a href="./tokushoho.html" class="hover:text-white">特定商取引法に基づく表記</a>
+    </div>
+    <p class="text-stone-500">&copy; Tsumugi Capital LLC. All rights reserved.</p>
+  </footer>
+</body>
+</html>
