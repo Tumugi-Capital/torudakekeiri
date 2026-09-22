@@ -1,0 +1,36 @@
+name: Marketing generator checks
+on:
+  pull_request:
+    paths:
+      - 'tools/marketing/**'
+      - '.github/workflows/marketing-*.yml'
+      - 'MARKETING_CHANGELOG.md'
+  push:
+    paths:
+      - 'tools/marketing/**'
+      - '.github/workflows/marketing-*.yml'
+      - 'MARKETING_CHANGELOG.md'
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: tools/marketing/package-lock.json
+      - run: npm ci --prefix tools/marketing --ignore-scripts
+      - run: npm test --prefix tools/marketing
+      - run: node tools/marketing/generate.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: marketing-preview
+          path: marketing-output/
+          retention-days: 14
+          if-no-files-found: error

@@ -1,0 +1,8 @@
+{
+  "name": "torudakekeiri-marketing",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": { "test": "node --test", "generate": "node generate.mjs" },
+  "dependencies": { "twitter-text": "3.1.0" }
+}
