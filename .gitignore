@@ -1,0 +1,4 @@
+# Local marketing tooling and generated review artifacts
+/tools/marketing/node_modules/
+/marketing-output/
+/marketing-previous/
