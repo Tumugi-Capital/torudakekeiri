@@ -801,6 +801,11 @@ body{letter-spacing:.025em;line-height:1.9} h1,h2,h3{letter-spacing:.025em} .wra
         <details class="feature-detail"><summary>用途メモを読み取りに反映</summary><p>「メモ: A社との打ち合わせ」のように送っておくと、レシートや請求書だけではわからない用途を、勘定科目の判断に生かせます。</p></details>
         <details class="feature-detail"><summary>家事按分（事業割合の設定）</summary><p>自宅の家賃や通信費など、事業と私用が混ざる支出は、事業割合を選ぶだけで按分できます。同じ支払先の2回目からは、前回の割合をワンタップで使えます。</p></details>
         <details class="feature-detail"><summary>承認フロー（PREMIUM・任意）</summary><p>借方・貸方・税区分・支払方法がそろった仕訳を、証憑画像とあわせて承認者へ1通で届けます。承認されると、会計ソフトへの記帳まで自動で行います。入力する人と確認する人を分けたいときに便利です。</p></details>
+        <details class="feature-detail"><summary>飲食費は、使い道を選ぶだけ</summary><p>飲食のレシートは、使い道（一人で飲食・お土産や差し入れ・社外の方を含む・社内のみ）をボタンで選ぶと、それに合った勘定科目の候補になります。コンビニやスーパーのレシートには人数を聞かず、社外の方との飲食を選んだときだけ、参加者を記録できます。</p></details>
+        <details class="feature-detail"><summary>8%と10%が混ざったレシートの内訳を検算</summary><p>食品とお酒・日用品などを一緒に買ったレシートは、税率ごとに分けて記帳します。読み取った内訳は、レシートに印字された消費税額と照らし合わせて確かめ、合わないときは自動で読み直します。</p></details>
+        <details class="feature-detail"><summary>ポイント払いは、実際に支払った金額で</summary><p>ポイントで一部を支払ったレシートは、ポイント分を差し引いた、実際に支払った金額で記帳します。</p></details>
+        <details class="feature-detail"><summary>直した内容を、次回から反映</summary><p>支払先の名前や勘定科目を直すと、その内容を覚えます。同じお店のレシートは、次回から直した内容で表示します。</p></details>
+        <details class="feature-detail"><summary>従業員の有無に合わせた案内</summary><p>はじめに従業員の有無を選んでおくと、従業員がいない方には福利厚生費の選択肢を出しません。従業員が増えたときは、LINEで「従業員設定」と送れば変更できます。</p></details>
         <details class="feature-detail"><summary>勘定科目・税区分を記帳前に修正</summary><p>AIの候補が違っていても、LINE上で勘定科目や税区分を直してから記帳できます。</p></details>
         <details class="feature-detail"><summary>支払方法に応じた貸方科目の判定</summary><p>現金、事業用クレジットカード、個人カード・立替払い、事業用口座、電子マネー・QR決済などに対応しています。</p></details>
         <details class="feature-detail"><summary>Money Forward・freee連携</summary><p>お使いの会計ソフトを選んでおけば、内容を確かめたあと、Money Forwardまたはfreeeへ記帳できます。</p></details>
@@ -867,6 +872,10 @@ body{letter-spacing:.025em;line-height:1.9} h1,h2,h3{letter-spacing:.025em} .wra
     <div class="wrap">
       <div class="sec-head"><p class="eyebrow">NEWS</p><h2>お知らせ</h2></div>
       <ul class="news">
+        <li><time class="num">2026.11.10</time><span>会計ソフトの応答に時間がかかるときも、「記帳する」がすぐに反応し、結果をあとからお知らせするようにしました。</span></li>
+        <li><time class="num">2026.11.09</time><span>8%と10%が混ざったレシートの内訳の読み取りを改善しました。コンビニ・スーパーのレシートでは、人数の確認を省きました。</span></li>
+        <li><time class="num">2026.11.08</time><span>飲食費・お酒・手土産の科目を、使い道に合わせて選べるようにしました。従業員の有無の設定にも対応しました。</span></li>
+        <li><time class="num">2026.11.05</time><span>ポイントで一部を支払ったレシートを、実際に支払った金額で記帳するようにしました。</span></li>
         <li><time class="num">2026.07.09</time><span>PDF請求書のAI読み取りと、取引先情報の会計ソフト転記に対応しました。</span></li>
         <li><time class="num">2026.07.05</time><span>弥生会計向けCSV出力（仕訳日記帳インポート形式）に対応しました。</span></li>
         <li><time class="num">2026.05.31</time><span>「撮るだけ経理」β版ユーザーの募集を開始しました。</span></li>
@@ -885,6 +894,10 @@ body{letter-spacing:.025em;line-height:1.9} h1,h2,h3{letter-spacing:.025em} .wra
         <details><summary>弥生会計でも使えますか？</summary><p>はい。PREMIUM PLANでは、LINEで「CSV出力」と送ると、その月の確定済み仕訳を弥生会計の仕訳日記帳インポート形式CSVでダウンロードできます。「CSV出力 2026-06」のように月指定も可能です。CSVはShift_JIS・CRLFで出力し、税額は弥生側の自動計算に任せる設計です。</p></details>
         <details><summary>PDFの請求書をそのまま読み取れますか？</summary><p>はい。PDFで届いた請求書ファイルをLINEに送ると、AIが請求書の内容を読み取り、仕訳候補作成に進められます。紙の請求書を撮影するだけでなく、PDFファイルそのものを送れる点が特徴です。読み取り結果は記帳・CSV出力前に必ず確認できます。</p></details>
         <details><summary>取引先名は入力・修正できますか？</summary><p>はい。AIで読み取りにくい取引先名や、請求書・領収書だけでは分かりにくい相手先をLINE上で入力・補足できます。記帳・CSV出力前に確認できる設計です。</p></details>
+        <details><summary>コンビニで買った飲み物やお弁当は、どの科目になりますか？</summary><p>解析のあとに表示されるボタンで、使い道（一人で飲食・お土産や差し入れ・社外の方を含む・社内のみ）を選ぶと、それに合った勘定科目の候補を表示します。最終的な科目は、記帳の前にご自身で確認・変更できます。判断に迷う場合は、税理士等の専門家にご確認ください。</p></details>
+        <details><summary>8%と10%が混ざったレシートはどうなりますか？</summary><p>税率ごとの金額を読み取り、会計ソフトへは税率ごとに分けて記帳します。内訳は解析結果に表示されますので、記帳の前にレシートと見比べてご確認ください。</p></details>
+        <details><summary>「記帳する」を押したあと、結果がすぐに出ないことがあります。</summary><p>会計ソフト側の応答に時間がかかっているときは、「記帳しています」とお返しし、完了したら結果をお知らせします。同じボタンをもう一度押す必要はありません。押し直しても、二重には記帳されません。</p></details>
+        <details><summary>食料品の消費税が1%になった場合、対応しますか？</summary><p>国会で審議中の法案（2027年4月から2年間、飲食料品の税率を1%にするもの）に合わせた準備を進めています。法案が成立した場合は、対象期間の日付のレシートを1%として読み取り・記帳できるようにします。内容は、成立した法律や会計ソフト各社の対応に合わせて見直します。</p></details>
         <details><summary>LINEの返信が遅い、または返らない場合は？</summary><p>LINE公式アカウントの月間通数上限や一時的な通信状況により、返信が遅れる場合があります。時間をおいて再度お試しください。β期間中は安定運用に向けて順次改善しています。</p></details>
         <details><summary>エラーが出た場合はどうすればよいですか？</summary><p>LINEで「エラー」と送ると、よくある対処法を確認できます。エラーIDが表示された場合は、お問い合わせ時にそのIDをお知らせください。</p></details>
       </div>
