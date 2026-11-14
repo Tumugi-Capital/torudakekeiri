@@ -584,6 +584,44 @@ body{background:var(--paper)}
 .final-card .btn{margin-top:26px;font-size:16px;padding:18px 30px}
 .final-card .hero-note{justify-content:center}
 @media(max-width:820px){.final-card{padding:40px 20px}.chat-mock{max-width:420px;margin-inline:auto}}
+
+/* 畳んだ一覧（ほかの機能・ほかの質問・過去のお知らせ・比較の根拠） */
+.more{margin-top:18px}
+.more>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:14px;color:var(--green);padding:11px 20px;border:1px solid var(--rule);border-radius:999px;background:var(--paper)}
+.more>summary::-webkit-details-marker{display:none}
+.more>summary::after{content:"＋";font-weight:700}
+.more[open]>summary::after{content:"−"}
+.more[open]>summary{margin-bottom:14px}
+.more .costs-note{margin-top:0}
+.anbun-side h3{font-size:18px;margin-bottom:10px;line-height:1.6}
+.anbun-side p{font-size:15px;color:var(--ink-2);line-height:1.9}
+.more-link{display:inline-block;margin-top:14px;font-weight:700;font-size:14px;color:var(--green)}
+@media(min-width:900px){.anbun-grid{align-items:center}}
+.beta-one{max-width:720px}
+
+/* スマホでは、比較と料金を詰めて表示する（内容は同じ） */
+@media(max-width:639px){
+  .cmp{display:flex;flex-direction:column}
+  .cmp-col--on{order:-1;border-radius:15px 15px 0 0!important}
+  .cmp-col{padding:22px 22px 18px}
+  .cmp-col:first-child{border-radius:0}
+  .cmp dl>div,.cmp dl>div:first-child{padding-block:9px}
+  .cmp-col:not(.cmp-col--on) dl>div:nth-child(3),.cmp-col:not(.cmp-col--on) dl>div:nth-child(4){display:none}
+  .cmp-col:last-child{border-radius:0 0 15px 15px;border-bottom:0}
+  .costs{margin-top:20px}
+  .plans{gap:16px;margin-top:28px}
+  .plan{padding:22px 20px}
+  .plan-price b{font-size:40px}
+  .plan-desc{margin-bottom:12px}
+  .plan ul{gap:4px}
+  .plan li{font-size:14px;line-height:1.6}
+  .sec{padding-block:48px}
+  .sec-head{margin-bottom:24px}
+  #tokucho .grid{gap:26px}
+  .safe-item{padding:20px 20px 18px}
+  .pain-section .card{padding:14px 0}
+  .lead-out{margin-top:28px}
+}
 </style>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%278%27 fill=%27%23124e3b%27/%3E%3Cpath d=%27M9 13V9h4m6 0h4v4m0 6v4h-4m-6 0H9v-4m4-3 2 2 4-4%27 fill=%27none%27 stroke=%27white%27 stroke-width=%272%27/%3E%3C/svg%3E" />
 </head>
@@ -647,13 +685,6 @@ body{background:var(--paper)}
     <div class="wrap integration-strip"><p>お使いの会計ソフトに対応<small>PREMIUMプランでご利用いただけます</small></p><div><b>Money Forward</b><span>記帳・証憑添付</span></div><div><b>freee</b><span>取引登録・証憑対応</span></div><div><b>弥生会計</b><span>CSV出力</span></div></div>
   </section>
 
-  <section class="intro-section sec sec--plain" style="padding-block:0 64px">
-    <div class="wrap">
-      <p class="eyebrow" style="margin-bottom:14px">撮るだけ経理とは</p>
-      <p class="prose" style="font-size:17px">LINEに送ったレシートや請求書をAIが読み取り、仕訳の候補にしてお返しする会計入力アシスタントです。</p>
-    </div>
-  </section>
-
   <section class="pain-section sec">
     <div class="wrap">
       <div class="sec-head">
@@ -714,11 +745,6 @@ body{background:var(--paper)}
         <p class="eyebrow">弥生会計をお使いの方へ</p>
         <h2><span class="ph">弥生会計へは、</span><span class="ph">月末に「CSV出力」と送るだけ。</span></h2>
         <p class="prose">日々のレシートや請求書をLINEで処理しておけば、月末に「CSV出力」と送るだけで、弥生会計の仕訳日記帳にそのまま取り込めるCSVをダウンロードできます。</p>
-      </div>
-      <div class="grid grid--3">
-        <div class="card card--flat"><p>1. 領収書の写真や請求書のPDFを、LINEに送る</p></div>
-        <div class="card card--flat"><p>2. 勘定科目・税区分・支払方法・取引先を確認する</p></div>
-        <div class="card card--flat"><p>3. 月末に「CSV出力」と送り、弥生会計に取り込む</p></div>
       </div>
       <p class="foot-note">CSVは弥生会計向けの25列・ヘッダーなし形式で出力するため、API連携の設定は必要ありません。弥生会計はそのままに、日々のレシート整理だけをLINEで軽くできます。</p>
     </div>
@@ -783,10 +809,11 @@ body{background:var(--paper)}
           <div class="cost cost--on"><b class="num">3,900<i>〜</i>7,400<i>円</i></b><span>記帳代行の相場との月額差</span></div>
           <div class="cost cost--on"><b class="num">4.7<i>〜</i>8.9<i>万円</i></b><span>同じく年間の差</span></div>
         </div>
-        <p class="costs-note">個人事業主が記帳代行に依頼した場合、<b>月額5,000〜8,500円程度</b>が相場とされています（1仕訳あたり50〜100円の従量制もあり、月30仕訳なら1,500〜3,000円）。撮るだけ経理は<b>何枚送っても月1,100円</b>で、枚数による追加料金はありません。<br />従量課金型の読み取りサービスには<b>月額11,000円＋1件22円</b>といった体系のものもあり、月30件なら約11,660円になります。<br />ただし、記帳代行は作業そのものを任せられるのに対し、撮るだけ経理では<b>記帳前の確認をご自身で行う</b>必要があります。どこまで手間を任せたいかに合わせてお選びください。</p>
       </div>
-
-      <p class="foot-note">※ 記帳代行の料金相場は、弥生株式会社「<a href="https://www.yayoi-kk.co.jp/zeirishi/oyakudachi/market_price/" target="_blank" rel="noopener">記帳代行の料金相場は？</a>」（2026年8月時点）を参照した一般的な目安です。実際の費用は仕訳数・業務範囲・依頼先によって大きく異なります。税理士事務所へ依頼する場合は月30,000円程度からが目安とされています。<br />※「従量課金型の読み取りサービス」の金額は、証憑のデータ化を代行する既存サービスで公開されている料金体系の一例です（月額基本料11,000円＋データ化1件22円、税込。2026年8月時点）。会計事務所向けなど対象や提供範囲が異なる場合があり、料金体系はサービスにより大きく異なります。正確な内容は各社の公式情報をご確認ください。また、会計ソフトに付属するレシート読み取りは、プランによって月15〜30件などの上限が設けられている場合があります。<br />※ 撮るだけ経理は記帳作業を支援するサービスであり、税務申告・税務代理・税務相談は行いません。記帳内容の確認はご自身で行っていただく必要があります。</p>
+      <details class="more"><summary>比較の根拠と注意</summary>
+        <p class="costs-note">個人事業主が記帳代行に依頼した場合、<b>月額5,000〜8,500円程度</b>が相場とされています（1仕訳あたり50〜100円の従量制もあり、月30仕訳なら1,500〜3,000円）。撮るだけ経理は<b>何枚送っても月1,100円</b>で、枚数による追加料金はありません。<br />従量課金型の読み取りサービスには<b>月額11,000円＋1件22円</b>といった体系のものもあり、月30件なら約11,660円になります。<br />ただし、記帳代行は作業そのものを任せられるのに対し、撮るだけ経理では<b>記帳前の確認をご自身で行う</b>必要があります。どこまで手間を任せたいかに合わせてお選びください。</p>
+        <p class="foot-note">※ 記帳代行の料金相場は、弥生株式会社「<a href="https://www.yayoi-kk.co.jp/zeirishi/oyakudachi/market_price/" target="_blank" rel="noopener">記帳代行の料金相場は？</a>」（2026年8月時点）を参照した一般的な目安です。実際の費用は仕訳数・業務範囲・依頼先によって大きく異なります。税理士事務所へ依頼する場合は月30,000円程度からが目安とされています。<br />※「従量課金型の読み取りサービス」の金額は、証憑のデータ化を代行する既存サービスで公開されている料金体系の一例です（月額基本料11,000円＋データ化1件22円、税込。2026年8月時点）。会計事務所向けなど対象や提供範囲が異なる場合があり、料金体系はサービスにより大きく異なります。正確な内容は各社の公式情報をご確認ください。また、会計ソフトに付属するレシート読み取りは、プランによって月15〜30件などの上限が設けられている場合があります。<br />※ 撮るだけ経理は記帳作業を支援するサービスであり、税務申告・税務代理・税務相談は行いません。記帳内容の確認はご自身で行っていただく必要があります。</p>
+      </details>
     </div>
   </section>
   <section class="sec" id="pricing">
@@ -861,19 +888,10 @@ body{background:var(--paper)}
           <div class="calc-row calc-row--total"><span>経費に計上</span><b class="num">30,000 円</b></div>
           <p class="calc-note">1円未満は切り捨て。全額と割合は摘要へ自動で記録するため、あとから根拠を確認できます。</p>
         </div>
-        <div class="talk-notes">
-          <div class="talk-note">
-            <h3>割合を選ぶだけ</h3>
-            <p>レシートを送ったあと「家事按分する」を押し、10%〜90%から選ぶか、任意の割合を入力します。金額の計算は自動です。</p>
-          </div>
-          <div class="talk-note">
-            <h3>2回目からは、ワンタップ</h3>
-            <p>同じ支払先のレシートを送ると「前回は事業30%でした。同じ割合で按分しますか？」とご提案します。毎月同じ割合で按分する家賃や通信費で、特に便利です。</p>
-          </div>
-          <div class="talk-note">
-            <h3>あとから変更・解除もできます</h3>
-            <p>割合を間違えても、記帳の前なら変更できます。按分をやめて全額計上に戻すこともできます。</p>
-          </div>
+        <div class="anbun-side">
+          <h3><span class="ph">割合を選ぶだけ。</span><span class="ph">2回目からはワンタップ。</span></h3>
+          <p>レシートを送ったあと「家事按分する」を押して割合を選ぶだけで、金額は自動で計算します。同じ支払先の2回目からは、前回の割合をそのまま使えます。</p>
+          <a class="more-link" href="help.html#anbun">操作の流れをヘルプで見る →</a>
         </div>
       </div>
       <p class="foot-note">※ 事業割合は、実際の使用状況に基づいてお決めください。割合の妥当性についての税務判断は、税理士等の専門家にご相談ください。</p>
@@ -883,29 +901,35 @@ body{background:var(--paper)}
   <section class="sec" id="features">
     <div class="wrap">
       <div class="sec-head"><p class="eyebrow">06 / FEATURES</p><h2>日々の経理に必要な機能を、<br>ひととおり。</h2></div>
+      <div>
       <div class="feature-list">
         <details class="feature-detail"><summary>領収書・レシート画像のAI読み取り</summary><p>日付・金額・支払先・取引先・摘要などを読み取り、確かめやすい形で表示します。</p></details>
         <details class="feature-detail"><summary>PDFの請求書のAI読み取り</summary><p>メールで届いた請求書や、Webからダウンロードした請求書のPDFも、LINEにそのまま送るだけで読み取れます。日付・金額・取引先などをもとに、仕訳の候補を作ります。</p></details>
+        <details class="feature-detail"><summary>Money Forward・freee連携</summary><p>お使いの会計ソフトを選んでおけば、内容を確かめたあと、Money Forwardまたはfreeeへ記帳できます。</p></details>
+        <details class="feature-detail"><summary>弥生会計向けCSV出力</summary><p>当月または指定した月の確定済みの仕訳を、弥生会計の仕訳日記帳に取り込める形式のCSVで出力します。</p></details>
+        <details class="feature-detail"><summary>勘定科目・税区分を記帳前に修正</summary><p>AIの候補が違っていても、LINE上で勘定科目や税区分を直してから記帳できます。</p></details>
+        <details class="feature-detail"><summary>飲食費は、使い道を選ぶだけ</summary><p>飲食のレシートは、使い道（一人で飲食・お土産や差し入れ・社外の方を含む・社内のみ）をボタンで選ぶと、それに合った勘定科目の候補になります。コンビニやスーパーのレシートには人数を聞かず、社外の方との飲食を選んだときだけ、参加者を記録できます。</p></details>
+        <details class="feature-detail"><summary>家事按分（事業割合の設定）</summary><p>自宅の家賃や通信費など、事業と私用が混ざる支出は、事業割合を選ぶだけで按分できます。同じ支払先の2回目からは、前回の割合をワンタップで使えます。</p></details>
+        <details class="feature-detail"><summary>直した内容を、次回から反映</summary><p>支払先の名前や勘定科目を直すと、その内容を覚えます。同じお店のレシートは、次回から直した内容で表示します。</p></details>
+      </div>
+      <details class="more"><summary>ほかの機能を見る（14件）</summary>
+      <div class="feature-list">
         <details class="feature-detail"><summary>取引先の入力・補足</summary><p>AIが読み取りにくい取引先名は、解析結果の「支払先を変更」から入力・修正できます。</p></details>
         <details class="feature-detail"><summary>店名の読み違いを、英字の表記で確認</summary><p>店名がカタカナと英字の両方で印字されたレシートは、2つを照らし合わせます。「ビエトロ」のような濁点・半濁点の読み違いは、英字の表記（PIETRO）に合わせて自動で直し、直したことをお知らせします。</p></details>
         <details class="feature-detail"><summary>用途メモを読み取りに反映</summary><p>「メモ: A社との打ち合わせ」のように送っておくと、レシートや請求書だけではわからない用途を、勘定科目の判断に生かせます。</p></details>
-        <details class="feature-detail"><summary>家事按分（事業割合の設定）</summary><p>自宅の家賃や通信費など、事業と私用が混ざる支出は、事業割合を選ぶだけで按分できます。同じ支払先の2回目からは、前回の割合をワンタップで使えます。</p></details>
         <details class="feature-detail"><summary>承認フロー（PREMIUM・任意）</summary><p>借方・貸方・税区分・支払方法がそろった仕訳を、証憑画像とあわせて承認者へ1通で届けます。承認されると、会計ソフトへの記帳まで自動で行います。入力する人と確認する人を分けたいときに便利です。</p></details>
-        <details class="feature-detail"><summary>飲食費は、使い道を選ぶだけ</summary><p>飲食のレシートは、使い道（一人で飲食・お土産や差し入れ・社外の方を含む・社内のみ）をボタンで選ぶと、それに合った勘定科目の候補になります。コンビニやスーパーのレシートには人数を聞かず、社外の方との飲食を選んだときだけ、参加者を記録できます。</p></details>
         <details class="feature-detail"><summary>8%と10%が混ざったレシートの内訳を検算</summary><p>食品とお酒・日用品などを一緒に買ったレシートは、税率ごとに分けて記帳します。読み取った内訳は、レシートに印字された消費税額と照らし合わせて確かめ、合わないときは自動で読み直します。</p></details>
         <details class="feature-detail"><summary>ポイント払いは、実際に支払った金額で</summary><p>ポイントで一部を支払ったレシートは、ポイント分を差し引いた、実際に支払った金額で記帳します。</p></details>
-        <details class="feature-detail"><summary>直した内容を、次回から反映</summary><p>支払先の名前や勘定科目を直すと、その内容を覚えます。同じお店のレシートは、次回から直した内容で表示します。</p></details>
         <details class="feature-detail"><summary>従業員の有無に合わせた案内</summary><p>はじめに従業員の有無を選んでおくと、従業員がいない方には福利厚生費の選択肢を出しません。従業員が増えたときは、LINEで「従業員設定」と送れば変更できます。</p></details>
-        <details class="feature-detail"><summary>勘定科目・税区分を記帳前に修正</summary><p>AIの候補が違っていても、LINE上で勘定科目や税区分を直してから記帳できます。</p></details>
         <details class="feature-detail"><summary>支払方法に応じた貸方科目の判定</summary><p>現金、事業用クレジットカード、個人カード・立替払い、事業用口座、電子マネー・QR決済などに対応しています。</p></details>
-        <details class="feature-detail"><summary>Money Forward・freee連携</summary><p>お使いの会計ソフトを選んでおけば、内容を確かめたあと、Money Forwardまたはfreeeへ記帳できます。</p></details>
-        <details class="feature-detail"><summary>弥生会計向けCSV出力</summary><p>当月または指定した月の確定済みの仕訳を、弥生会計の仕訳日記帳に取り込める形式のCSVで出力します。</p></details>
         <details class="feature-detail"><summary>領収書画像の証憑添付</summary><p>Money Forwardでは仕訳への証憑添付、freeeではファイルボックスへの領収書アップロードに対応しています。</p></details>
         <details class="feature-detail"><summary>会計ソフトごとの登録履歴</summary><p>Money Forward・freeeそれぞれの登録状況を確認でき、二重登録の防止にも役立ちます。</p></details>
         <details class="feature-detail"><summary>未処理・月次の確認</summary><p>未処理・承認待ち・円換算待ちの候補や、月末の時点で残っている作業を、LINEで確認できます。</p></details>
         <details class="feature-detail"><summary>外貨のレシートにも対応</summary><p>外貨のレシートと思われる場合は、日本円の換算額を入力していただいてから記帳します。</p></details>
         <details class="feature-detail"><summary>撮り方のコツと画像品質のお知らせ</summary><p>LINEのメニューの「撮り方のコツ」で、きれいに読める撮り方（標準カメラで撮る・明るい場所で全体を写す）を確認できます。画像が小さく、証憑の保存に向かない可能性があるときはお知らせし、撮り直しをおすすめします。</p></details>
         <details class="feature-detail"><summary>見たままの言葉で操作</summary><p>LINEの「使い方」では、ボタンの太字の言葉（例：「残りのレシートを見る」）を押すか送るだけで答えが返ります。返信の文面は、スマートフォンで読みやすい長さにそろえています。</p></details>
+      </div>
+      </details>
       </div>
     </div>
   </section>
@@ -924,7 +948,7 @@ body{background:var(--paper)}
 
   <section class="beta-section sec">
     <div class="wrap">
-      <div class="grid grid--2">
+      <div class="beta-one">
         <div>
           <p class="eyebrow">β版ユーザー募集中</p>
           <h2 style="font-size:clamp(20px,2.4vw,26px); margin-block:12px 16px"><span class="ph">いま、少人数の方に</span><span class="ph">β版をご提供しています</span></h2>
@@ -932,15 +956,6 @@ body{background:var(--paper)}
           <p class="foot-note">β期間中は、機能・表示・料金プランを見直す場合があります。いただいたご感想をもとに、改善を続けています。</p>
           <a class="btn btn--primary" href="https://lin.ee/8zc0VBd" data-cta="line-add" style="margin-top:8px">LINEでβ版を試してみる</a>
         </div>
-        <ul class="ticks">
-          <li>領収書や請求書のPDFをLINEに送るだけで、AIが読み取り</li>
-          <li>用途メモや取引先の入力で、内容を補足</li>
-          <li>記帳の前に、勘定科目・税区分・支払方法を確認</li>
-          <li>Money Forward・freeeへの記帳まで対応</li>
-          <li>弥生会計向けのCSV出力にも対応</li>
-          <li>会計ソフトの設定や登録履歴もLINEで確認</li>
-          <li>エラー時の案内、利用状況の確認、ご意見の送信にも対応</li>
-        </ul>
       </div>
     </div>
   </section>
@@ -962,16 +977,22 @@ body{background:var(--paper)}
   <section class="sec" id="news">
     <div class="wrap">
       <div class="sec-head"><p class="eyebrow">NEWS</p><h2>お知らせ</h2></div>
+      <div>
       <ul class="news">
         <li><time class="num">2026.11.14</time><span>LINEのメニューを「写真を送る」中心にし、「撮り方のコツ」を加えました。店名がカタカナと英字で併記されたレシートの読み違いを、自動で確かめるようにしました。LINEの返信を、スマートフォンで読みやすい長さに見直しました。</span></li>
         <li><time class="num">2026.11.10</time><span>会計ソフトの応答に時間がかかるときも、「記帳する」がすぐに反応し、結果をあとからお知らせするようにしました。</span></li>
         <li><time class="num">2026.11.09</time><span>8%と10%が混ざったレシートの内訳の読み取りを改善しました。コンビニ・スーパーのレシートでは、人数の確認を省きました。</span></li>
+      </ul>
+      <details class="more"><summary>過去のお知らせ（5件）</summary>
+      <ul class="news">
         <li><time class="num">2026.11.08</time><span>飲食費・お酒・手土産の科目を、使い道に合わせて選べるようにしました。従業員の有無の設定にも対応しました。</span></li>
         <li><time class="num">2026.11.05</time><span>ポイントで一部を支払ったレシートを、実際に支払った金額で記帳するようにしました。</span></li>
         <li><time class="num">2026.07.09</time><span>PDF請求書のAI読み取りと、取引先情報の会計ソフト転記に対応しました。</span></li>
         <li><time class="num">2026.07.05</time><span>弥生会計向けCSV出力（仕訳日記帳インポート形式）に対応しました。</span></li>
         <li><time class="num">2026.05.31</time><span>「撮るだけ経理」β版ユーザーの募集を開始しました。</span></li>
       </ul>
+      </details>
+      </div>
     </div>
   </section>
 
@@ -980,20 +1001,24 @@ body{background:var(--paper)}
       <div class="sec-head"><p class="eyebrow">FAQ</p><h2>よくあるご質問</h2></div>
       <div class="faq">
         <details open><summary>無料で試せますか？</summary><p>はい。LINEで友だち追加するだけで、月10回までAI解析を無料で試せます。クレジットカード登録は不要です。無料枠を使い切った場合は翌月に回復するほか、ENTRY・PREMIUMプランへの申し込みで引き続きご利用いただけます。</p></details>
-        <details><summary>きれいに読み取ってもらうコツは？</summary><p>レシートはLINEのカメラではなく、スマートフォンの標準カメラで撮ってください。ピントや明るさの補正が効き、文字がくっきり写ります。撮った写真は、LINEのメニューの「写真を送る」から、何枚かまとめて選んで送れます。LINEの設定で、送る写真の画質を「高画質」にしておくと、さらに読み取りやすくなります。</p></details>
         <details><summary>どんな書類を読み取れますか？</summary><p>一般的な領収書・レシート画像、電子領収書のスクリーンショットに加えて、PDFで届いた請求書にも対応しています。画像やPDFの状態、文字の鮮明さにより、読み取り精度は変わります。</p></details>
+        <details><summary>きれいに読み取ってもらうコツは？</summary><p>レシートはLINEのカメラではなく、スマートフォンの標準カメラで撮ってください。ピントや明るさの補正が効き、文字がくっきり写ります。撮った写真は、LINEのメニューの「写真を送る」から、何枚かまとめて選んで送れます。LINEの設定で、送る写真の画質を「高画質」にしておくと、さらに読み取りやすくなります。</p></details>
         <details><summary>ENTRYプランで会計ソフト連携は使えますか？</summary><p>使えません。ENTRYはAI解析・仕訳候補確認が中心です。Money Forward・freeeへの記帳サポート、弥生会計CSV出力はPREMIUM対象です。</p></details>
         <details><summary>freee連携は使えますか？</summary><p>PREMIUM PLANで対応しています。LINEで「freee連携」と送信し、freeeログインを完了すると、解析結果の確認後にfreeeへ登録できます。</p></details>
         <details><summary>弥生会計でも使えますか？</summary><p>はい。PREMIUM PLANでは、LINEで「CSV出力」と送ると、その月の確定済み仕訳を弥生会計の仕訳日記帳インポート形式CSVでダウンロードできます。「CSV出力 2026-06」のように月指定も可能です。CSVはShift_JIS・CRLFで出力し、税額は弥生側の自動計算に任せる設計です。</p></details>
+        <details><summary>エラーが出た場合はどうすればよいですか？</summary><p>LINEで「エラー」と送ると、よくある対処法を確認できます。エラーIDが表示された場合は、お問い合わせ時にそのIDをお知らせください。</p></details>
+      </div>
+      <details class="more"><summary>ほかの質問を見る（7件）</summary>
+      <div class="faq">
         <details><summary>PDFの請求書をそのまま読み取れますか？</summary><p>はい。PDFで届いた請求書ファイルをLINEに送ると、AIが請求書の内容を読み取り、仕訳候補作成に進められます。紙の請求書を撮影するだけでなく、PDFファイルそのものを送れる点が特徴です。読み取り結果は記帳・CSV出力前に必ず確認できます。</p></details>
         <details><summary>取引先名は入力・修正できますか？</summary><p>はい。AIで読み取りにくい取引先名や、請求書・領収書だけでは分かりにくい相手先をLINE上で入力・補足できます。記帳・CSV出力前に確認できる設計です。</p></details>
         <details><summary>コンビニで買った飲み物やお弁当は、どの科目になりますか？</summary><p>解析のあとに表示されるボタンで、使い道（一人で飲食・お土産や差し入れ・社外の方を含む・社内のみ）を選ぶと、それに合った勘定科目の候補を表示します。最終的な科目は、記帳の前にご自身で確認・変更できます。判断に迷う場合は、税理士等の専門家にご確認ください。</p></details>
         <details><summary>8%と10%が混ざったレシートはどうなりますか？</summary><p>税率ごとの金額を読み取り、会計ソフトへは税率ごとに分けて記帳します。内訳は解析結果に表示されますので、記帳の前にレシートと見比べてご確認ください。</p></details>
         <details><summary>「記帳する」を押したあと、結果がすぐに出ないことがあります。</summary><p>会計ソフト側の応答に時間がかかっているときは、「記帳しています」とお返しし、完了したら結果をお知らせします。同じボタンをもう一度押す必要はありません。押し直しても、二重には記帳されません。</p></details>
-        <details><summary>食料品の消費税が1%になった場合、対応しますか？</summary><p>国会で審議中の法案（2027年4月から2年間、飲食料品の税率を1%にするもの）に合わせた準備を進めています。法案が成立した場合は、対象期間の日付のレシートを1%として読み取り・記帳できるようにします。内容は、成立した法律や会計ソフト各社の対応に合わせて見直します。</p></details>
+        <details><summary>食料品の消費税が1%になった場合、対応しますか？</summary><p>衆議院を通過し、参議院で審議中の法案（2027年4月から2年間、飲食料品の税率を1%にするもの）に合わせた準備を進めています。法案が成立した場合は、対象期間の日付のレシートを1%として読み取り・記帳できるようにします。内容は、成立した法律や会計ソフト各社の対応に合わせて見直します。</p></details>
         <details><summary>LINEの返信が遅い、または返らない場合は？</summary><p>LINE公式アカウントの月間通数上限や一時的な通信状況により、返信が遅れる場合があります。時間をおいて再度お試しください。β期間中は安定運用に向けて順次改善しています。</p></details>
-        <details><summary>エラーが出た場合はどうすればよいですか？</summary><p>LINEで「エラー」と送ると、よくある対処法を確認できます。エラーIDが表示された場合は、お問い合わせ時にそのIDをお知らせください。</p></details>
       </div>
+      </details>
       <div class="help-cta">
         <div><h3>もっと詳しい使い方を知りたい方へ</h3><p>コマンド一覧・会計ソフト連携の手順・エラー対処法をまとめています。</p></div>
         <a class="btn btn--ghost" href="help.html">ヘルプセンターを見る</a>

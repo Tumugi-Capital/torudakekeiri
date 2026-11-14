@@ -199,6 +199,19 @@
           </div>
         </details>
 
+        <details id="anbun" class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
+          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>家事按分（自宅の家賃や通信費を事業の割合だけ経費に）</span><span class="chevron text-brand-500">›</span></summary>
+          <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
+            <p>自宅兼事務所なら、家賃・電気代・通信費のうち事業で使っている分を経費にできます。全額と割合は摘要へ自動で記録するため、あとから根拠を確認できます（1円未満は切り捨て）。</p>
+            <ol class="mt-3 list-decimal space-y-2 pl-5">
+              <li><span class="font-bold">割合を選ぶだけ</span>：レシートを送ったあと「家事按分する」を押し、10%〜90%から選ぶか、任意の割合を入力します。金額の計算は自動です。</li>
+              <li><span class="font-bold">2回目からは、ワンタップ</span>：同じ支払先のレシートを送ると「前回は事業30%でした。同じ割合で按分しますか？」とご提案します。毎月同じ割合で按分する家賃や通信費で、特に便利です。</li>
+              <li><span class="font-bold">あとから変更・解除もできます</span>：割合を間違えても、記帳の前なら変更できます。按分をやめて全額計上に戻すこともできます。</li>
+            </ol>
+            <p class="mt-3 text-xs leading-6 text-stone-500">事業割合は、実際の使用状況に基づいてお決めください。割合の妥当性についての税務判断は、税理士等の専門家にご相談ください。</p>
+          </div>
+        </details>
+
         <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
           <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>勘定科目・税区分を修正する</span><span class="chevron text-brand-500">›</span></summary>
           <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
@@ -516,5 +529,8 @@
     })();
   </script>
 <script src="./assets/line-route.js"></script>
+<script>
+  (function(){var a=location.hash&&document.getElementById(location.hash.slice(1));if(a&&a.tagName==='DETAILS'){a.open=true;}})();
+</script>
 </body>
 </html>
