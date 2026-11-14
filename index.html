@@ -506,6 +506,85 @@ body{letter-spacing:.025em;line-height:1.9} h1,h2,h3{letter-spacing:.025em} .wra
 @media(max-width:480px){.hero h1{font-size:40px}.tag{font-size:12px}.hero-note{font-size:12px}.hero-cta{gap:16px}.hero-lead{font-size:16px}.site-head .btn{font-size:14px;padding:9px 11px}.ledger th,.ledger td,.mock-edit,.mock-confirm{font-size:12px}.demo-heading{font-size:12px}.demo-number{display:none}}
 
 #top{scroll-margin-top:86px}
+
+/* ───── 2026-11 リデザイン：あたたかい生成り × 深緑 × アプリコット ─────────────
+   LINEのメニュー（リッチメニュー）と同じ配色に合わせ、親しみやすさを足す。
+   上の既存スタイルを、同じセレクタで後から上書きする（このブロックだけ外せば元に戻る）。 */
+:root{
+  --paper:#fffdf9;--paper-2:#f7f1e7;--paper-3:#efe6d6;
+  --rule:#e6dccb;--rule-soft:#efe7da;
+  --green:#2e5a48;--green-700:#234638;--green-50:#e8f1eb;
+  --accent:#d9774e;--accent-700:#b95f39;--accent-50:#fcede4;
+  --mint:#dff0e7;--sky:#e1ecf4;--mustard:#f9efd4;
+}
+@media (prefers-color-scheme: dark){
+  :root{--accent:#eb9a74;--accent-700:#f2b494;--accent-50:#2c1f19;--mint:#1b2b24;--sky:#1a2530;--mustard:#2b2618}
+}
+body{background:var(--paper)}
+.site-head{background:color-mix(in srgb,var(--paper) 93%,transparent);border-bottom:1px solid var(--rule-soft)}
+.btn--primary{box-shadow:0 6px 18px rgba(46,90,72,.22)}
+.btn--primary:hover{box-shadow:0 10px 24px rgba(46,90,72,.28)}
+
+/* ヒーロー */
+.hero{background:radial-gradient(900px 420px at 88% 18%,var(--accent-50),transparent 60%),radial-gradient(700px 380px at 8% 92%,var(--mint),transparent 62%),var(--paper)}
+.tag{color:var(--green)}
+.tag>span{background:var(--accent-50);border-color:#f3cdb8;color:var(--accent-700)}
+.hero h1 em{background:linear-gradient(transparent 74%,#f8d6c2 74%);padding-inline:2px}
+@media (prefers-color-scheme: dark){.hero h1 em{background:linear-gradient(transparent 70%,rgba(235,154,116,.35) 70%)}}
+.hero-note{gap:8px 10px}
+.hero-note span{background:var(--paper);border:1px solid var(--rule);border-radius:999px;padding:5px 12px;font-weight:600;color:var(--ink-2)}
+.hero-note span:before{color:var(--accent)}
+
+/* LINEのトーク画面のイメージ */
+.chat-mock{background:#8cabd9;border-radius:26px;padding:0 0 18px;box-shadow:0 24px 60px rgba(15,31,25,.16);overflow:hidden;border:6px solid #1f2a26}
+.chat-bar{background:#1f2a26;color:#fff;font-size:13px;font-weight:700;padding:10px 16px;display:flex;align-items:center;gap:8px}
+.chat-bar i{width:22px;height:22px;border-radius:7px;background:var(--green);display:grid;place-items:center;font-style:normal;font-size:18px;line-height:1}
+.chat-body{padding:16px 14px 0;display:flex;flex-direction:column;gap:12px}
+.bubble-me{align-self:flex-end;background:#a6e3a1;border-radius:16px 4px 16px 16px;padding:8px;max-width:62%}
+.mini-receipt{background:#fff;border-radius:4px;padding:10px 12px 14px;width:150px;font-size:10px;color:#3c4c45;line-height:1.6;box-shadow:0 1px 2px rgba(0,0,0,.08);
+  -webkit-mask:linear-gradient(#000 0 0) top/100% calc(100% - 6px) no-repeat,conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/12px 6px repeat-x;
+          mask:linear-gradient(#000 0 0) top/100% calc(100% - 6px) no-repeat,conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/12px 6px repeat-x}
+.mini-receipt b{display:block;font-size:11px;text-align:center;letter-spacing:.1em;margin-bottom:4px}
+.mini-receipt span{display:flex;justify-content:space-between}
+.mini-receipt em{font-style:normal}
+.mini-receipt .tot{border-top:1px dashed #b9c4be;margin-top:4px;padding-top:4px;font-weight:700}
+.bubble-cap{display:block;font-size:10px;color:#2d4a3b;text-align:right;margin-top:4px}
+.chat-mock .ledger{margin-left:0;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.bubble-bot{align-self:flex-start;background:#fff;border-radius:4px 16px 16px 16px;padding:10px 14px;font-size:13px;line-height:1.7;color:#24372f;max-width:80%;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.chat-mock .ledger-cap{color:#26384a;margin-top:12px}
+.demo-stage.chat-stage{background:none;border:0;padding:0}
+
+/* お悩み：白いカードに、LINEメニューと同じ淡い色の帯 */
+.pain-section .grid{gap:16px}
+.pain-section .card{background:var(--paper);border:1px solid var(--rule);border-radius:16px;padding:24px 22px;border-top:6px solid #f3c7ad}
+.pain-section .card:nth-child(2){border-top-color:#b9d3e8}
+.pain-section .card:nth-child(3){border-top-color:#ecd28e}
+.pain-section .card:nth-child(4){border-top-color:#b5dbc6}
+.pain-section .card:last-child{border:1px solid var(--rule);border-top:6px solid #b5dbc6}
+.lead-out{color:var(--green)}
+.lead-out span:last-child{background:linear-gradient(transparent 64%,#f8d6c2 64%)}
+
+/* 3つの理由：番号をアプリコットの丸に */
+#tokucho .feature-index{border:0;padding:0;margin-bottom:6px;width:44px;height:44px;border-radius:50%;background:var(--accent-50);color:var(--accent-700);display:grid;place-items:center;font-weight:700;letter-spacing:0}
+
+/* 見出しの小さな英字はアプリコットに */
+.eyebrow{color:var(--accent-700)}
+#how .eyebrow{color:#f2b494}
+
+/* 料金のおすすめ */
+.plan-badge,.cmp-badge{background:var(--accent);color:#fff}
+.plan--reco{background:var(--paper);border-color:var(--green);box-shadow:0 18px 40px rgba(46,90,72,.14)}
+.cmp-col--on{background:var(--green-50)}
+.cmp,.safe,.calc,.costs,.help-cta{background:var(--paper)}
+
+/* 最後のひと押し */
+.final-cta{padding-block:90px;background:var(--paper)}
+.final-card{position:relative;overflow:hidden;border-radius:24px;padding:56px 32px;text-align:center;background:radial-gradient(500px 260px at 0% 0%,var(--accent-50),transparent 70%),radial-gradient(520px 280px at 100% 100%,var(--mint),transparent 70%),var(--paper-2);border:1px solid var(--rule)}
+.final-card h2{font-size:clamp(25px,3vw,34px);line-height:1.6;margin:10px 0 14px}
+.final-card p{font-size:16px;color:var(--ink-2);max-width:36em;margin-inline:auto}
+.final-card .btn{margin-top:26px;font-size:16px;padding:18px 30px}
+.final-card .hero-note{justify-content:center}
+@media(max-width:820px){.final-card{padding:40px 20px}.chat-mock{max-width:420px;margin-inline:auto}}
 </style>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%278%27 fill=%27%23124e3b%27/%3E%3Cpath d=%27M9 13V9h4m6 0h4v4m0 6v4h-4m-6 0H9v-4m4-3 2 2 4-4%27 fill=%27none%27 stroke=%27white%27 stroke-width=%272%27/%3E%3C/svg%3E" />
 </head>
@@ -526,33 +605,44 @@ body{letter-spacing:.025em;line-height:1.9} h1,h2,h3{letter-spacing:.025em} .wra
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <span class="tag">LINEで使える会計入力アシスタント <span>β版</span></span>
+        <span class="tag">LINEで使える経理アシスタント <span>β版</span></span>
         <h1>経理の入力は、<br><em><span class="ph">LINEに</span><span class="ph">送るだけ。</span></em></h1>
-        <p class="hero-subtitle">レシートの写真も、PDFの請求書も。<br><span class="ph">AIが読み取って、</span><span class="ph">仕訳の候補を作ります。</span></p>
-        <p class="hero-lead">内容を確かめたら、いつもの会計ソフトへ。<br class="desktop-break">入力の手間を減らして、本業に使える時間を増やします。</p>
+        <p class="hero-subtitle">撮って、送って、確かめるだけ。<br><span class="ph">日付・金額・勘定科目まで、</span><span class="ph">AIが読み取ります。</span></p>
+        <p class="hero-lead">レシートの写真も、PDFの請求書も、いつものLINEに送るだけ。<br class="desktop-break">月末にまとめて入力していた時間を、本業に使えます。</p>
         <div class="hero-cta">
           <a class="btn btn--primary" href="https://lin.ee/8zc0VBd" data-cta="line-add"><span class="line-icon" aria-hidden="true">LINE</span>無料で試してみる <span aria-hidden="true">↗</span></a>
           <a class="hero-secondary" href="#how">使い方を見る <span aria-hidden="true">↓</span></a>
         </div>
-        <p class="hero-note"><span>月10回まで無料</span><span>クレジットカード登録不要</span></p>
+        <p class="hero-note"><span>月10回まで無料</span><span>クレジットカード登録不要</span><span>アプリのインストール不要</span></p>
       </div>
-      <div class="demo-stage" aria-label="LINEに請求書を送って仕訳を確認する画面イメージ">
-        <div class="demo-heading"><span>使い慣れたLINEで、経理まで。</span><span class="demo-number">01 — 03</span></div>
-        <div class="send-row"><span class="sent-time">送信</span><div class="file-bubble"><span class="file-type">PDF</span><div><b>請求書_7月.pdf</b><small>PDFのまま送れます</small></div><span aria-hidden="true">↗</span></div></div>
-        <div class="analysis-row"><span class="ai-avatar" aria-hidden="true">⌁</span><span>撮るだけ経理</span></div>
-        <div class="ledger">
-          <div class="ledger-top"><b><span aria-hidden="true">✓</span> 解析が完了しました</b><span>仕訳候補</span></div>
-          <div class="ledger-amount"><span>読み取り金額</span><strong class="num">3,850<small>円</small></strong></div>
-          <div class="ledger-body"><table><tbody>
-            <tr><th scope="row">日付</th><td class="num">2026 / 07 / 10</td></tr>
-            <tr><th scope="row">支払先・取引先</th><td>○○文具店</td></tr>
-            <tr><th scope="row">勘定科目</th><td>消耗品費</td></tr>
-            <tr><th scope="row">税区分</th><td>課対仕入 10%</td></tr>
-          </tbody></table></div>
-          <div class="ledger-foot"><span class="mock-edit">科目を変更</span><span class="mock-confirm">この内容で記帳 <span aria-hidden="true">✓</span></span></div>
+      <div class="demo-stage chat-stage" aria-label="LINEにレシートの写真を送り、解析結果を確かめて記帳するまでの画面イメージ">
+        <div class="chat-mock">
+          <div class="chat-bar"><i aria-hidden="true">⌁</i>撮るだけ経理</div>
+          <div class="chat-body">
+            <div class="bubble-me">
+              <div class="mini-receipt" aria-hidden="true">
+                <b>○○文具店</b>
+                <span><em>ノート</em><em>1,650</em></span>
+                <span><em>ボールペン</em><em>2,200</em></span>
+                <span class="tot"><em>合計</em><em>¥3,850</em></span>
+              </div>
+              <small class="bubble-cap">写真を送るだけ</small>
+            </div>
+            <div class="ledger">
+              <div class="ledger-top"><b><span aria-hidden="true">✓</span> 解析結果</b><span>仕訳候補</span></div>
+              <div class="ledger-amount"><span>金額</span><strong class="num">3,850<small>円</small></strong></div>
+              <div class="ledger-body"><table><tbody>
+                <tr><th scope="row">日付</th><td class="num">2026 / 07 / 10</td></tr>
+                <tr><th scope="row">支払先</th><td>○○文具店</td></tr>
+                <tr><th scope="row">勘定科目</th><td>消耗品費</td></tr>
+                <tr><th scope="row">税区分</th><td>課対仕入 10%</td></tr>
+              </tbody></table></div>
+              <div class="ledger-foot"><span class="mock-edit">科目を変更</span><span class="mock-confirm">記帳する <span aria-hidden="true">✓</span></span></div>
+            </div>
+            <div class="bubble-bot">✅ Money Forwardへ記帳しました。<br>おつかれさまでした。</div>
+          </div>
+          <p class="ledger-cap">※画面はイメージです。会計ソフトへの記帳はPREMIUMプランの機能です。</p>
         </div>
-        <div class="demo-confirm"><span aria-hidden="true">✓</span> 内容を確認してから、会計ソフトへ。</div>
-        <p class="ledger-cap">※画面はイメージです。実際の表示とは異なります。</p>
       </div>
     </div>
     <div class="wrap integration-strip"><p>お使いの会計ソフトに対応<small>PREMIUMプランでご利用いただけます</small></p><div><b>Money Forward</b><span>記帳・証憑添付</span></div><div><b>freee</b><span>取引登録・証憑対応</span></div><div><b>弥生会計</b><span>CSV出力</span></div></div>
@@ -908,6 +998,18 @@ body{letter-spacing:.025em;line-height:1.9} h1,h2,h3{letter-spacing:.025em} .wra
       <div class="help-cta">
         <div><h3>もっと詳しい使い方を知りたい方へ</h3><p>コマンド一覧・会計ソフト連携の手順・エラー対処法をまとめています。</p></div>
         <a class="btn btn--ghost" href="help.html">ヘルプセンターを見る</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta sec sec--plain" aria-labelledby="final-cta-title">
+    <div class="wrap">
+      <div class="final-card">
+        <p class="eyebrow">START FREE</p>
+        <h2 id="final-cta-title"><span class="ph">今日のレシート1枚から、</span><br><span class="ph">はじめてみませんか。</span></h2>
+        <p>LINEで友だち追加して、レシートの写真を送るだけ。月10回までは無料で、クレジットカードの登録もいりません。</p>
+        <a class="btn btn--primary" href="https://lin.ee/8zc0VBd" data-cta="line-add-final"><span class="line-icon" aria-hidden="true">LINE</span>無料で試してみる <span aria-hidden="true">↗</span></a>
+        <p class="hero-note"><span>月10回まで無料</span><span>クレジットカード登録不要</span><span>アプリのインストール不要</span></p>
       </div>
     </div>
   </section>
