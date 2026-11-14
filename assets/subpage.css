@@ -1,0 +1,62 @@
+/* 使い方・ヘルプ／利用規約／プライバシーポリシー／特定商取引法に基づく表記 の共通デザイン。
+   トップページ（index.html）と同じ、生成り × 深緑 × アプリコットの配色にそろえる。
+   各ページの Tailwind のクラスはそのままに、ここで見た目を上書きする。 */
+:root{
+  color-scheme:only light;
+  --ink:#172c25;--ink-2:#3c4c45;--ink-3:#66796f;
+  --paper:#fffdf9;--paper-2:#f7f1e7;--rule:#e6dccb;
+  --green:#2e5a48;--green-700:#234638;--green-50:#e8f1eb;
+  --accent:#d9774e;--accent-700:#b95f39;--accent-50:#fcede4;
+}
+body{background:var(--paper-2)!important;color:var(--ink-2)}
+h1,h2,h3{font-family:'Noto Sans JP','Hiragino Sans','Hiragino Kaku Gothic ProN',sans-serif!important;color:var(--ink)}
+
+/* 上部のバー */
+body>nav{background:color-mix(in srgb,var(--paper) 94%,transparent)!important;border-color:var(--rule)!important}
+body>nav a:first-child{font-size:15px;gap:10px}
+.brand-mark{width:28px;height:28px;border-radius:8px;background:var(--green);color:#fff;display:inline-grid;place-items:center;font-style:normal;font-size:24px;line-height:1}
+body>nav a:last-child{background:var(--paper)!important;border:1px solid var(--rule);color:var(--green)!important}
+body>nav a:last-child:hover{background:var(--green-50)!important}
+
+/* ページの見出し */
+.page-hero{position:relative;overflow:hidden;padding:56px 16px 48px!important;text-align:center;box-shadow:none!important;border-bottom:1px solid var(--rule);
+  background:radial-gradient(520px 260px at 92% 0%,var(--accent-50),transparent 65%),radial-gradient(520px 280px at 0% 100%,#dff0e7,transparent 65%),var(--paper)!important}
+.page-hero>.absolute{display:none}
+.page-eyebrow{display:inline-block;font-family:Arial,sans-serif;font-size:12px;font-weight:700;letter-spacing:.18em;color:var(--accent-700);margin-bottom:10px}
+.page-hero h1{font-size:clamp(24px,4.4vw,34px)!important;line-height:1.5;letter-spacing:.02em}
+.page-hero p{color:var(--ink-3)!important}
+.page-hero h1 .ph{display:inline-block}
+.page-updated{margin-top:10px;font-size:12px;color:var(--ink-3)}
+
+/* 本文のカード */
+main article,main details,#no-results{border-color:var(--rule)!important;background:var(--paper)!important;box-shadow:0 1px 2px rgba(23,44,37,.04),0 12px 32px rgba(23,44,37,.06)!important}
+main article{border-radius:24px!important}
+main article h2{border:0!important;padding:0 0 0 14px!important;border-left:4px solid var(--accent)!important;line-height:1.55;font-size:18px!important}
+main article p,main article li,main article dd{color:var(--ink-2)}
+main article a{color:var(--green);text-decoration:underline;text-underline-offset:3px}
+main dl>div{border-color:var(--paper-2)!important}
+main dt{color:var(--ink)!important;position:relative;padding-left:14px}
+main dt::before{content:'';position:absolute;left:0;top:13px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+
+/* ヘルプ：カテゴリのタイル・見出し・記事 */
+#category-nav a{background:var(--paper)!important;border-color:var(--rule)!important;border-radius:18px!important;padding:18px 10px!important;color:var(--ink)!important}
+#category-nav a:hover{border-color:var(--green)!important;transform:translateY(-2px)}
+#category-nav a>span:first-child{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;margin:0 auto 6px;font-size:22px;background:var(--accent-50)}
+#category-nav a:nth-child(2)>span:first-child{background:#e1ecf4}
+#category-nav a:nth-child(3)>span:first-child{background:#f9efd4}
+#category-nav a:nth-child(4)>span:first-child{background:#ece7f5}
+#category-nav a:nth-child(5)>span:first-child{background:#dff0e7}
+#category-nav a:nth-child(6)>span:first-child{background:#fbe3dc}
+main section>h2{font-size:19px!important;padding-bottom:6px;border-bottom:2px solid var(--rule)}
+main details{border-radius:20px!important}
+main details[open]>summary{color:var(--green)}
+main details .chevron{color:var(--accent)!important}
+.cmd{background:var(--green-50)!important;color:var(--green-700)!important;border:1px solid #cfe2d6}
+#help-search{font-size:15px}
+.page-hero .shadow-soft{box-shadow:0 8px 24px rgba(23,44,37,.08)!important;border:1px solid var(--rule)}
+
+/* 下部 */
+.site-footer{background:var(--paper)!important;color:var(--ink-3)!important;border-top:1px solid var(--rule);padding:44px 16px 36px!important}
+.site-footer a{color:var(--green)!important}
+.site-footer a:hover{text-decoration:underline}
+.site-footer p:last-child{color:var(--ink-3)!important}

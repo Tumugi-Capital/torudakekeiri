@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
+  <meta name="color-scheme" content="only light" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>免責事項・利用規約 | 撮るだけ経理</title>
   <meta name="description" content="「撮るだけ経理」の免責事項・利用規約です。" />
@@ -15,10 +16,10 @@
       theme: {
         extend: {
           colors: {
-            brand: { 50: '#f7f5f0', 100: '#eee9df', 200: '#ddd3bf', 500: '#3f6252', 600: '#345244', 700: '#263f35' },
-            cream: '#fcfbf8',
-            mint: '#e8ede6',
-            honey: '#e9ddb8'
+            brand: { 50: '#f7f1e7', 100: '#efe6d6', 200: '#e6dccb', 500: '#2e5a48', 600: '#234638', 700: '#1f3a2f' },
+            cream: '#fffdf9',
+            mint: '#dff0e7',
+            honey: '#f9efd4'
           },
           boxShadow: {
             soft: '0 14px 34px rgba(45, 55, 45, 0.10)',
@@ -47,21 +48,23 @@
       background-size: 18px 18px;
     }
   </style>
+  <link rel="stylesheet" href="assets/subpage.css" />
 </head>
 <body class="bg-brand-50 text-stone-700 leading-relaxed tracking-wide">
 
   <nav class="sticky top-0 z-50 border-b border-brand-100 bg-white/95 px-4 py-3 backdrop-blur">
     <div class="mx-auto flex max-w-2xl items-center justify-between gap-3">
-      <a href="./" class="flex items-center gap-2 text-sm font-extrabold text-stone-800"><span class="text-lg">🧾</span>撮るだけ経理</a>
+      <a href="./" class="flex items-center gap-2 text-sm font-extrabold text-stone-800"><i class="brand-mark" aria-hidden="true">⌁</i>撮るだけ経理</a>
       <a href="./" class="rounded-full bg-brand-100 px-4 py-1.5 text-xs font-bold text-brand-700 transition hover:bg-brand-200">← サービス紹介へ戻る</a>
     </div>
   </nav>
 
-  <header class="relative overflow-hidden bg-gradient-to-br from-brand-100 via-cream to-mint px-4 py-10 text-center shadow-sm dot-bg">
+  <header class="relative overflow-hidden page-hero px-4 py-10 text-center shadow-sm dot-bg">
     <div class="absolute -right-12 -top-10 h-36 w-36 rounded-full bg-white/60 blur-2xl"></div>
     <div class="absolute -bottom-16 -left-12 h-40 w-40 rounded-full bg-brand-200/60 blur-2xl"></div>
     <div class="relative mx-auto max-w-2xl">
-      <h1 class="text-2xl font-extrabold text-stone-800 sm:text-3xl">「撮るだけ経理」免責事項・利用規約</h1>
+      <span class="page-eyebrow">TERMS OF USE</span>
+      <h1 class="text-2xl font-extrabold text-stone-800 sm:text-3xl"><span class="ph">「撮るだけ経理」</span><span class="ph">免責事項・利用規約</span></h1>
     </div>
   </header>
 
@@ -113,7 +116,7 @@
     </div>
   </main>
 
-  <footer class="bg-stone-800 px-4 py-10 text-center text-xs text-stone-300">
+  <footer class="site-footer px-4 py-10 text-center text-xs">
     <p class="mb-4"><a href="./" class="underline hover:text-white">撮るだけ経理 サービス紹介ページ</a></p>
     <p class="mb-4 text-stone-400">運営会社: <a href="https://tumugi-capital.github.io/homepage/" class="underline hover:text-white" target="_blank" rel="noopener noreferrer">紬キャピタル合同会社</a></p>
     <div class="mx-auto mb-6 flex max-w-xs flex-col gap-3 text-stone-400 sm:max-w-none sm:flex-row sm:justify-center sm:gap-5">
