@@ -13,8 +13,8 @@
  */
 (function () {
   var LINE_ADD_URLS = {
-    lp: "",
-    x: ""
+    lp: "https://lin.ee/nRZlyLR",
+    x: "https://lin.ee/ysRb6nm"
   };
   var DEFAULT_URL = "https://lin.ee/8zc0VBd";
   var KEY = "torudake_line_route";
