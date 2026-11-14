@@ -97,14 +97,17 @@
 
   <!-- カテゴリジャンプ -->
   <div id="category-nav" class="mx-auto max-w-2xl px-4 pt-8">
-    <div class="grid grid-cols-2 gap-3 text-center text-xs font-bold text-stone-700 sm:grid-cols-3">
-      <a href="#getting-started" class="rounded-2xl border border-brand-100 bg-white px-3 py-4 shadow-sm transition hover:shadow-soft"><span class="block text-xl">🌱</span><span class="mt-1 block">はじめに</span></a>
-      <a href="#receipts" class="rounded-2xl border border-brand-100 bg-white px-3 py-4 shadow-sm transition hover:shadow-soft"><span class="block text-xl">📷</span><span class="mt-1 block">レシート・請求書の処理</span></a>
-      <a href="#integrations" class="rounded-2xl border border-brand-100 bg-white px-3 py-4 shadow-sm transition hover:shadow-soft"><span class="block text-xl">🔗</span><span class="mt-1 block">会計ソフト連携</span></a>
-      <a href="#commands" class="rounded-2xl border border-brand-100 bg-white px-3 py-4 shadow-sm transition hover:shadow-soft"><span class="block text-xl">💬</span><span class="mt-1 block">確認・管理コマンド</span></a>
-      <a href="#billing" class="rounded-2xl border border-brand-100 bg-white px-3 py-4 shadow-sm transition hover:shadow-soft"><span class="block text-xl">💳</span><span class="mt-1 block">料金・お支払い</span></a>
-      <a href="#troubleshooting" class="rounded-2xl border border-brand-100 bg-white px-3 py-4 shadow-sm transition hover:shadow-soft"><span class="block text-xl">🛠</span><span class="mt-1 block">トラブル・お問い合わせ</span></a>
-    </div>
+    <nav class="help-toc" aria-label="カテゴリ">
+      <p class="help-toc-title">目次</p>
+      <ol>
+        <li><a href="#getting-started">はじめに</a></li>
+        <li><a href="#receipts">レシート・請求書の処理</a></li>
+        <li><a href="#integrations">会計ソフト連携</a></li>
+        <li><a href="#commands">確認・管理コマンド</a></li>
+        <li><a href="#billing">料金・お支払い</a></li>
+        <li><a href="#troubleshooting">トラブル・お問い合わせ</a></li>
+      </ol>
+    </nav>
   </div>
 
   <main class="mx-auto max-w-2xl px-4 pb-16 pt-4">
@@ -115,8 +118,8 @@
 
     <!-- ============ はじめに ============ -->
     <section id="getting-started" class="help-category pt-8">
-      <h2 class="flex items-center gap-2 text-lg font-extrabold text-stone-800"><span>🌱</span>はじめに</h2>
-      <div class="mt-4 space-y-3">
+      <h2 class="text-lg font-extrabold text-stone-800">はじめに</h2>
+      <div class="help-list mt-4">
 
         <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
           <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>撮るだけ経理とは</span><span class="chevron text-brand-500">›</span></summary>
@@ -160,8 +163,8 @@
 
     <!-- ============ レシート・請求書の処理 ============ -->
     <section id="receipts" class="help-category pt-10">
-      <h2 class="flex items-center gap-2 text-lg font-extrabold text-stone-800"><span>📷</span>レシート・請求書の処理</h2>
-      <div class="mt-4 space-y-3">
+      <h2 class="text-lg font-extrabold text-stone-800">レシート・請求書の処理</h2>
+      <div class="help-list mt-4">
 
         <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
           <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>レシート・領収書を送って仕訳する</span><span class="chevron text-brand-500">›</span></summary>
@@ -258,8 +261,8 @@
 
     <!-- ============ 会計ソフト連携 ============ -->
     <section id="integrations" class="help-category pt-10">
-      <h2 class="flex items-center gap-2 text-lg font-extrabold text-stone-800"><span>🔗</span>会計ソフト連携</h2>
-      <div class="mt-4 space-y-3">
+      <h2 class="text-lg font-extrabold text-stone-800">会計ソフト連携</h2>
+      <div class="help-list mt-4">
 
         <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
           <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>Money Forward クラウド会計と連携する</span><span class="chevron text-brand-500">›</span></summary>
@@ -315,8 +318,8 @@
 
     <!-- ============ 確認・管理コマンド ============ -->
     <section id="commands" class="help-category pt-10">
-      <h2 class="flex items-center gap-2 text-lg font-extrabold text-stone-800"><span>💬</span>確認・管理コマンド</h2>
-      <div class="mt-4 space-y-3">
+      <h2 class="text-lg font-extrabold text-stone-800">確認・管理コマンド</h2>
+      <div class="help-list mt-4">
 
         <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
           <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>LINEコマンド一覧</span><span class="chevron text-brand-500">›</span></summary>
@@ -395,8 +398,8 @@
 
     <!-- ============ 料金・お支払い ============ -->
     <section id="billing" class="help-category pt-10">
-      <h2 class="flex items-center gap-2 text-lg font-extrabold text-stone-800"><span>💳</span>料金・お支払い</h2>
-      <div class="mt-4 space-y-3">
+      <h2 class="text-lg font-extrabold text-stone-800">料金・お支払い</h2>
+      <div class="help-list mt-4">
 
         <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
           <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>料金プランの内容（無料 / ENTRY / PREMIUM）</span><span class="chevron text-brand-500">›</span></summary>
@@ -425,8 +428,8 @@
 
     <!-- ============ トラブル・お問い合わせ ============ -->
     <section id="troubleshooting" class="help-category pt-10">
-      <h2 class="flex items-center gap-2 text-lg font-extrabold text-stone-800"><span>🛠</span>トラブル・お問い合わせ</h2>
-      <div class="mt-4 space-y-3">
+      <h2 class="text-lg font-extrabold text-stone-800">トラブル・お問い合わせ</h2>
+      <div class="help-list mt-4">
 
         <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
           <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>よくあるエラーと対処法</span><span class="chevron text-brand-500">›</span></summary>
@@ -472,7 +475,7 @@
 
     <!-- 解決しないとき -->
     <section class="pt-12">
-      <div class="rounded-[2rem] bg-gradient-to-br from-brand-100 via-white to-honey p-6 text-center shadow-soft">
+      <div class="help-cta-box p-6 text-center">
         <p class="text-lg font-extrabold text-stone-800">解決しませんでしたか？</p>
         <p class="mt-2 text-sm leading-7 text-stone-600">LINEで「お問い合わせ」と送っていただければ、直接ご案内します。</p>
         <a href="https://lin.ee/8zc0VBd" class="mt-5 inline-block rounded-full bg-brand-500 px-8 py-3.5 text-sm font-bold text-white shadow-pop transition hover:bg-brand-600">LINEで質問する</a>
