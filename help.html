@@ -227,7 +227,7 @@
             <ul class="mt-3 list-disc space-y-1 pl-5">
               <li><span class="font-bold">現金</span> → 現金</li>
               <li><span class="font-bold">事業用クレジットカード</span> → 未払金</li>
-              <li><span class="font-bold">個人カード・立替払い</span> → 原則として短期借入金（事業主借等の方針がある場合はそちらを優先）</li>
+              <li><span class="font-bold">個人カード・立替払い</span> → 個人事業主は事業主借（LINEの画面では「個人立替」と表示）、法人・未設定は短期借入金。LINEで<span class="cmd">事業形態</span>と送って設定できます</li>
               <li><span class="font-bold">事業用口座・電子マネー・QR決済</span> にも対応</li>
             </ul>
             <p class="mt-3 text-xs leading-6 text-stone-500">会社や税理士の会計方針がある場合は、そちらを優先してください。</p>
@@ -337,6 +337,8 @@
                   <li><span class="cmd">メモ: ○○</span> — 次に送るレシートの用途を解析に反映</li>
                   <li><span class="cmd">メモ確認</span> / <span class="cmd">メモ削除</span> — 保存中の用途メモの確認・削除</li>
                   <li><span class="cmd">従業員設定</span> — 従業員の有無を変更（福利厚生費の選択肢の出し分けに使います）</li>
+                  <li><span class="cmd">事業形態</span> — 個人事業主か法人かを選ぶ（個人カード・立替の科目が変わります）</li>
+                  <li><span class="cmd">決算月</span> — 法人の決算月を選ぶ（年間集計と期末のお知らせに使います）</li>
                 </ul>
               </div>
               <div>
