@@ -16,25 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: { 50: '#f7f1e7', 100: '#efe6d6', 200: '#e6dccb', 500: '#2e5a48', 600: '#234638', 700: '#1f3a2f' },
-            cream: '#fffdf9',
-            mint: '#dff0e7',
-            honey: '#f9efd4'
-          },
-          boxShadow: {
-            soft: '0 14px 34px rgba(45, 55, 45, 0.10)',
-            pop: '0 18px 44px rgba(38, 63, 53, 0.24)'
-          }
-        }
-      }
-    }
-  </script>
+  <link rel="stylesheet" href="./assets/tailwind.css" />
   <style>
     html { scroll-behavior: smooth; }
     body {
@@ -214,6 +196,19 @@
           <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
             <p>AIで読み取りにくい取引先名や、領収書・請求書だけでは分かりにくい相手先は、LINE上で入力・補足できます。</p>
             <p class="mt-3">解析結果の「<span class="font-bold">支払先を変更</span>」を押し、正しい名前を送ると直せます。直した名前は覚えておき、同じお店の次のレシートから使います。取引先情報は記帳・CSV出力の前に確認できます。</p>
+          </div>
+        </details>
+
+        <details id="anbun" class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
+          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>家事按分（自宅の家賃や通信費を事業の割合だけ経費に）</span><span class="chevron text-brand-500">›</span></summary>
+          <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
+            <p>自宅兼事務所なら、家賃・電気代・通信費のうち事業で使っている分を経費にできます。全額と割合は摘要へ自動で記録するため、あとから根拠を確認できます（1円未満は切り捨て）。</p>
+            <ol class="mt-3 list-decimal space-y-2 pl-5">
+              <li><span class="font-bold">割合を選ぶだけ</span>：レシートを送ったあと「家事按分する」を押し、10%〜90%から選ぶか、任意の割合を入力します。金額の計算は自動です。</li>
+              <li><span class="font-bold">2回目からは、ワンタップ</span>：同じ支払先のレシートを送ると「前回は事業30%でした。同じ割合で按分しますか？」とご提案します。毎月同じ割合で按分する家賃や通信費で、特に便利です。</li>
+              <li><span class="font-bold">あとから変更・解除もできます</span>：割合を間違えても、記帳の前なら変更できます。按分をやめて全額計上に戻すこともできます。</li>
+            </ol>
+            <p class="mt-3 text-xs leading-6 text-stone-500">事業割合は、実際の使用状況に基づいてお決めください。割合の妥当性についての税務判断は、税理士等の専門家にご相談ください。</p>
           </div>
         </details>
 
@@ -534,5 +529,8 @@
     })();
   </script>
 <script src="./assets/line-route.js"></script>
+<script>
+  (function(){var a=location.hash&&document.getElementById(location.hash.slice(1));if(a&&a.tagName==='DETAILS'){a.open=true;}})();
+</script>
 </body>
 </html>
