@@ -611,8 +611,8 @@ body{letter-spacing:.025em;line-height:1.9} h1,h2,h3{letter-spacing:.025em} .wra
     <div class="wrap">
       <div class="sec-head"><p class="eyebrow">02 / HOW IT WORKS</p><h2>送る。確認する。<br>いつもの会計ソフトへ。</h2></div>
       <div class="steps">
-        <div class="step"><div><h3>必要に応じて、用途や取引先を伝える</h3><p>「メモ: A社との打ち合わせ」「取引先: 株式会社○○」のように先に送っておくと、次のレシートの読み取りに反映されます。</p></div></div>
-        <div class="step"><div><h3>レシートや請求書をLINEで送る</h3><p>スマートフォンで撮ったレシートや領収書の画像はもちろん、PDFで届いた請求書もそのまま送れます。</p></div></div>
+        <div class="step"><div><h3>必要に応じて、用途を伝える</h3><p>「メモ: A社との打ち合わせ」のように先に送っておくと、次のレシートの読み取りに反映されます。</p></div></div>
+        <div class="step"><div><h3>レシートや請求書をLINEで送る</h3><p>レシートはスマートフォンの標準カメラで撮り、LINEのメニューの「写真を送る」から送ります。何枚かまとめて選べます。PDFで届いた請求書もそのまま送れます。</p></div></div>
         <div class="step"><div><h3>AIが読み取り、仕訳の候補を作成</h3><p>日付・金額・支払先・取引先・摘要・勘定科目・税区分を読み取ります。足りない情報は、LINE上で入力・補足できます。</p></div></div>
         <div class="step"><div><h3>会計ソフトへ反映</h3><p>Money Forward・freeeへそのまま記帳するか、月末に弥生会計向けのCSVを出力します。</p></div></div>
       </div>
@@ -797,7 +797,8 @@ body{letter-spacing:.025em;line-height:1.9} h1,h2,h3{letter-spacing:.025em} .wra
       <div class="feature-list">
         <details class="feature-detail"><summary>領収書・レシート画像のAI読み取り</summary><p>日付・金額・支払先・取引先・摘要などを読み取り、確かめやすい形で表示します。</p></details>
         <details class="feature-detail"><summary>PDFの請求書のAI読み取り</summary><p>メールで届いた請求書や、Webからダウンロードした請求書のPDFも、LINEにそのまま送るだけで読み取れます。日付・金額・取引先などをもとに、仕訳の候補を作ります。</p></details>
-        <details class="feature-detail"><summary>取引先の入力・補足</summary><p>AIが読み取りにくい取引先名や、あとから補足したい相手先を、LINE上で入力・確認できます。</p></details>
+        <details class="feature-detail"><summary>取引先の入力・補足</summary><p>AIが読み取りにくい取引先名は、解析結果の「支払先を変更」から入力・修正できます。</p></details>
+        <details class="feature-detail"><summary>店名の読み違いを、英字の表記で確認</summary><p>店名がカタカナと英字の両方で印字されたレシートは、2つを照らし合わせます。「ビエトロ」のような濁点・半濁点の読み違いは、英字の表記（PIETRO）に合わせて自動で直し、直したことをお知らせします。</p></details>
         <details class="feature-detail"><summary>用途メモを読み取りに反映</summary><p>「メモ: A社との打ち合わせ」のように送っておくと、レシートや請求書だけではわからない用途を、勘定科目の判断に生かせます。</p></details>
         <details class="feature-detail"><summary>家事按分（事業割合の設定）</summary><p>自宅の家賃や通信費など、事業と私用が混ざる支出は、事業割合を選ぶだけで按分できます。同じ支払先の2回目からは、前回の割合をワンタップで使えます。</p></details>
         <details class="feature-detail"><summary>承認フロー（PREMIUM・任意）</summary><p>借方・貸方・税区分・支払方法がそろった仕訳を、証憑画像とあわせて承認者へ1通で届けます。承認されると、会計ソフトへの記帳まで自動で行います。入力する人と確認する人を分けたいときに便利です。</p></details>
@@ -814,7 +815,8 @@ body{letter-spacing:.025em;line-height:1.9} h1,h2,h3{letter-spacing:.025em} .wra
         <details class="feature-detail"><summary>会計ソフトごとの登録履歴</summary><p>Money Forward・freeeそれぞれの登録状況を確認でき、二重登録の防止にも役立ちます。</p></details>
         <details class="feature-detail"><summary>未処理・月次の確認</summary><p>未処理・承認待ち・円換算待ちの候補や、月末の時点で残っている作業を、LINEで確認できます。</p></details>
         <details class="feature-detail"><summary>外貨のレシートにも対応</summary><p>外貨のレシートと思われる場合は、日本円の換算額を入力していただいてから記帳します。</p></details>
-        <details class="feature-detail"><summary>画像品質のお知らせ</summary><p>画像が小さく、証憑の保存に向かない可能性があるときはお知らせし、撮り直しをおすすめします。</p></details>
+        <details class="feature-detail"><summary>撮り方のコツと画像品質のお知らせ</summary><p>LINEのメニューの「撮り方のコツ」で、きれいに読める撮り方（標準カメラで撮る・明るい場所で全体を写す）を確認できます。画像が小さく、証憑の保存に向かない可能性があるときはお知らせし、撮り直しをおすすめします。</p></details>
+        <details class="feature-detail"><summary>見たままの言葉で操作</summary><p>LINEの「使い方」では、ボタンの太字の言葉（例：「残りのレシートを見る」）を押すか送るだけで答えが返ります。返信の文面は、スマートフォンで読みやすい長さにそろえています。</p></details>
       </div>
     </div>
   </section>
@@ -872,6 +874,7 @@ body{letter-spacing:.025em;line-height:1.9} h1,h2,h3{letter-spacing:.025em} .wra
     <div class="wrap">
       <div class="sec-head"><p class="eyebrow">NEWS</p><h2>お知らせ</h2></div>
       <ul class="news">
+        <li><time class="num">2026.11.14</time><span>LINEのメニューを「写真を送る」中心にし、「撮り方のコツ」を加えました。店名がカタカナと英字で併記されたレシートの読み違いを、自動で確かめるようにしました。LINEの返信を、スマートフォンで読みやすい長さに見直しました。</span></li>
         <li><time class="num">2026.11.10</time><span>会計ソフトの応答に時間がかかるときも、「記帳する」がすぐに反応し、結果をあとからお知らせするようにしました。</span></li>
         <li><time class="num">2026.11.09</time><span>8%と10%が混ざったレシートの内訳の読み取りを改善しました。コンビニ・スーパーのレシートでは、人数の確認を省きました。</span></li>
         <li><time class="num">2026.11.08</time><span>飲食費・お酒・手土産の科目を、使い道に合わせて選べるようにしました。従業員の有無の設定にも対応しました。</span></li>
@@ -888,6 +891,7 @@ body{letter-spacing:.025em;line-height:1.9} h1,h2,h3{letter-spacing:.025em} .wra
       <div class="sec-head"><p class="eyebrow">FAQ</p><h2>よくあるご質問</h2></div>
       <div class="faq">
         <details open><summary>無料で試せますか？</summary><p>はい。LINEで友だち追加するだけで、月10回までAI解析を無料で試せます。クレジットカード登録は不要です。無料枠を使い切った場合は翌月に回復するほか、ENTRY・PREMIUMプランへの申し込みで引き続きご利用いただけます。</p></details>
+        <details><summary>きれいに読み取ってもらうコツは？</summary><p>レシートはLINEのカメラではなく、スマートフォンの標準カメラで撮ってください。ピントや明るさの補正が効き、文字がくっきり写ります。撮った写真は、LINEのメニューの「写真を送る」から、何枚かまとめて選んで送れます。LINEの設定で、送る写真の画質を「高画質」にしておくと、さらに読み取りやすくなります。</p></details>
         <details><summary>どんな書類を読み取れますか？</summary><p>一般的な領収書・レシート画像、電子領収書のスクリーンショットに加えて、PDFで届いた請求書にも対応しています。画像やPDFの状態、文字の鮮明さにより、読み取り精度は変わります。</p></details>
         <details><summary>ENTRYプランで会計ソフト連携は使えますか？</summary><p>使えません。ENTRYはAI解析・仕訳候補確認が中心です。Money Forward・freeeへの記帳サポート、弥生会計CSV出力はPREMIUM対象です。</p></details>
         <details><summary>freee連携は使えますか？</summary><p>PREMIUM PLANで対応しています。LINEで「freee連携」と送信し、freeeログインを完了すると、解析結果の確認後にfreeeへ登録できます。</p></details>

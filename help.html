@@ -153,7 +153,7 @@
               <li>支払方法（現金・事業用クレカ・個人カードなど）を選択します。</li>
               <li>最終確認して、Money Forward・freeeへの記帳、または後日の弥生CSV出力へ進みます。</li>
             </ol>
-            <p class="mt-3">操作に迷ったら、いつでもLINEで<span class="cmd">ヘルプ</span>と送ると、使い方とコマンド一覧を確認できます。</p>
+            <p class="mt-3">操作に迷ったら、いつでもLINEで<span class="cmd">ヘルプ</span>と送ると、使い方のメニューを確認できます。ボタンの太字の言葉を押すか、その言葉を送るだけで操作できます。</p>
           </div>
         </details>
 
@@ -171,6 +171,9 @@
             <p>スマホで撮影した領収書・レシート画像をLINEに送ると、AIが解析して仕訳候補を返信します。電子領収書のスクリーンショットにも対応しています。</p>
             <p class="mt-3">きれいに読み取るコツ:</p>
             <ul class="mt-2 list-disc space-y-1 pl-5">
+              <li>LINEのカメラではなく、スマホの<span class="font-bold">標準カメラ</span>で撮る（ピントや明るさの補正が効きます）</li>
+              <li>撮った写真は、LINEのメニューの「写真を送る」から選んで送る（何枚かまとめて選べます）</li>
+              <li>LINEの設定で、送る写真の画質を「高画質」にしておく</li>
               <li>明るい場所で、領収書全体が入るように撮影する</li>
               <li>文字がはっきり読める距離から撮る（近すぎ・遠すぎに注意）</li>
               <li>しわを伸ばし、影が入らないようにする</li>
@@ -209,7 +212,7 @@
           <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>取引先名を入力・補足する</span><span class="chevron text-brand-500">›</span></summary>
           <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
             <p>AIで読み取りにくい取引先名や、領収書・請求書だけでは分かりにくい相手先は、LINE上で入力・補足できます。</p>
-            <p class="mt-3"><span class="cmd">取引先: 株式会社○○</span>のように送ると、解析・記帳に反映されます。取引先情報は記帳・CSV出力の前に確認できます。</p>
+            <p class="mt-3">解析結果の「<span class="font-bold">支払先を変更</span>」を押し、正しい名前を送ると直せます。直した名前は覚えておき、同じお店の次のレシートから使います。取引先情報は記帳・CSV出力の前に確認できます。</p>
           </div>
         </details>
 
@@ -247,7 +250,7 @@
           <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>証憑（領収書画像）の保存について</span><span class="chevron text-brand-500">›</span></summary>
           <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
             <p>PREMIUM PLANでは、Money Forwardへの記帳時に領収書画像を証憑として添付、freeeではファイルボックスへのアップロードをサポートします。</p>
-            <p class="mt-3">画像が小さい・不鮮明な場合は「証憑保存に不向きな可能性」を警告します。その場合は明るい場所で再撮影してください。</p>
+            <p class="mt-3">画像が小さい・不鮮明な場合は「証憑保存に不向きな可能性」をお知らせします。その場合は、スマホの標準カメラで明るい場所で撮り直し、「写真を送る」から送ってください。LINEで<span class="cmd">撮り方</span>と送ると、撮り方のコツを確認できます。</p>
             <p class="mt-3 rounded-2xl bg-brand-50 p-4 text-xs leading-6 text-stone-500">インボイス番号はLINE画面に表示しません（読み取り誤りによる誤解を避けるため）。番号の確認が必要な場合は、添付された領収書画像や原本をご確認ください。証憑対応はインボイス制度への完全対応を保証するものではありません。</p>
           </div>
         </details>
@@ -326,8 +329,8 @@
                 <p class="font-bold text-stone-700">はじめる・使い方</p>
                 <ul class="mt-1 list-disc space-y-1 pl-5">
                   <li><span class="cmd">はじめて</span> / <span class="cmd">スタート</span> — 初回の使い方を表示</li>
-                  <li><span class="cmd">β版案内</span> — βユーザー向けの利用手順</li>
-                  <li><span class="cmd">ヘルプ</span> / <span class="cmd">使い方</span> — コマンド一覧を表示</li>
+                  <li><span class="cmd">ヘルプ</span> / <span class="cmd">使い方</span> — 使い方のメニューを表示（ボタンの太字の言葉を押すか送るだけで操作できます）</li>
+                  <li><span class="cmd">撮り方</span> — きれいに読める撮り方のコツ</li>
                   <li><span class="cmd">FAQ</span> / <span class="cmd">よくある質問</span> — よくある質問と対処法</li>
                 </ul>
               </div>
@@ -336,7 +339,6 @@
                 <ul class="mt-1 list-disc space-y-1 pl-5">
                   <li><span class="cmd">メモ: ○○</span> — 次に送るレシートの用途を解析に反映</li>
                   <li><span class="cmd">メモ確認</span> / <span class="cmd">メモ削除</span> — 保存中の用途メモの確認・削除</li>
-                  <li><span class="cmd">取引先: ○○</span> — 取引先名の入力・補足</li>
                   <li><span class="cmd">従業員設定</span> — 従業員の有無を変更（福利厚生費の選択肢の出し分けに使います）</li>
                 </ul>
               </div>
@@ -354,7 +356,7 @@
               <div>
                 <p class="font-bold text-stone-700">連携・出力</p>
                 <ul class="mt-1 list-disc space-y-1 pl-5">
-                  <li><span class="cmd">連携</span> — Money Forwardとの連携を開始</li>
+                  <li><span class="cmd">連携</span> — お使いの会計ソフト（Money Forward・freee・弥生）を選んで連携</li>
                   <li><span class="cmd">freee連携</span> — freeeとの連携を開始</li>
                   <li><span class="cmd">会計ソフト</span> — 会計ソフト設定の確認</li>
                   <li><span class="cmd">MFを使う</span> / <span class="cmd">freeeを使う</span> — 優先表示の切り替え</li>
@@ -365,7 +367,8 @@
                 <p class="font-bold text-stone-700">契約・サポート</p>
                 <ul class="mt-1 list-disc space-y-1 pl-5">
                   <li><span class="cmd">プラン</span> — 現在の契約プランを確認</li>
-                  <li><span class="cmd">解約</span> / <span class="cmd">プラン変更</span> — 解約・プラン変更の案内</li>
+                  <li><span class="cmd">プラン変更</span> — プラン変更の案内</li>
+                  <li><span class="cmd">解約</span> — 契約・支払いの管理画面（解約もこちら）</li>
                   <li><span class="cmd">エラー</span> / <span class="cmd">記帳できない</span> — よくあるエラーと対処法</li>
                   <li><span class="cmd">フィードバック</span> — 感想・改善要望の送信方法</li>
                   <li><span class="cmd">お問い合わせ</span> / <span class="cmd">サポート</span> — 連絡方法の案内</li>
@@ -413,7 +416,8 @@
         <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
           <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>プラン変更・解約する</span><span class="chevron text-brand-500">›</span></summary>
           <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
-            <p>LINEで<span class="cmd">解約</span>または<span class="cmd">プラン変更</span>と送ると、手続きの案内が表示されます。案内に沿ってお手続きください。</p>
+            <p>プランを変えるときはLINEで<span class="cmd">プラン変更</span>、解約するときは<span class="cmd">解約</span>と送ると、手続きの案内が表示されます。案内に沿ってお手続きください。</p>
+            <p class="mt-3">解約されたあと、LINEで解約の理由を1問だけお聞きすることがあります（ボタンを押すだけ・回答は任意です）。今後の改善に使います。</p>
             <p class="mt-3 text-xs leading-6 text-stone-500">β期間中は、利用状況や改善状況に応じて提供内容・利用条件・料金プランを調整する場合があります。重要な変更は事前にご案内します。</p>
           </div>
         </details>
@@ -433,7 +437,7 @@
               <li><span class="font-bold">Money Forwardに記帳できない</span><br />LINEで<span class="cmd">連携</span>と送って、Money Forwardを再連携してください。</li>
               <li><span class="font-bold">連携したのにエラーになる</span><br />権限や有効期限の問題の可能性があります。まず<span class="cmd">連携</span>と送って再連携してください。</li>
               <li><span class="font-bold">証憑添付だけ失敗した</span><br />記帳自体は完了している場合があります。必要に応じて、Money Forward側で画像を手動添付してください。</li>
-              <li><span class="font-bold">「画像が小さい」と表示された</span><br />証憑保存に不向きな可能性があります。明るい場所で、文字がはっきり読める距離から再撮影してください。</li>
+              <li><span class="font-bold">「画像が小さい」と表示された</span><br />証憑保存に不向きな可能性があります。スマホの標準カメラで、明るい場所から文字がはっきり読めるように撮り直し、「写真を送る」から送ってください。</li>
               <li><span class="font-bold">勘定科目・税区分が違う</span><br />支払方法を選ぶ前に「科目を変更」「税区分を変更」ボタンから修正できます。</li>
               <li><span class="font-bold">外貨レシートと判定された</span><br />カード明細などで日本円換算額を確認し、円換算額を入力してください。</li>
             </ol>
