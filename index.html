@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<meta name="color-scheme" content="light" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>撮るだけ経理 - レシートもPDF請求書もLINEでAI読み取り</title>
@@ -120,16 +121,7 @@
   --on-green:   #ffffff;
   --shadow:     0 1px 2px rgba(15,31,25,.06), 0 8px 24px rgba(15,31,25,.06);
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    --ink: #e8efeb; --ink-2: #b3c3bb; --ink-3: #849a90;
-    --paper: #0e1613; --paper-2: #141e1a; --paper-3: #1a2621;
-    --rule: #2a3a33; --rule-soft: #223029;
-    --green: #7fae99; --green-700: #a8ccbb; --green-300: #3d5e4f; --green-50: #17231e;
-    --ochre: #d9b269; --ochre-50: #2a2318; --on-green: #0e1613;
-    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
-  }
-}
+
 :root[data-theme="dark"] {
   --ink: #e8efeb; --ink-2: #b3c3bb; --ink-3: #849a90;
   --paper: #0e1613; --paper-2: #141e1a; --paper-3: #1a2621;
@@ -372,7 +364,7 @@ a { color: inherit; }
   padding: 12px; box-shadow: var(--shadow); max-width: 380px; width: 100%;
 }
 :root[data-theme="dark"] .phone { background: #3b525f; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .phone { background: #3b525f; } }
+
 .phone-bar {
   display: flex; align-items: center; justify-content: center; gap: 7px;
   color: #fff; font-size: 12px; font-weight: 700; padding: 4px 0 12px; letter-spacing: .04em;
@@ -507,19 +499,20 @@ body{letter-spacing:.025em;line-height:1.9} h1,h2,h3{letter-spacing:.025em} .wra
 
 #top{scroll-margin-top:86px}
 
-/* ───── 2026-11 リデザイン：あたたかい生成り × 深緑 × アプリコット ─────────────
+/* ダークモードの配色は使わない（暗い背景に明るい色が混ざり、くすんで見えたため。利用者の指摘）。
+   どの端末でも明るい配色で表示する。
+   ───── 2026-11 リデザイン：あたたかい生成り × 深緑 × アプリコット ─────────────
    LINEのメニュー（リッチメニュー）と同じ配色に合わせ、親しみやすさを足す。
    上の既存スタイルを、同じセレクタで後から上書きする（このブロックだけ外せば元に戻る）。 */
 :root{
+  color-scheme:light;
   --paper:#fffdf9;--paper-2:#f7f1e7;--paper-3:#efe6d6;
   --rule:#e6dccb;--rule-soft:#efe7da;
   --green:#2e5a48;--green-700:#234638;--green-50:#e8f1eb;
   --accent:#d9774e;--accent-700:#b95f39;--accent-50:#fcede4;
   --mint:#dff0e7;--sky:#e1ecf4;--mustard:#f9efd4;
 }
-@media (prefers-color-scheme: dark){
-  :root{--accent:#eb9a74;--accent-700:#f2b494;--accent-50:#2c1f19;--mint:#1b2b24;--sky:#1a2530;--mustard:#2b2618}
-}
+
 body{background:var(--paper)}
 .site-head{background:color-mix(in srgb,var(--paper) 93%,transparent);border-bottom:1px solid var(--rule-soft)}
 .btn--primary{box-shadow:0 6px 18px rgba(46,90,72,.22)}
@@ -530,7 +523,7 @@ body{background:var(--paper)}
 .tag{color:var(--green)}
 .tag>span{background:var(--accent-50);border-color:#f3cdb8;color:var(--accent-700)}
 .hero h1 em{background:linear-gradient(transparent 74%,#f8d6c2 74%);padding-inline:2px}
-@media (prefers-color-scheme: dark){.hero h1 em{background:linear-gradient(transparent 70%,rgba(235,154,116,.35) 70%)}}
+
 .hero-note{gap:8px 10px}
 .hero-note span{background:var(--paper);border:1px solid var(--rule);border-radius:999px;padding:5px 12px;font-weight:600;color:var(--ink-2)}
 .hero-note span:before{color:var(--accent)}
