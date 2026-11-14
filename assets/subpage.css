@@ -38,19 +38,26 @@ main dl>div{border-color:var(--paper-2)!important}
 main dt{color:var(--ink)!important;position:relative;padding-left:14px}
 main dt::before{content:'';position:absolute;left:0;top:13px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
 
-/* ヘルプ：カテゴリのタイル・見出し・記事 */
-#category-nav a{background:var(--paper)!important;border-color:var(--rule)!important;border-radius:18px!important;padding:18px 10px!important;color:var(--ink)!important}
-#category-nav a:hover{border-color:var(--green)!important;transform:translateY(-2px)}
-#category-nav a>span:first-child{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;margin:0 auto 6px;font-size:22px;background:var(--accent-50)}
-#category-nav a:nth-child(2)>span:first-child{background:#e1ecf4}
-#category-nav a:nth-child(3)>span:first-child{background:#f9efd4}
-#category-nav a:nth-child(4)>span:first-child{background:#ece7f5}
-#category-nav a:nth-child(5)>span:first-child{background:#dff0e7}
-#category-nav a:nth-child(6)>span:first-child{background:#fbe3dc}
-main section>h2{font-size:19px!important;padding-bottom:6px;border-bottom:2px solid var(--rule)}
-main details{border-radius:20px!important}
-main details[open]>summary{color:var(--green)}
+/* ヘルプ：ほかのページと同じ「白いカード＋左のアクセント線」の形にそろえる */
+.help-toc{background:var(--paper);border:1px solid var(--rule);border-radius:24px;padding:22px 24px;box-shadow:0 1px 2px rgba(23,44,37,.04),0 12px 32px rgba(23,44,37,.06)}
+.help-toc-title{font-size:13px;font-weight:700;color:var(--ink-3);letter-spacing:.08em;margin-bottom:8px}
+.help-toc ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;column-gap:24px;counter-reset:toc}
+.help-toc li{counter-increment:toc;border-bottom:1px solid var(--paper-2)}
+.help-toc li:nth-last-child(-n+2){border-bottom:0}
+.help-toc a{display:flex;align-items:center;gap:10px;padding:10px 0;font-size:14px;font-weight:700;color:var(--ink);text-decoration:none}
+.help-toc a::before{content:counter(toc,decimal-leading-zero);font-family:Arial,sans-serif;font-size:12px;color:var(--accent-700);letter-spacing:.06em}
+.help-toc a:hover{color:var(--green)}
+@media(max-width:480px){.help-toc ol{grid-template-columns:1fr}.help-toc li:nth-last-child(2){border-bottom:1px solid var(--paper-2)}}
+main section>h2{font-size:18px!important;padding:0 0 0 14px!important;border:0!important;border-left:4px solid var(--accent)!important;line-height:1.55}
+.help-list{background:var(--paper);border:1px solid var(--rule);border-radius:24px;overflow:hidden;box-shadow:0 1px 2px rgba(23,44,37,.04),0 12px 32px rgba(23,44,37,.06)}
+.help-list>details{margin:0!important;border:0!important;border-top:1px solid var(--paper-2)!important;border-radius:0!important;box-shadow:none!important;background:transparent!important}
+.help-list>details:first-child{border-top:0!important}
+.help-list>details>summary{padding:18px 22px!important;font-size:15px}
+.help-list>details[open]>summary{color:var(--green)}
+.help-list>details>div{border-color:var(--paper-2)!important;padding:4px 22px 22px!important}
 main details .chevron{color:var(--accent)!important}
+.help-cta-box{background:var(--paper);border:1px solid var(--rule);border-radius:24px;box-shadow:0 1px 2px rgba(23,44,37,.04),0 12px 32px rgba(23,44,37,.06)}
+.help-cta-box a{background:var(--green)!important}
 .cmd{background:var(--green-50)!important;color:var(--green-700)!important;border:1px solid #cfe2d6}
 #help-search{font-size:15px}
 .page-hero .shadow-soft{box-shadow:0 8px 24px rgba(23,44,37,.08)!important;border:1px solid var(--rule)}
