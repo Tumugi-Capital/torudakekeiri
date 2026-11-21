@@ -5,9 +5,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>撮るだけ経理 - レシートもPDF請求書もLINEでAI読み取り</title>
-<meta name="description" content="撮るだけ経理は、LINEに領収書・レシート画像を送るだけでなく、PDFで届いた請求書もそのまま送信してAI読み取りできる会計入力アシスタントです。友だち追加だけで月10回まで無料でAI解析を試せます（クレジットカード登録不要）。取引先入力、科目・税区分の確認、Money Forward・freeeへの記帳、弥生会計CSV出力までサポート。現在β版ユーザー募集中です。" />
+<meta name="description" content="撮るだけ経理は、LINEに領収書・レシート画像を送るだけでなく、PDFで届いた請求書もそのまま送信してAI読み取りできる会計入力アシスタントです。友だち追加だけで月20回まで無料でAI解析を試せます（クレジットカード登録不要）。取引先入力、科目・税区分の確認、Money Forward・freeeへの記帳、弥生会計CSV出力までサポート。現在β版ユーザー募集中です。" />
 <meta property="og:title" content="撮るだけ経理｜経理の入力は、LINEに送るだけ。" />
-<meta property="og:description" content="領収書・レシート画像だけでなく、PDFで届いた請求書もLINEにそのまま送ってAI読み取り。友だち追加だけで月10回まで無料で試せます。Money Forward・freee記帳、弥生会計CSV出力までサポート。β版ユーザー募集中。" />
+<meta property="og:description" content="領収書・レシート画像だけでなく、PDFで届いた請求書もLINEにそのまま送ってAI読み取り。友だち追加だけで月20回まで無料で試せます。Money Forward・freee記帳、弥生会計CSV出力までサポート。β版ユーザー募集中。" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://tumugi-capital.github.io/torudakekeiri/" />
 <meta property="og:site_name" content="撮るだけ経理" />
@@ -62,7 +62,7 @@
      "name": "無料で試せますか？",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "はい。LINEで友だち追加するだけで、月10回までAI解析を無料で試せます。クレジットカード登録は不要です。無料枠を使い切った場合は翌月に回復するほか、ENTRY・PREMIUMプランへの申し込みで引き続きご利用いただけます。"
+      "text": "はい。LINEで友だち追加するだけで、月20回までAI解析を無料で試せます。クレジットカード登録は不要です。無料枠を使い切った場合は翌月に回復するほか、ENTRY・PREMIUMプランへの申し込みで引き続きご利用いただけます。"
      }
     },
     {
@@ -321,6 +321,7 @@ a { color: inherit; }
 .plan-price { display: flex; align-items: baseline; gap: 6px; }
 .plan-price b { font-size: 38px; font-weight: 700; letter-spacing: -.01em; }
 .plan-price span { font-size: 13px; color: var(--ink-3); }
+.plan-annual { margin-top: 2px; font-size: 13px; color: var(--ink-3); }
 .plan-desc { font-size: 13.5px; color: var(--ink-2); }
 .plan ul { display: grid; gap: 10px; font-size: 14px; }
 .plan li { display: grid; grid-template-columns: 18px 1fr; gap: 9px; align-items: start; }
@@ -650,7 +651,7 @@ body{background:var(--paper)}
           <a class="btn btn--primary" href="https://lin.ee/8zc0VBd" data-cta="line-add"><span class="line-icon" aria-hidden="true">LINE</span>無料で試してみる <span aria-hidden="true">↗</span></a>
           <a class="hero-secondary" href="#how">使い方を見る <span aria-hidden="true">↓</span></a>
         </div>
-        <p class="hero-note"><span>月10回まで無料</span><span>クレジットカード登録不要</span><span>アプリのインストール不要</span></p>
+        <p class="hero-note"><span>月20回まで無料</span><span>クレジットカード登録不要</span><span>アプリのインストール不要</span></p>
       </div>
       <div class="demo-stage chat-stage" aria-label="LINEにレシートの写真を送り、解析結果を確かめて記帳するまでの画面イメージ">
         <div class="chat-mock">
@@ -792,7 +793,7 @@ body{background:var(--paper)}
           <span class="cmp-badge">おすすめ</span>
           <h3 class="cmp-name">撮るだけ経理<br />PREMIUM</h3>
           <dl>
-            <div><dt>月あたりの費用</dt><dd><b class="num">1,100円</b><small>（税込）1日あたり約36円・年13,200円</small></dd></div>
+            <div><dt>月あたりの費用</dt><dd><b class="num">1,100円</b><small>（税込）1日あたり約36円・年払いなら年11,000円</small></dd></div>
             <div><dt>枚数が増えた月</dt><dd><b>何枚でも1,100円</b><small>追加料金なし</small></dd></div>
             <div><dt>PDF請求書</dt><dd>そのまま送信OK</dd></div>
             <div><dt>弥生会計</dt><dd>CSV出力対応</dd></div>
@@ -820,7 +821,7 @@ body{background:var(--paper)}
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">04 / PLANS</p><h2>まずは無料で。<br><span class="ph">必要に応じて選べる、</span><span class="ph">3つのプラン。</span></h2>
-        <p class="prose">月10回までは無料でお試しいただけます。ENTRYはAIによる読み取りと仕訳候補の確認、PREMIUMはMoney Forward・freeeへの記帳や弥生会計向けCSV出力までご利用いただけます。どのプランも、枚数に応じた追加料金はかかりません。</p>
+        <p class="prose">月20回までは無料でお試しいただけます。ENTRYはAIによる読み取りと仕訳候補の確認、PREMIUMはMoney Forward・freeeへの記帳や弥生会計向けCSV出力までご利用いただけます。どのプランも、枚数に応じた追加料金はかかりません。</p>
       </div>
       <div class="plans">
         <div class="plan">
@@ -828,7 +829,7 @@ body{background:var(--paper)}
           <div class="plan-price"><b class="num">0</b><span>円 / 月</span></div>
           <p class="plan-desc">友だち追加だけで、すぐにお試しいただけます。クレジットカードの登録は不要です。</p>
           <ul>
-            <li><i>✓</i><span>月10回までのAI読み取り（レシート画像・PDFの請求書）</span></li>
+            <li><i>✓</i><span>月20回までのAI読み取り（レシート画像・PDFの請求書）</span></li>
             <li><i>✓</i><span>仕訳候補の作成</span></li>
             <li><i>✓</i><span>用途メモ・取引先の補足を読み取りに反映</span></li>
             <li class="no"><i>—</i><span>会計ソフトへの記帳・CSV出力は対象外</span></li>
@@ -839,6 +840,7 @@ body{background:var(--paper)}
         <div class="plan">
           <p class="plan-name">ENTRY PLAN</p>
           <div class="plan-price"><b class="num">550</b><span>円 / 月（税込）</span></div>
+          <p class="plan-annual">年払いなら年5,500円（2か月分お得）</p>
           <p class="plan-desc">AIによる読み取りと仕訳候補の確認を、手軽に使いたい方に。会計ソフトとの連携は含まれません。</p>
           <ul>
             <li><i>✓</i><span>レシート画像・PDFの請求書のAI読み取り</span></li>
@@ -855,6 +857,7 @@ body{background:var(--paper)}
           <span class="plan-badge">おすすめ</span>
           <p class="plan-name">PREMIUM PLAN</p>
           <div class="plan-price"><b class="num">1,100</b><span>円 / 月（税込）</span></div>
+          <p class="plan-annual">年払いなら年11,000円（2か月分お得）</p>
           <p class="plan-desc">枚数を気にせず、会計ソフトへの記帳や弥生会計向けCSV出力まで使いたい方に。</p>
           <ul>
             <li><i>✓</i><span>レシート画像・PDFの請求書のAI読み取り</span></li>
@@ -1003,7 +1006,7 @@ body{background:var(--paper)}
     <div class="wrap">
       <div class="sec-head"><p class="eyebrow">FAQ</p><h2>よくあるご質問</h2></div>
       <div class="faq">
-        <details open><summary>無料で試せますか？</summary><p>はい。LINEで友だち追加するだけで、月10回までAI解析を無料で試せます。レシートが手元になくても、LINEで「見本」と送ると、見本のレシートで結果を確かめられます（無料回数には数えません）。クレジットカード登録は不要です。無料枠を使い切った場合は翌月に回復するほか、ENTRY・PREMIUMプランへの申し込みで引き続きご利用いただけます。</p></details>
+        <details open><summary>無料で試せますか？</summary><p>はい。LINEで友だち追加するだけで、月20回までAI解析を無料で試せます。レシートが手元になくても、LINEで「見本」と送ると、見本のレシートで結果を確かめられます（無料回数には数えません）。クレジットカード登録は不要です。無料枠を使い切った場合は翌月に回復するほか、ENTRY・PREMIUMプランへの申し込みで引き続きご利用いただけます。</p></details>
         <details><summary>どんな書類を読み取れますか？</summary><p>一般的な領収書・レシート画像、電子領収書のスクリーンショットに加えて、PDFで届いた請求書にも対応しています。画像やPDFの状態、文字の鮮明さにより、読み取り精度は変わります。</p></details>
         <details><summary>きれいに読み取ってもらうコツは？</summary><p>レシートはLINEのカメラではなく、スマートフォンの標準カメラで撮ってください。ピントや明るさの補正が効き、文字がくっきり写ります。撮った写真は、LINEのメニューの「写真を送る」から、何枚かまとめて選んで送れます。LINEの設定で、送る写真の画質を「高画質」にしておくと、さらに読み取りやすくなります。</p></details>
         <details><summary>ENTRYプランで会計ソフト連携は使えますか？</summary><p>使えません。ENTRYはAI解析・仕訳候補確認が中心です。Money Forward・freeeへの記帳サポート、弥生会計CSV出力はPREMIUM対象です。</p></details>
@@ -1034,9 +1037,9 @@ body{background:var(--paper)}
       <div class="final-card">
         <p class="eyebrow">START FREE</p>
         <h2 id="final-cta-title"><span class="ph">今日のレシート1枚から、</span><br><span class="ph">はじめてみませんか。</span></h2>
-        <p>LINEで友だち追加して、レシートの写真を送るだけ。月10回までは無料で、クレジットカードの登録もいりません。</p>
+        <p>LINEで友だち追加して、レシートの写真を送るだけ。月20回までは無料で、クレジットカードの登録もいりません。</p>
         <a class="btn btn--primary" href="https://lin.ee/8zc0VBd" data-cta="line-add-final"><span class="line-icon" aria-hidden="true">LINE</span>無料で試してみる <span aria-hidden="true">↗</span></a>
-        <p class="hero-note"><span>月10回まで無料</span><span>クレジットカード登録不要</span><span>アプリのインストール不要</span></p>
+        <p class="hero-note"><span>月20回まで無料</span><span>クレジットカード登録不要</span><span>アプリのインストール不要</span></p>
       </div>
     </div>
   </section>
