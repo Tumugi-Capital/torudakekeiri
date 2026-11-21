@@ -119,8 +119,8 @@
               <li><a href="https://lin.ee/8zc0VBd" class="font-bold text-brand-600 underline">LINE友だち追加</a>から「撮るだけ経理」を友だちに追加します。</li>
               <li>LINEで<span class="cmd">はじめて</span>または<span class="cmd">スタート</span>と送ると、初回の使い方が表示されます。</li>
               <li>友だち追加した時点で、月20回までのAI解析を無料でお試しいただけます（クレジットカード登録不要）。</li>
-              <li>有料プラン（ENTRY / PREMIUM）は、LINEで<span class="cmd">申し込み</span>と送ると表示されるボタンからお申し込みください。お使いのLINEとご契約が自動でつながります。お支払いはクレジットカード（Stripe決済）に対応しています。プランの内容は<a href="./#pricing" class="font-bold text-brand-600 underline">料金プラン</a>でご確認いただけます。</li>
-              <li>お申し込み後は、LINEの案内に沿ってご利用ください。</li>
+              <li>有料プラン（ENTRY / PREMIUM）は、LINEで<span class="cmd">申し込み</span>と送ると表示されるボタンからお申し込みください。お使いのLINEとご契約が自動でつながります。お支払いはクレジットカード（Stripe決済）に対応しています。プランの内容は<a href="./#pricing" class="font-bold text-brand-600 underline">料金プラン</a>でご確認いただけます。年払いを選べるときは、申し込みのカードの各プランの下に「年払いなら…」と表示されます。</li>
+              <li>お申し込みが終わると、LINEでお知らせが届きます。PREMIUMの方は、続けて<span class="cmd">連携</span>と送って会計ソフトとつないでください。</li>
             </ol>
             <p class="mt-3 text-xs leading-6 text-stone-500">現在はβ版として少人数にテスト提供中です。提供内容・利用条件は改善のため変更する場合があります。</p>
           </div>
@@ -132,8 +132,8 @@
             <ol class="list-decimal space-y-2 pl-5">
               <li>LINEに領収書・レシートの写真を送ります（PDF請求書はファイルのまま送信できます）。</li>
               <li>AIが日付・金額・支払先・勘定科目・税区分を読み取り、確認画面を返信します。</li>
-              <li>内容が違う場合は「科目を変更」「税区分を変更」から修正します。</li>
-              <li>支払方法（現金・事業用クレカ・個人カードなど）を選択します。</li>
+              <li>内容が違う場合は「科目を変更」「税区分を変更」「支払先を変更」「金額を変更」「日付を変更」「摘要を変更」から直します。</li>
+              <li>支払方法（現金・事業用クレカ・個人カードなど）を選択します。カード払いと読み取れたときは、「事業用カードで払った」「個人カードで払った」を押すだけで進めます。</li>
               <li>最終確認して、Money Forward・freeeへの記帳、または後日の弥生CSV出力へ進みます。</li>
             </ol>
             <p class="mt-3">操作に迷ったら、いつでもLINEで<span class="cmd">ヘルプ</span>と送ると、使い方のメニューを確認できます。ボタンの太字の言葉を押すか、その言葉を送るだけで操作できます。</p>
@@ -161,7 +161,7 @@
               <li>文字がはっきり読める距離から撮る（近すぎ・遠すぎに注意）</li>
               <li>しわを伸ばし、影が入らないようにする</li>
             </ul>
-            <p class="mt-3 rounded-2xl bg-honey/60 p-4 text-xs leading-6 text-stone-600">⚠️ クレジットカード決済の「売上票（控え）」と「レシート」は同じ支払いです。二重計上を防ぐため、どちらか一方だけを送ってください。</p>
+            <p class="mt-3 rounded-2xl bg-honey/60 p-4 text-xs leading-6 text-stone-600">⚠️ クレジットカード決済の「売上票（控え）」と「レシート」は同じ支払いです。二重計上を防ぐため、どちらか一方だけを送ってください。両方送ってしまっても、日付・金額が同じで店名が近いものがあれば、記帳の前に「同じ買い物かもしれません」とお知らせします（PREMIUM）。そのときは、片方を「経費にしない」で外してください。</p>
           </div>
         </details>
 
@@ -176,6 +176,15 @@
               <li>送信先に「撮るだけ経理」を選んで送信</li>
             </ol>
             <p class="mt-3">読み取り結果は、記帳・CSV出力の前に必ず確認できます。</p>
+          </div>
+        </details>
+
+        <details id="bulk" class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
+          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>何枚かまとめて送る（まとめて記帳）</span><span class="chevron text-brand-500">›</span></summary>
+          <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
+            <p>LINEのメニューの「写真を送る」から、何枚かまとめて選んで送れます。カードには、どのレシートの結果かが表示されます。</p>
+            <p class="mt-3">支払方法まで決まっていて、すぐ記帳できるものが2枚以上あると、「まとめて記帳」のボタンが出ます。押すと、Money Forward・freee へまとめて記帳し、結果を1通でお知らせします（PREMIUM）。freee では、登録の前に1回だけ確認します。</p>
+            <p class="mt-3">確認が必要なレシートや、「同じ買い物かもしれません」と出たレシートは、まとめて記帳から外れます。1枚ずつのカードで確かめてください。押し直しても、二重には記帳されません。</p>
           </div>
         </details>
 
@@ -195,7 +204,14 @@
           <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>取引先名を入力・補足する</span><span class="chevron text-brand-500">›</span></summary>
           <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
             <p>AIで読み取りにくい取引先名や、領収書・請求書だけでは分かりにくい相手先は、LINE上で入力・補足できます。</p>
-            <p class="mt-3">解析結果の「<span class="font-bold">支払先を変更</span>」を押し、正しい名前を送ると直せます。直した名前は覚えておき、同じお店の次のレシートから使います。取引先情報は記帳・CSV出力の前に確認できます。</p>
+            <p class="mt-3">解析結果の「<span class="font-bold">支払先を変更</span>」を押し、正しい名前を送ると直せます。直した名前は覚えておき、同じお店の次のレシートから自動で直します。取引先情報は記帳・CSV出力の前に確認できます。</p>
+            <p class="mt-3">店名の読み違いは、自動でも直します。</p>
+            <ul class="mt-2 list-disc space-y-1 pl-5">
+              <li>レシートの英字表記や住所と照らし合わせる</li>
+              <li>よく知られた店名は、いつもの表記に合わせる</li>
+              <li>住所のないレシートは、支店名やロゴの店名を読み直す</li>
+            </ul>
+            <p class="mt-3">自動で直したときは、カードに「〇〇を直しました」と表示します。レシートと見比べて、違うときは「支払先を変更」で直してください。</p>
           </div>
         </details>
 
@@ -213,10 +229,36 @@
         </details>
 
         <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
-          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>勘定科目・税区分を修正する</span><span class="chevron text-brand-500">›</span></summary>
+          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>勘定科目・税区分・読み取り内容を修正する</span><span class="chevron text-brand-500">›</span></summary>
           <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
-            <p>AIの候補が違う場合は、<span class="font-bold">支払方法を選ぶ前に</span>確認画面の「科目を変更」「税区分を変更」ボタンから修正できます。</p>
-            <p class="mt-3">Money Forward・freeeへ記帳したあとの修正は、各会計ソフト側で行ってください。</p>
+            <p>AIの候補が違う場合は、記帳の前に確認画面のボタンから直せます。</p>
+            <ul class="mt-3 list-disc space-y-1 pl-5">
+              <li><span class="font-bold">科目を変更</span> / <span class="font-bold">税区分を変更</span></li>
+              <li><span class="font-bold">支払先を変更</span> / <span class="font-bold">金額を変更</span> / <span class="font-bold">日付を変更</span></li>
+              <li><span class="font-bold">摘要を変更</span> — 買った物・用途の読み違いを直す</li>
+            </ul>
+            <p class="mt-3">ボタンを押して、正しい内容をLINEで送るだけです。やめるときは<span class="cmd">キャンセル</span>と送ります。摘要を直しても、家事按分や飲食の参加者の記録は、うしろに自動で残ります。</p>
+            <p class="mt-3">記帳したあとに間違いに気づいたら、LINEで<span class="cmd">取り消し</span>と送ると、直前の記帳を会計ソフトから削除して未処理に戻せます（PREMIUM）。直してから、もう一度記帳できます。取り消せないときは、会計ソフトの画面で削除してください。</p>
+          </div>
+        </details>
+
+        <details id="meal" class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
+          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>飲食費（参加者を摘要に残す）</span><span class="chevron text-brand-500">›</span></summary>
+          <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
+            <p>飲食費のレシートでは、ボタンで「一人で飲食」「社外を含む」「社内のみ」「お土産・差し入れ用」から選ぶと、合った科目の候補を出します。</p>
+            <p class="mt-3">あわせて、何名で、どなたとの飲食かをLINEで送ると、摘要に残せます。</p>
+            <p class="mt-3"><span class="cmd">3名、◯◯社の△△さん</span></p>
+            <p class="mt-3">社外の方との飲食で、1人あたり1万円以下なら、会議費の目安を表示します。参加者の記録は、あとから確認するときの根拠になります。</p>
+            <p class="mt-3 text-xs leading-6 text-stone-500">科目の判断に迷う場合は、税理士等の専門家にご確認ください。</p>
+          </div>
+        </details>
+
+        <details id="private" class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
+          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>個人の買い物を外す（経費にしない）</span><span class="chevron text-brand-500">›</span></summary>
+          <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
+            <p>私用の買い物のレシートを送ってしまったときは、記帳の確認画面で「<span class="font-bold">経費にしない</span>」を押します。</p>
+            <p class="mt-3">確認のあと「個人利用」として除外し、記帳・CSV出力・未処理の一覧から外れます。</p>
+            <p class="mt-3">レシートとカードの控えの両方を送って「同じ買い物かもしれません」と出たときも、片方をこのボタンで外してください。</p>
           </div>
         </details>
 
@@ -230,6 +272,7 @@
               <li><span class="font-bold">個人カード・立替払い</span> → 個人事業主は事業主借（LINEの画面では「個人立替」と表示）、法人・未設定は短期借入金。LINEで<span class="cmd">事業形態</span>と送って設定できます</li>
               <li><span class="font-bold">事業用口座・電子マネー・QR決済</span> にも対応</li>
             </ul>
+            <p class="mt-3">レシートからカード払いと読み取れたときは、記帳の確認画面に「<span class="font-bold">事業用カードで払った</span>」「<span class="font-bold">個人カードで払った</span>」が出ます。押すと、そのまま最終確認に進みます。現金や振込なら「<span class="font-bold">ほかの支払方法</span>」から選んでください。</p>
             <p class="mt-3 text-xs leading-6 text-stone-500">会社や税理士の会計方針がある場合は、そちらを優先してください。</p>
           </div>
         </details>
@@ -368,8 +411,8 @@
                 <p class="font-bold text-stone-700">契約・サポート</p>
                 <ul class="mt-1 list-disc space-y-1 pl-5">
                   <li><span class="cmd">プラン</span> — 現在の契約プランを確認</li>
-                  <li><span class="cmd">プラン変更</span> — プラン変更の案内</li>
-                  <li><span class="cmd">解約</span> — 契約・支払いの管理画面（解約もこちら）</li>
+                  <li><span class="cmd">申し込み</span> — 有料プランの申し込み（ご契約中の方は、プランの変更画面）</li>
+                  <li><span class="cmd">解約</span> / <span class="cmd">支払い</span> — 契約・支払いの管理画面（カードの変更・解約もこちら）</li>
                   <li><span class="cmd">エラー</span> / <span class="cmd">記帳できない</span> — よくあるエラーと対処法</li>
                   <li><span class="cmd">フィードバック</span> — 感想・改善要望の送信方法</li>
                   <li><span class="cmd">お問い合わせ</span> / <span class="cmd">サポート</span> — 連絡方法の案内</li>
@@ -411,13 +454,16 @@
             </ul>
             <p class="mt-3 font-bold text-brand-600">いずれも月額固定で、枚数による従量課金はありません。</p>
             <p class="mt-3">現在の契約プランはLINEで<span class="cmd">プラン</span>と送ると確認できます。お申し込みは、LINEで<span class="cmd">申し込み</span>と送ると表示されるボタンから（お使いのLINEとご契約が自動でつながります）。</p>
+            <p class="mt-3">年払いは月払いより2か月分お得です。選べるときは、申し込みのカードの各プランの下に「年払いなら…」と表示されます。</p>
           </div>
         </details>
 
         <details class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
           <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>プラン変更・解約する</span><span class="chevron text-brand-500">›</span></summary>
           <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
-            <p>プランを変えるときはLINEで<span class="cmd">プラン変更</span>、解約するときは<span class="cmd">解約</span>と送ると、手続きの案内が表示されます。案内に沿ってお手続きください。</p>
+            <p>ご契約中の方がLINEで<span class="cmd">申し込み</span>と送ると、新しい申し込みではなく、プランの変更画面へのボタンが出ます。「プランを変更する」を押して開く画面から、プランの変更や年払いへの切り替えができます。二重に契約・請求されることはありません。</p>
+            <p class="mt-3">解約やカードの変更は、LINEで<span class="cmd">解約</span>または<span class="cmd">支払い</span>と送ると開く画面から行えます。解約は、今の請求期間の終わりに反映されます。</p>
+            <p class="mt-3">お支払いができなかったとき（カードの期限切れなど）は、LINEで1回お知らせします。<span class="cmd">支払い</span>と送って、カードを変更してください。</p>
             <p class="mt-3">解約されたあと、LINEで解約の理由を1問だけお聞きすることがあります（ボタンを押すだけ・回答は任意です）。今後の改善に使います。</p>
             <p class="mt-3 text-xs leading-6 text-stone-500">β期間中は、利用状況や改善状況に応じて提供内容・利用条件・料金プランを調整する場合があります。重要な変更は事前にご案内します。</p>
           </div>
@@ -439,7 +485,8 @@
               <li><span class="font-bold">連携したのにエラーになる</span><br />権限や有効期限の問題の可能性があります。まず<span class="cmd">連携</span>と送って再連携してください。</li>
               <li><span class="font-bold">証憑添付だけ失敗した</span><br />記帳自体は完了している場合があります。必要に応じて、Money Forward側で画像を手動添付してください。</li>
               <li><span class="font-bold">「画像が小さい」と表示された</span><br />証憑保存に不向きな可能性があります。スマホの標準カメラで、明るい場所から文字がはっきり読めるように撮り直し、「写真を送る」から送ってください。</li>
-              <li><span class="font-bold">勘定科目・税区分が違う</span><br />支払方法を選ぶ前に「科目を変更」「税区分を変更」ボタンから修正できます。</li>
+              <li><span class="font-bold">勘定科目・税区分・店名などが違う</span><br />記帳の前に「科目を変更」「税区分を変更」「支払先を変更」「摘要を変更」などのボタンから修正できます。</li>
+              <li><span class="font-bold">「プランのお支払いができませんでした」と届いた</span><br />カードの有効期限や残高をご確認ください。LINEで<span class="cmd">支払い</span>と送ると、お支払い方法を変更できます。</li>
               <li><span class="font-bold">外貨レシートと判定された</span><br />カード明細などで日本円換算額を確認し、円換算額を入力してください。</li>
             </ol>
             <p class="mt-4">解決しない場合は、スクリーンショット・操作内容・エラーIDをLINEに送ってください。LINEで<span class="cmd">エラー</span>と送ると、この対処法一覧をいつでも確認できます。</p>
