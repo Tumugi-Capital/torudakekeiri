@@ -182,9 +182,9 @@
         <details id="bulk" class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
           <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>何枚かまとめて送る（まとめて記帳）</span><span class="chevron text-brand-500">›</span></summary>
           <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
-            <p>LINEのメニューの「写真を送る」から、何枚かまとめて選んで送れます。カードには、どのレシートの結果かが表示されます。</p>
+            <p>LINEのメニューの「写真を送る」から、何枚かまとめて選んで送れます。カードは1枚目だけを出し、記帳するか「経費にしない」で片付けると、次のレシートを自動で出します。後回しにしたいときは<span class="cmd">次へ</span>と送ってください。</p>
             <p class="mt-3">支払方法まで決まっていて、すぐ記帳できるものが2枚以上あると、「まとめて記帳」のボタンが出ます。押すと、Money Forward・freee へまとめて記帳し、結果を1通でお知らせします（PREMIUM）。freee では、登録の前に1回だけ確認します。</p>
-            <p class="mt-3">確認が必要なレシートや、「同じ買い物かもしれません」と出たレシートは、まとめて記帳から外れます。1枚ずつのカードで確かめてください。押し直しても、二重には記帳されません。</p>
+            <p class="mt-3">確認が必要なレシートや、「同じ日付・同じ金額の…が記帳前で残っています」と出たレシートは、まとめて記帳から外れます。1枚ずつのカードで確かめてください。押し直しても、二重には記帳されません。</p>
           </div>
         </details>
 
@@ -247,9 +247,24 @@
           <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
             <p>飲食費のレシートでは、ボタンで「一人で飲食」「社外を含む」「社内のみ」「お土産・差し入れ用」から選ぶと、合った科目の候補を出します。</p>
             <p class="mt-3">あわせて、何名で、どなたとの飲食かをLINEで送ると、摘要に残せます。</p>
-            <p class="mt-3"><span class="cmd">3名、◯◯社の△△さん</span></p>
+            <p class="mt-3"><span class="cmd">4名（自分含む）、◯◯社の△△さん、□□さん、××さん</span></p>
+            <p class="mt-3">人数は、ご自身を含めた人数で送ってください。</p>
             <p class="mt-3">社外の方との飲食で、1人あたり1万円以下なら、会議費の目安を表示します。参加者の記録は、あとから確認するときの根拠になります。</p>
             <p class="mt-3 text-xs leading-6 text-stone-500">科目の判断に迷う場合は、税理士等の専門家にご確認ください。</p>
+          </div>
+        </details>
+
+        <details id="grocery" class="help-article rounded-3xl border border-brand-100 bg-white shadow-sm">
+          <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>食材のレシート（仕入高）</span><span class="chevron text-brand-500">›</span></summary>
+          <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
+            <p>精肉店・青果店・業務スーパーなどで食材を買ったレシートは、外食の飲食費ではなく、用途を選ぶボタンが出ます。</p>
+            <ul class="mt-3 list-disc space-y-1 pl-5">
+              <li><span class="font-bold">お店の材料・仕入</span> → 仕入高</li>
+              <li><span class="font-bold">社内の差し入れ</span> → 福利厚生費（従業員がいる場合）</li>
+              <li><span class="font-bold">取引先への贈答</span> → 交際費</li>
+              <li><span class="font-bold">私用</span> → 経費にしない</li>
+            </ul>
+            <p class="mt-3">一度「仕入」にしたお店は、次回から質問せずに仕入高にします。飲食店の方は、LINEで<span class="cmd">業種</span>と送って「飲食店」を選ぶと、はじめてのお店の食材も最初から仕入高にします。違うときは「科目を変更」で直せます。</p>
           </div>
         </details>
 
@@ -269,7 +284,7 @@
             <ul class="mt-3 list-disc space-y-1 pl-5">
               <li><span class="font-bold">現金</span> → 現金</li>
               <li><span class="font-bold">事業用クレジットカード</span> → 未払金</li>
-              <li><span class="font-bold">個人カード・立替払い</span> → 個人事業主は事業主借（LINEの画面では「個人立替」と表示）、法人・未設定は短期借入金。LINEで<span class="cmd">事業形態</span>と送って設定できます</li>
+              <li><span class="font-bold">個人カード・立替</span> → 個人事業主は事業主借（LINEの画面では「個人立替」と表示）、法人・未設定は短期借入金。LINEで<span class="cmd">事業形態</span>と送って設定できます</li>
               <li><span class="font-bold">事業用口座・電子マネー・QR決済</span> にも対応</li>
             </ul>
             <p class="mt-3">レシートからカード払いと読み取れたときは、記帳の確認画面に「<span class="font-bold">事業用カードで払った</span>」「<span class="font-bold">個人カードで払った</span>」が出ます。押すと、そのまま最終確認に進みます。現金や振込なら「<span class="font-bold">ほかの支払方法</span>」から選んでください。</p>
@@ -382,6 +397,7 @@
                   <li><span class="cmd">従業員設定</span> — 従業員の有無を変更（福利厚生費の選択肢の出し分けに使います）</li>
                   <li><span class="cmd">事業形態</span> — 個人事業主か法人かを選ぶ（個人カード・立替の科目が変わります）</li>
                   <li><span class="cmd">決算月</span> — 法人の決算月を選ぶ（年間集計と期末のお知らせに使います）</li>
+                  <li><span class="cmd">業種</span> — 飲食店かどうかを選ぶ（飲食店なら、食材のレシートを最初から仕入高にします）</li>
                 </ul>
               </div>
               <div>
@@ -481,7 +497,9 @@
           <summary class="flex items-center justify-between gap-3 p-5 font-bold text-stone-800"><span>よくあるエラーと対処法</span><span class="chevron text-brand-500">›</span></summary>
           <div class="border-t border-brand-50 p-5 text-sm leading-8 text-stone-600">
             <ol class="list-decimal space-y-3 pl-5">
-              <li><span class="font-bold">Money Forwardに記帳できない</span><br />LINEで<span class="cmd">連携</span>と送って、Money Forwardを再連携してください。</li>
+              <li><span class="font-bold">「つながりませんでした。連携はそのままで大丈夫です」と出た</span><br />Money Forward・freee 側が混み合っているか、メンテナンス中です。少し待って、もう一度記帳ボタンを押してください。連携のやり直しは要りません。</li>
+              <li><span class="font-bold">「応答が途中で途切れました」と出た</span><br />記帳済みかを確かめた結果をお知らせします。「記帳されていないことを確かめました」なら、もう一度押してください。「確かめられませんでした」なら、押し直す前に会計ソフトの画面で、その仕訳があるかをご確認ください。</li>
+              <li><span class="font-bold">Money Forwardに記帳できない（「連携の期限が切れている」と出た）</span><br />LINEで<span class="cmd">連携</span>と送って、Money Forwardを再連携してください。</li>
               <li><span class="font-bold">連携したのにエラーになる</span><br />権限や有効期限の問題の可能性があります。まず<span class="cmd">連携</span>と送って再連携してください。</li>
               <li><span class="font-bold">証憑添付だけ失敗した</span><br />記帳自体は完了している場合があります。必要に応じて、Money Forward側で画像を手動添付してください。</li>
               <li><span class="font-bold">「画像が小さい」と表示された</span><br />証憑保存に不向きな可能性があります。スマホの標準カメラで、明るい場所から文字がはっきり読めるように撮り直し、「写真を送る」から送ってください。</li>
