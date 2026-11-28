@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="color-scheme" content="only light" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>インボイス制度とレシートの見方（登録番号・経過措置） | 撮るだけ経理</title>
+  <link rel="canonical" href="https://tumugi-capital.github.io/torudakekeiri/guide-invoice-basics.html" />
+  <meta name="description" content="インボイス制度で、レシートや領収書のどこを見ればよいか、登録番号（T＋13桁）があるときとないときで記帳がどう変わるか、経過措置の割合までをまとめました。" />
+  <meta property="og:title" content="インボイス制度とレシートの見方（登録番号・経過措置） | 撮るだけ経理" />
+  <meta property="og:description" content="インボイス制度で、レシートや領収書のどこを見ればよいか、登録番号（T＋13桁）があるときとないときで記帳がどう変わるか、経過措置の割合までをまとめました。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://tumugi-capital.github.io/torudakekeiri/guide-invoice-basics.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:image" content="https://tumugi-capital.github.io/torudakekeiri/og-image.png?v=2" />
+  <meta name="twitter:image" content="https://tumugi-capital.github.io/torudakekeiri/og-image.png?v=2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/tailwind.css" />
+  <style>
+    body {
+      font-family: 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+      -webkit-font-smoothing: antialiased; line-break: strict; word-break: normal; overflow-wrap: anywhere;
+    }
+    h1, h2 { font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif; letter-spacing: 0.04em; }
+    p, li, h1, h2, h3 { text-wrap: pretty; }
+    .dot-bg { background-image: radial-gradient(rgba(63, 98, 82, 0.14) 1.2px, transparent 1.2px); background-size: 18px 18px; }
+    .cmd { display: inline-block; border-radius: 9999px; background: #eee9df; padding: 1px 10px; font-weight: 700; color: #263f35; font-size: 0.85em; }
+    table.guide-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+    table.guide-table th, table.guide-table td { border-bottom: 1px solid #efe6d6; padding: 8px 6px; text-align: left; vertical-align: top; }
+    table.guide-table th { color: #1f3a2f; white-space: nowrap; }
+  </style>
+  <link rel="stylesheet" href="assets/subpage.css" />
+  <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "headline": "インボイス制度とレシートの見方（登録番号・経過措置）",
+   "description": "インボイス制度で、レシートや領収書のどこを見ればよいか、登録番号（T＋13桁）があるときとないときで記帳がどう変わるか、経過措置の割合までをまとめました。",
+   "url": "https://tumugi-capital.github.io/torudakekeiri/guide-invoice-basics.html",
+   "inLanguage": "ja",
+   "datePublished": "2026-11-28",
+   "dateModified": "2026-11-28",
+   "author": {
+    "@type": "Organization",
+    "name": "紬キャピタル合同会社"
+   },
+   "publisher": {
+    "@id": "https://tumugi-capital.github.io/torudakekeiri/#organization"
+   },
+   "about": {
+    "@id": "https://tumugi-capital.github.io/torudakekeiri/#app"
+   },
+   "mainEntityOfPage": "https://tumugi-capital.github.io/torudakekeiri/guide-invoice-basics.html"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "インボイスかどうかは、レシートのどこで分かりますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "「T」から始まる13桁の登録番号（適格請求書発行事業者の登録番号）が印字されているかで分かります。あわせて、税率ごとの金額や消費税額が書かれているかも確かめます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "登録番号がないレシートは、経費にできないのですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "経費（所得税・法人税の必要経費や損金）にはできます。変わるのは消費税の計算で、登録番号がない取引は、仕入税額控除が経過措置の割合（例：70%）に限られます。免税事業者や簡易課税の方は、影響が小さい・ないこともあります。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "撮るだけ経理では登録番号をどう扱いますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "登録番号の有無を読み取り、登録番号がない取引は、取引日に応じた経過措置の割合で記帳できるようにしています。登録番号そのものは、LINEの画面には表示しません。"
+     }
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "撮るだけ経理",
+     "item": "https://tumugi-capital.github.io/torudakekeiri/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "インボイス制度とレシートの見方（登録番号・経過措置）",
+     "item": "https://tumugi-capital.github.io/torudakekeiri/guide-invoice-basics.html"
+    }
+   ]
+  }
+ ]
+}
+  </script>
+</head>
+<body class="bg-brand-50 text-stone-700 leading-relaxed tracking-wide">
+
+  <nav class="sticky top-0 z-50 border-b border-brand-100 bg-white/95 px-4 py-3 backdrop-blur">
+    <div class="mx-auto flex max-w-2xl items-center justify-between gap-3">
+      <a href="./" class="flex items-center gap-2 text-sm font-extrabold text-stone-800"><i class="brand-mark" aria-hidden="true">⌁</i>撮るだけ経理</a>
+      <a href="./" class="rounded-full bg-brand-100 px-4 py-1.5 text-xs font-bold text-brand-700 transition hover:bg-brand-200">← サービス紹介へ戻る</a>
+    </div>
+  </nav>
+
+  <header class="relative overflow-hidden page-hero px-4 pb-10 pt-10 text-center shadow-sm dot-bg">
+    <div class="relative mx-auto max-w-2xl">
+      <span class="page-eyebrow">GUIDE</span>
+      <h1 class="text-2xl font-extrabold text-stone-800 sm:text-3xl">インボイス制度とレシートの見方（登録番号・経過措置）</h1>
+      <p class="mt-3 text-sm leading-7 text-stone-600">レシートに登録番号があるか、ないか。<br />インボイス制度で記帳がどう変わるかの基本です。</p>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-2xl px-4 pb-16 pt-4">
+    <section class="pt-10">
+      <h2 class="text-lg font-extrabold text-stone-800">レシートで見るところ</h2>
+      <div class="mt-4 rounded-3xl border border-brand-100 bg-white p-5 text-sm leading-8 text-stone-600 shadow-sm">
+        <ul class="list-disc space-y-1 pl-5">
+          <li><strong>登録番号：</strong>「T」＋13桁の数字。適格請求書発行事業者の登録番号です。</li>
+          <li><strong>税率ごとの金額：</strong>8%（軽減税率）と10%の対象の金額が分かれているか。</li>
+          <li><strong>消費税額：</strong>税率ごとの消費税額が書かれているか。</li>
+          <li><strong>日付・お店の名前：</strong>いつ、どこで買ったか。</li>
+        </ul>
+      </div>
+    </section>
+    <section class="pt-10">
+      <h2 class="text-lg font-extrabold text-stone-800">登録番号があるとき・ないとき</h2>
+      <div class="mt-4 rounded-3xl border border-brand-100 bg-white p-5 text-sm leading-8 text-stone-600 shadow-sm">
+        <h3 class="font-bold text-stone-800">登録番号がある（インボイス）</h3>
+        <ul class="list-disc space-y-1 pl-5">
+          <li>消費税の計算で、仕入税額控除を全額受けられます</li>
+        </ul>
+        <h3 class="font-bold text-stone-800 mt-6">登録番号がない</h3>
+        <ul class="list-disc space-y-1 pl-5">
+          <li>経費にはできます</li>
+          <li>仕入税額控除は経過措置の割合に限られます</li>
+        </ul>
+        <p class="mt-3">経過措置の割合は、取引日によって変わります。撮るだけ経理では、次の割合で記帳します（令和8年度の税制改正による見直し後の割合）。</p>
+        <ul class="list-disc space-y-1 pl-5">
+          <li>2026年9月30日まで：80%</li>
+          <li>2026年10月1日〜2028年9月30日：70%</li>
+          <li>2028年10月1日〜2030年9月30日：50%</li>
+          <li>2030年10月1日から：30%</li>
+        </ul>
+        <p class="mt-3">制度は見直されることがあります。最新の内容は、国税庁の案内でご確認ください。</p>
+      </div>
+    </section>
+    <section class="pt-10">
+      <h2 class="text-lg font-extrabold text-stone-800">免税事業者・簡易課税の方は</h2>
+      <div class="mt-4 rounded-3xl border border-brand-100 bg-white p-5 text-sm leading-8 text-stone-600 shadow-sm">
+        <p>消費税の免税事業者の方は、消費税の申告がないため、登録番号の有無で納める税額は変わりません。簡易課税の方は、売上から消費税額を計算するため、仕入れの登録番号の有無は計算に影響しません。撮るだけ経理では、最初の設定で課税方式（免税事業者・簡易課税・原則課税）を選べます。</p>
+      </div>
+    </section>
+    <section class="pt-10">
+      <h2 class="text-lg font-extrabold text-stone-800">撮るだけ経理での扱い</h2>
+      <div class="mt-4 rounded-3xl border border-brand-100 bg-white p-5 text-sm leading-8 text-stone-600 shadow-sm">
+        <ul class="list-disc space-y-1 pl-5">
+          <li>レシート・請求書の登録番号の有無を読み取ります。</li>
+          <li>登録番号がない取引は、取引日に応じた経過措置の割合で記帳できるようにし、その旨をお知らせします。</li>
+          <li>登録番号から正式な会社名を調べ、店名の読み違いを直します。</li>
+          <li>登録番号そのものは、LINEの画面に表示しません。会計ソフトにも転記しません。</li>
+        </ul>
+      </div>
+    </section>
+    <section class="pt-10">
+      <h2 class="text-lg font-extrabold text-stone-800">よくある質問</h2>
+      <div class="mt-4 rounded-3xl border border-brand-100 bg-white p-5 text-sm leading-8 text-stone-600 shadow-sm">
+        <h3 class="font-bold text-stone-800">インボイスかどうかは、レシートのどこで分かりますか？</h3>
+        <p class="mt-3">「T」から始まる13桁の登録番号（適格請求書発行事業者の登録番号）が印字されているかで分かります。あわせて、税率ごとの金額や消費税額が書かれているかも確かめます。</p>
+        <h3 class="font-bold text-stone-800 mt-6">登録番号がないレシートは、経費にできないのですか？</h3>
+        <p class="mt-3">経費（所得税・法人税の必要経費や損金）にはできます。変わるのは消費税の計算で、登録番号がない取引は、仕入税額控除が経過措置の割合（例：70%）に限られます。免税事業者や簡易課税の方は、影響が小さい・ないこともあります。</p>
+        <h3 class="font-bold text-stone-800 mt-6">撮るだけ経理では登録番号をどう扱いますか？</h3>
+        <p class="mt-3">登録番号の有無を読み取り、登録番号がない取引は、取引日に応じた経過措置の割合で記帳できるようにしています。登録番号そのものは、LINEの画面には表示しません。</p>
+      </div>
+    </section>
+
+    <section class="pt-10">
+      <div class="rounded-3xl border border-brand-100 bg-white p-5 text-sm leading-8 text-stone-600 shadow-sm">
+        <h2 class="text-lg font-extrabold text-stone-800">撮るだけ経理を試してみる</h2>
+        <p class="mt-3">撮るだけ経理は、LINEにレシート・領収書の写真やPDFの請求書を送るだけで、AIが仕訳の候補を作り、確認したうえでMoney Forward クラウド会計・freee会計へ記帳できる経理アシスタントです。月20回まで無料で試せます（クレジットカード登録不要）。</p>
+        <p class="mt-3"><a href="https://lin.ee/8zc0VBd" class="font-bold text-brand-600 underline">LINEで友だち追加して試す</a>　／　<a href="./help.html" class="font-bold text-brand-600 underline">ヘルプセンター</a>　／　<a href="./#pricing" class="font-bold text-brand-600 underline">料金プラン</a></p>
+      </div>
+      <p class="mt-6 text-xs leading-6 text-stone-500">この記事は一般的な考え方をまとめたもので、税務の助言ではありません。実際の科目・処理は、事業の内容や会計方針によって変わります。判断に迷うときは、税理士等の専門家にご確認ください。</p>
+      <p class="mt-3 text-xs leading-6 text-stone-500">ほかの解説：<a href="./guide-line-receipt.html" class="font-bold text-brand-600 underline">個人事業主がLINEでレシートを整理する方法</a>　／　<a href="./guide-industry-accounts.html" class="font-bold text-brand-600 underline">業種別・よくある経費と勘定科目の考え方</a>　／　<a href="./guide-accounting-software.html" class="font-bold text-brand-600 underline">freee・Money Forward・弥生へレシートを取り込む方法</a>　／　<a href="./guide-household-split.html" class="font-bold text-brand-600 underline">家事按分のやり方（自宅の家賃・電気代・スマホ代）</a>　／　<a href="./guide-tax-return-checklist.html" class="font-bold text-brand-600 underline">確定申告前のレシート整理チェックリスト</a></p>
+    </section>
+  </main>
+</body>
+</html>
