@@ -27,42 +27,142 @@
  "@context": "https://schema.org",
  "@graph": [
   {
-   "@type": "SoftwareApplication",
-   "name": "撮るだけ経理",
-   "applicationCategory": "BusinessApplication",
-   "operatingSystem": "LINE (iOS / Android)",
+   "@type": "Organization",
+   "@id": "https://tumugi-capital.github.io/torudakekeiri/#organization",
+   "name": "紬キャピタル合同会社",
    "url": "https://tumugi-capital.github.io/torudakekeiri/",
-   "description": "LINEに送ったレシートや請求書をAIが読み取り、仕訳の候補にしてお返しする会計入力アシスタントです。",
+   "brand": {
+    "@type": "Brand",
+    "name": "撮るだけ経理"
+   },
+   "publishingPrinciples": "https://tumugi-capital.github.io/torudakekeiri/tokushoho.html"
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://tumugi-capital.github.io/torudakekeiri/#website",
+   "name": "撮るだけ経理",
+   "url": "https://tumugi-capital.github.io/torudakekeiri/",
+   "inLanguage": "ja",
+   "publisher": {
+    "@id": "https://tumugi-capital.github.io/torudakekeiri/#organization"
+   }
+  },
+  {
+   "@type": "SoftwareApplication",
+   "@id": "https://tumugi-capital.github.io/torudakekeiri/#app",
+   "name": "撮るだけ経理",
+   "alternateName": [
+    "とるだけけいり",
+    "撮るだけ経理（LINEの経理アシスタント）"
+   ],
+   "applicationCategory": "BusinessApplication",
+   "applicationSubCategory": "会計・経理（レシート読み取り・仕訳）",
+   "operatingSystem": "LINE (iOS / Android / PC)",
+   "url": "https://tumugi-capital.github.io/torudakekeiri/",
+   "installUrl": "https://lin.ee/8zc0VBd",
+   "description": "撮るだけ経理は、LINEにレシート・領収書の写真やPDFの請求書を送るだけで、AIが日付・金額・支払先・勘定科目・税区分を読み取って仕訳の候補にし、確認したうえでMoney Forward クラウド会計・freee会計へ記帳できる、個人事業主・小規模事業者向けの経理アシスタントです。弥生会計向けのCSV出力にも対応し、月20回まで無料で試せます。",
+   "featureList": [
+    "LINEに送ったレシート・領収書・PDF請求書をAIが読み取り、仕訳の候補を作成",
+    "Money Forward クラウド会計・freee会計への記帳（PREMIUM）",
+    "弥生会計の仕訳日記帳インポート形式のCSV出力（PREMIUM）",
+    "8%と10%が混ざったレシートの税率ごとの内訳の読み取りと検算",
+    "業種（11業種）に合わせた勘定科目の判断",
+    "支払方法に応じた貸方科目（現金・事業用カード・個人カードの立替など）",
+    "家事按分・外貨のレシート・複数枚のまとめて記帳・記帳の取り消し",
+    "二重記帳の防止（通信が途切れたときも記帳済みかを確認）",
+    "インボイス登録番号は画面に表示しない"
+   ],
+   "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "個人事業主・フリーランス・小規模事業者"
+   },
+   "inLanguage": "ja",
+   "publisher": {
+    "@id": "https://tumugi-capital.github.io/torudakekeiri/#organization"
+   },
    "offers": [
     {
      "@type": "Offer",
-     "name": "FREE",
+     "name": "FREE（月20回まで無料）",
      "price": "0",
      "priceCurrency": "JPY"
     },
     {
      "@type": "Offer",
-     "name": "ENTRY",
+     "name": "ENTRY（月額）",
      "price": "550",
-     "priceCurrency": "JPY"
+     "priceCurrency": "JPY",
+     "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "price": "550",
+      "priceCurrency": "JPY",
+      "referenceQuantity": {
+       "@type": "QuantitativeValue",
+       "value": 1,
+       "unitCode": "MON"
+      }
+     }
     },
     {
      "@type": "Offer",
-     "name": "PREMIUM",
+     "name": "ENTRY（年払い）",
+     "price": "5500",
+     "priceCurrency": "JPY",
+     "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "price": "5500",
+      "priceCurrency": "JPY",
+      "referenceQuantity": {
+       "@type": "QuantitativeValue",
+       "value": 1,
+       "unitCode": "ANN"
+      }
+     }
+    },
+    {
+     "@type": "Offer",
+     "name": "PREMIUM（月額）",
      "price": "1100",
-     "priceCurrency": "JPY"
+     "priceCurrency": "JPY",
+     "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "price": "1100",
+      "priceCurrency": "JPY",
+      "referenceQuantity": {
+       "@type": "QuantitativeValue",
+       "value": 1,
+       "unitCode": "MON"
+      }
+     }
+    },
+    {
+     "@type": "Offer",
+     "name": "PREMIUM（年払い）",
+     "price": "11000",
+     "priceCurrency": "JPY",
+     "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "price": "11000",
+      "priceCurrency": "JPY",
+      "referenceQuantity": {
+       "@type": "QuantitativeValue",
+       "value": 1,
+       "unitCode": "ANN"
+      }
+     }
     }
    ]
   },
   {
    "@type": "FAQPage",
+   "@id": "https://tumugi-capital.github.io/torudakekeiri/#faq",
    "mainEntity": [
     {
      "@type": "Question",
      "name": "無料で試せますか？",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "はい。LINEで友だち追加するだけで、月20回までAI解析を無料で試せます。クレジットカード登録は不要です。無料枠を使い切った場合は翌月に回復するほか、ENTRY・PREMIUMプランへの申し込みで引き続きご利用いただけます。"
+      "text": "はい。LINEで友だち追加するだけで、月20回までAI解析を無料で試せます。レシートが手元になくても、LINEで「見本」と送ると、見本のレシートで結果を確かめられます（無料回数には数えません）。クレジットカード登録は不要です。無料枠を使い切った場合は翌月に回復するほか、ENTRY・PREMIUMプランへの申し込みで引き続きご利用いただけます。"
      }
     },
     {
@@ -75,6 +175,14 @@
     },
     {
      "@type": "Question",
+     "name": "きれいに読み取ってもらうコツは？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "レシートはLINEのカメラではなく、スマートフォンの標準カメラで撮ってください。ピントや明るさの補正が効き、文字がくっきり写ります。撮った写真は、LINEのメニューの「写真を送る」から、何枚かまとめて選んで送れます。LINEの設定で、送る写真の画質を「高画質」にしておくと、さらに読み取りやすくなります。"
+     }
+    },
+    {
+     "@type": "Question",
      "name": "ENTRYプランで会計ソフト連携は使えますか？",
      "acceptedAnswer": {
       "@type": "Answer",
@@ -83,10 +191,26 @@
     },
     {
      "@type": "Question",
+     "name": "freee連携は使えますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "PREMIUM PLANで対応しています。LINEで「freee連携」と送信し、freeeログインを完了すると、解析結果の確認後にfreeeへ登録できます。"
+     }
+    },
+    {
+     "@type": "Question",
      "name": "弥生会計でも使えますか？",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "はい。PREMIUM PLANでは、LINEで「CSV出力」と送ると、その月の確定済み仕訳を弥生会計の仕訳日記帳インポート形式CSVでダウンロードできます。「CSV出力 2026-06」のように月指定も可能です。"
+      "text": "はい。PREMIUM PLANでは、LINEで「CSV出力」と送ると、その月の確定済み仕訳を弥生会計の仕訳日記帳インポート形式CSVでダウンロードできます。「CSV出力 2026-06」のように月指定も可能です。CSVはShift_JIS・CRLFで出力し、税額は弥生側の自動計算に任せる設計です。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "エラーが出た場合はどうすればよいですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "LINEで「エラー」と送ると、よくある対処法を確認できます。エラーIDが表示された場合は、お問い合わせ時にそのIDをお知らせください。"
      }
     },
     {
@@ -94,7 +218,79 @@
      "name": "PDFの請求書をそのまま読み取れますか？",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "はい。PDFで届いた請求書ファイルをLINEに送ると、AIが請求書の内容を読み取り、仕訳候補作成に進められます。読み取り結果は記帳・CSV出力前に必ず確認できます。"
+      "text": "はい。PDFで届いた請求書ファイルをLINEに送ると、AIが請求書の内容を読み取り、仕訳候補作成に進められます。紙の請求書を撮影するだけでなく、PDFファイルそのものを送れる点が特徴です。読み取り結果は記帳・CSV出力前に必ず確認できます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "取引先名は入力・修正できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "はい。AIで読み取りにくい取引先名や、請求書・領収書だけでは分かりにくい相手先をLINE上で入力・補足できます。記帳・CSV出力前に確認できる設計です。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "コンビニで買った飲み物やお弁当は、どの科目になりますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "解析のあとに表示されるボタンで、使い道（一人で飲食・お土産や差し入れ・社外の方を含む・社内のみ）を選ぶと、それに合った勘定科目の候補を表示します。最終的な科目は、記帳の前にご自身で確認・変更できます。判断に迷う場合は、税理士等の専門家にご確認ください。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "8%と10%が混ざったレシートはどうなりますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "税率ごとの金額を読み取り、会計ソフトへは税率ごとに分けて記帳します。内訳は解析結果に表示されますので、記帳の前にレシートと見比べてご確認ください。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "「記帳する」を押したあと、結果がすぐに出ないことがあります。",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "会計ソフト側の応答に時間がかかっているときは、「記帳しています」とお返しし、完了したら結果をお知らせします。同じボタンをもう一度押す必要はありません。押し直しても、二重には記帳されません。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "会計ソフトが混み合っている・メンテナンス中のときは？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Money Forward・freee 側が一時的に応答しないときは、「つながりませんでした。連携はそのままで大丈夫です」とお知らせします。少し待って、もう一度記帳ボタンを押してください。連携のやり直しをお願いするのは、連携が本当に切れたときだけです。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "業種によって、勘定科目は変わりますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "同じような買い物でも、業種によって合う科目が違うことがあります。はじめに業種を選んでおくと、その業種でよくある科目の候補を出しやすくなります（11業種から選べます。LINEで「業種」と送って変更できます）。荷造運賃・地代家賃・広告宣伝費・水道光熱費にも対応しています。最終的な科目は、記帳の前にご自身で確認・変更できます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "食材を買ったレシートは、どの科目になりますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "精肉店・青果店などの食材のレシートは、用途（お店の材料・仕入、社内の差し入れ、取引先への贈答、私用）を選ぶと、それに合った科目（仕入高・福利厚生費・交際費）にします。飲食店の方は、LINEで「業種」と送って「飲食店」を選ぶと、最初から仕入高にします。最終的な科目は、記帳の前にご自身で確認・変更できます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "食料品の消費税が1%になった場合、対応しますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "衆議院を通過し、参議院で審議中の法案（2027年4月から2年間、飲食料品の税率を1%にするもの）に合わせた準備を進めています。法案が成立した場合は、対象期間の日付のレシートを1%として読み取り・記帳できるようにします。内容は、成立した法律や会計ソフト各社の対応に合わせて見直します。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "LINEの返信が遅い、または返らない場合は？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "LINE公式アカウントの月間通数上限や一時的な通信状況により、返信が遅れる場合があります。時間をおいて再度お試しください。β期間中は安定運用に向けて順次改善しています。"
      }
     }
    ]
@@ -229,6 +425,9 @@ a { color: inherit; }
 .hero h1 { font-size: clamp(28px, 4.6vw, 46px); line-height: 1.34; margin-block: 20px 18px; }
 .hero h1 em { font-style: normal; color: var(--green); }
 .hero-lead { color: var(--ink-2); font-size: 16px; max-width: 46ch; }
+/* AI検索・検索エンジンが引用しやすい、サービスの定義（構造化データの description と同じ内容）。 */
+.hero-define { margin-top: 18px; color: var(--ink-3); font-size: 12.5px; line-height: 1.8; max-width: 52ch; }
+.hero-define strong { color: var(--ink-2); }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 .hero-note { margin-top: 16px; font-size: 13px; color: var(--ink-3); }
 
@@ -652,6 +851,7 @@ body{background:var(--paper)}
           <a class="hero-secondary" href="#how">使い方を見る <span aria-hidden="true">↓</span></a>
         </div>
         <p class="hero-note"><span>月20回まで無料</span><span>クレジットカード登録不要</span><span>アプリのインストール不要</span></p>
+        <p class="hero-define"><strong>撮るだけ経理とは</strong>　LINEにレシート・領収書の写真やPDFの請求書を送るだけで、AIが日付・金額・支払先・勘定科目・税区分を読み取って仕訳の候補にし、確認したうえでMoney Forward クラウド会計・freee会計へ記帳できる、個人事業主・小規模事業者向けの経理アシスタントです。弥生会計向けのCSV出力にも対応しています。</p>
       </div>
       <div class="demo-stage chat-stage" aria-label="LINEにレシートの写真を送り、解析結果を確かめて記帳するまでの画面イメージ">
         <div class="chat-mock">
@@ -1017,7 +1217,7 @@ body{background:var(--paper)}
         <details><summary>弥生会計でも使えますか？</summary><p>はい。PREMIUM PLANでは、LINEで「CSV出力」と送ると、その月の確定済み仕訳を弥生会計の仕訳日記帳インポート形式CSVでダウンロードできます。「CSV出力 2026-06」のように月指定も可能です。CSVはShift_JIS・CRLFで出力し、税額は弥生側の自動計算に任せる設計です。</p></details>
         <details><summary>エラーが出た場合はどうすればよいですか？</summary><p>LINEで「エラー」と送ると、よくある対処法を確認できます。エラーIDが表示された場合は、お問い合わせ時にそのIDをお知らせください。</p></details>
       </div>
-      <details class="more"><summary>ほかの質問を見る（7件）</summary>
+      <details class="more"><summary>ほかの質問を見る（10件）</summary>
       <div class="faq">
         <details><summary>PDFの請求書をそのまま読み取れますか？</summary><p>はい。PDFで届いた請求書ファイルをLINEに送ると、AIが請求書の内容を読み取り、仕訳候補作成に進められます。紙の請求書を撮影するだけでなく、PDFファイルそのものを送れる点が特徴です。読み取り結果は記帳・CSV出力前に必ず確認できます。</p></details>
         <details><summary>取引先名は入力・修正できますか？</summary><p>はい。AIで読み取りにくい取引先名や、請求書・領収書だけでは分かりにくい相手先をLINE上で入力・補足できます。記帳・CSV出力前に確認できる設計です。</p></details>
