@@ -28,6 +28,9 @@
 
 - [サービス紹介（料金・機能・よくある質問）](https://tumugi-capital.github.io/torudakekeiri/)
 - [ヘルプセンター（使い方・コマンド・会計ソフト連携・エラー対処）](https://tumugi-capital.github.io/torudakekeiri/help.html)
+- [個人事業主がLINEでレシートを整理する方法](https://tumugi-capital.github.io/torudakekeiri/guide-line-receipt.html)
+- [業種別・よくある経費と勘定科目の考え方](https://tumugi-capital.github.io/torudakekeiri/guide-industry-accounts.html)
+- [freee・Money Forward・弥生へレシートを取り込む方法](https://tumugi-capital.github.io/torudakekeiri/guide-accounting-software.html)
 - [特定商取引法に基づく表記](https://tumugi-capital.github.io/torudakekeiri/tokushoho.html)
 - [利用規約](https://tumugi-capital.github.io/torudakekeiri/terms.html)
 - [プライバシーポリシー](https://tumugi-capital.github.io/torudakekeiri/privacy.html)
