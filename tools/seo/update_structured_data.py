@@ -77,7 +77,7 @@ def build(page: str) -> dict:
                 "@type": "Organization",
                 "@id": org_id,
                 "name": "紬キャピタル合同会社",
-                "url": SITE,
+                "url": "https://tumugi-capital.github.io/homepage/",
                 "brand": {"@type": "Brand", "name": "撮るだけ経理"},
                 "publishingPrinciples": SITE + "tokushoho.html",
             },

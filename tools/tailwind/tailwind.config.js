@@ -1,7 +1,7 @@
-// ヘルプ・利用規約・プライバシーポリシー・特定商取引法の4ページ用のデザイン（assets/tailwind.css）の設定。
+// ヘルプ・利用規約・プライバシーポリシー・特定商取引法・解説（guide-*.html）のページ用のデザイン（assets/tailwind.css）の設定。
 // 4ページのHTMLで使うクラス名を変えたら、tools/tailwind/README.md の手順で作り直す。
 module.exports = {
-  content: ['../../help.html', '../../terms.html', '../../privacy.html', '../../tokushoho.html'],
+  content: ['../../help.html', '../../terms.html', '../../privacy.html', '../../tokushoho.html', '../../guide-*.html'],
   theme: {
     extend: {
       colors: {

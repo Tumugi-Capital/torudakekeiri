@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="color-scheme" content="only light" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>個人事業主がLINEでレシートを整理する方法 | 撮るだけ経理</title>
+  <link rel="canonical" href="https://tumugi-capital.github.io/torudakekeiri/guide-line-receipt.html" />
+  <meta name="description" content="個人事業主・フリーランスが、たまりがちなレシート・領収書をLINEで整理し、会計ソフトへ記帳するまでの流れと、月末に困らないためのコツをまとめました。" />
+  <meta property="og:title" content="個人事業主がLINEでレシートを整理する方法 | 撮るだけ経理" />
+  <meta property="og:description" content="個人事業主・フリーランスが、たまりがちなレシート・領収書をLINEで整理し、会計ソフトへ記帳するまでの流れと、月末に困らないためのコツをまとめました。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://tumugi-capital.github.io/torudakekeiri/guide-line-receipt.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:image" content="https://tumugi-capital.github.io/torudakekeiri/og-image.png?v=2" />
+  <meta name="twitter:image" content="https://tumugi-capital.github.io/torudakekeiri/og-image.png?v=2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/tailwind.css" />
+  <style>
+    body {
+      font-family: 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+      -webkit-font-smoothing: antialiased; line-break: strict; word-break: normal; overflow-wrap: anywhere;
+    }
+    h1, h2 { font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif; letter-spacing: 0.04em; }
+    p, li, h1, h2, h3 { text-wrap: pretty; }
+    .dot-bg { background-image: radial-gradient(rgba(63, 98, 82, 0.14) 1.2px, transparent 1.2px); background-size: 18px 18px; }
+    .cmd { display: inline-block; border-radius: 9999px; background: #eee9df; padding: 1px 10px; font-weight: 700; color: #263f35; font-size: 0.85em; }
+    table.guide-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+    table.guide-table th, table.guide-table td { border-bottom: 1px solid #efe6d6; padding: 8px 6px; text-align: left; vertical-align: top; }
+    table.guide-table th { color: #1f3a2f; white-space: nowrap; }
+  </style>
+  <link rel="stylesheet" href="assets/subpage.css" />
+  <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "headline": "個人事業主がLINEでレシートを整理する方法",
+   "description": "個人事業主・フリーランスが、たまりがちなレシート・領収書をLINEで整理し、会計ソフトへ記帳するまでの流れと、月末に困らないためのコツをまとめました。",
+   "url": "https://tumugi-capital.github.io/torudakekeiri/guide-line-receipt.html",
+   "inLanguage": "ja",
+   "datePublished": "2026-11-28",
+   "dateModified": "2026-11-28",
+   "author": {
+    "@type": "Organization",
+    "name": "紬キャピタル合同会社"
+   },
+   "publisher": {
+    "@id": "https://tumugi-capital.github.io/torudakekeiri/#organization"
+   },
+   "about": {
+    "@id": "https://tumugi-capital.github.io/torudakekeiri/#app"
+   },
+   "mainEntityOfPage": "https://tumugi-capital.github.io/torudakekeiri/guide-line-receipt.html"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "レシートを整理するいちばん簡単な方法は？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "受け取ったその日のうちにスマホで撮り、記録に残すことです。撮るだけ経理なら、LINEに写真を送るだけで、AIが日付・金額・支払先・勘定科目・税区分を読み取って仕訳の候補にします。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "専用のアプリは必要ですか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "撮るだけ経理は、いつものLINEで使えます。アプリのインストールは不要で、友だち追加するだけで始められます。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "会計ソフトへの入力も自動になりますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "PREMIUMプランでは、読み取った内容を確認したうえで、Money Forward クラウド会計・freee会計へ記帳できます。弥生会計向けにはCSVを出力できます。AIが勝手に記帳することはありません。"
+     }
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "撮るだけ経理",
+     "item": "https://tumugi-capital.github.io/torudakekeiri/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "個人事業主がLINEでレシートを整理する方法",
+     "item": "https://tumugi-capital.github.io/torudakekeiri/guide-line-receipt.html"
+    }
+   ]
+  }
+ ]
+}
+  </script>
+</head>
+<body class="bg-brand-50 text-stone-700 leading-relaxed tracking-wide">
+
+  <nav class="sticky top-0 z-50 border-b border-brand-100 bg-white/95 px-4 py-3 backdrop-blur">
+    <div class="mx-auto flex max-w-2xl items-center justify-between gap-3">
+      <a href="./" class="flex items-center gap-2 text-sm font-extrabold text-stone-800"><i class="brand-mark" aria-hidden="true">⌁</i>撮るだけ経理</a>
+      <a href="./" class="rounded-full bg-brand-100 px-4 py-1.5 text-xs font-bold text-brand-700 transition hover:bg-brand-200">← サービス紹介へ戻る</a>
+    </div>
+  </nav>
+
+  <header class="relative overflow-hidden page-hero px-4 pb-10 pt-10 text-center shadow-sm dot-bg">
+    <div class="relative mx-auto max-w-2xl">
+      <span class="page-eyebrow">GUIDE</span>
+      <h1 class="text-2xl font-extrabold text-stone-800 sm:text-3xl">個人事業主がLINEでレシートを整理する方法</h1>
+      <p class="mt-3 text-sm leading-7 text-stone-600">レシートは「その日のうちに撮って送る」だけ。<br />月末にまとめて入力する手間を減らす方法をまとめました。</p>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-2xl px-4 pb-16 pt-4">
+    <section class="pt-10">
+      <h2 class="text-lg font-extrabold text-stone-800">レシートがたまる原因</h2>
+      <div class="mt-4 rounded-3xl border border-brand-100 bg-white p-5 text-sm leading-8 text-stone-600 shadow-sm">
+        <p>個人事業主・フリーランスの経理で多い悩みは、レシートが財布や引き出しにたまり、月末や確定申告の前にまとめて入力することになる、というものです。時間がたつほど、次のようなことが起きやすくなります。</p>
+        <ul class="list-disc space-y-1 pl-5">
+          <li>何の支払いだったか（用途・相手）を思い出せない</li>
+          <li>感熱紙の文字が薄くなって読めない</li>
+          <li>入力の量が多く、本業の時間が削られる</li>
+          <li>同じレシートを二重に入力してしまう</li>
+        </ul>
+      </div>
+    </section>
+    <section class="pt-10">
+      <h2 class="text-lg font-extrabold text-stone-800">LINEで整理する流れ</h2>
+      <div class="mt-4 rounded-3xl border border-brand-100 bg-white p-5 text-sm leading-8 text-stone-600 shadow-sm">
+        <p>撮るだけ経理を使うと、次の流れでレシートを整理できます。</p>
+        <ol class="list-decimal space-y-2 pl-5">
+          <li><a href="https://lin.ee/8zc0VBd" class="font-bold text-brand-600 underline">LINEで友だち追加</a>する（アプリのインストールは不要）。</li>
+          <li>レシートを受け取ったら、その場でスマホの標準カメラで撮る。</li>
+          <li>LINEのメニューの「写真を送る」から送る（何枚かまとめて選べます）。PDFの請求書は、ファイルのまま送れます。</li>
+          <li>AIが日付・金額・支払先・勘定科目・税区分を読み取り、確認のカードを返します。違うところは「科目を変更」などのボタンで直します。</li>
+          <li>支払方法（現金・事業用カード・個人カードなど）を選び、Money Forward・freee へ記帳します（PREMIUM）。弥生会計を使っている方は、月ごとにCSVを出力して取り込みます。</li>
+        </ol>
+      </div>
+    </section>
+    <section class="pt-10">
+      <h2 class="text-lg font-extrabold text-stone-800">月末に困らないためのコツ</h2>
+      <div class="mt-4 rounded-3xl border border-brand-100 bg-white p-5 text-sm leading-8 text-stone-600 shadow-sm">
+        <ul class="list-disc space-y-1 pl-5">
+          <li><strong>その日のうちに送る：</strong>用途を覚えているうちなら、科目の判断も正確になります。</li>
+          <li><strong>用途はメモで添える：</strong>「メモ: A社との打ち合わせ」のように先に送っておくと、科目の判断に生かせます。</li>
+          <li><strong>飲食は相手と人数を残す：</strong>会議費・交際費の判断の根拠になります。撮るだけ経理では、LINEで送った参加者を摘要に残せます。</li>
+          <li><strong>私用の買い物は外す：</strong>「経費にしない」で除外しておけば、帳簿に混ざりません。</li>
+          <li><strong>月末に残りを確認する：</strong>LINEで<span class="cmd">未処理</span>と送ると、まだ記帳していないレシートを確認できます。</li>
+        </ul>
+      </div>
+    </section>
+    <section class="pt-10">
+      <h2 class="text-lg font-extrabold text-stone-800">紙のレシートの保管について</h2>
+      <div class="mt-4 rounded-3xl border border-brand-100 bg-white p-5 text-sm leading-8 text-stone-600 shadow-sm">
+        <p>写真で記録しても、紙の原本をいつ捨ててよいかは、電子帳簿保存法の要件（スキャナ保存の要件など）によって変わります。原本の扱いに迷うときは、ヘルプセンターの説明や、税理士等の専門家の案内を確認してください。</p>
+      </div>
+    </section>
+    <section class="pt-10">
+      <h2 class="text-lg font-extrabold text-stone-800">よくある質問</h2>
+      <div class="mt-4 rounded-3xl border border-brand-100 bg-white p-5 text-sm leading-8 text-stone-600 shadow-sm">
+        <h3 class="font-bold text-stone-800">レシートを整理するいちばん簡単な方法は？</h3>
+        <p class="mt-3">受け取ったその日のうちにスマホで撮り、記録に残すことです。撮るだけ経理なら、LINEに写真を送るだけで、AIが日付・金額・支払先・勘定科目・税区分を読み取って仕訳の候補にします。</p>
+        <h3 class="font-bold text-stone-800 mt-6">専用のアプリは必要ですか？</h3>
+        <p class="mt-3">撮るだけ経理は、いつものLINEで使えます。アプリのインストールは不要で、友だち追加するだけで始められます。</p>
+        <h3 class="font-bold text-stone-800 mt-6">会計ソフトへの入力も自動になりますか？</h3>
+        <p class="mt-3">PREMIUMプランでは、読み取った内容を確認したうえで、Money Forward クラウド会計・freee会計へ記帳できます。弥生会計向けにはCSVを出力できます。AIが勝手に記帳することはありません。</p>
+      </div>
+    </section>
+
+    <section class="pt-10">
+      <div class="rounded-3xl border border-brand-100 bg-white p-5 text-sm leading-8 text-stone-600 shadow-sm">
+        <h2 class="text-lg font-extrabold text-stone-800">撮るだけ経理を試してみる</h2>
+        <p class="mt-3">撮るだけ経理は、LINEにレシート・領収書の写真やPDFの請求書を送るだけで、AIが仕訳の候補を作り、確認したうえでMoney Forward クラウド会計・freee会計へ記帳できる経理アシスタントです。月20回まで無料で試せます（クレジットカード登録不要）。</p>
+        <p class="mt-3"><a href="https://lin.ee/8zc0VBd" class="font-bold text-brand-600 underline">LINEで友だち追加して試す</a>　／　<a href="./help.html" class="font-bold text-brand-600 underline">ヘルプセンター</a>　／　<a href="./#pricing" class="font-bold text-brand-600 underline">料金プラン</a></p>
+      </div>
+      <p class="mt-6 text-xs leading-6 text-stone-500">この記事は一般的な考え方をまとめたもので、税務の助言ではありません。実際の科目・処理は、事業の内容や会計方針によって変わります。判断に迷うときは、税理士等の専門家にご確認ください。</p>
+      <p class="mt-3 text-xs leading-6 text-stone-500">ほかの解説：<a href="./guide-industry-accounts.html" class="font-bold text-brand-600 underline">業種別・よくある経費と勘定科目の考え方</a>　／　<a href="./guide-accounting-software.html" class="font-bold text-brand-600 underline">freee・Money Forward・弥生へレシートを取り込む方法</a></p>
+    </section>
+  </main>
+</body>
+</html>

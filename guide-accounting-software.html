@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="color-scheme" content="only light" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>freee・Money Forward・弥生へレシートを取り込む方法 | 撮るだけ経理</title>
+  <link rel="canonical" href="https://tumugi-capital.github.io/torudakekeiri/guide-accounting-software.html" />
+  <meta name="description" content="レシート・領収書を freee会計・Money Forward クラウド会計・弥生会計へ取り込む方法を、撮るだけ経理（LINE）を使う手順で説明します。連携のしかた、記帳の流れ、弥生会計へのCSVの取り込みまでまとめました。" />
+  <meta property="og:title" content="freee・Money Forward・弥生へレシートを取り込む方法 | 撮るだけ経理" />
+  <meta property="og:description" content="レシート・領収書を freee会計・Money Forward クラウド会計・弥生会計へ取り込む方法を、撮るだけ経理（LINE）を使う手順で説明します。連携のしかた、記帳の流れ、弥生会計へのCSVの取り込みまでまとめました。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://tumugi-capital.github.io/torudakekeiri/guide-accounting-software.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:image" content="https://tumugi-capital.github.io/torudakekeiri/og-image.png?v=2" />
+  <meta name="twitter:image" content="https://tumugi-capital.github.io/torudakekeiri/og-image.png?v=2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/tailwind.css" />
+  <style>
+    body {
+      font-family: 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+      -webkit-font-smoothing: antialiased; line-break: strict; word-break: normal; overflow-wrap: anywhere;
+    }
+    h1, h2 { font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif; letter-spacing: 0.04em; }
+    p, li, h1, h2, h3 { text-wrap: pretty; }
+    .dot-bg { background-image: radial-gradient(rgba(63, 98, 82, 0.14) 1.2px, transparent 1.2px); background-size: 18px 18px; }
+    .cmd { display: inline-block; border-radius: 9999px; background: #eee9df; padding: 1px 10px; font-weight: 700; color: #263f35; font-size: 0.85em; }
+    table.guide-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+    table.guide-table th, table.guide-table td { border-bottom: 1px solid #efe6d6; padding: 8px 6px; text-align: left; vertical-align: top; }
+    table.guide-table th { color: #1f3a2f; white-space: nowrap; }
+  </style>
+  <link rel="stylesheet" href="assets/subpage.css" />
+  <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "headline": "freee・Money Forward・弥生へレシートを取り込む方法",
+   "description": "レシート・領収書を freee会計・Money Forward クラウド会計・弥生会計へ取り込む方法を、撮るだけ経理（LINE）を使う手順で説明します。連携のしかた、記帳の流れ、弥生会計へのCSVの取り込みまでまとめました。",
+   "url": "https://tumugi-capital.github.io/torudakekeiri/guide-accounting-software.html",
+   "inLanguage": "ja",
+   "datePublished": "2026-11-28",
+   "dateModified": "2026-11-28",
+   "author": {
+    "@type": "Organization",
+    "name": "紬キャピタル合同会社"
+   },
+   "publisher": {
+    "@id": "https://tumugi-capital.github.io/torudakekeiri/#organization"
+   },
+   "about": {
+    "@id": "https://tumugi-capital.github.io/torudakekeiri/#app"
+   },
+   "mainEntityOfPage": "https://tumugi-capital.github.io/torudakekeiri/guide-accounting-software.html"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "LINEからfreee会計に記帳できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "撮るだけ経理のPREMIUMプランで、LINEで「freee連携」と送って連携すると、読み取ったレシートを確認したうえでfreee会計へ取引として登録できます。領収書の画像はファイルボックスへアップロードします。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "LINEからMoney Forward クラウド会計に記帳できますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "撮るだけ経理のPREMIUMプランで、LINEで「連携」と送って連携すると、読み取ったレシートを確認したうえでMoney Forward クラウド会計へ仕訳を登録できます。レシートの画像は証憑として仕訳に添付します。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "弥生会計にも取り込めますか？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "撮るだけ経理のPREMIUMプランで、LINEで「CSV出力」と送ると、その月の確定済みの仕訳を弥生会計の仕訳日記帳のインポート形式のCSVで出力できます。"
+     }
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "撮るだけ経理",
+     "item": "https://tumugi-capital.github.io/torudakekeiri/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "freee・Money Forward・弥生へレシートを取り込む方法",
+     "item": "https://tumugi-capital.github.io/torudakekeiri/guide-accounting-software.html"
+    }
+   ]
+  }
+ ]
+}
+  </script>
+</head>
+<body class="bg-brand-50 text-stone-700 leading-relaxed tracking-wide">
+
+  <nav class="sticky top-0 z-50 border-b border-brand-100 bg-white/95 px-4 py-3 backdrop-blur">
+    <div class="mx-auto flex max-w-2xl items-center justify-between gap-3">
+      <a href="./" class="flex items-center gap-2 text-sm font-extrabold text-stone-800"><i class="brand-mark" aria-hidden="true">⌁</i>撮るだけ経理</a>
+      <a href="./" class="rounded-full bg-brand-100 px-4 py-1.5 text-xs font-bold text-brand-700 transition hover:bg-brand-200">← サービス紹介へ戻る</a>
+    </div>
+  </nav>
+
+  <header class="relative overflow-hidden page-hero px-4 pb-10 pt-10 text-center shadow-sm dot-bg">
+    <div class="relative mx-auto max-w-2xl">
+      <span class="page-eyebrow">GUIDE</span>
+      <h1 class="text-2xl font-extrabold text-stone-800 sm:text-3xl">freee・Money Forward・弥生へレシートを取り込む方法</h1>
+      <p class="mt-3 text-sm leading-7 text-stone-600">LINEに送ったレシートを、お使いの会計ソフトへ。<br />freee・Money Forward・弥生それぞれの取り込み方です。</p>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-2xl px-4 pb-16 pt-4">
+    <section class="pt-10">
+      <h2 class="text-lg font-extrabold text-stone-800">3つの会計ソフトの取り込み方の違い</h2>
+      <div class="mt-4 rounded-3xl border border-brand-100 bg-white p-5 text-sm leading-8 text-stone-600 shadow-sm">
+        <h3 class="font-bold text-stone-800">Money Forward クラウド会計</h3>
+        <ul class="list-disc space-y-1 pl-5">
+          <li>連携して、仕訳を直接登録します</li>
+          <li>レシートの画像は、証憑として仕訳に添付します</li>
+        </ul>
+        <h3 class="font-bold text-stone-800 mt-6">freee会計</h3>
+        <ul class="list-disc space-y-1 pl-5">
+          <li>連携して、取引を直接登録します</li>
+          <li>レシートの画像は、ファイルボックスへアップロードします</li>
+        </ul>
+        <h3 class="font-bold text-stone-800 mt-6">弥生会計</h3>
+        <ul class="list-disc space-y-1 pl-5">
+          <li>月ごとにCSVを出力して、弥生会計で取り込みます</li>
+          <li>レシートの画像はCSVには含まれません</li>
+        </ul>
+      </div>
+    </section>
+    <section class="pt-10">
+      <h2 class="text-lg font-extrabold text-stone-800">Money Forward クラウド会計の場合</h2>
+      <div class="mt-4 rounded-3xl border border-brand-100 bg-white p-5 text-sm leading-8 text-stone-600 shadow-sm">
+        <ol class="list-decimal space-y-2 pl-5">
+          <li>LINEで<span class="cmd">連携</span>と送り、表示されるボタンから Money Forward にログインして、連携を許可します。</li>
+          <li>レシートの写真を送り、読み取り結果を確かめます。違うところはボタンで直します。</li>
+          <li>支払方法を選び、「MFに記帳する」を押します。仕訳が登録され、レシートの画像が添付されます。</li>
+          <li>間違えたときは、LINEで<span class="cmd">取り消し</span>と送ると、直前の記帳を Money Forward から削除して未処理に戻せます。</li>
+        </ol>
+      </div>
+    </section>
+    <section class="pt-10">
+      <h2 class="text-lg font-extrabold text-stone-800">freee会計の場合</h2>
+      <div class="mt-4 rounded-3xl border border-brand-100 bg-white p-5 text-sm leading-8 text-stone-600 shadow-sm">
+        <ol class="list-decimal space-y-2 pl-5">
+          <li>LINEで<span class="cmd">freee連携</span>と送り、表示されるボタンから freee にログインして、連携を許可します。</li>
+          <li>レシートの写真を送り、読み取り結果を確かめます。</li>
+          <li>支払方法を選び、freee への登録ボタンを押します。取引が登録され、領収書の画像がファイルボックスにアップロードされます。</li>
+        </ol>
+      </div>
+    </section>
+    <section class="pt-10">
+      <h2 class="text-lg font-extrabold text-stone-800">弥生会計の場合</h2>
+      <div class="mt-4 rounded-3xl border border-brand-100 bg-white p-5 text-sm leading-8 text-stone-600 shadow-sm">
+        <ol class="list-decimal space-y-2 pl-5">
+          <li>レシートの写真を送り、読み取り結果を確かめて確定します。</li>
+          <li>LINEで<span class="cmd">CSV出力</span>と送ると、その月の確定済みの仕訳のCSVが届きます。「CSV出力 2026-11」のように月を指定することもできます。</li>
+          <li>弥生会計の仕訳日記帳のインポート機能で、そのCSVを取り込みます。</li>
+        </ol>
+        <p class="mt-3">取り込む前に、弥生会計に同じ名前の勘定科目・税区分があるかを確かめてください。</p>
+      </div>
+    </section>
+    <section class="pt-10">
+      <h2 class="text-lg font-extrabold text-stone-800">記帳の前に確認できるので安心</h2>
+      <div class="mt-4 rounded-3xl border border-brand-100 bg-white p-5 text-sm leading-8 text-stone-600 shadow-sm">
+        <ul class="list-disc space-y-1 pl-5">
+          <li>AIが勝手に記帳することはありません。必ず内容を確かめてから記帳します。</li>
+          <li>同じレシートを二重に記帳しないよう確認をはさみます。記帳の途中で通信が途切れたときも、会計ソフトに記帳済みかを確かめてからお知らせします。</li>
+          <li>8%と10%が混ざったレシートは、税率ごとに分けて記帳します。</li>
+          <li>インボイスの登録番号は、LINEの画面に表示しません。</li>
+        </ul>
+      </div>
+    </section>
+    <section class="pt-10">
+      <h2 class="text-lg font-extrabold text-stone-800">よくある質問</h2>
+      <div class="mt-4 rounded-3xl border border-brand-100 bg-white p-5 text-sm leading-8 text-stone-600 shadow-sm">
+        <h3 class="font-bold text-stone-800">LINEからfreee会計に記帳できますか？</h3>
+        <p class="mt-3">撮るだけ経理のPREMIUMプランで、LINEで「freee連携」と送って連携すると、読み取ったレシートを確認したうえでfreee会計へ取引として登録できます。領収書の画像はファイルボックスへアップロードします。</p>
+        <h3 class="font-bold text-stone-800 mt-6">LINEからMoney Forward クラウド会計に記帳できますか？</h3>
+        <p class="mt-3">撮るだけ経理のPREMIUMプランで、LINEで「連携」と送って連携すると、読み取ったレシートを確認したうえでMoney Forward クラウド会計へ仕訳を登録できます。レシートの画像は証憑として仕訳に添付します。</p>
+        <h3 class="font-bold text-stone-800 mt-6">弥生会計にも取り込めますか？</h3>
+        <p class="mt-3">撮るだけ経理のPREMIUMプランで、LINEで「CSV出力」と送ると、その月の確定済みの仕訳を弥生会計の仕訳日記帳のインポート形式のCSVで出力できます。</p>
+      </div>
+    </section>
+
+    <section class="pt-10">
+      <div class="rounded-3xl border border-brand-100 bg-white p-5 text-sm leading-8 text-stone-600 shadow-sm">
+        <h2 class="text-lg font-extrabold text-stone-800">撮るだけ経理を試してみる</h2>
+        <p class="mt-3">撮るだけ経理は、LINEにレシート・領収書の写真やPDFの請求書を送るだけで、AIが仕訳の候補を作り、確認したうえでMoney Forward クラウド会計・freee会計へ記帳できる経理アシスタントです。月20回まで無料で試せます（クレジットカード登録不要）。</p>
+        <p class="mt-3"><a href="https://lin.ee/8zc0VBd" class="font-bold text-brand-600 underline">LINEで友だち追加して試す</a>　／　<a href="./help.html" class="font-bold text-brand-600 underline">ヘルプセンター</a>　／　<a href="./#pricing" class="font-bold text-brand-600 underline">料金プラン</a></p>
+      </div>
+      <p class="mt-6 text-xs leading-6 text-stone-500">この記事は一般的な考え方をまとめたもので、税務の助言ではありません。実際の科目・処理は、事業の内容や会計方針によって変わります。判断に迷うときは、税理士等の専門家にご確認ください。</p>
+      <p class="mt-3 text-xs leading-6 text-stone-500">ほかの解説：<a href="./guide-line-receipt.html" class="font-bold text-brand-600 underline">個人事業主がLINEでレシートを整理する方法</a>　／　<a href="./guide-industry-accounts.html" class="font-bold text-brand-600 underline">業種別・よくある経費と勘定科目の考え方</a></p>
+    </section>
+  </main>
+</body>
+</html>
